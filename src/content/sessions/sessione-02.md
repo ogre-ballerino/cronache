@@ -2,8 +2,8 @@
 titolo: La casa di Hans Traeumer
 numero: 2
 data: 2025-05-02
-estratto: Dal diario del dottor Lawrence a un appartamento abbandonato nel North End di Boston, dove gli investigatori trovano la foto di una spedizione in Egitto del 1865 e un indizio che porta a Berlino.
-luoghiVisitati: [Boston, Boston Psychoanalytic Society, Casa di Hans Traeumer]
+estratto: Dal diario del dottor Lawrence a un appartamento abbandonato nel North End di Arkham, dove gli investigatori trovano la foto di una spedizione in Egitto del 1865 e un indizio che porta a Berlino.
+luoghiVisitati: [Boston, Boston Psychoanalytic Society, Arkham, Casa di Hans Traeumer]
 ---
 
 ## Dal diario del dottor Lawrence
@@ -47,7 +47,7 @@ indirizzo.
 ## Sopra la lavanderia
 
 L'indirizzo porta alla [[Casa di Hans Traeumer]], nel North End di
-[[Boston]]: un appartamento sopra una lavanderia fatiscente, nel quartiere
+[[Arkham]]: un appartamento sopra una lavanderia fatiscente, nel quartiere
 dei polacchi. I vicini raccontano che il vecchio [[Hans Traeumer|Hans]] è
 sparito da circa tre mesi e non paga l'affitto. Era riservato, viveva di
 lezioni di lingue e di pianoforte; prima insegnava tedesco in una modesta

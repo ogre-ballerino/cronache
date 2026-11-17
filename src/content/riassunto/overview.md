@@ -20,9 +20,9 @@ geroglifici parlano di uno spirito di [[Nyarlathotep]].
 
 Mesi dopo, a [[Boston]], un uomo con gli occhiali da sole lascia a HP un
 biglietto con il nome di Hans e un indirizzo. Nella [[Casa di Hans
-Traeumer]] c'è la foto di una spedizione in Egitto del 1865: la dottoressa
-[[Evelyn Hayes]], il linguista [[Hans Traeumer]], il finanziatore
-[[Randolph Allen]], lo studente [[Simon Fairbanks]] e l'ex soldato
+Traeumer]], ad Arkham, c'è la foto di una spedizione in Egitto del
+1865: la dottoressa [[Evelyn Hayes]], il linguista [[Hans Traeumer]], il
+finanziatore [[Randolph Allen]], lo studente [[Simon Fairbanks]] e l'ex soldato
 [[Sergei Volkov]]. Della spedizione non tornò quasi nessuno. Una frase da
 un'opera di Mozart, "Thamos, re d'Egitto, ha la chiave", indica una
 cassetta di sicurezza della [[Deutsche Bank]] di Berlino. Alla [[Boston

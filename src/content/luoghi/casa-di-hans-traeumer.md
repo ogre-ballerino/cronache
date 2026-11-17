@@ -1,8 +1,8 @@
 ---
 titolo: Casa di Hans Traeumer
 tipo: Casa
-regione: Boston
-estratto: L'appartamento di Hans Traeumer, sopra una lavanderia nel North End di Boston, dove gli investigatori trovano la foto della spedizione del 1865.
+regione: Massachusetts
+estratto: L'appartamento di Hans Traeumer, sopra una lavanderia nel North End di Arkham, dove gli investigatori trovano la foto della spedizione del 1865.
 ---
 
 Sopra una lavanderia fatiscente, nel quartiere dei polacchi, in cima a una

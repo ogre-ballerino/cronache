@@ -9,7 +9,7 @@ Professore e linguista famoso, lavorò alla traduzione della stele di
 Rosetta. Fu il linguista della spedizione in Egitto di [[Evelyn Hayes]].
 Tornato, abbandonò la linguistica per una vita umile: insegnante di
 tedesco in una modesta scuola pubblica, poi lezioni di lingue e di
-pianoforte, in affitto sopra una lavanderia del North End di [[Boston]]. È
+pianoforte, in affitto sopra una lavanderia del North End di [[Arkham]]. È
 sparito circa tre mesi prima che gli investigatori arrivino alla [[Casa di
 Hans Traeumer|sua casa]], dove trovano la foto del 1865 e la pista per la
 [[Deutsche Bank]]. È stato in contatto per un anno con [[Chung]].
