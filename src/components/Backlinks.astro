@@ -14,6 +14,7 @@ const sections = [
   { prefix: 'personaggi', label: 'Investigatori' },
   { prefix: 'png', label: 'Comprimari' },
   { prefix: 'luoghi', label: 'Luoghi' },
+  { prefix: 'handout', label: 'Handout' },
 ]
   .map((s) => ({ ...s, links: backlinks.filter((l) => l.url.split('/')[1] === s.prefix) }))
   .filter((s) => s.links.length > 0);

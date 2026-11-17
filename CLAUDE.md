@@ -2,7 +2,7 @@
 
 Companion site for a finished Call of Cthulhu 7e campaign (season 1, from the
 United States to Berlin), built with Astro. The sections (capitoli/diario,
-riassunto, investigatori, comprimari, luoghi) are cross-linked with
+riassunto, investigatori, comprimari, luoghi, handout) are cross-linked with
 Obsidian-style wikilinks. Forked from the
 [strahd](https://github.com/sirlisko/strahd) site; the visual theme is an
 occult "Miskatonic tome".
@@ -62,6 +62,11 @@ These apply to every content edit.
   forms as above), `fazione`, `luogo`,
   `estratto`, `tag`.
 - `luoghi/`: `titolo`, `tipo`, `regione`, `estratto`, `tag`.
+- `handout/`: `titolo`, `capitolo` (number of the session where the
+  investigators got it), `fonte` (where it came from), `estratto`, `tag`,
+  `immagine` (card thumbnail) only if the file exists. Body: the document
+  as the investigators read it, transcribed from the Keeper's notes without
+  adding text. Sessions and entities link to it instead of repeating it.
 - Filenames are the kebab-case, accent-free `titolo`.
 
 ## Commits

@@ -5,7 +5,7 @@ type Backlink = { title: string; url: string; numero?: number };
 
 let backlinkCache: Map<string, Backlink[]> | null = null;
 
-const COLLECTIONS = ['sessions', 'personaggi', 'png', 'luoghi', 'riassunto'] as const;
+const COLLECTIONS = ['sessions', 'personaggi', 'png', 'luoghi', 'handout', 'riassunto'] as const;
 
 async function buildBacklinkIndex() {
   const index = new Map<string, Backlink[]>();

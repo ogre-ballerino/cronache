@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import { handoutMeta } from '../../lib/handout';
+
+const handouts = (await getCollection('handout')).sort(
+  (a, b) => a.data.capitolo - b.data.capitolo || a.data.titolo.localeCompare(b.data.titolo)
+);
+---
+<BaseLayout title="Handout" description="I documenti, le fotografie e le pagine che gli investigatori hanno avuto tra le mani nel corso della campagna.">
+  <h1 class="page-title">Handout</h1>
+  <p class="page-lede">Documenti, fotografie e pagine strappate, nell'ordine in cui sono arrivati sul tavolo.</p>
+  <CardGrid>
+    {handouts.map((h) => (
+      <Card
+        href={`/handout/${h.id}`}
+        title={h.data.titolo}
+        excerpt={h.data.estratto}
+        meta={handoutMeta(h.data)}
+        image={h.data.immagine}
+      />
+    ))}
+  </CardGrid>
+</BaseLayout>

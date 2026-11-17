@@ -51,6 +51,15 @@ const luoghi = defineCollection({
   }),
 });
 
+const handout = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/handout' }),
+  schema: z.object({
+    ...baseFields,
+    capitolo: z.number().int().positive(),
+    fonte: z.string().optional(),
+  }),
+});
+
 const riassunto = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/riassunto' }),
   schema: z.object({
@@ -58,4 +67,4 @@ const riassunto = defineCollection({
   }),
 });
 
-export const collections = { sessions, personaggi, png, luoghi, riassunto };
+export const collections = { sessions, personaggi, png, luoghi, handout, riassunto };

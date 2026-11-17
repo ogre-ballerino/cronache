@@ -13,6 +13,7 @@ const COLLECTION_ROUTES = {
   personaggi: '/personaggi',
   png: '/png',
   luoghi: '/luoghi',
+  handout: '/handout',
   riassunto: '/riassunto',
 };
 

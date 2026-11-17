@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Cerca" description="Cerca tra capitoli, investigatori, comprimari e luoghi della campagna.">
+<BaseLayout title="Cerca" description="Cerca tra capitoli, investigatori, comprimari, luoghi e handout della campagna.">
   <style is:inline>
     /* In a layer so the site rules beat Pagefind's inflated specificity. */
     @import url('/pagefind/pagefind-component-ui.css') layer(pagefind);
   </style>
   <h1 class="page-title">Cerca</h1>
-  <p class="page-lede">Cerca tra capitoli, investigatori, comprimari e luoghi.</p>
+  <p class="page-lede">Cerca tra capitoli, investigatori, comprimari, luoghi e handout.</p>
 
   <div class="search">
     <pagefind-input placeholder="Arkham, Berlino…" autofocus></pagefind-input>
