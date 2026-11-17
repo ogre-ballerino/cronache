@@ -6,7 +6,7 @@ estratto: La sorella di Madame Jade. Per un anno in contatto con Hans Traeumer, 
 ---
 
 Sorella di [[Madame Jade]], che la crede morta. Per circa un anno è stata
-in contatto con [[Hans Traeumer]], e nel suo diario lo pregava di separarsi
+in contatto con [[Hans Traeumer]], e nel suo [[Il diario di Chung|diario]] lo pregava di separarsi
 da uno specchio che lo tormentava; lei stessa scriveva di incubi e
 dell'impossibilità di svegliarsi. Tra le sue cose c'è il simbolo dello
 specchio. È sparita più o meno quando è sparito Hans.

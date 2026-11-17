@@ -55,30 +55,23 @@ scuola pubblica, dove i colleghi lo ricordano fin troppo preparato per quel
 posto, con tutte le lingue antiche che conosceva.
 
 Per terra, posta mai aperta: bollette scadute e giornali. In soggiorno, pile
-di libri e appunti con gli stessi simboli ripetuti all'infinito, identici a
-quelli del sarcofago, uno dei quali inciso più a fondo degli altri.
-
-![Cinque simboli disegnati a mano: un cerchio attraversato da una linea spezzata, un triangolo, una figura con tentacoli e un cerchio, un pentagono con un occhio, un rombo con un fulmine](/images/indizi/simboli.jpg)
-
-*I simboli trovati in casa di Hans.*
+di libri e appunti con gli stessi [[I simboli di Hans|simboli]] ripetuti
+all'infinito, identici a quelli del sarcofago, uno dei quali inciso più a
+fondo degli altri.
 
 Nel caminetto dello studio c'è un foglio che qualcuno ha cercato di
-bruciare: in tedesco, è la ricevuta di una cassetta di sicurezza della
-[[Deutsche Bank]], con un indirizzo parziale di [[Berlino]] e una frase:
-"Thamos, König in Ägypten hat den Schlüssel", Thamos, re d'Egitto, ha la
-chiave. In un libro scoprono che viene da un'opera di Mozart, e suonando
+bruciare: in tedesco, è [[La ricevuta bruciata|la ricevuta]] di una
+cassetta di sicurezza della [[Deutsche Bank]], con un indirizzo parziale di
+[[Berlino]] e una frase: "Thamos, König in Ägypten hat den Schlüssel",
+Thamos, re d'Egitto, ha la chiave. In un libro scoprono che viene da un'opera di Mozart, e suonando
 quel pezzo sul piccolo pianoforte sgangherato del soggiorno ottengono la
 chiave e il numero della cassetta.
 
 ## La spedizione del 1865
 
-![Sei persone in abiti da esplorazione davanti alle piramidi di Giza: una donna, due giovani, un uomo con una lunga barba, un uomo in piedi dietro e un anziano con cappello e bastone](/images/indizi/spedizione-1865.jpg)
-
-*La fotografia della spedizione del 1865.*
-
 In camera da letto, tra le foto ammucchiate in un angolo, una attira
-l'attenzione: è la più vecchia, accartocciata e ristesa più volte. Ritrae
-una spedizione in Egitto, e porta la data del 1865. Sul retro, cinque nomi:
+l'attenzione: è [[La fotografia del 1865|la più vecchia]], accartocciata e
+ristesa più volte. Ritrae una spedizione in Egitto, e porta la data del 1865. Sul retro, cinque nomi:
 la dottoressa [[Evelyn Hayes]], il professor Hans Traeumer, [[Randolph
 Allen]], [[Simon Fairbanks]] e [[Sergei Volkov]].
 

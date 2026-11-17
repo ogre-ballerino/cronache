@@ -16,9 +16,10 @@ colleghi, parla con [[McGhee]], e dagli appunti di [[Hans Traeumer|Hans]] e
 dal diario di [[Chung]] capisce che i due sono rimasti in contatto per
 circa un anno, mentre la mente di Hans si deteriorava.
 
-Nel diario Chung scrive di incubi e di non riuscire più a svegliarsi; tra
-le sue cose c'è uno dei simboli, quello dello specchio, che ricorda una
-palla da biliardo. Una pagina è più chiara delle altre:
+Nel [[Il diario di Chung|diario]] Chung scrive di incubi e di non riuscire
+più a svegliarsi; tra le sue cose c'è uno dei simboli, quello dello
+specchio, che ricorda una palla da biliardo. Una pagina è più chiara delle
+altre:
 
 > Ho di nuovo consigliato caldamente a H di allontanare lo specchio. Lui è reticente a separarsene, temendo che qualcuno possa usarlo per scopi nefasti.
 
@@ -36,14 +37,13 @@ Stati Uniti. Il suo ultimo indirizzo noto è un cimitero ortodosso.
 
 Alla biblioteca di [[Arkham]], [[Agatha Fletcher|Agatha]] trova la tesi di
 [[Evelyn Hayes]], arricchita dal bibliotecario [[Armitage]] con dei ritagli
-di giornale: *I Segreti di Nophru-Ka: Un'Analisi delle Anomalie
-Archeologiche e la Loro Potenziale Connessione con i Culti dei Grandi
-Antichi*. La tesi, del 1864, studia la [[Tomba di Nophru-Ka]], un faraone
-minore della dinastia arcaica: geroglifici atipici, geometrie non euclidee
-incise nella pietra, leghe metalliche sconosciute, i segni di contatti con
-civiltà predinastiche e con i culti dei Grandi Antichi. Più volte vi
-compaiono simboli arcaici legati al culto di [[Nyarlathotep]], tra cui uno
-simile a un avocado. La conclusione: serve una ricerca sul posto.
+di giornale: *[[I Segreti di Nophru-Ka]]*. La tesi, del 1864, studia la
+[[Tomba di Nophru-Ka]], un faraone minore della dinastia arcaica:
+geroglifici atipici, geometrie non euclidee incise nella pietra, leghe
+metalliche sconosciute, i segni di contatti con civiltà predinastiche e con
+i culti dei Grandi Antichi. Più volte vi compaiono simboli arcaici legati
+al culto di [[Nyarlathotep]], tra cui uno simile a un avocado. La
+conclusione: serve una ricerca sul posto.
 
 I primi articoli la ridicolizzano, tra "omini verdi" e accademici che
 arrossiscono di vergogna. Quelli successivi raccontano come Evelyn sia
@@ -109,7 +109,8 @@ se fosse cresciuto anziché essere stato costruito.
 
 I volumi raccontano di Nyarlathotep, il Caos Strisciante, mutaforma
 ingannevole dai mille avatar, indipendenti l'uno dall'altro, frammenti che
-prendono un'identità propria. Ne descrivono due: [[Aza'ghul]], il Djinn
+prendono un'identità propria. Ne descrivono due ([[Gli avatar di
+Nyarlathotep|le pagine sugli avatar]]): [[Aza'ghul]], il Djinn
 Seduttore, legato all'anima, invisibile tranne che alla polvere di
 Ibn-Ghazi, che esaudisce desideri per corrompere gli uomini; e [[Qal'Lith]],
 la Tessitrice di Incubi, legata alla mente, progenie dimenticata di

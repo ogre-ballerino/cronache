@@ -22,4 +22,4 @@ come alla partenza per l'Egitto. [[Salem]] lo libera, e lui racconta che
 cosa accadde nel 1865. Al risveglio è nel corpo di [[Alistair]], e non
 ricorda più nulla dalla spedizione in poi.
 
-Compare nella [[La casa di Hans Traeumer|fotografia della spedizione]].
+Compare nella [[La fotografia del 1865|fotografia della spedizione]].

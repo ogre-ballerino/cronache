@@ -6,6 +6,6 @@ estratto: Il bibliotecario di Arkham, che conserva la tesi di Evelyn Hayes e la 
 ---
 
 Nel capitolo [[Il caveau di Berlino]] fornisce ad [[Agatha
-Fletcher|Agatha]] la tesi di [[Evelyn Hayes]], *I Segreti di Nophru-Ka*,
+Fletcher|Agatha]] la tesi di [[Evelyn Hayes]], *[[I Segreti di Nophru-Ka]]*,
 con i ritagli di giornale che la ridicolizzano e quelli sulla spedizione
 in Egitto.
