@@ -2,75 +2,147 @@
 titolo: Il caveau di Berlino
 numero: 3
 data: 2025-05-09
-estratto: Dalla Psychology Society al caveau della Banca di Berlino, passando per una biblioteca che non vuole lasciar andare gli investigatori. Agatha perde un dito, Rita rivede la sorella morta.
-luoghiVisitati: [Psychology Society, Berlino, Hotel Savoy, Banca di Berlino, Biblioteca di Berlino]
+estratto: Dalla Boston Psychoanalytic Society al caveau della Deutsche Bank, passando per una biblioteca che non vuole lasciar andare gli investigatori. Agatha perde un dito, Rita rivede la sorella morta.
+luoghiVisitati: [Boston Psychoanalytic Society, Arkham, Berlino, Anhalter Bahnhof, Hotel Savoy, Deutsche Bank, Cabaret Schwarze Katze, Biblioteca di Stato Prussiana]
 ---
 
-## La Psychology Society
+## La Boston Psychoanalytic Society
 
-Il dottor [[HP Lawrence|Lawrence]] porta gli appunti alla [[Psychology Society]], in cerca
-di pazienti o studiosi che abbiano già visto qualcuno scrivere simboli
-esoterici e perdere la ragione. Ne discute con i colleghi e scopre che [[Chung]] e [[Hans Trommer]] sono rimasti in
-contatto per circa un anno. Parla anche con [[McGhee]]. Nel diario di
-Chung si parla di incubi e di non riuscire più a svegliarsi; tra le sue
-cose c'è uno dei simboli, che ricorda una palla da biliardo.
+Il dottor [[HP Lawrence|Lawrence]] porta gli appunti alla [[Boston
+Psychoanalytic Society]], in cerca di pazienti o studiosi che abbiano già
+visto qualcuno scrivere simboli esoterici e perdere la ragione. Non ce ne
+sono altri: quello di Hans e Chung sembra un caso isolato. Ne discute con i
+colleghi, parla con [[McGhee]], e dagli appunti di [[Hans Traeumer|Hans]] e
+dal diario di [[Chung]] capisce che i due sono rimasti in contatto per
+circa un anno, mentre la mente di Hans si deteriorava.
 
-[[Rita]] intanto cerca notizie sui membri della spedizione e non ne trova
-traccia. Di uno di loro, [[Serghey]], si sa che era stato congedato
-dall'esercito russo per aver picchiato un uomo che aveva offeso lo zar, e
-poi trasferito negli Stati Uniti per la sua sicurezza. Nessuno risulta
-essere tornato dall'Egitto, tranne Hans. Ma anche [[Randalf Allen]], morto
-nel 1875 ufficialmente d'infarto, era tornato: era un collezionista di
-antichità.
+Nel diario Chung scrive di incubi e di non riuscire più a svegliarsi; tra
+le sue cose c'è uno dei simboli, quello dello specchio, che ricorda una
+palla da biliardo. Una pagina è più chiara delle altre:
 
-Tornata alla sua bancarella, [[Agatha Fletcher|Agatha]] trova la tesi di [[Evelyn
-Trommer]] arricchita dal bibliotecario con dei ritagli di giornale. La
-tesi, del 1864, aveva fatto scandalo: parlava di "omini verdi", di
-contatti con civiltà sconosciute, di geometria non euclidea, dei Grandi
-Antichi e di [[Nyarlathotep]], e riportava un simbolo simile a un avocado.
-I primi articoli la ridicolizzano; quelli successivi raccontano come
-Evelyn sia riuscita comunque a mettere insieme una spedizione per l'Egitto.
+> Ho di nuovo consigliato caldamente a H di allontanare lo specchio. Lui è reticente a separarsene, temendo che qualcuno possa usarlo per scopi nefasti.
+
+Chung teme che ciò che tormenta Hans si nasconda dentro lo specchio, e che
+avvicinarsi troppo possa colpire anche lei e le persone a cui tiene: "Non
+ho nessuno oltre a mia sorella".
+
+## Le tracce della spedizione
+
+[[Rita Peacock|Rita]] intanto cerca notizie sui membri della spedizione e
+non ne trova traccia. Dai registri militari scopre che [[Sergei Volkov]],
+ex soldato, era stato congedato con disonore dall'esercito russo per aver
+picchiato un commilitone che aveva offeso lo zar, ed era poi fuggito negli
+Stati Uniti. Il suo ultimo indirizzo noto è un cimitero ortodosso.
+
+Alla biblioteca di [[Arkham]], [[Agatha Fletcher|Agatha]] trova la tesi di
+[[Evelyn Hayes]], arricchita dal bibliotecario [[Armitage]] con dei ritagli
+di giornale: *I Segreti di Nophru-Ka: Un'Analisi delle Anomalie
+Archeologiche e la Loro Potenziale Connessione con i Culti dei Grandi
+Antichi*. La tesi, del 1864, studia la [[Tomba di Nophru-Ka]], un faraone
+minore della dinastia arcaica: geroglifici atipici, geometrie non euclidee
+incise nella pietra, leghe metalliche sconosciute, i segni di contatti con
+civiltà predinastiche e con i culti dei Grandi Antichi. Più volte vi
+compaiono simboli arcaici legati al culto di [[Nyarlathotep]], tra cui uno
+simile a un avocado. La conclusione: serve una ricerca sul posto.
+
+I primi articoli la ridicolizzano, tra "omini verdi" e accademici che
+arrossiscono di vergogna. Quelli successivi raccontano come Evelyn sia
+riuscita comunque a mettere insieme una spedizione semiufficiale per
+l'Egitto, finanziata da [[Randolph Allen]], collezionista di Boston
+appassionato di cultura egizia, con il suo studente e assistente [[Simon
+Fairbanks]] e con Hans Traeumer, il celebre linguista che aveva lavorato
+alla traduzione della stele di Rosetta.
+
+> Scavi o Scandali? L'Insolita Dottoressa Hayes Scava più a Fondo nella Controversia che nella Storia
+
+Dell'esito della spedizione, nulla. Nessuno risulta essere tornato
+dall'Egitto, tranne Hans, che ha smesso di fare il linguista e si è ritirato
+a una vita umile. Evelyn non ha più pubblicato, Simon non ha finito gli
+studi. Ma anche Randolph Allen, morto nel 1875 ufficialmente d'infarto, era
+tornato.
 
 ## Berlino
 
-Gli investigatori partono per [[Berlino]]: sette giorni di viaggio, senza
-incidenti, a parte una vecchia signora che seduce HP, il cui cuore però
-batte per una sola. La sistemazione trovata in città non è all'altezza del
-gruppo: si trasferiscono all'[[Hotel Savoy]], a spese di [[Alistar]].
+Gli investigatori partono per [[Berlino]]: giorni di traversata per mare,
+senza incidenti, a parte una vecchia signora che seduce HP, il cui cuore
+però batte per una sola. Il treno li lascia all'[[Anhalter Bahnhof]],
+sotto un tetto di ferro alto come quello di una cattedrale; fuori, un
+venditore di giornali grida che il marco continua a crollare.
 
-Alla [[Banca di Berlino]] convincono il banchiere [[Fritz]] a farli
-accedere alla cassetta di sicurezza. I dipendenti della banca non riescono
-a dormire: sono emaciati, giallastri. Fritz cede in cambio della promessa
-che il loro aiuto potrà curare la sua insonnia, e dà appuntamento alle
-quattro del pomeriggio.
+Un poliziotto con un vistoso elmetto chiede "Auto, Droschke, oder Gepäck?"
+e procura loro un taxi. Rifiutata la pensione più economica, la Goldenen
+Gans Gasthaus, il gruppo costringe [[Alistair]] a pagare tre stanze
+all'[[Hotel Savoy]]: Rita e [[Madame Jade]] in una, Agatha e [[Salem]] in
+un'altra, Alistair e HP nell'ultima.
 
-## La biblioteca
+## La Deutsche Bank
 
-In uno sgabuzzino della [[Biblioteca di Berlino|biblioteca]] trovano
-l'*Antiquarium Tenebris*. Racconta di Nyarlathotep, il Caos Strisciante,
-signore della rovina dai mille avatar, e di alcune delle sue forme:
-[[Ara'gul]], il genio seduttore il cui simbolo è sul diario, intermediario
-sulla Terra; [[Q'allith]], la Tessitrice di Incubi, che si nutre di
-angosce, manipola i sogni, vi intrappola le persone e si proietta nel mondo
-reale, e che può essere esiliata solo con un artefatto benevolo; e un
-terzo nome, Xeztoth.
+Alla [[Deutsche Bank]], tra colonne di pietra, lampadari di cristallo e
+banconi di mogano, trovano il banchiere [[Fritz]]: magro, emaciato, con
+grosse occhiaie e la pelle giallastra. Non dorme bene da tempo, e non è
+l'unico: la banca è a corto di personale, e uno dei dipendenti è stato
+trovato a mangiare monete, ed è morto.
 
-Cercando di prendere il libro, [[Agatha Fletcher|Agatha]] perde un dito. La biblioteca
-sembra voler intrappolare il gruppo: riescono a fuggire, ma non senza
-pagarne il prezzo in sanità.
+Per aprire una cassetta servono la chiave e un documento d'identità del
+titolare. Fritz cede in cambio della promessa che il loro aiuto potrà curare
+la sua insonnia, e dà appuntamento alle quattro del pomeriggio, a banca
+chiusa.
+
+## Una carta d'identità
+
+Il documento lo procurano al [[Cabaret Schwarze Katze]], un locale fumoso
+illuminato di rosso e di verde, tra artisti bohémien, ballerine e un
+gruppo jazz scalcinato. Il contatto aspetta al bancone: lungo cappotto,
+cilindro un po' di lato, una sciarpa di seta sgargiante. In un angolo
+appartato, ma non del tutto nascosto, mostra il documento falso come fosse
+un'opera d'arte. È di ottima fattura.
+
+## L'Antiquarium Tenebris
+
+Nascosta nella [[Biblioteca di Stato Prussiana]], la più antica di
+Berlino, c'è una sezione occulta, l'*Antiquarium Tenebris*, a cui si
+accede da una porta di servizio mal segnalata. Le volte sono basse, la luce
+viene da lampade a olio, e il legno degli scaffali è scuro e contorto, come
+se fosse cresciuto anziché essere stato costruito.
+
+> Poiché qui sono gli occhi di Nyarlathotep: mille occhi fissi a mille forme. Ascolti il loro canto? È la musica del caos sfrenato, inarrestabile e onnivoro.
+
+I volumi raccontano di Nyarlathotep, il Caos Strisciante, mutaforma
+ingannevole dai mille avatar, indipendenti l'uno dall'altro, frammenti che
+prendono un'identità propria. Ne descrivono due: [[Aza'ghul]], il Djinn
+Seduttore, legato all'anima, invisibile tranne che alla polvere di
+Ibn-Ghazi, che esaudisce desideri per corrompere gli uomini; e [[Qal'Lith]],
+la Tessitrice di Incubi, legata alla mente, progenie dimenticata di
+un'antica divinità egizia, che si nutre di angosce, manipola i sogni, vi
+intrappola le persone e si proietta nel mondo reale, e che può essere
+esiliata solo con un artefatto benevolo. Un terzo nome è solo citato:
+Xez'toth.
+
+Cercando di prendere un libro, Agatha perde un dito. La biblioteca sembra
+voler intrappolare il gruppo: riescono a fuggire, ma non senza pagarne il
+prezzo in sanità.
 
 ## Il caveau
 
 Nella banca si respira un'aria malsana, diversa da quella della biblioteca.
-Gli investigatori entrano nel caveau: la chiave apre una delle cassette più
-antiche, ricoperta da una sorta di muffa spettrale. Dentro c'è un disco di
-ossidiana, nero e lucido come vetro vulcanico: uno specchio, custodito lì
-da un anno.
+Una scalinata di pietra porta nel seminterrato, oltre una porta d'acciaio
+intagliata. Il caveau è freddo e buio, e le cassette si stendono a perdita
+d'occhio; superate tre serie di sbarre presidiate da guardie armate, gli
+investigatori arrivano alla sala più interna, dove ci sono solo una decina
+di cassette. La chiave apre una delle più antiche, ricoperta da una sorta
+di muffa spettrale.
 
-Nello specchio Rita vede la sorellina morta; anche Chung vede la propria
+![Un disco di ossidiana nero e lucidissimo, appoggiato su un piccolo sostegno nero, che riflette la luce di una finestra](/images/indizi/specchio-ossidiana.jpg)
+
+*Lo specchio di ossidiana.*
+
+Dentro c'è un disco nero, lucido come vetro vulcanico, che riflette la luce
+in modo distorto: uno specchio di ossidiana, custodito lì da un anno.
+
+Nello specchio Rita vede la sorellina morta; anche Jade vede la propria
 sorella. HP vede una foto di sé con gli altri, coperta di muffa. Solo la
 sorella di Rita è senza muffa.
 
-Al [[Hotel Savoy|Savoy]] qualcuno consegna ad Agatha un biglietto da visita con
-l'indirizzo di un antiquario: identico a quello che HP aveva ricevuto per
-Hans.
+Al [[Hotel Savoy|Savoy]] qualcuno consegna ad Agatha un biglietto da visita
+con l'indirizzo di un antiquario, che ha uno specchio di luce pura: lo
+stesso tipo di biglietto che HP aveva ricevuto per Hans.

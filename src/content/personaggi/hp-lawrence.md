@@ -1,18 +1,28 @@
 ---
 titolo: HP Lawrence
-professione: Psicologo
+professione: Psicoanalista
 stato: vivo
-estratto: Psicologo, veterano della Grande Guerra e terapeuta di Rita. Teme la vecchiaia più di ogni altra cosa.
+estratto: Psicoanalista allievo di Freud, veterano della Somme e terapeuta dei compagni. Le sue teorie sull'invisibile lo rendono lo zimbello di Boston; teme la vecchiaia più di ogni altra cosa.
 ---
 
-Il dottor Lawrence frequenta la [[Psychology Society]], dove scopre i
-contatti tra [[Chung]] e [[Hans Trommer]]. È stato il terapeuta di
-[[Rita]].
+Il dottor Lawrence, per gli amici Dr Law, ha combattuto sulla Somme, dove
+ha perso l'amico Antoine. Ogni settimana si confronta con il suo mentore,
+[[Sigmund Freud|Sigmund]], ma è sempre più lontano dall'ortodossia
+psicoanalitica.
 
-Ha combattuto in trincea: nel sogno del capitolo [[Lo specchio d'opale]]
-il fronte torna a prendersi l'università, e sotto i suoi piedi c'è la
-faccia di Antoine, il suo amico. Il suo terrore è invecchiare.
+Dopo la fattoria tiene un diario e riceve uno a uno i compagni: [[Rita
+Peacock]], [[Agatha Fletcher]], [[Madame Jade]] (capitolo [[La casa di Hans
+Traeumer]]). Il 15 aprile 1920 presenta alla [[Boston Psychoanalytic
+Society]] *Unseen Currents: Psychoanalysis and the Invisible World*, ed è
+deriso. A fine serata uno sconosciuto con gli occhiali da sole gli lascia
+il biglietto di [[Hans Traeumer|Hans]]. Più tardi, alla stessa società,
+scopre i contatti tra Hans e [[Chung]].
+
+Nello Specchio di Luce Pura vede Chung e Jade insieme. Nel sogno del
+capitolo [[Lo specchio d'opale]] la trincea torna a prendersi
+l'università, e sotto i suoi piedi c'è la faccia di Antoine. Da allora il
+suo terrore è invecchiare.
 
 Apre la sua porta nelle [[Terre del Sogno]], cerca di dominare la rabbia
-verso i vecchi davanti a un'apparizione di Freud e sopravvive ai morsi di
-[[Q'allith]].
+verso i vecchi davanti a un'apparizione di Freud, affida il suo diario a
+Jade e sopravvive ai morsi di [[Qal'Lith]].

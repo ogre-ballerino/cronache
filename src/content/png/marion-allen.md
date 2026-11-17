@@ -1,10 +1,13 @@
 ---
 titolo: Marion Allen
-ruolo: Nipote di Randalf Allen
+ruolo: Nipote di Randolph Allen
 stato: sconosciuto
-estratto: Nipote di Randalf Allen, ha indagato sull'occulto con Rupert Merriweather. È partito per New Orleans; ha uno zio che vive a Boston.
+estratto: Guidò Rupert Merriweather e i suoi compagni nelle sedute spiritiche alla fattoria fuori Arkham. Nipote di Randolph Allen, è partito per New Orleans.
 ---
 
-Compagno di indagini di [[Rupert Merriweather]] e nipote di [[Randalf
-Allen]]. Le tracce del capitolo [[La scatola di Rupert]] portano a [[New
-Orleans]], dove era andato a indagare. Ha uno zio che vive a [[Boston]].
+Poco più anziano di [[Rupert Merriweather]] e dei suoi compagni di scuola,
+li guidò nell'esplorazione dell'occulto: in sei comprarono la [[Fattoria
+fuori Arkham]] per le loro sedute, finché l'ultimo esperimento evocò
+un'entità maligna. È nipote di [[Randolph Allen]]. Le tracce del capitolo
+[[La scatola di Rupert]] portano a [[New Orleans]], dove era andato a
+indagare. Ha uno zio che vive a [[Boston]].
