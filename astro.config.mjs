@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import { unified } from '@astrojs/markdown-remark';
+import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
+import rehypeHeadingLinks from './src/lib/rehype-heading-links.mjs';
 import remarkWikilinks from './src/lib/remark-wikilinks.mjs';
 
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [remarkWikilinks],
+      rehypePlugins: [rehypeHeadingIds, rehypeHeadingLinks],
     }),
   },
 });
