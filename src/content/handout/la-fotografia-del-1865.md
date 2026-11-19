@@ -12,12 +12,15 @@ tante che una pila è accatastata in un angolo. Una attira l'attenzione per
 due motivi: è la più vecchia, e sembra essere stata accartocciata e ristesa
 più volte.
 
-![Sei persone in abiti da esplorazione davanti alle piramidi di Giza: una donna, due giovani, un uomo con una lunga barba, un uomo in piedi dietro e un anziano con cappello e bastone](/images/indizi/spedizione-1865.jpg)
+![Cinque persone in abiti da esplorazione davanti alle piramidi di Giza: una donna, un giovane, un uomo con una lunga barba, un uomo in piedi dietro e un anziano con cappello e bastone](/images/indizi/spedizione-1865.jpg)
+
+Da sinistra: [[Evelyn Hayes]], [[Simon Fairbanks]], [[Sergei Volkov]],
+[[Hans Traeumer]], [[Randolph Allen]].
 
 Davanti c'è una data: 1865. Dietro, cinque nomi:
 
-- Dr Evelyn Hayes ([[Evelyn Hayes]])
-- Prof. Hans Traeumer ([[Hans Traeumer]])
-- Mr Randolph Allen ([[Randolph Allen]])
-- Mr Simon Fairbanks ([[Simon Fairbanks]])
-- Sergej Voskov ([[Sergei Volkov]])
+- Dr [[Evelyn Hayes]]
+- Prof. [[Hans Traeumer]]
+- Mr [[Randolph Allen]]
+- Mr [[Simon Fairbanks]]
+- [[Sergei Volkov]]
