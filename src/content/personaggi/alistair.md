@@ -2,6 +2,7 @@
 titolo: Alistair
 stato: scomparso
 estratto: Paga l'albergo a Berlino e insegue nel sogno la musica e il sorriso della madre. Liberato dal bozzolo, sceglie di restare nelle Terre del Sogno.
+immagine: /images/personaggi/alistair.png
 ---
 
 A [[Berlino]] il gruppo lo costringe a pagare tre stanze all'[[Hotel

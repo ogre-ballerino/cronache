@@ -4,6 +4,7 @@ professione: Cartomante
 stato: viva
 estratto: Cartomante con un passato nell'Ordine dei Gufi, qualche truffa alle spalle e un gatto, Salem, che la segue anche nei sogni. Esce dalle Terre del Sogno invecchiata di diciassette anni.
 tag: [specchio di luce pura, ordine dei gufi]
+immagine: /images/personaggi/agatha-fletcher.png
 ---
 
 Nata nel 1845 a Cabot Cove in una famiglia di scienziati, è sempre stata

@@ -3,6 +3,7 @@ titolo: Madame Jade
 professione: Medium
 stato: viva
 estratto: Medium cresciuta in un tempio Shaolin, in crisi con il buddhismo, cerca la verità sulla scomparsa della sorella Chung. Nel sogno la ritrova piena di odio.
+immagine: /images/personaggi/madame-jade.png
 ---
 
 Sostiene di sentire le voci degli spiriti e le correnti sottili che
