@@ -1,4 +1,5 @@
 ---
+import Sigil from './Sigil.astro';
 import { siteName } from '../lib/site';
 
 interface Props {
@@ -22,6 +23,7 @@ const isWithin = (href: string) => path === href.slice(0, -1) || path.startsWith
 <header class:list={['site-header', { 'site-header-masthead': masthead }]}>
   {masthead ? (
     <>
+      <Sigil class="masthead-sigil" />
       <p class="masthead-kicker">Call of Cthulhu</p>
       <h1 class="masthead-title">{siteName}</h1>
       <p class="masthead-lede">Cronaca di quanto vedemmo, e di quanto preferiremmo dimenticare.</p>
