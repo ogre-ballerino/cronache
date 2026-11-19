@@ -5,6 +5,7 @@ import { toRoman, longDate } from '../lib/format';
 import { fullPortrait } from '../lib/portraits';
 import { groupBySeason } from '../lib/seasons';
 import { isLost } from '../lib/status';
+import { nextSession } from '../lib/site';
 
 const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
 const latest = sessions[0];
@@ -14,8 +15,25 @@ const characters = (await getCollection('personaggi')).sort((a, b) =>
   a.data.titolo.localeCompare(b.data.titolo)
 );
 const party = characters.filter((p) => fullPortrait(p.id));
+
+const nextDate = new Date(`${nextSession}Z`);
+const nextLabel = [
+  nextDate.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }),
+  nextDate.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }),
+].join(' alle ');
 ---
 <BaseLayout masthead>
+  {nextDate.getTime() > Date.now() && (
+    <p class="next-session" id="next-session" data-at={nextSession}>
+      Prossima sessione: {nextLabel}
+    </p>
+  )}
+
+  <script>
+    const item = document.getElementById('next-session');
+    if (item && new Date(item.dataset.at!).getTime() < Date.now()) item.hidden = true;
+  </script>
+
   {latest && (
     <section class="latest-session">
       <p class="kicker kicker-split">
