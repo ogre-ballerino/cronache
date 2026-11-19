@@ -36,6 +36,7 @@ const party = characters.filter((p) => fullPortrait(p.id));
           <a class="cast-portrait" href={`/personaggi/${p.id}`}>
             <img src={fullPortrait(p.id)} alt="" loading="lazy" />
             <span>{p.data.titolo}</span>
+            {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
           </a>
         ))}
       </div>
