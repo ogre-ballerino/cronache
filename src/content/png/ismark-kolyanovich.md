@@ -18,3 +18,5 @@ Nella [[sessione-12|sessione 12]] ha proposto di lasciare il campo e tornare a c
 Nella [[sessione-13|sessione 13]] ha preferito non conoscere [[Madama Eva]], restando al carro. Sulla strada verso [[Vallaki]] è sceso a spingere il carro impantanato in un tratto paludoso; nell'imboscata subito dopo ha incrociato lo sguardo di una creatura emersa dal fango e il suo corpo ha cominciato a marcire, lasciandolo gravemente ferito.
 
 Nella [[sessione-14|sessione 14]], curato da [[Don Matteor]], è tornato in piedi e ha finito due zombie, l'ultimo decapitandolo al fianco della sorella. Ha aiutato Don Matteor a spostare il tronco che bloccava la strada e a spingere il carro, rimasto senza cavalli, fino a [[Vallaki]].
+
+Nella [[sessione-15|sessione 15]] ha scoperto con [[Ireena]] che il bando da [[Vallaki]] non ha più senso: la città è in rivolta, senza guardie, e la scena gli ha ricordato con terrore quella vista al [[Villaggio di Barovia]]. Ha portato con [[Don Matteor]] la botte di vino fino alla casupola dove il gruppo si è rifugiato, l'ha sprangata con le gambe di un tavolo e ha fatto il secondo turno di guardia.

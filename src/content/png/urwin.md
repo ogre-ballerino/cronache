@@ -1,7 +1,7 @@
 ---
 titolo: Urwin
 ruolo: Locandiere a Vallaki
-stato: vivo
+stato: scomparso
 fazione: Clan dei mannari-corvo
 luogo: Locanda di Urwin
 estratto: Locandiere legato a un clan di mannari-corvo, alleato prezioso ma non combattente del gruppo.
@@ -18,3 +18,5 @@ Dopo che [[Don Matteor]] viene bandito da Vallaki insieme a [[Ismark Kolyanovich
 Al mattino della partenza ha ceduto ad [[Artemis]] un barile di vino e delle razioni per il viaggio, e i suoi corvi hanno scortato il gruppo per un buon tratto fuori da [[Vallaki]].
 
 Nella [[sessione-14|sessione 14]] i due cavalli del carro sono stati uccisi da un cavaliere non-morto sulla strada per [[Vallaki]]: [[Don Matteor]] intende ripagarglieli.
+
+Nella [[sessione-15|sessione 15]] il gruppo ha trovato la [[Locanda di Urwin]] saccheggiata e vuota: della famiglia di Urwin nessuna traccia, ma dalle camere sembra che una parte dei vestiti sia stata portata via, forse in una fuga. Sulla sua scrivania sono rimasti il registro dei conti e due penne di lunghissime piume nere; nel fienile, ormai abbandonato dai corvi, era nascosto sotto lo sterco uno scrigno con pozioni e una strana sacca grigia.

@@ -11,3 +11,5 @@ Custode della [[Chiesa di Vallaki]], dà rifugio a [[Ismark Kolyanovich]] e [[Ir
 Rivela al gruppo che le reliquie di Sant'Andral — quelle che tenevano consacrata la chiesa — sono state rubate; le indagini portano alla [[Bottega del Becchino]], dove il gruppo le recupera dopo uno scontro con un gruppo di vampiri.
 
 Ucciso durante la messa da [[Erieth]] (invisibile, sotto Darkness), su ordine del patrono di quest'ultimo, che aveva comandato di uccidere "il prete" senza specificare quale. Il punteruolo lasciato vicino al corpo, rubato dalla bottega di [[Van der Vort]], punta i sospetti su di lui. La sua morte scatena il caos in città: nubi nere si addensano sul cielo e i fedeli fuggono urlando che "il diavolo è tra noi".
+
+Nella [[sessione-15|sessione 15]] [[Don Matteor]] ha saputo della sua morte da un abitante di [[Vallaki]]: in città si dice che sia stato ucciso dal diavolo Strahd. Delle reliquie di Sant'Andral non si sa più nulla.

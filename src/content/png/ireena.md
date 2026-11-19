@@ -18,3 +18,5 @@ Nella [[sessione-12|sessione 12]], all'accampamento, si è irritata con [[Ismark
 Nella [[sessione-13|sessione 13]] si è offerta per prima per il turno di guardia notturno all'[[Accampamento dei Vistani]] e ha voluto conoscere [[Madama Eva]]: intimidita come una scolaretta, si è sentita dire «lo so chi sei, cara. Non temere, qui sei al sicuro». Eva non le ha tolto gli occhi di dosso, ma lei non ha mostrato di riconoscerla. Sulla strada verso [[Vallaki]], nell'imboscata dei non-morti, si è messa in posizione di difesa.
 
 Nella [[sessione-14|sessione 14]] si è vista davvero in azione per la prima volta: ha piantato la spada nell'occhio di uno zombie e ha affrontato il cavaliere non-morto, scalfendogli l'elmo.
+
+Nella [[sessione-15|sessione 15]], di nuovo a [[Vallaki]] ormai senza guardie, ha mostrato la stessa paura del fratello davanti a una scena già vista a Barovia. Nella casupola dove il gruppo ha passato la notte ha chiuso da sola gli scuri delle finestre.
