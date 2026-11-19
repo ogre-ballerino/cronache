@@ -27,3 +27,11 @@ suo terrore è invecchiare.
 Apre la sua porta nelle [[Terre del Sogno]], cerca di dominare la rabbia
 verso i vecchi davanti a un'apparizione di Freud, affida il suo diario a
 Jade e sopravvive ai morsi di [[Qal'Lith]].
+
+Nel sogno porta con sé una fotografia della guerra: lui, sorridente, tra
+i commilitoni davanti alle tende. Nel capitolo [[La cattedrale di
+muschio]] la depone nell'urna sull'altare, e nella foto compare l'acqua.
+
+![HP Lawrence, calvo e con la barba, ride in abito civile tra cinque soldati in uniforme davanti a una tenda da campo](/images/indizi/fotografia-di-hp.jpg)
+
+La fotografia di HP.
