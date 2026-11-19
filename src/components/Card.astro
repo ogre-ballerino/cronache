@@ -1,5 +1,5 @@
 ---
-import { isDead } from '../lib/status';
+import { isLost } from '../lib/status';
 
 interface Props {
   href: string;
@@ -13,7 +13,7 @@ const { href, title, excerpt, meta, image } = Astro.props;
 const status = ['vivo', 'viva'].includes(Astro.props.status ?? '') ? undefined : Astro.props.status;
 ---
 <a class="card" href={href}>
-  {image && <img class:list={['card-image', { 'portrait-dead': isDead(status) }]} src={image} alt="" loading="lazy" />}
+  {image && <img class:list={['card-image', { 'portrait-lost': isLost(status) }]} src={image} alt="" loading="lazy" />}
   <h3>{title}</h3>
   {meta && <p class="entry-meta">{meta}</p>}
   {excerpt && <p>{excerpt}</p>}

@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import { toRoman, longDate } from '../lib/format';
 import { fullPortrait } from '../lib/portraits';
 import { groupBySeason } from '../lib/seasons';
-import { isDead } from '../lib/status';
+import { isLost } from '../lib/status';
 
 const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
 const latest = sessions[0];
@@ -35,7 +35,7 @@ const party = characters.filter((p) => fullPortrait(p.id));
       <div class="cast-grid">
         {party.map((p) => (
           <a class="cast-portrait" href={`/personaggi/${p.id}`}>
-            <img class:list={{ 'portrait-dead': isDead(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
+            <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
             <span>{p.data.titolo}</span>
             {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
           </a>

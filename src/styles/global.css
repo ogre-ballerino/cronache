@@ -367,7 +367,7 @@ main {
   aspect-ratio: 2 / 3;
 }
 
-img.portrait-dead {
+img.portrait-lost {
   filter: grayscale(1) contrast(0.75) brightness(0.55) blur(0.5px);
   opacity: 0.8;
 }
