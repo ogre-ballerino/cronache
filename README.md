@@ -1,8 +1,8 @@
-# Call of Cthulhu — season 1
+# L'Equilibrio delle Ombre
 
-Companion site for a finished, Italian-language *Call of Cthulhu* (7th
-edition) campaign: chapters, investigators, NPCs and places, cross-linked with
-Obsidian-style wikilinks. Built with [Astro](https://astro.build), content in
+Companion site for *L'Equilibrio delle Ombre*, an ongoing Italian-language
+*Call of Cthulhu* (7th edition) campaign: chapters, investigators, NPCs and
+places, cross-linked with Obsidian-style wikilinks. Built with [Astro](https://astro.build), content in
 Markdown. Forked from [strahd](https://github.com/sirlisko/strahd).
 
 The site itself is in Italian; code and docs are in English. Editorial

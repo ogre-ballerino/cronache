@@ -1,7 +1,8 @@
-# Call of Cthulhu campaign — project conventions
+# L'Equilibrio delle Ombre — project conventions
 
-Companion site for a finished Call of Cthulhu 7e campaign (season 1, from the
-United States to Berlin), built with Astro. The sections (capitoli/diario,
+Companion site for *L'Equilibrio delle Ombre*, an ongoing Call of Cthulhu 7e
+campaign (season 1, from the United States to Berlin, is finished; season 2
+starts on 2026-11-22), built with Astro. The sections (capitoli/diario,
 riassunto, investigatori, comprimari, luoghi, handout) are cross-linked with
 Obsidian-style wikilinks. Forked from the
 [strahd](https://github.com/sirlisko/strahd) site; the visual theme is an
@@ -14,17 +15,17 @@ frontmatter keys and URL routes are Italian and must stay that way. The
 routes keep strahd's names (`/diario`, `/personaggi`, `/png`); only the visible
 labels changed (Capitoli, Investigatori, Comprimari).
 
-The site title is a generic "Call of Cthulhu" for now (with a "Stagione I"
-kicker); it lives in `src/lib/site.ts`.
+The site title is the campaign name, "L'Equilibrio delle Ombre" (with a
+"Call of Cthulhu" kicker on the home masthead); it lives in `src/lib/site.ts`.
 
 ## Content conventions
 
 These apply to every content edit.
 
-- **Sources:** the season 1 transcript and photos of the handwritten notes
+- **Sources:** session transcripts and photos of the handwritten notes
   live in `sources/` (gitignored). The handwritten notes win over the
   transcript for name spelling and for what the investigators actually
-  learned. There will be no new sessions: content is a one-time import.
+  learned.
 - **Renames and merges:** to rename an entity or merge duplicates, use the
   `rename-entity` skill (`.claude/skills/rename-entity/SKILL.md`). Never
   change a `titolo` or a filename by hand once published: wikilinks,
@@ -49,12 +50,13 @@ These apply to every content edit.
 
 ### Frontmatter
 
-- `sessions/sessione-NN.md`: `titolo`, `numero`, `data` (real session date),
-  `estratto` (≤300 chars), `luoghiVisitati`, `tag`. Body: third-person
-  Italian narrative in `##` sections by scene.
+- `sessions/sessione-NN.md`: `titolo`, `numero`, `stagione`, `data` (real
+  session date), `estratto` (≤300 chars), `luoghiVisitati`, `tag`. Body: third-person
+  Italian narrative in `##` sections by scene. `numero` keeps counting
+  across seasons (season 2 starts at 8); `stagione` groups the chapters.
 - `personaggi/` (investigators): `titolo`, `professione`, `stato`
   (`vivo`|`morto`|`folle`|`scomparso`|`ritirato`, or the feminine
-  `viva`|`morta`|`scomparsa`|`ritirata` for women), `sanita` (final SAN,
+  `viva`|`morta`|`scomparsa`|`ritirata` for women), `sanita` (latest SAN,
   optional), `fazione`, `estratto`, `tag`, `immagine` only if the file
   exists.
 - `png/` (comprimari): `titolo`, `ruolo`, `stato`
