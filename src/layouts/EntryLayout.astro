@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Backlinks from '../components/Backlinks.astro';
+import { isDead } from '../lib/status';
 
 interface Props {
   title: string;
@@ -27,7 +28,7 @@ const section = sections[backlinksUrl.split('/')[1]];
 <BaseLayout title={title} description={description} type="article">
   <article data-pagefind-body data-pagefind-filter={section && `sezione:${section}`}>
     <header class="entry-header">
-      {image && <img class="entry-image" src={image} alt={title} />}
+      {image && <img class:list={['entry-image', { 'portrait-dead': isDead(status) }]} src={image} alt={title} />}
       <h1 class="page-title" data-pagefind-weight="10">{title}</h1>
       {meta && <p class="entry-meta" data-pagefind-ignore>{meta}</p>}
       {(status || tags.length > 0) && (
