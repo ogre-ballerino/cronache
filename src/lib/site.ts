@@ -1,1 +1,1 @@
-export const siteName = 'Call of Cthulhu';
+export const siteName = "L'Equilibrio delle Ombre";
