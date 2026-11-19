@@ -166,23 +166,6 @@ main {
   line-height: 1.02;
 }
 
-.masthead-sigil {
-  display: block;
-  width: min(220px, 55vw);
-  margin: 0 auto 1.5rem;
-  color: var(--color-rubric);
-  animation: sigil-wake 6s ease-out 1;
-}
-
-@keyframes sigil-wake {
-  from { opacity: 0; transform: rotate(-40deg) scale(0.9); filter: blur(4px); }
-  to { opacity: 1; transform: none; filter: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .masthead-sigil { animation: none; }
-}
-
 .masthead-lede {
   max-width: 36ch;
   margin: 1rem auto 0;
