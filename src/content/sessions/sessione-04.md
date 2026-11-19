@@ -1,6 +1,7 @@
 ---
 titolo: Lo specchio d'opale
 numero: 4
+stagione: 1
 data: 2025-05-15
 estratto: Un antiquario berlinese sostituisce il dito perduto di Agatha e vende al gruppo lo Specchio di Luce Pura. Poi il gruppo si addormenta di proposito, e i sogni di Alistair e HP diventano incubi.
 luoghiVisitati: [Antiquitäten und Kuriositäten, Hotel Savoy, Terre del Sogno]

@@ -1,6 +1,7 @@
 ---
 titolo: La scatola di Rupert
 numero: 1
+stagione: 1
 data: 2025-04-25
 estratto: Un vecchio morente affida agli investigatori una scatola con un piccolo sarcofago egizio, un diario in pelle e una chiave, e li supplica di cacciare l'entità che ha evocato in gioventù.
 luoghiVisitati: [St. Mary's Teaching Hospital, Arkham, Fattoria fuori Arkham]

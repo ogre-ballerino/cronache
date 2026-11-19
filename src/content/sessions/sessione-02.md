@@ -1,6 +1,7 @@
 ---
 titolo: La casa di Hans Traeumer
 numero: 2
+stagione: 1
 data: 2025-05-02
 estratto: Dal diario del dottor Lawrence a un appartamento abbandonato nel North End di Arkham, dove gli investigatori trovano la foto di una spedizione in Egitto del 1865 e un indizio che porta a Berlino.
 luoghiVisitati: [Boston, Boston Psychoanalytic Society, Arkham, Casa di Hans Traeumer]

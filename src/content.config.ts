@@ -14,6 +14,7 @@ const sessions = defineCollection({
   schema: z.object({
     ...baseFields,
     numero: z.number().int().positive(),
+    stagione: z.number().int().positive(),
     data: z.coerce.date(),
     luoghiVisitati: z.array(z.string()).default([]),
   }),

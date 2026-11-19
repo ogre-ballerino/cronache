@@ -1,6 +1,7 @@
 ---
 titolo: La cattedrale di muschio
 numero: 6
+stagione: 1
 data: 2025-06-26
 estratto: Una scala senza fine, una cattedrale di muschio carnivoro, un mare di sogni ghiacciati e infine l'acchiappasogni, dove la Tessitrice di Incubi divora Rita.
 luoghiVisitati: [Terre del Sogno]

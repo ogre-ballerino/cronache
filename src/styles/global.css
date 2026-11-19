@@ -276,6 +276,21 @@ main {
   color: var(--color-ink-muted);
 }
 
+.season-heading {
+  margin: 0 0 1rem;
+  font-family: var(--font-sc);
+  font-variant: small-caps;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--color-rubric);
+}
+
+.session-index + .season-heading,
+.season + .season {
+  margin-top: 2.5rem;
+}
+
 /* Home */
 
 .next-session {

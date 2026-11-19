@@ -1,6 +1,7 @@
 ---
 titolo: La Tessitrice di Incubi
 numero: 7
+stagione: 1
 data: 2025-07-03
 estratto: Lo scontro con Qal'Lith. Agatha uccide la Tessitrice con lo Specchio di Luce Pura e ne paga il prezzo; Alistair resta nel sogno, e nessuno torna davvero com'era.
 luoghiVisitati: [Terre del Sogno]
