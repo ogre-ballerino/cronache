@@ -1,7 +1,7 @@
 ---
 titolo: Madame Jade
 professione: Medium
-stato: viva
+stato: ritirata
 estratto: Medium cresciuta in un tempio Shaolin, in crisi con il buddhismo, cerca la verità sulla scomparsa della sorella Chung. Nel sogno la ritrova piena di odio.
 immagine: /images/personaggi/madame-jade.png
 ---
@@ -25,3 +25,5 @@ ideogramma di Chung: il suo nomignolo da bambina.
 Nel mare ghiacciato delle [[Terre del Sogno]] il diario resta asciutto, ed
 è lei a notare che sul ghiaccio sono scritti dei sogni. Al risveglio, Chung
 è nel corpo di Rita.
+
+Dopo il sogno lascia il gruppo e torna nel Regno Unito.
