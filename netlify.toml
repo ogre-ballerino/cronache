@@ -97,3 +97,10 @@
   from = "/png/hans-traeumer"
   to = "/personaggi/hans-traeumer"
   status = 301
+
+# The site moved from the cthulhu subdomain; keep old links and search results working.
+[[redirects]]
+  from = "https://cthulhu.ogreballerino.com/*"
+  to = "https://ombre.ogreballerino.com/:splat"
+  status = 301
+  force = true

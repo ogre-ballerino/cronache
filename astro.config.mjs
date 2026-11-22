@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import remarkWikilinks from './src/lib/remark-wikilinks.mjs';
 
 export default defineConfig({
-  site: 'https://cthulhu.ogreballerino.com',
+  site: 'https://ombre.ogreballerino.com',
   output: 'static',
   integrations: [sitemap()],
   markdown: {
