@@ -29,7 +29,7 @@
 
 [[redirects]]
   from = "/png/hans-trommer"
-  to = "/png/hans-traeumer"
+  to = "/personaggi/hans-traeumer"
   status = 301
 
 [[redirects]]
@@ -90,4 +90,10 @@
 [[redirects]]
   from = "/luoghi/casa-di-hans-trommer"
   to = "/luoghi/casa-di-hans-traeumer"
+  status = 301
+
+# Hans became an investigator in Alistair's body.
+[[redirects]]
+  from = "/png/hans-traeumer"
+  to = "/personaggi/hans-traeumer"
   status = 301

@@ -1,8 +1,10 @@
 ---
 titolo: Hans Traeumer
-ruolo: Linguista della spedizione del 1865
+professione: Linguista
+sottotitolo: nel corpo di Alistair
 stato: vivo
-estratto: Celebre linguista della spedizione del 1865, uno dei pochi tornati dall'Egitto. Gli investigatori lo trovano, giovane, in un bozzolo nel sogno; si risveglia nel corpo di Alistair.
+estratto: Celebre linguista della spedizione del 1865, uno dei pochi tornati dall'Egitto. Liberato giovane da un bozzolo nel sogno, si risveglia nel corpo di Alistair senza ricordare nulla dalla spedizione in poi.
+immagine: /images/personaggi/hans-traeumer.png
 ---
 
 Professore e linguista famoso, lavorò alla traduzione della stele di
@@ -20,6 +22,7 @@ e magro, con gli occhiali da sole.
 Nell'acchiappasogni delle [[Terre del Sogno]] è chiuso in un bozzolo, giovane
 come alla partenza per l'Egitto. [[Salem]] lo libera, e lui racconta che
 cosa accadde nel 1865. Al risveglio è nel corpo di [[Alistair]], e non
-ricorda più nulla dalla spedizione in poi.
+ricorda più nulla dalla spedizione in poi. Da allora viaggia con gli
+investigatori, con il volto di Alistair ma senza la sua catenina.
 
 Compare nella [[La fotografia del 1865|fotografia della spedizione]].
