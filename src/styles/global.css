@@ -344,21 +344,29 @@ main {
 }
 
 .cast-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.5rem;
+  --cast-columns: 5;
+  --cast-gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--cast-gap);
   width: min(1000px, calc(100vw - 2rem));
   margin-left: calc(50% - min(500px, 50vw - 1rem));
 }
 
+.cast-grid + .cast-grid {
+  margin-top: 2.5rem;
+}
+
 @media (max-width: 720px) {
   .cast-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
+    --cast-columns: 2;
+    --cast-gap: 1.25rem;
   }
 }
 
 .cast-portrait {
+  flex: 0 0 calc((100% - (var(--cast-columns) - 1) * var(--cast-gap)) / var(--cast-columns));
   display: flex;
   flex-direction: column;
   gap: 0.6rem;

@@ -15,6 +15,10 @@ const characters = (await getCollection('personaggi')).sort((a, b) =>
   a.data.titolo.localeCompare(b.data.titolo)
 );
 const party = characters.filter((p) => fullPortrait(p.id));
+const castRows = [
+  party.filter((p) => !isLost(p.data.stato)),
+  party.filter((p) => isLost(p.data.stato)),
+].filter((row) => row.length > 0);
 
 const nextDate = new Date(`${nextSession}Z`);
 const nextLabel = [
@@ -50,16 +54,18 @@ const nextLabel = [
     <section>
       <div class="ornament" aria-hidden="true">&#10022; &#10022; &#10022;</div>
       <h2 class="section-title">Gli investigatori</h2>
-      <div class="cast-grid">
-        {party.map((p) => (
-          <a class="cast-portrait" href={`/personaggi/${p.id}`}>
-            <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
-            <span>{p.data.titolo}</span>
-            {p.data.sottotitolo && <span class="cast-subtitle">{p.data.sottotitolo}</span>}
-            {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
-          </a>
-        ))}
-      </div>
+      {castRows.map((row) => (
+        <div class="cast-grid">
+          {row.map((p) => (
+            <a class="cast-portrait" href={`/personaggi/${p.id}`}>
+              <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
+              <span>{p.data.titolo}</span>
+              {p.data.sottotitolo && <span class="cast-subtitle">{p.data.sottotitolo}</span>}
+              {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
+            </a>
+          ))}
+        </div>
+      ))}
     </section>
   )}
 
