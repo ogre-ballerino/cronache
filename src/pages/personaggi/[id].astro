@@ -15,6 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const meta = [
   entry.data.professione,
+  entry.data.sottotitolo,
   entry.data.sanita !== undefined && `Sanità ${entry.data.sanita}`,
   entry.data.giocatore && `Giocatore: ${entry.data.giocatore}`,
   entry.data.fazione,

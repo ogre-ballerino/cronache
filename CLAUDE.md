@@ -54,7 +54,8 @@ These apply to every content edit.
   session date), `estratto` (≤300 chars), `luoghiVisitati`, `tag`. Body: third-person
   Italian narrative in `##` sections by scene. `numero` keeps counting
   across seasons (season 2 starts at 8); `stagione` groups the chapters.
-- `personaggi/` (investigators): `titolo`, `professione`, `stato`
+- `personaggi/` (investigators): `titolo`, `professione`, `sottotitolo`
+  (optional, shown under the name, e.g. "nel corpo di Alistair"), `stato`
   (`vivo`|`morto`|`folle`|`scomparso`|`ritirato`, or the feminine
   `viva`|`morta`|`scomparsa`|`ritirata` for women), `sanita` (latest SAN,
   optional), `fazione`, `estratto`, `tag`, `immagine` only if the file

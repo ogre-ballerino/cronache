@@ -55,6 +55,7 @@ const nextLabel = [
           <a class="cast-portrait" href={`/personaggi/${p.id}`}>
             <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
             <span>{p.data.titolo}</span>
+            {p.data.sottotitolo && <span class="cast-subtitle">{p.data.sottotitolo}</span>}
             {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
           </a>
         ))}

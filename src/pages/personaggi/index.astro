@@ -17,7 +17,7 @@ const characters = (await getCollection('personaggi')).sort((a, b) =>
         href={`/personaggi/${p.id}`}
         title={p.data.titolo}
         excerpt={p.data.estratto}
-        meta={[p.data.professione, p.data.giocatore && `Giocatore: ${p.data.giocatore}`].filter(Boolean).join(' · ')}
+        meta={[p.data.professione, p.data.sottotitolo, p.data.giocatore && `Giocatore: ${p.data.giocatore}`].filter(Boolean).join(' · ')}
         status={p.data.stato}
         image={p.data.immagine}
       />
