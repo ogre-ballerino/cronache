@@ -57,8 +57,7 @@ These apply to every content edit.
 - `personaggi/` (investigators): `titolo`, `professione`, `sottotitolo`
   (optional, shown under the name, e.g. "nel corpo di Alistair"), `stato`
   (`vivo`|`morto`|`folle`|`scomparso`|`ritirato`, or the feminine
-  `viva`|`morta`|`scomparsa`|`ritirata` for women), `sanita` (latest SAN,
-  optional), `fazione`, `estratto`, `tag`, `immagine` only if the file
+  `viva`|`morta`|`scomparsa`|`ritirata` for women), `fazione`, `estratto`, `tag`, `immagine` only if the file
   exists.
 - `png/` (comprimari): `titolo`, `ruolo`, `stato`
   (`vivo`|`morto`|`folle`|`scomparso`|`sconosciuto`, feminine

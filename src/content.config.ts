@@ -28,7 +28,6 @@ const personaggi = defineCollection({
     professione: z.string().optional(),
     sottotitolo: z.string().optional(),
     stato: z.enum(['vivo', 'viva', 'morto', 'morta', 'folle', 'scomparso', 'scomparsa', 'ritirato', 'ritirata']).default('vivo'),
-    sanita: z.number().int().min(0).max(99).optional(),
     fazione: z.string().optional(),
   }),
 });

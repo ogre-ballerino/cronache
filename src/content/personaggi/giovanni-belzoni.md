@@ -2,7 +2,6 @@
 titolo: Giovanni Belzoni
 professione: Archeologo
 stato: vivo
-sanita: 60
 estratto: Gigante padovano di quarantasette anni, ex uomo forzuto dei palcoscenici londinesi diventato egittologo di fama mondiale. Rumoroso, appariscente, veste all'araba anche in Occidente.
 immagine: /images/personaggi/giovanni-belzoni.png
 ---
