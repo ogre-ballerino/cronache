@@ -62,7 +62,7 @@ The section prefix is the collection's route: `/personaggi`, `/png`, `/luoghi`, 
 ## 5. Verify
 
 - Grep `src/content/` again for the old names: nothing should remain except deliberate aliases.
-- Run `pnpm -C sites/<site> build`: it must succeed with no `[wikilinks] Unresolved link` warnings.
+- Run `pnpm -C sites/<site> build`: it must succeed (an unresolved wikilink fails it) with no `[wikilinks] … names both …` warnings.
 
 ## 6. Report
 

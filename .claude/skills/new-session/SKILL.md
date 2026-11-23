@@ -69,7 +69,8 @@ For each existing entity that appears again:
 Run `pnpm -C sites/<site> build` and check the output:
 
 - It must succeed (schema errors, e.g. `estratto` over 300 characters, fail the build).
-- Fix every `[wikilinks] Unresolved link` warning by correcting the target or creating the missing entity.
+- Unresolved wikilinks fail the build, listed together: fix each by correcting the target or creating the missing entity.
+- Fix every `[wikilinks] … names both …` warning: two entries share a name, so one of them is probably a duplicate.
 
 ## 7. Report
 

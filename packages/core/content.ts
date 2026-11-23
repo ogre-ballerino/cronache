@@ -23,8 +23,8 @@ const baseFields = {
   tag: z.array(z.string()).default([]),
 };
 
-// Files starting with `_` are drafts.
-const loader = (collection: string) => glob({ pattern: '**/[^_]*.md', base: `./src/content/${collection}` });
+// Top-level files only, as the wikilink slug map reads them; `_` marks a draft.
+const loader = (collection: string) => glob({ pattern: '[^_]*.md', base: `./src/content/${collection}` });
 
 const collection = (name: string, fields: Fields, extra: Fields = {}) =>
   defineCollection({ loader: loader(name), schema: z.object({ ...baseFields, ...fields, ...extra }) });

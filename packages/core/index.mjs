@@ -7,6 +7,7 @@ import { enabledCollections } from './lib/collections.mjs';
 import { resolveConfig } from './config.mjs';
 import rehypeHeadingLinks from './lib/rehype-heading-links.mjs';
 import remarkWikilinks from './lib/remark-wikilinks.mjs';
+import { findUnresolvedLinks } from './lib/wikilinks.mjs';
 
 export { defineCampaign } from './config.mjs';
 
@@ -38,19 +39,29 @@ function virtualModules(config, { root, contentDir, publicDir }) {
   };
 }
 
+// A broken link renders as plain text and only warns while writing; a build
+// must not publish it.
+function assertLinksResolve(contentDir) {
+  const unresolved = findUnresolvedLinks(contentDir);
+  if (unresolved.length === 0) return;
+  const list = unresolved.map(({ file, target }) => `  ${path.relative(contentDir, file)}: [[${target}]]`).join('\n');
+  throw new Error(`[wikilinks] ${unresolved.length} unresolved link(s):\n${list}`);
+}
+
 /** @param {import('./config.mjs').CampaignConfig} userConfig */
 export default function cronache(userConfig) {
   const config = resolveConfig(userConfig);
   return {
     name: '@cronache/core',
     hooks: {
-      'astro:config:setup': ({ config: astroConfig, updateConfig, injectRoute }) => {
+      'astro:config:setup': ({ command, config: astroConfig, updateConfig, injectRoute }) => {
         const root = fileURLToPath(astroConfig.root);
         const paths = {
           root,
           contentDir: path.join(root, 'src', 'content'),
           publicDir: fileURLToPath(astroConfig.publicDir),
         };
+        if (command === 'build') assertLinksResolve(paths.contentDir);
 
         updateConfig({
           trailingSlash: 'always',

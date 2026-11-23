@@ -36,9 +36,25 @@ export function normalize(str) {
 // (IM Fell) draw a straight " as a closing quote.
 export const curlyQuotes = (s) => s.replace(/"([^"]*)"/g, '“$1”');
 
-function frontmatterField(raw, key) {
+export function frontmatterField(raw, key) {
   const m = raw.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
   return m?.[1].trim().replace(/^(["'])(.*)\1$/, '$2');
+}
+
+export const markdownBody = (raw) => raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
+
+// Top-level .md files only, drafts (`_`) excluded: the same set the content
+// collections load.
+export function* contentFiles(contentDir) {
+  for (const { key } of COLLECTIONS) {
+    const dir = path.join(contentDir, key);
+    if (!fs.existsSync(dir)) continue;
+    for (const file of fs.readdirSync(dir).sort()) {
+      if (!file.endsWith('.md') || file.startsWith('_')) continue;
+      const filePath = path.join(dir, file);
+      yield { collection: key, id: file.replace(/\.md$/, ''), path: filePath, raw: fs.readFileSync(filePath, 'utf-8') };
+    }
+  }
 }
 
 const caches = new Map();
@@ -46,31 +62,41 @@ const caches = new Map();
 export function getSlugMap(contentDir) {
   const cached = caches.get(contentDir);
   if (cached) return cached;
-  const cache = new Map();
 
-  for (const { key: collection } of COLLECTIONS) {
-    const dir = path.join(contentDir, collection);
-    if (!fs.existsSync(dir)) continue;
+  const map = new Map();
+  const add = (key, entry) => {
+    const existing = map.get(key);
+    if (existing && existing.url !== entry.url) {
+      console.warn(`[wikilinks] "${key}" names both ${existing.url} and ${entry.url}: links go to ${entry.url}`);
+    }
+    map.set(key, entry);
+  };
 
-    for (const file of fs.readdirSync(dir)) {
-      if (!file.endsWith('.md') || file.startsWith('_')) continue;
-      const id = file.replace(/\.md$/, '');
-      const raw = fs.readFileSync(path.join(dir, file), 'utf-8');
-      const title = frontmatterField(raw, 'titolo') ?? id;
-      const url = entryUrl(collection, id);
-      const entry = {
-        url,
-        title,
-        collection,
-        ruolo: frontmatterField(raw, 'ruolo'),
-        stato: frontmatterField(raw, 'stato'),
-        tipo: frontmatterField(raw, 'tipo'),
-      };
+  for (const { collection, id, raw } of contentFiles(contentDir)) {
+    const title = frontmatterField(raw, 'titolo') ?? id;
+    const entry = {
+      url: entryUrl(collection, id),
+      title,
+      collection,
+      ruolo: frontmatterField(raw, 'ruolo'),
+      stato: frontmatterField(raw, 'stato'),
+      tipo: frontmatterField(raw, 'tipo'),
+    };
+    add(normalize(id), entry);
+    add(normalize(title), entry);
+  }
+  caches.set(contentDir, map);
+  return map;
+}
 
-      cache.set(normalize(id), entry);
-      cache.set(normalize(title), entry);
+/** Every `[[target]]` in a content body that matches no entry. */
+export function findUnresolvedLinks(contentDir) {
+  const slugMap = getSlugMap(contentDir);
+  const unresolved = [];
+  for (const file of contentFiles(contentDir)) {
+    for (const [, target] of markdownBody(file.raw).matchAll(WIKILINK_RE)) {
+      if (!slugMap.has(normalize(target))) unresolved.push({ file: file.path, target });
     }
   }
-  caches.set(contentDir, cache);
-  return cache;
+  return unresolved;
 }
