@@ -246,6 +246,10 @@ Stella, rinascita e speranza; la seconda carta, per Hans, è la Morte. Grau
 le bacia la mano, e la zampa a Salem, e le offre un liquore con scaglie
 d'oro. HP li fotografa, con un flash che illumina il locale a giorno.
 
+![Fotografia seppiata al cabaret: un'anziana signora molto rugosa, con una maschera nera sugli occhi, si stringe al collo di un uomo stempiato in abito scuro, a viso scoperto, con un garofano all'occhiello e in mano un gatto nero con una mascherina bianca](/images/indizi/agatha-e-grau-weisse-maus.jpg)
+
+La fotografia di HP: Agatha, Grau e Salem alla Weiße Maus.
+
 Hans va al bancone e conosce Belzoni, uomo di mondo di origini italiane, che
 dice di essere lì da grande appassionato di cabaret. Hans lo invita al
 tavolo, ma HP non gli crede del tutto: non è lì solo per Anita. Belzoni,
