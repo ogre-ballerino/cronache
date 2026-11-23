@@ -22,5 +22,10 @@
   },
   "devDependencies": {
     "pagefind": "^1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:sirlisko/cronache",
+    "directory": "sites/cthulhu"
   }
 }

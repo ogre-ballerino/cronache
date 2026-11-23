@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm build)"
+      "Bash(pnpm build:all)",
+      "Bash(pnpm -C sites/strahd build)",
+      "Bash(pnpm -C sites/cthulhu build)"
     ]
   }
 }
