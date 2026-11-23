@@ -2,7 +2,7 @@
 titolo: Tariq Cornelius
 stato: vivo
 estratto: Studioso di magia con un gufo famiglio, esperto nell'identificare oggetti magici.
-immagine: /images/personaggi/tariq.png
+immagine: /images/personaggi/tariq.webp
 classe: Mago
 ---
 

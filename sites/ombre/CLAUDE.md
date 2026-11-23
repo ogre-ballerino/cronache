@@ -16,6 +16,6 @@ Companion site for *L'Equilibrio delle Ombre*, an ongoing Call of Cthulhu 7e cam
 ## Site-specific notes
 
 - Portraits of investigators who are dead, missing or retired are dimmed, and the home page shows them in a second row.
-- When no investigator has a `-full.png` portrait, the home page shows a "Dramatis personae" list instead.
+- When no investigator has a `-full.webp` portrait, the home page shows a "Dramatis personae" list instead.
 - There's no map yet. A 1920s world map (US and Berlin) may come later; `luoghiVisitati` is kept on sessions for it.
 - The next session date is fixed in `campaign.config.mjs` (`nextSession.at`, a local wall-clock time): update it after each session. The home page hides it once it has passed.

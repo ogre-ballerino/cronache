@@ -26,7 +26,7 @@ Wikilink resolution is case-, accent- and apostrophe-insensitive and matches eit
 - Also check the non-wikilink references:
   - `luoghiVisitati:` in session frontmatter (holds place titles),
   - `luogo:` in `png/` frontmatter (plain text place name),
-  - `immagine:` paths and `public/images/personaggi/<id>*.png` for characters (rename the image files along with the entry),
+  - `immagine:` paths and `public/images/personaggi/<id>*.webp` for characters (rename the image files along with the entry),
   - anything else the site's `CLAUDE.md` lists as referring to entity ids (e.g. a map's pins).
 
 ## 3. Apply

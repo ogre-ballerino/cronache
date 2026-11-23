@@ -3,7 +3,7 @@ titolo: Rita Peacock
 professione: Poliziotta
 stato: morta
 estratto: Poliziotta ossessionata dalla sorellina morta e da un fratello latitante che non è mai esistito. Muore nel sogno, e nel suo corpo ora c'è Chung.
-immagine: /images/personaggi/rita-peacock.png
+immagine: /images/personaggi/rita-peacock.webp
 ---
 
 Una donna forgiata dalla necessità, che lotta ogni giorno per affermarsi

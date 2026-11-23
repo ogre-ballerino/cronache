@@ -3,7 +3,7 @@ titolo: Don Matteor
 classe: Chierico
 stato: vivo
 estratto: Mastro chierico del gruppo, sensibile alla magia e alle auree di morte/malvagità.
-immagine: /images/personaggi/don-matteor.png
+immagine: /images/personaggi/don-matteor.webp
 ---
 
 Fu lui, all'inizio della campagna a [[Goya]], a notare su tutti i cadaveri de [[I Fratelli Banditi|i banditi]] lo stesso tatuaggio sul collo e a percepirne un'aura di morte e malvagità — la scoperta che ha dato al gruppo la propria missione: dare la caccia ai superstiti della setta necromantica.

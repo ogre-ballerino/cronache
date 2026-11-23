@@ -3,6 +3,7 @@ import config from 'virtual:cronache/config';
 import BaseLayout from './BaseLayout.astro';
 import Backlinks from '../components/Backlinks.astro';
 import { collectionByKey, entryUrl } from '../lib/collections.mjs';
+import { imageSize } from '../lib/portraits';
 import { isAlive, isLost } from '../lib/status.mjs';
 
 interface Props {
@@ -17,13 +18,16 @@ interface Props {
 }
 const { title, description, meta, tags = [], collection, id, image } = Astro.props;
 const status = isAlive(Astro.props.status) ? undefined : Astro.props.status;
+const size = image ? imageSize(image) : undefined;
 
 const section = config.sections[collectionByKey(collection)!.section as keyof typeof config.sections].label;
 ---
 <BaseLayout title={title} description={description} type="article">
   <article data-pagefind-body data-pagefind-filter={section && `sezione:${section}`}>
     <header class="entry-header">
-      {image && <img class:list={['entry-image', { 'portrait-lost': isLost(status) }]} src={image} alt={title} />}
+      {image && (
+        <img class:list={['entry-image', { 'portrait-lost': isLost(status) }]} src={image} alt={title} width={size?.width} height={size?.height} />
+      )}
       <h1 class="page-title" data-pagefind-weight="10">{title}</h1>
       {meta && <p class="entry-meta" data-pagefind-ignore>{meta}</p>}
       {(status || tags.length > 0) && (
