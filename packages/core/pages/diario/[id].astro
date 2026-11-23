@@ -3,6 +3,7 @@ import { entryUrl } from '../../lib/collections.mjs';
 import { getCollection, render } from 'astro:content';
 import config from 'virtual:cronache/config';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { ogImage } from '../../lib/og';
 import { toRoman, longDate } from '../../lib/format';
 
 export async function getStaticPaths() {
@@ -23,6 +24,7 @@ const { Content } = await render(entry);
   tags={entry.data.tag}
   collection="sessions"
   id={entry.id}
+  og={ogImage(entry.data)}
 >
   <Content />
   <nav slot="after" class="entry-pager" aria-label={config.labels.otherSessions}>

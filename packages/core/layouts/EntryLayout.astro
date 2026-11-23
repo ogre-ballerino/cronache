@@ -5,6 +5,7 @@ import Backlinks from '../components/Backlinks.astro';
 import { collectionByKey, entryUrl } from '../lib/collections.mjs';
 import { imageSize } from '../lib/portraits';
 import { isAlive, isLost } from '../lib/status.mjs';
+import type { OgImage } from '../lib/og';
 
 interface Props {
   title: string;
@@ -15,14 +16,15 @@ interface Props {
   collection: string;
   id: string;
   image?: string;
+  og?: OgImage;
 }
-const { title, description, meta, tags = [], collection, id, image } = Astro.props;
+const { title, description, meta, tags = [], collection, id, image, og } = Astro.props;
 const status = isAlive(Astro.props.status) ? undefined : Astro.props.status;
 const size = image ? imageSize(image) : undefined;
 
 const section = config.sections[collectionByKey(collection)!.section as keyof typeof config.sections].label;
 ---
-<BaseLayout title={title} description={description} type="article">
+<BaseLayout title={title} description={description} type="article" og={og}>
   <article data-pagefind-body data-pagefind-filter={section && `sezione:${section}`}>
     <header class="entry-header">
       {image && (

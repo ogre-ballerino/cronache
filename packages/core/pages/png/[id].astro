@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { ogImage } from '../../lib/og';
 
 export async function getStaticPaths() {
   const npcs = await getCollection('png');
@@ -24,6 +25,7 @@ const meta = [ruolo, luogo && !ruolo?.includes(luogo) && luogo, fazione].filter(
   tags={entry.data.tag}
   collection="png"
   id={entry.id}
+  og={ogImage(entry.data)}
 >
   <Content />
 </EntryLayout>

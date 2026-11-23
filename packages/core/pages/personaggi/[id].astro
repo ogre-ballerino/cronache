@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { ogImage } from '../../lib/og';
 import { fullPortrait } from '../../lib/portraits';
 import { characterMeta } from '../../lib/characters';
 
@@ -24,6 +25,7 @@ const meta = [characterMeta(entry.data), entry.data.fazione].filter(Boolean).joi
   tags={entry.data.tag}
   collection="personaggi"
   id={entry.id}
+  og={ogImage(entry.data)}
   image={fullPortrait(entry.id) ?? entry.data.immagine}
 >
   <Content />

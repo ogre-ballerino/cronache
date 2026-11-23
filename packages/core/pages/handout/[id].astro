@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { ogImage } from '../../lib/og';
 import { handoutMeta } from '../../lib/handout';
 
 export async function getStaticPaths() {
@@ -21,6 +22,7 @@ const { Content } = await render(entry);
   tags={entry.data.tag}
   collection="handout"
   id={entry.id}
+  og={ogImage(entry.data)}
 >
   <Content />
 </EntryLayout>

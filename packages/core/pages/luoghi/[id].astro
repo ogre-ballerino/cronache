@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import { ogImage } from '../../lib/og';
 
 export async function getStaticPaths() {
   const places = await getCollection('luoghi');
@@ -21,6 +22,7 @@ const meta = [entry.data.tipo, entry.data.regione].filter(Boolean).join(' · ');
   tags={entry.data.tag}
   collection="luoghi"
   id={entry.id}
+  og={ogImage(entry.data)}
 >
   <Content />
 </EntryLayout>

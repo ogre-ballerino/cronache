@@ -1,7 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import config from 'virtual:cronache/config';
+import { publicDir } from 'virtual:cronache/paths';
 import { STATI_PERSONAGGI, STATI_PNG } from './lib/status.mjs';
 import { curlyQuotes } from './lib/wikilinks.mjs';
 
@@ -16,10 +19,15 @@ export interface CollectionFields {
   handout?: Fields;
 }
 
+const publicFile = z
+  .string()
+  .refine((src) => fs.existsSync(path.join(publicDir, src)), { error: (issue) => `${issue.input} not found in public/` });
+
 const baseFields = {
   titolo: z.string(),
   estratto: z.string().max(300).transform(curlyQuotes).optional(),
   immagine: z.string().optional(),
+  anteprima: publicFile.optional(),
   tag: z.array(z.string()).default([]),
 };
 
