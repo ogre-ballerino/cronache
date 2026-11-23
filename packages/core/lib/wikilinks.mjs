@@ -2,13 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { COLLECTIONS, entryUrl } from './collections.mjs';
 
-// Resolved from the current working directory rather than import.meta.url:
-// Astro moves this module under dist/.prerender/ during build, which would
-// break a path resolved relative to the module's own location. Astro (dev
-// and build) is always invoked from the project root, so process.cwd() is
-// the stable anchor here.
-const CONTENT_DIR = path.join(process.cwd(), 'src', 'content');
-
 export const WIKILINK_RE = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
 // Range of Unicode combining diacritical marks (U+0300-U+036F), built from
@@ -48,14 +41,15 @@ function frontmatterField(raw, key) {
   return m?.[1].trim().replace(/^(["'])(.*)\1$/, '$2');
 }
 
-let cache = null;
+const caches = new Map();
 
-export function getSlugMap() {
-  if (cache) return cache;
-  cache = new Map();
+export function getSlugMap(contentDir) {
+  const cached = caches.get(contentDir);
+  if (cached) return cached;
+  const cache = new Map();
 
   for (const { key: collection } of COLLECTIONS) {
-    const dir = path.join(CONTENT_DIR, collection);
+    const dir = path.join(contentDir, collection);
     if (!fs.existsSync(dir)) continue;
 
     for (const file of fs.readdirSync(dir)) {
@@ -77,5 +71,6 @@ export function getSlugMap() {
       cache.set(normalize(title), entry);
     }
   }
+  caches.set(contentDir, cache);
   return cache;
 }

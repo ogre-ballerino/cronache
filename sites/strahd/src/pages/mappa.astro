@@ -3,11 +3,12 @@ import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
 import { entryUrl } from '@cronache/core/lib/collections.mjs';
 import { getCollection } from 'astro:content';
 import { getSlugMap, normalize } from '@cronache/core/lib/wikilinks.mjs';
+import { contentDir } from 'virtual:cronache/paths';
 
 const places = await getCollection('luoghi');
 const byId = Object.fromEntries(places.map((l) => [l.id, l]));
 
-const slugMap = getSlugMap();
+const slugMap = getSlugMap(contentDir);
 const visitedUrls = new Set<string>();
 for (const s of await getCollection('sessions')) {
   for (const name of s.data.luoghiVisitati) {

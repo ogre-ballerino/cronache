@@ -1,5 +1,6 @@
 import { getCollection, type CollectionKey } from 'astro:content';
 import config from 'virtual:cronache/config';
+import { contentDir } from 'virtual:cronache/paths';
 import { enabledCollections, entryUrl } from './collections.mjs';
 import { getSlugMap, normalize, WIKILINK_RE } from './wikilinks.mjs';
 
@@ -9,7 +10,7 @@ let backlinkCache: Map<string, Backlink[]> | null = null;
 
 async function buildBacklinkIndex() {
   const index = new Map<string, Backlink[]>();
-  const slugMap = getSlugMap();
+  const slugMap = getSlugMap(contentDir);
 
   for (const { key } of enabledCollections(config.features)) {
     const entries = await getCollection(key as CollectionKey);

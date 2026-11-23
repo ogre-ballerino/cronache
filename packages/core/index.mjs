@@ -22,12 +22,13 @@ function routes(features) {
   return [...pages, ['/cerca', 'cerca.astro']];
 }
 
-function virtualModules(config, root) {
+function virtualModules(config, { root, contentDir, publicDir }) {
   const require = createRequire(path.join(root, 'package.json'));
   // Relative paths are the site's own files; anything else is a package (fonts).
   const resolveCss = (spec) => (spec.startsWith('.') ? path.resolve(root, spec) : require.resolve(spec));
   const modules = {
     'virtual:cronache/config': `export default ${JSON.stringify(config)};`,
+    'virtual:cronache/paths': `export const contentDir = ${JSON.stringify(contentDir)};\nexport const publicDir = ${JSON.stringify(publicDir)};`,
     'virtual:cronache/styles': config.css.map((spec) => `import ${JSON.stringify(resolveCss(spec))};`).join('\n'),
   };
   return {
@@ -44,16 +45,23 @@ export default function cronache(userConfig) {
     name: '@cronache/core',
     hooks: {
       'astro:config:setup': ({ config: astroConfig, updateConfig, injectRoute }) => {
+        const root = fileURLToPath(astroConfig.root);
+        const paths = {
+          root,
+          contentDir: path.join(root, 'src', 'content'),
+          publicDir: fileURLToPath(astroConfig.publicDir),
+        };
+
         updateConfig({
           trailingSlash: 'always',
           integrations: [sitemap()],
           markdown: {
             processor: unified({
-              remarkPlugins: [remarkWikilinks],
+              remarkPlugins: [[remarkWikilinks, { contentDir: paths.contentDir }]],
               rehypePlugins: [rehypeHeadingIds, rehypeHeadingLinks],
             }),
           },
-          vite: { plugins: [virtualModules(config, fileURLToPath(astroConfig.root))] },
+          vite: { plugins: [virtualModules(config, paths)] },
         });
         for (const [pattern, page] of routes(config.features)) {
           injectRoute({ pattern, entrypoint: `@cronache/core/pages/${page}` });
