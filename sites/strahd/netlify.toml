@@ -1,6 +1,9 @@
+# Netlify UI: Package directory = sites/strahd, Base directory unset, so install
+# and build run at the workspace root.
 [build]
-  command = "pnpm build"
-  publish = "dist"
+  command = "pnpm --filter strahd build"
+  publish = "sites/strahd/dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- sites/strahd packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml"
 
 [build.environment]
   NODE_VERSION = "24"
