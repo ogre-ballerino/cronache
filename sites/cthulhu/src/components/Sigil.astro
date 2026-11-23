@@ -1,0 +1,28 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+<svg class={className} viewBox="-30 -30 840 840" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="390" cy="390" r="405" stroke-opacity=".55" stroke-width="5" />
+  <circle cx="390" cy="390" r="378" stroke-opacity=".6" stroke-width="5" stroke-dasharray="1 22" />
+  <g stroke-width="16">
+    <circle cx="384" cy="108" r="64" />
+    <polyline points="282,80 336,142 386,88 434,142 494,66" />
+    <polygon points="102,268 38,432 178,424" />
+    <polyline points="56,424 140,392 100,372 120,346 94,338 76,388" />
+    <polygon points="665,246 744,340 712,432 618,428 592,346" />
+    <circle cx="666" cy="356" r="40" />
+    <line x1="622" y1="350" x2="708" y2="350" />
+    <polygon points="378,556 458,650 390,748 306,650" />
+    <polyline points="370,600 346,644 378,638 352,692" />
+  </g>
+  <g stroke="var(--color-verdigris)" stroke-width="14">
+    <path d="M372,240 C380,220 412,228 405,254 C399,276 362,300 354,340 C347,372 350,410 380,420 C405,428 425,412 425,400" />
+    <circle cx="392" cy="382" r="14" />
+    <path d="M354,408 C332,400 322,428 302,420 C292,416 284,418 278,426" />
+    <path d="M382,421 C390,440 372,450 380,465 C385,476 372,483 363,489" />
+    <path d="M418,408 C432,400 446,416 436,431 C428,443 440,456 448,466" />
+  </g>
+</svg>

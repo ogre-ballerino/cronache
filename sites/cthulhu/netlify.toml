@@ -1,0 +1,106 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[redirects]]
+  from = "/personaggi/agatha"
+  to = "/personaggi/agatha-fletcher"
+  status = 301
+
+[[redirects]]
+  from = "/png/kurt"
+  to = "/png/kurt-weber"
+  status = 301
+
+# Cronologia was merged into Capitoli.
+[[redirects]]
+  from = "/cronologia"
+  to = "/diario/"
+  status = 301
+
+# Season 1 names corrected from the Keeper's notes.
+[[redirects]]
+  from = "/png/kurt-vebert"
+  to = "/png/kurt-weber"
+  status = 301
+
+[[redirects]]
+  from = "/png/hans-trommer"
+  to = "/personaggi/hans-traeumer"
+  status = 301
+
+[[redirects]]
+  from = "/png/evelyn-trommer"
+  to = "/png/evelyn-hayes"
+  status = 301
+
+[[redirects]]
+  from = "/png/randalf-allen"
+  to = "/png/randolph-allen"
+  status = 301
+
+[[redirects]]
+  from = "/png/serghey"
+  to = "/png/sergei-volkov"
+  status = 301
+
+[[redirects]]
+  from = "/png/aragul"
+  to = "/png/azaghul"
+  status = 301
+
+[[redirects]]
+  from = "/personaggi/alistar"
+  to = "/personaggi/alistair"
+  status = 301
+
+[[redirects]]
+  from = "/personaggi/rita"
+  to = "/personaggi/rita-peacock"
+  status = 301
+
+[[redirects]]
+  from = "/personaggi/jade"
+  to = "/personaggi/madame-jade"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/banca-di-berlino"
+  to = "/luoghi/deutsche-bank"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/psychology-society"
+  to = "/luoghi/boston-psychoanalytic-society"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/biblioteca-di-berlino"
+  to = "/luoghi/biblioteca-di-stato-prussiana"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/antiquitaten-kuriositaten"
+  to = "/luoghi/antiquitaten-und-kuriositaten"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/casa-di-hans-trommer"
+  to = "/luoghi/casa-di-hans-traeumer"
+  status = 301
+
+# Hans became an investigator in Alistair's body.
+[[redirects]]
+  from = "/png/hans-traeumer"
+  to = "/personaggi/hans-traeumer"
+  status = 301
+
+# The site moved from the cthulhu subdomain; keep old links and search results working.
+[[redirects]]
+  from = "https://cthulhu.ogreballerino.com/*"
+  to = "https://ombre.ogreballerino.com/:splat"
+  status = 301
+  force = true

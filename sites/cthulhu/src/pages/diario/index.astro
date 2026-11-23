@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { toRoman, longDate } from '../../lib/format';
+import { groupBySeason } from '../../lib/seasons';
+
+const seasons = groupBySeason(await getCollection('sessions'));
+---
+<BaseLayout title="Capitoli" description="Tutte le sessioni della campagna, dalla prima all'ultima, con il racconto di ciò che gli investigatori hanno vissuto.">
+  <h1 class="page-title">Capitoli</h1>
+  <p class="page-lede">Il resoconto di ogni serata di gioco, dalla più recente.</p>
+
+  {seasons.map(({ stagione, sessions }) => (
+    <section class="season">
+      <h2 class="season-heading">Stagione {toRoman(stagione)}</h2>
+      <ol class="timeline">
+        {sessions.map((s) => (
+          <li class="timeline-item">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="timeline-body">
+              <span class="timeline-meta">Capitolo {toRoman(s.data.numero)} · {longDate(s.data.data)}</span>
+              <a class="timeline-title" href={`/diario/${s.id}`}>{s.data.titolo}</a>
+              {s.data.estratto && <p class="timeline-excerpt">{s.data.estratto}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+</BaseLayout>

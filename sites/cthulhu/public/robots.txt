@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ombre.ogreballerino.com/sitemap-index.xml
