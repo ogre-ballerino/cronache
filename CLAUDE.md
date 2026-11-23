@@ -45,7 +45,7 @@ Conventional commits, subject line only. Content updates use the `content` scope
 
 ## Commands
 
-From the root: `pnpm dev:<site>`, `pnpm build:<site>`, `pnpm build:all`. Inside a site folder, plain `pnpm dev` / `pnpm build` / `pnpm preview`. Before committing a change to `packages/core/`, run `pnpm build:all`: it serves every site.
+From the root: `pnpm dev:<site>`, `pnpm build:<site>`, `pnpm build:all`. Inside a site folder, plain `pnpm dev` / `pnpm build` / `pnpm preview`. Before committing a change to `packages/core/`, run `pnpm test` (engine unit tests, `node:test`, in `packages/core/test/`) and `pnpm build:all`: it serves every site.
 
 ## Technical notes
 
