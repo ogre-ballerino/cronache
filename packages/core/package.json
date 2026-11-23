@@ -9,6 +9,9 @@
     "./content": "./content.ts",
     "./*": "./*"
   },
+  "scripts": {
+    "test": "node --test"
+  },
   "peerDependencies": {
     "astro": "^7.3.1"
   },

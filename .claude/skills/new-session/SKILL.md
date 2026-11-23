@@ -47,7 +47,7 @@ Body: a third-person narrative in Italian that summarises what happened, split i
 
 For each character, NPC or place that appears for the first time, create a file named after the kebab-case, accent-free title (e.g. `padre-lucian-petrovich.md`). Fields besides `titolo` are optional; fill in what is known, use `sconosciuto` for things that matter but aren't known yet.
 
-Use the fields listed in the root `CLAUDE.md` plus the site's own (its `CLAUDE.md`), for example a character's `classe` or `professione`. Leave `giocatore` out (no real names). Set `immagine: /images/personaggi/<id>.png` only if that file exists. Whether a place was visited comes from the sessions' `luoghiVisitati`, not from the place. If the site has handouts and the group received a document, transcribe it in `handout/` and link to it.
+Use the fields listed in the root `CLAUDE.md` plus the site's own (its `CLAUDE.md`), for example a character's `classe` or `professione`. Leave `giocatore` out (no real names). Set `immagine: /images/personaggi/<id>.webp` only if that file exists. Whether a place was visited comes from the sessions' `luoghiVisitati`, not from the place. If the site has handouts and the group received a document, transcribe it in `handout/` and link to it.
 
 Body: a short Italian paragraph with what the group knows and how they met it, linked back to the session and other entities.
 
@@ -69,7 +69,8 @@ For each existing entity that appears again:
 Run `pnpm -C sites/<site> build` and check the output:
 
 - It must succeed (schema errors, e.g. `estratto` over 300 characters, fail the build).
-- Fix every `[wikilinks] Unresolved link` warning by correcting the target or creating the missing entity.
+- Unresolved wikilinks fail the build, listed together: fix each by correcting the target or creating the missing entity.
+- Fix every `[wikilinks] … names both …` warning: two entries share a name, so one of them is probably a duplicate.
 
 ## 7. Report
 
@@ -77,7 +78,7 @@ End with a short report:
 
 - Session file created, entities created, entities updated.
 - **Ambiguities**: every name or detail you had to interpret, with your choice (e.g. "«Strad» → Strahd von Zarovich", "unclear whether Izek died: left `stato: vivo`").
-- Anything left for the user: map pins to place, a missing session date, the next session date if the site keeps it in `campaign.config.mjs`, and for new player characters the portraits to add in `public/images/personaggi/` (`<id>.png` square + `<id>-full.png` tall; the home page picks up the full one automatically, then set `immagine`).
+- Anything left for the user: map pins to place, a missing session date, the next session date if the site keeps it in `campaign.config.mjs`, and for new player characters the portraits to add in `public/images/personaggi/` (`<id>.webp` square + `<id>-full.webp` tall, converted from PNG as the root `CLAUDE.md` explains; the home page picks up the full one automatically, then set `immagine`).
 - A suggested commit message, e.g. `feat(content): add sessione-11`.
 
 Don't commit — the user reviews `git diff` first.

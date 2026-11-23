@@ -1,4 +1,5 @@
 ---
+import { entryUrl } from '../../lib/collections.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import config from 'virtual:cronache/config';
@@ -20,7 +21,7 @@ const { title, heading, lede, description } = config.sections.diario;
             <span class="timeline-marker" aria-hidden="true"></span>
             <div class="timeline-body">
               <span class="timeline-meta">{config.labels.session} {toRoman(s.data.numero)} · {longDate(s.data.data)}</span>
-              <a class="timeline-title" href={`/diario/${s.id}`}>{s.data.titolo}</a>
+              <a class="timeline-title" href={entryUrl('sessions', s.id)}>{s.data.titolo}</a>
               {s.data.estratto && <p class="timeline-excerpt">{s.data.estratto}</p>}
             </div>
           </li>

@@ -3,7 +3,7 @@ titolo: Giovanni Belzoni
 professione: Archeologo
 stato: vivo
 estratto: Gigante padovano di quarantasette anni, ex uomo forzuto dei palcoscenici londinesi diventato egittologo di fama mondiale. Rumoroso, appariscente, veste all'araba anche in Occidente. Gli investigatori lo conoscono a Berlino, alla Weiße Maus.
-immagine: /images/personaggi/giovanni-belzoni.png
+immagine: /images/personaggi/giovanni-belzoni.webp
 ---
 
 Giovanni Belzoni, "il Grande", è nato a Padova. Ha studiato ingegneria, ma

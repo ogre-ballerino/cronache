@@ -9,7 +9,8 @@ const { Content } = await render(entry);
 <EntryLayout
   title={entry.data.titolo}
   description={config.sections.riassunto.description}
-  backlinksUrl="/riassunto"
+  collection="riassunto"
+  id={entry.id}
 >
   <Content />
 </EntryLayout>

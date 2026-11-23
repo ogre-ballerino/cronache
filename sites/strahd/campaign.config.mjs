@@ -28,7 +28,7 @@ export default defineCampaign({
     ornament: '&#8258;',
     lines: [
       'Tenuto dalla compagnia, sessione dopo sessione · <a href="https://ogreballerino.com">ogreballerino.com</a>',
-      'Fatto con le manine sante di <a href="https://sirlisko.com">sirlisko</a> (alias <a href="/personaggi/tariq">Tariq</a>)',
+      'Fatto con le manine sante di <a href="https://sirlisko.com">sirlisko</a> (alias <a href="/personaggi/tariq/">Tariq</a>)',
     ],
   },
   nextSession: { endpoint: 'https://cms.sirlisko.com/items/strahd' },

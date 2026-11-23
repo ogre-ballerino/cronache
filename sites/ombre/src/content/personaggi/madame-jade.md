@@ -3,7 +3,7 @@ titolo: Madame Jade
 professione: Medium
 stato: ritirata
 estratto: Medium cresciuta in un tempio Shaolin, in crisi con il buddhismo, cerca la verità sulla scomparsa della sorella Chung. La ritrova nel corpo di Rita e la riporta in Inghilterra.
-immagine: /images/personaggi/madame-jade.png
+immagine: /images/personaggi/madame-jade.webp
 ---
 
 Sostiene di sentire le voci degli spiriti e le correnti sottili che

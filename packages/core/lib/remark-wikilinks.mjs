@@ -1,3 +1,4 @@
+import path from 'node:path';
 import { visit } from 'unist-util-visit';
 import { isDead, isUncertain } from './status.mjs';
 import { curlyQuotes, getSlugMap, normalize, WIKILINK_RE } from './wikilinks.mjs';
@@ -47,10 +48,12 @@ function addMarginalia(tree, slugMap) {
   }
 }
 
-export default function remarkWikilinks() {
+/** @param {{ contentDir: string }} options */
+export default function remarkWikilinks({ contentDir }) {
+  const sessionsDir = path.join(contentDir, 'sessions') + path.sep;
   return (tree, file) => {
-    const slugMap = getSlugMap();
-    if (file.path?.includes('/content/sessions/')) addMarginalia(tree, slugMap);
+    const slugMap = getSlugMap(contentDir);
+    if (file.path?.startsWith(sessionsDir)) addMarginalia(tree, slugMap);
 
     visit(tree, 'text', (node, index, parent) => {
       if (!parent || typeof index !== 'number') return;

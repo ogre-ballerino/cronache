@@ -22,7 +22,8 @@ const meta = [ruolo, luogo && !ruolo?.includes(luogo) && luogo, fazione].filter(
   meta={meta}
   status={entry.data.stato}
   tags={entry.data.tag}
-  backlinksUrl={`/png/${entry.id}`}
+  collection="png"
+  id={entry.id}
 >
   <Content />
 </EntryLayout>

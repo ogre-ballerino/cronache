@@ -22,7 +22,8 @@ const meta = [characterMeta(entry.data), entry.data.fazione].filter(Boolean).joi
   meta={meta}
   status={entry.data.stato}
   tags={entry.data.tag}
-  backlinksUrl={`/personaggi/${entry.id}`}
+  collection="personaggi"
+  id={entry.id}
   image={fullPortrait(entry.id) ?? entry.data.immagine}
 >
   <Content />

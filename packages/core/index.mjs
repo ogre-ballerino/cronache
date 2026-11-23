@@ -3,36 +3,33 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
+import { enabledCollections } from './lib/collections.mjs';
 import { resolveConfig } from './config.mjs';
 import rehypeHeadingLinks from './lib/rehype-heading-links.mjs';
 import remarkWikilinks from './lib/remark-wikilinks.mjs';
+import { findUnresolvedLinks } from './lib/wikilinks.mjs';
 
 export { defineCampaign } from './config.mjs';
 
-const ROUTES = [
-  ['/diario', 'diario/index.astro'],
-  ['/diario/[id]', 'diario/[id].astro'],
-  ['/personaggi', 'personaggi/index.astro'],
-  ['/personaggi/[id]', 'personaggi/[id].astro'],
-  ['/png', 'png/index.astro'],
-  ['/png/[id]', 'png/[id].astro'],
-  ['/luoghi', 'luoghi/index.astro'],
-  ['/luoghi/[id]', 'luoghi/[id].astro'],
-  ['/riassunto', 'riassunto.astro'],
-  ['/cerca', 'cerca.astro'],
-];
+function routes(features) {
+  const pages = enabledCollections(features).flatMap(({ section, single }) =>
+    single
+      ? [[`/${section}`, `${section}.astro`]]
+      : [
+          [`/${section}`, `${section}/index.astro`],
+          [`/${section}/[id]`, `${section}/[id].astro`],
+        ]
+  );
+  return [...pages, ['/cerca', 'cerca.astro']];
+}
 
-const HANDOUT_ROUTES = [
-  ['/handout', 'handout/index.astro'],
-  ['/handout/[id]', 'handout/[id].astro'],
-];
-
-function virtualModules(config, root) {
+function virtualModules(config, { root, contentDir, publicDir }) {
   const require = createRequire(path.join(root, 'package.json'));
   // Relative paths are the site's own files; anything else is a package (fonts).
   const resolveCss = (spec) => (spec.startsWith('.') ? path.resolve(root, spec) : require.resolve(spec));
   const modules = {
     'virtual:cronache/config': `export default ${JSON.stringify(config)};`,
+    'virtual:cronache/paths': `export const contentDir = ${JSON.stringify(contentDir)};\nexport const publicDir = ${JSON.stringify(publicDir)};`,
     'virtual:cronache/styles': config.css.map((spec) => `import ${JSON.stringify(resolveCss(spec))};`).join('\n'),
   };
   return {
@@ -42,24 +39,42 @@ function virtualModules(config, root) {
   };
 }
 
+// A broken link renders as plain text and only warns while writing; a build
+// must not publish it.
+function assertLinksResolve(contentDir) {
+  const unresolved = findUnresolvedLinks(contentDir);
+  if (unresolved.length === 0) return;
+  const list = unresolved.map(({ file, target }) => `  ${path.relative(contentDir, file)}: [[${target}]]`).join('\n');
+  throw new Error(`[wikilinks] ${unresolved.length} unresolved link(s):\n${list}`);
+}
+
 /** @param {import('./config.mjs').CampaignConfig} userConfig */
 export default function cronache(userConfig) {
   const config = resolveConfig(userConfig);
   return {
     name: '@cronache/core',
     hooks: {
-      'astro:config:setup': ({ config: astroConfig, updateConfig, injectRoute }) => {
+      'astro:config:setup': ({ command, config: astroConfig, updateConfig, injectRoute }) => {
+        const root = fileURLToPath(astroConfig.root);
+        const paths = {
+          root,
+          contentDir: path.join(root, 'src', 'content'),
+          publicDir: fileURLToPath(astroConfig.publicDir),
+        };
+        if (command === 'build') assertLinksResolve(paths.contentDir);
+
         updateConfig({
+          trailingSlash: 'always',
           integrations: [sitemap()],
           markdown: {
             processor: unified({
-              remarkPlugins: [remarkWikilinks],
+              remarkPlugins: [[remarkWikilinks, { contentDir: paths.contentDir }]],
               rehypePlugins: [rehypeHeadingIds, rehypeHeadingLinks],
             }),
           },
-          vite: { plugins: [virtualModules(config, fileURLToPath(astroConfig.root))] },
+          vite: { plugins: [virtualModules(config, paths)] },
         });
-        for (const [pattern, page] of [...ROUTES, ...(config.features.handout ? HANDOUT_ROUTES : [])]) {
+        for (const [pattern, page] of routes(config.features)) {
           injectRoute({ pattern, entrypoint: `@cronache/core/pages/${page}` });
         }
       },

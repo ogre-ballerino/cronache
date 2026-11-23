@@ -26,7 +26,7 @@ Wikilink resolution is case-, accent- and apostrophe-insensitive and matches eit
 - Also check the non-wikilink references:
   - `luoghiVisitati:` in session frontmatter (holds place titles),
   - `luogo:` in `png/` frontmatter (plain text place name),
-  - `immagine:` paths and `public/images/personaggi/<id>*.png` for characters (rename the image files along with the entry),
+  - `immagine:` paths and `public/images/personaggi/<id>*.webp` for characters (rename the image files along with the entry),
   - anything else the site's `CLAUDE.md` lists as referring to entity ids (e.g. a map's pins).
 
 ## 3. Apply
@@ -53,16 +53,16 @@ For every filename that changed or was removed, add a permanent redirect to the 
 ```toml
 [[redirects]]
   from = "/png/ismarc"
-  to = "/png/ismark-kolyanovich"
+  to = "/png/ismark-kolyanovich/"
   status = 301
 ```
 
-The section prefix is the collection's route: `/personaggi`, `/png`, `/luoghi`, `/diario`, `/handout`.
+The section prefix is the collection's route: `/personaggi`, `/png`, `/luoghi`, `/diario`, `/handout`. The `to` URL ends in `/` (every page URL does; without it the visitor gets a second redirect).
 
 ## 5. Verify
 
 - Grep `src/content/` again for the old names: nothing should remain except deliberate aliases.
-- Run `pnpm -C sites/<site> build`: it must succeed with no `[wikilinks] Unresolved link` warnings.
+- Run `pnpm -C sites/<site> build`: it must succeed (an unresolved wikilink fails it) with no `[wikilinks] … names both …` warnings.
 
 ## 6. Report
 

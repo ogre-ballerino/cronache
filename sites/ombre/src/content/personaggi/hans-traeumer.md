@@ -4,7 +4,7 @@ professione: Linguista
 sottotitolo: nel corpo di Alistair
 stato: vivo
 estratto: Celebre linguista della spedizione del 1865, uno dei pochi tornati dall'Egitto. Liberato da un bozzolo nel sogno, si risveglia nel corpo di Alistair, con la mente di un novantenne e nessun ricordo della spedizione.
-immagine: /images/personaggi/hans-traeumer.png
+immagine: /images/personaggi/hans-traeumer.webp
 ---
 
 Professore e linguista famoso, lavorò alla traduzione della stele di

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import { entryUrl } from '@cronache/core/lib/collections.mjs';
 import NextSession from '@cronache/core/components/NextSession.astro';
 import SessionIndex from '@cronache/core/components/SessionIndex.astro';
 import { getCollection } from 'astro:content';
@@ -28,9 +29,9 @@ const party = characters.filter((p) => fullPortrait(p.id));
         <span>Ultima sessione · {toRoman(latest.data.numero)}</span>
         <span>{longDate(latest.data.data)}</span>
       </p>
-      <h2><a href={`/diario/${latest.id}`}>{latest.data.titolo}</a></h2>
+      <h2><a href={entryUrl('sessions', latest.id)}>{latest.data.titolo}</a></h2>
       {latest.data.estratto && <p class="drop-cap">{latest.data.estratto}</p>}
-      <p class="read-more"><a href={`/diario/${latest.id}`}>Continua a leggere</a> &rarr;</p>
+      <p class="read-more"><a href={entryUrl('sessions', latest.id)}>Continua a leggere</a> &rarr;</p>
     </section>
   )}
 
@@ -40,7 +41,7 @@ const party = characters.filter((p) => fullPortrait(p.id));
       <h2 class="section-title">La compagnia</h2>
       <div class="cast-grid">
         {party.map((p) => (
-          <a class="cast-portrait" href={`/personaggi/${p.id}`}>
+          <a class="cast-portrait" href={entryUrl('personaggi', p.id)}>
             <img src={fullPortrait(p.id)} alt="" loading="lazy" />
             <span>{p.data.titolo}</span>
           </a>

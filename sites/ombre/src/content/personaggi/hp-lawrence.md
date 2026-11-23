@@ -3,7 +3,7 @@ titolo: HP Lawrence
 professione: Psicoanalista
 stato: vivo
 estratto: Psicoanalista allievo di Freud, veterano della Somme e terapeuta dei compagni. Le sue teorie sull'invisibile lo rendono lo zimbello di Boston; teme la vecchiaia più di ogni altra cosa.
-immagine: /images/personaggi/hp-lawrence.png
+immagine: /images/personaggi/hp-lawrence.webp
 ---
 
 Il dottor Lawrence, per gli amici Dr Law, ha combattuto sulla Somme, dove

@@ -20,6 +20,7 @@ pnpm install
 pnpm dev:strahd       # http://localhost:4321
 pnpm build:strahd     # static output in sites/strahd/dist/ (plus the Pagefind search index)
 pnpm build:all        # every site: run it after touching packages/core
+pnpm test             # engine unit tests
 ```
 
 Inside a site folder, plain `pnpm dev`, `pnpm build` and `pnpm preview` work too.

@@ -19,7 +19,8 @@ const { Content } = await render(entry);
   description={entry.data.estratto}
   meta={handoutMeta(entry.data)}
   tags={entry.data.tag}
-  backlinksUrl={`/handout/${entry.id}`}
+  collection="handout"
+  id={entry.id}
 >
   <Content />
 </EntryLayout>

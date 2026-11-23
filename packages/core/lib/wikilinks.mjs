@@ -1,21 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-
-// Resolved from the current working directory rather than import.meta.url:
-// Astro moves this module under dist/.prerender/ during build, which would
-// break a path resolved relative to the module's own location. Astro (dev
-// and build) is always invoked from the project root, so process.cwd() is
-// the stable anchor here.
-const CONTENT_DIR = path.join(process.cwd(), 'src', 'content');
-
-const COLLECTION_ROUTES = {
-  sessions: '/diario',
-  personaggi: '/personaggi',
-  png: '/png',
-  luoghi: '/luoghi',
-  handout: '/handout',
-  riassunto: '/riassunto',
-};
+import { COLLECTIONS, entryUrl } from './collections.mjs';
 
 export const WIKILINK_RE = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
@@ -51,39 +36,67 @@ export function normalize(str) {
 // (IM Fell) draw a straight " as a closing quote.
 export const curlyQuotes = (s) => s.replace(/"([^"]*)"/g, '“$1”');
 
-function frontmatterField(raw, key) {
+export function frontmatterField(raw, key) {
   const m = raw.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
   return m?.[1].trim().replace(/^(["'])(.*)\1$/, '$2');
 }
 
-let cache = null;
+export const markdownBody = (raw) => raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
 
-export function getSlugMap() {
-  if (cache) return cache;
-  cache = new Map();
-
-  for (const [collection, routeBase] of Object.entries(COLLECTION_ROUTES)) {
-    const dir = path.join(CONTENT_DIR, collection);
+// Top-level .md files only, drafts (`_`) excluded: the same set the content
+// collections load.
+export function* contentFiles(contentDir) {
+  for (const { key } of COLLECTIONS) {
+    const dir = path.join(contentDir, key);
     if (!fs.existsSync(dir)) continue;
-
-    for (const file of fs.readdirSync(dir)) {
+    for (const file of fs.readdirSync(dir).sort()) {
       if (!file.endsWith('.md') || file.startsWith('_')) continue;
-      const id = file.replace(/\.md$/, '');
-      const raw = fs.readFileSync(path.join(dir, file), 'utf-8');
-      const title = frontmatterField(raw, 'titolo') ?? id;
-      const url = collection === 'riassunto' ? routeBase : `${routeBase}/${id}`;
-      const entry = {
-        url,
-        title,
-        collection,
-        ruolo: frontmatterField(raw, 'ruolo'),
-        stato: frontmatterField(raw, 'stato'),
-        tipo: frontmatterField(raw, 'tipo'),
-      };
-
-      cache.set(normalize(id), entry);
-      cache.set(normalize(title), entry);
+      const filePath = path.join(dir, file);
+      yield { collection: key, id: file.replace(/\.md$/, ''), path: filePath, raw: fs.readFileSync(filePath, 'utf-8') };
     }
   }
-  return cache;
+}
+
+const caches = new Map();
+
+export function getSlugMap(contentDir) {
+  const cached = caches.get(contentDir);
+  if (cached) return cached;
+
+  const map = new Map();
+  const add = (key, entry) => {
+    const existing = map.get(key);
+    if (existing && existing.url !== entry.url) {
+      console.warn(`[wikilinks] "${key}" names both ${existing.url} and ${entry.url}: links go to ${entry.url}`);
+    }
+    map.set(key, entry);
+  };
+
+  for (const { collection, id, raw } of contentFiles(contentDir)) {
+    const title = frontmatterField(raw, 'titolo') ?? id;
+    const entry = {
+      url: entryUrl(collection, id),
+      title,
+      collection,
+      ruolo: frontmatterField(raw, 'ruolo'),
+      stato: frontmatterField(raw, 'stato'),
+      tipo: frontmatterField(raw, 'tipo'),
+    };
+    add(normalize(id), entry);
+    add(normalize(title), entry);
+  }
+  caches.set(contentDir, map);
+  return map;
+}
+
+/** Every `[[target]]` in a content body that matches no entry. */
+export function findUnresolvedLinks(contentDir) {
+  const slugMap = getSlugMap(contentDir);
+  const unresolved = [];
+  for (const file of contentFiles(contentDir)) {
+    for (const [, target] of markdownBody(file.raw).matchAll(WIKILINK_RE)) {
+      if (!slugMap.has(normalize(target))) unresolved.push({ file: file.path, target });
+    }
+  }
+  return unresolved;
 }

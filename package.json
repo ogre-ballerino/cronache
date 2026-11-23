@@ -14,7 +14,8 @@
     "dev:ombre": "pnpm --filter ombre dev",
     "build:ombre": "pnpm --filter ombre build",
     "transcribe": "node scripts/transcribe.mjs",
-    "session": "node scripts/session.mjs"
+    "session": "node scripts/session.mjs",
+    "test": "pnpm --filter @cronache/core test"
   },
   "optionalDependencies": {
     "parakeet-coreml": "^2.2.0"

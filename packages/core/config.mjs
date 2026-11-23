@@ -1,3 +1,5 @@
+import { enabledCollections, sectionUrl } from './lib/collections.mjs';
+
 /**
  * @typedef {object} SectionText
  * @property {string} label        Nav entry, search filter and backlink group.
@@ -94,13 +96,12 @@ export function resolveConfig(user) {
       return [key, merged];
     })
   );
-  const href = (key) => (key === 'riassunto' ? '/riassunto/' : `/${key}/`);
-  const navKeys = ['riassunto', 'diario', 'personaggi', 'png', 'luoghi', ...(features.handout ? ['handout'] : []), 'cerca'];
+  const navKeys = [...enabledCollections(features).map((c) => c.section), 'cerca'];
 
   return {
     ...user,
     headerTitle: user.headerTitle ?? user.name,
-    nav: user.nav ?? navKeys.map((key) => ({ href: href(key), label: sections[key].label })),
+    nav: user.nav ?? navKeys.map((key) => ({ href: sectionUrl(key), label: sections[key].label })),
     css: user.css ?? [],
     features,
     footer: user.footer ?? { ornament: '', lines: [] },
