@@ -1,15 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import NextSession from '@cronache/core/components/NextSession.astro';
+import SessionIndex from '@cronache/core/components/SessionIndex.astro';
 import { getCollection } from 'astro:content';
-import { toRoman, longDate } from '../lib/format';
-import { fullPortrait } from '../lib/portraits';
-import { groupBySeason } from '../lib/seasons';
-import { isLost } from '../lib/status';
-import { nextSession } from '../lib/site';
+import config from 'virtual:cronache/config';
+import { toRoman, longDate } from '@cronache/core/lib/format';
+import { fullPortrait } from '@cronache/core/lib/portraits';
+import { isAlive, isLost } from '@cronache/core/lib/status.mjs';
+import Sigil from '../components/Sigil.astro';
 
 const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
 const latest = sessions[0];
-const seasons = groupBySeason(sessions);
 
 const characters = (await getCollection('personaggi')).sort((a, b) =>
   a.data.titolo.localeCompare(b.data.titolo)
@@ -19,24 +20,16 @@ const castRows = [
   party.filter((p) => !isLost(p.data.stato)),
   party.filter((p) => isLost(p.data.stato)),
 ].filter((row) => row.length > 0);
-
-const nextDate = new Date(`${nextSession}Z`);
-const nextLabel = [
-  nextDate.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }),
-  nextDate.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }),
-].join(' alle ');
 ---
 <BaseLayout masthead>
-  {nextDate.getTime() > Date.now() && (
-    <p class="next-session" id="next-session" data-at={nextSession}>
-      Prossima sessione: {nextLabel}
-    </p>
-  )}
+  <Fragment slot="masthead">
+    <Sigil class="masthead-sigil" />
+    <p class="masthead-kicker">Call of Cthulhu</p>
+    <h1 class="masthead-title">{config.name}</h1>
+    <p class="masthead-lede">Cronaca di quanto vedemmo, e di quanto preferiremmo dimenticare.</p>
+  </Fragment>
 
-  <script>
-    const item = document.getElementById('next-session');
-    if (item && new Date(item.dataset.at!).getTime() < Date.now()) item.hidden = true;
-  </script>
+  <NextSession />
 
   {latest && (
     <section class="latest-session">
@@ -61,7 +54,7 @@ const nextLabel = [
               <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
               <span>{p.data.titolo}</span>
               {p.data.sottotitolo && <span class="cast-subtitle">{p.data.sottotitolo}</span>}
-              {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
+              {!isAlive(p.data.stato) && <span class={`badge badge-${p.data.stato}`}>{p.data.stato}</span>}
             </a>
           ))}
         </div>
@@ -78,7 +71,7 @@ const nextLabel = [
           <li>
             <a href={`/personaggi/${p.id}`}>{p.data.titolo}</a>
             {p.data.professione && <span> {p.data.professione}</span>}
-            {!['vivo', 'viva'].includes(p.data.stato) && <span class={`badge badge-${p.data.stato}`}> {p.data.stato}</span>}
+            {!isAlive(p.data.stato) && <span class={`badge badge-${p.data.stato}`}> {p.data.stato}</span>}
           </li>
         ))}
       </ul>
@@ -89,23 +82,7 @@ const nextLabel = [
     <section>
       <div class="ornament" aria-hidden="true">&#10022; &#10022; &#10022;</div>
       <h2 class="section-title">Capitoli</h2>
-      {seasons.map(({ stagione, sessions }) => (
-        <>
-          <h3 class="season-heading">Stagione {toRoman(stagione)}</h3>
-          <ol class="session-index">
-            {sessions.map((s) => (
-              <li>
-                <span class="session-index-number">{toRoman(s.data.numero)}</span>
-                <a href={`/diario/${s.id}`}>{s.data.titolo}</a>
-                <span class="session-index-leader" aria-hidden="true"></span>
-                <span class="session-index-date">
-                  {s.data.data.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' })}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </>
-      ))}
+      <SessionIndex sessions={sessions} />
     </section>
   )}
 </BaseLayout>

@@ -1,16 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import { unified } from '@astrojs/markdown-remark';
-import sitemap from '@astrojs/sitemap';
-import remarkWikilinks from './src/lib/remark-wikilinks.mjs';
+import cronache from '@cronache/core';
+import campaign from './campaign.config.mjs';
 
 export default defineConfig({
   site: 'https://ombre.ogreballerino.com',
   output: 'static',
-  integrations: [sitemap()],
-  markdown: {
-    processor: unified({
-      remarkPlugins: [remarkWikilinks],
-    }),
-  },
+  integrations: [cronache(campaign)],
 });

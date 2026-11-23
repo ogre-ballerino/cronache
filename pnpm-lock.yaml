@@ -184,12 +184,9 @@ importers:
 
   sites/cthulhu:
     dependencies:
-      '@astrojs/markdown-remark':
-        specifier: ^7.3.0
-        version: 7.3.1
-      '@astrojs/sitemap':
-        specifier: ^3.7.4
-        version: 3.7.4
+      '@cronache/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@fontsource/cormorant-garamond':
         specifier: ^5.3.0
         version: 5.3.0
@@ -206,9 +203,6 @@ importers:
       pagefind:
         specifier: ^1.5.2
         version: 1.5.2
-      unist-util-visit:
-        specifier: ^5.0.0
-        version: 5.1.0
 
   sites/strahd:
     dependencies:
