@@ -11,3 +11,9 @@ stanze a spese di [[Alistair]] nel capitolo [[Il caveau di Berlino]]. Qui
 und Kuriositäten]], e qui, nel capitolo [[Lo specchio d'opale]], il gruppo
 si chiude in una stanza per il rituale del sonno che apre le [[Terre del
 Sogno]].
+
+Vicino a Potsdamer Platz. Nel capitolo [[La danza di Astarte]] gli
+investigatori vi si risvegliano dal sogno, il 26 agosto 1925; il concierge,
+un omone con i baffi a manubrio, offre loro il [[Der Berliner Bote|Berliner
+Bote]], e la sera porta la [[La lettera di Kurt Weber|lettera di Kurt
+Weber]]. Ci alloggia anche [[Giovanni Belzoni]].

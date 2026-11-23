@@ -2,7 +2,7 @@
 titolo: Agatha Fletcher
 professione: Cartomante
 stato: viva
-estratto: Cartomante con un passato nell'Ordine dei Gufi, qualche truffa alle spalle e un gatto, Salem, che la segue anche nei sogni. Esce dalle Terre del Sogno invecchiata di diciassette anni.
+estratto: Cartomante con un passato nell'Ordine dei Gufi, qualche truffa alle spalle e un gatto, Salem, che la segue anche nei sogni. Esce dalle Terre del Sogno invecchiata di diciassette anni, e a Berlino si innamora del cinema.
 tag: [specchio di luce pura, ordine dei gufi]
 immagine: /images/personaggi/agatha-fletcher.png
 ---
@@ -36,3 +36,13 @@ e a portarvi lo specchio.
 Contro [[Qal'Lith]] forza il potere dello specchio fino a farselo
 rivoltare contro, e invecchia di diciassette anni; poi riesce a uccidere la
 Tessitrice. Salem la porta fuori dal sogno saltando nel portale.
+
+A [[Berlino]], nel capitolo [[La danza di Astarte]], vede *Nosferatu* al
+[[Neues Schauspielhaus]] e ne riconosce i simboli esoterici; da allora
+legge riviste di cinema e gira per i teatri dell'avanguardia con [[HP
+Lawrence|HP]]. Alla [[Weiße Maus]] conosce [[Albin Grau]], l'uomo dietro
+il film, gli legge i tarocchi e, quando la danza di [[Anita Berber]]
+travolge la sala, finisce per danzare nuda attorno alla sua sedia. Si
+sveglia in un cinema con l'elmo e il mantello di Anita, e la vive come una
+liberazione. È lei a capire che sono stati vittime di un incantesimo di
+magia sessuale e di sangue.

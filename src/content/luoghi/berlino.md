@@ -10,3 +10,9 @@ Il gruppo arriva in treno all'[[Anhalter Bahnhof]]. Qui si trovano la
 *Antiquarium Tenebris*, il [[Cabaret Schwarze Katze]] e il negozio
 [[Antiquitäten und Kuriositäten]]. È all'[[Hotel Savoy]] che il gruppo si
 addormenta per entrare nelle [[Terre del Sogno]].
+
+Al risveglio, nell'agosto del 1925 (capitolo [[La danza di Astarte]]), è
+una città di smog, crimine ed eccessi in pieno giorno: il cinema del
+[[Neues Schauspielhaus]], la [[Galleria Nazionale]], il [[Museo di
+Etnologia]], il [[Romanisches Café]], l'[[Eldorado]], il [[Grunewald]] e il
+cabaret [[Weiße Maus]].

@@ -35,3 +35,13 @@ muschio]] la depone nell'urna sull'altare, e nella foto compare l'acqua.
 ![HP Lawrence, calvo e con la barba, ride in abito civile tra cinque soldati in uniforme davanti a una tenda da campo](/images/indizi/fotografia-di-hp.jpg)
 
 La fotografia di HP.
+
+Al risveglio, nel capitolo [[La danza di Astarte]], ritrova sul taccuino la
+nota scritta nel sogno, e capisce che è successo tutto davvero. Mette in
+guardia [[Madame Jade|Jade]] sulla donna che dice di essere [[Chung]], poi
+le affida il diario della sorella. Alla [[Galleria Nazionale]], davanti a
+un quadro di trincea di Otto Dix, lascia finalmente parlare il trauma della
+guerra; al [[Romanisches Café]] ritrova un po' di pace con [[Erich Fromm]].
+Alla [[Weiße Maus]] la danza di [[Anita Berber]] lo trascina oltre il suo
+consenso: si risveglia in un ricovero per senzatetto, senza soldi né
+macchina fotografica, e si sente violato.

@@ -2,7 +2,7 @@
 titolo: Giovanni Belzoni
 professione: Archeologo
 stato: vivo
-estratto: Gigante padovano di quarantasette anni, ex uomo forzuto dei palcoscenici londinesi diventato egittologo di fama mondiale. Rumoroso, appariscente, veste all'araba anche in Occidente.
+estratto: Gigante padovano di quarantasette anni, ex uomo forzuto dei palcoscenici londinesi diventato egittologo di fama mondiale. Rumoroso, appariscente, veste all'araba anche in Occidente. Gli investigatori lo conoscono a Berlino, alla Weiße Maus.
 immagine: /images/personaggi/giovanni-belzoni.png
 ---
 
@@ -24,3 +24,16 @@ si sa poco, perché è piuttosto riservato. Porta sempre con sé l'amuleto che
 gli regalò il suo compagno d'avventure, morto anni fa, e ha tatuata una
 conchiglia con un tridente all'interno. Non viaggia senza il suo fucile e
 il suo narghilè.
+
+Gli investigatori lo incontrano nel capitolo [[La danza di Astarte]], per
+una volta in abito da sera, al bancone della [[Weiße Maus]]: dice di essere
+lì da appassionato di cabaret, ma [[HP Lawrence|HP]] non gli crede del
+tutto. Si fa servire dell'assenzio, chiede di *die Übertretung*, e la danza
+di [[Anita Berber]] trascina anche lui, per un'ora. Si sveglia senza un
+soldo in un vicolo, e scopre di alloggiare anche lui all'[[Hotel Savoy]].
+È lui a capire che l'incantesimo serviva a incanalare l'energia sessuale
+dei presenti.
+
+![Ritratto in bianco e nero di un uomo con la barba folta e i capelli pettinati all'indietro, in giacca scura, panciotto e cravattino](/images/indizi/giovanni-belzoni-elegante.jpg)
+
+Belzoni in abito da sera.

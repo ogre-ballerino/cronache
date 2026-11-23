@@ -57,3 +57,16 @@ ricordo dell'Egitto, è nel corpo di Alistair, Chung in quello di Rita, lo
 specchio è diventato lo Specchio dell'Equilibrio di Nodens, e [[Salem]], il
 gatto di Agatha, è posseduto da un'entità chiamata Nomearod: un gatto di
 Saturno. Fine della prima stagione.
+
+## La Weiße Maus
+
+È il 26 agosto 1925. Jade riporta la sorella in Inghilterra; gli altri
+hanno qualche giorno a Berlino prima della nave per l'America. Il [[Der
+Berliner Bote|giornale]] annuncia che parte della collezione egizia del
+[[Museo di Etnologia]] sta per partire per gli Stati Uniti, in casse
+pagate, scopre Hans, dal [[Barone Grünau|barone Grünau]]. Una [[La lettera
+di Kurt Weber|lettera di Kurt Weber]] porta il gruppo alla [[Weiße Maus]],
+dove conosce [[Giovanni Belzoni]] e [[Albin Grau]], e dove la danza di
+[[Anita Berber]] trascina tutta la sala, loro compresi, in un baccanale:
+un incantesimo di magia sessuale e di sangue. Solo Grau e il barone ne
+restano fuori.

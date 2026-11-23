@@ -15,3 +15,8 @@ si aggirano per [[Berlino]].
 Il biglietto da visita con questo indirizzo arriva ad [[Agatha
 Fletcher|Agatha]] all'[[Hotel Savoy]]. Nel capitolo [[Lo specchio
 d'opale]] [[Kurt Weber|Kurt]] vende qui lo Specchio di Luce Pura.
+
+Il [[Der Berliner Bote|Berliner Bote]] ne pubblica un annuncio: curiosità
+egizie, maschere funerarie, ushabti e scritti rari. Sulla sua carta
+intestata arriva al Savoy la [[La lettera di Kurt Weber|lettera di Kurt
+Weber]] (capitolo [[La danza di Astarte]]).

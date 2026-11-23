@@ -14,3 +14,7 @@ libera [[Alistair]] e [[Hans Traeumer]].
 
 Alla fine del capitolo [[La Tessitrice di Incubi]] un'entità di nome
 Nomearod prende possesso di lui: un gatto di Saturno.
+
+A [[Berlino]], nel capitolo [[La danza di Astarte]], sembra di nuovo il
+gatto di sempre. Alla [[Weiße Maus]] porta una maschera bianca, e
+[[Albin Grau]] gli bacia la zampa.

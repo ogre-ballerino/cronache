@@ -18,3 +18,7 @@ Nel capitolo [[Lo specchio d'opale]] sostituisce il dito perduto di
 [[Agatha Fletcher|Agatha]] con quello di una scimmia in formaldeide, e vende
 al gruppo lo Specchio di Luce Pura e il Cristallizzatore di sogni in cambio
 di una "cortesia" ancora da pagare.
+
+Nel capitolo [[La danza di Astarte]] fa arrivare all'[[Hotel Savoy]], con
+la posta pneumatica, una [[La lettera di Kurt Weber|lettera]] con cinque
+biglietti per la [[Weiße Maus]] e una parola: *die Übertretung*.
