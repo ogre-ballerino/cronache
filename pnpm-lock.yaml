@@ -164,7 +164,9 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  sites/strahd:
     dependencies:
       '@astrojs/markdown-remark':
         specifier: ^7.3.0
