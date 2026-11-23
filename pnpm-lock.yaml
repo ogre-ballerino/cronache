@@ -164,7 +164,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    optionalDependencies:
+      parakeet-coreml:
+        specifier: ^2.2.0
+        version: 2.2.0
 
   packages/core:
     dependencies:
@@ -228,10 +232,6 @@ importers:
       pagefind:
         specifier: ^1.5.2
         version: 1.5.2
-    optionalDependencies:
-      parakeet-coreml:
-        specifier: ^2.2.0
-        version: 2.2.0
 
 packages:
 

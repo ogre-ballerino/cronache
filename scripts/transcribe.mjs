@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-// Transcribes an audio file in audio/ locally with Parakeet TDT v3
+// Transcribes a session recording locally with Parakeet TDT v3
 // (via parakeet-coreml, accelerated by the Neural Engine on Apple Silicon).
-// Usage: pnpm transcribe [-- audio/session-11.mp3]
-// With no argument, picks the only audio file in audio/ without a matching .txt.
+// Usage: pnpm transcribe <site>                          picks the only audio file in
+//                                                         sites/<site>/audio/ without a matching .txt
+//        pnpm transcribe sites/strahd/audio/session-11.mp3
 
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -16,12 +17,17 @@ import path from 'node:path';
 // (dist/index.cjs) works, so load it explicitly with createRequire.
 const { ParakeetAsrEngine } = createRequire(import.meta.url)('parakeet-coreml');
 
-const AUDIO_DIR = path.join(process.cwd(), 'audio');
 const AUDIO_EXTENSIONS = ['.mp3', '.m4a', '.wav', '.mp4', '.ogg', '.flac'];
 
 function findInputFile() {
   const arg = process.argv[2];
-  if (arg) return path.resolve(arg);
+  if (!arg) {
+    console.error('Usage: pnpm transcribe <site> | pnpm transcribe sites/<site>/audio/<file>');
+    process.exit(1);
+  }
+  if (arg.includes('/') || arg.includes('.')) return path.resolve(arg);
+
+  const AUDIO_DIR = path.join(process.cwd(), 'sites', arg, 'audio');
 
   if (!fs.existsSync(AUDIO_DIR)) {
     console.error(`Directory ${AUDIO_DIR} not found. Create it and put an audio file in it.`);
@@ -43,7 +49,7 @@ function findInputFile() {
   if (candidates.length > 1) {
     console.error(
       `Found several audio files without a transcript: ${candidates.join(', ')}.\n` +
-        `Pick one: pnpm transcribe -- audio/<file>`
+        `Pick one: pnpm transcribe sites/${arg}/audio/<file>`
     );
     process.exit(1);
   }
@@ -92,4 +98,4 @@ fs.writeFileSync(finalTxtPath, result.text, 'utf-8');
 
 const relTxt = path.relative(process.cwd(), finalTxtPath);
 console.log(`\nTranscript saved to ${relTxt} (${(result.durationMs / 1000).toFixed(1)}s processing time)`);
-console.log(`Next step: pnpm session -- ${relTxt}`);
+console.log(`Next step: pnpm session ${relTxt}`);

@@ -12,6 +12,11 @@
     "dev:strahd": "pnpm --filter strahd dev",
     "build:strahd": "pnpm --filter strahd build",
     "dev:cthulhu": "pnpm --filter cthulhu dev",
-    "build:cthulhu": "pnpm --filter cthulhu build"
+    "build:cthulhu": "pnpm --filter cthulhu build",
+    "transcribe": "node scripts/transcribe.mjs",
+    "session": "node scripts/session.mjs"
+  },
+  "optionalDependencies": {
+    "parakeet-coreml": "^2.2.0"
   }
 }
