@@ -1,4 +1,5 @@
 ---
+import { entryUrl } from '../../lib/collections.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import config from 'virtual:cronache/config';
@@ -13,7 +14,7 @@ const { title, heading, lede, description } = config.sections.png;
   <ul class="playbill">
     {npcs.map((p) => (
       <li>
-        <a class="playbill-name" href={`/png/${p.id}`}>
+        <a class="playbill-name" href={entryUrl('png', p.id)}>
           {p.data.titolo}
           {isDead(p.data.stato) && (
             <><span class="playbill-dagger" aria-hidden="true">&dagger;</span><span class="sr-only">({p.data.stato})</span></>

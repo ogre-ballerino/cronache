@@ -1,6 +1,7 @@
 ---
 import config from 'virtual:cronache/config';
 import { getBacklinksFor } from '../lib/backlinks';
+import { enabledCollections } from '../lib/collections.mjs';
 import { toRoman } from '../lib/format';
 
 interface Props {
@@ -9,16 +10,17 @@ interface Props {
 const { url } = Astro.props;
 const backlinks = (await getBacklinksFor(url)).toSorted((a, b) => (a.numero ?? 0) - (b.numero ?? 0));
 
-const { diario, personaggi, png, luoghi, handout } = config.sections;
 // The riassunto mentions nearly everything, so it's left out.
-const sections = [
-  { prefix: 'diario', label: diario.backlinks },
-  { prefix: 'personaggi', label: personaggi.label },
-  { prefix: 'png', label: png.label },
-  { prefix: 'luoghi', label: luoghi.label },
-  ...(config.features.handout ? [{ prefix: 'handout', label: handout.label }] : []),
-]
-  .map((s) => ({ ...s, links: backlinks.filter((l) => l.url.split('/')[1] === s.prefix) }))
+const sections = enabledCollections(config.features)
+  .filter((c) => !c.single)
+  .map((c) => {
+    const section: { label: string; backlinks?: string } = config.sections[c.section as keyof typeof config.sections];
+    return {
+      label: section.backlinks ?? section.label,
+      sessions: c.key === 'sessions',
+      links: backlinks.filter((l) => l.collection === c.key),
+    };
+  })
   .filter((s) => s.links.length > 0);
 ---
 {sections.length > 0 && (
@@ -29,7 +31,7 @@ const sections = [
         <>
           <dt>{s.label}</dt>
           <dd>
-            <ul class:list={{ 'backlinks-sessions': s.prefix === 'diario' }}>
+            <ul class:list={{ 'backlinks-sessions': s.sessions }}>
               {s.links.map((link) =>
                 link.numero ? (
                   <li>

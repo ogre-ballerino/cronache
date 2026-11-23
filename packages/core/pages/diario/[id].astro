@@ -1,4 +1,5 @@
 ---
+import { entryUrl } from '../../lib/collections.mjs';
 import { getCollection, render } from 'astro:content';
 import config from 'virtual:cronache/config';
 import EntryLayout from '../../layouts/EntryLayout.astro';
@@ -20,15 +21,16 @@ const { Content } = await render(entry);
   description={entry.data.estratto}
   meta={`${config.labels.session} ${toRoman(entry.data.numero)} · ${longDate(entry.data.data)}`}
   tags={entry.data.tag}
-  backlinksUrl={`/diario/${entry.id}`}
+  collection="sessions"
+  id={entry.id}
 >
   <Content />
   <nav slot="after" class="entry-pager" aria-label={config.labels.otherSessions}>
     {prev && (
-      <a href={`/diario/${prev.id}`}>&larr; {toRoman(prev.data.numero)}. {prev.data.titolo}</a>
+      <a href={entryUrl('sessions', prev.id)}>&larr; {toRoman(prev.data.numero)}. {prev.data.titolo}</a>
     )}
     {next && (
-      <a class="entry-pager-next" href={`/diario/${next.id}`}>{toRoman(next.data.numero)}. {next.data.titolo} &rarr;</a>
+      <a class="entry-pager-next" href={entryUrl('sessions', next.id)}>{toRoman(next.data.numero)}. {next.data.titolo} &rarr;</a>
     )}
   </nav>
 </EntryLayout>

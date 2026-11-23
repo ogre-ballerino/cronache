@@ -2,6 +2,7 @@
 import config from 'virtual:cronache/config';
 import BaseLayout from './BaseLayout.astro';
 import Backlinks from '../components/Backlinks.astro';
+import { collectionByKey, entryUrl } from '../lib/collections.mjs';
 import { isAlive, isLost } from '../lib/status.mjs';
 
 interface Props {
@@ -10,13 +11,14 @@ interface Props {
   meta?: string;
   status?: string;
   tags?: string[];
-  backlinksUrl: string;
+  collection: string;
+  id: string;
   image?: string;
 }
-const { title, description, meta, tags = [], backlinksUrl, image } = Astro.props;
+const { title, description, meta, tags = [], collection, id, image } = Astro.props;
 const status = isAlive(Astro.props.status) ? undefined : Astro.props.status;
 
-const section = config.sections[backlinksUrl.split('/')[1] as keyof typeof config.sections]?.label;
+const section = config.sections[collectionByKey(collection)!.section as keyof typeof config.sections].label;
 ---
 <BaseLayout title={title} description={description} type="article">
   <article data-pagefind-body data-pagefind-filter={section && `sezione:${section}`}>
@@ -35,7 +37,7 @@ const section = config.sections[backlinksUrl.split('/')[1] as keyof typeof confi
       <slot />
     </div>
     <div data-pagefind-ignore>
-      <Backlinks url={backlinksUrl} />
+      <Backlinks url={entryUrl(collection, id)} />
       <slot name="after" />
     </div>
   </article>

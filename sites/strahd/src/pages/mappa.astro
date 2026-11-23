@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import { entryUrl } from '@cronache/core/lib/collections.mjs';
 import { getCollection } from 'astro:content';
 import { getSlugMap, normalize } from '@cronache/core/lib/wikilinks.mjs';
 
@@ -10,8 +11,8 @@ const slugMap = getSlugMap();
 const visitedUrls = new Set<string>();
 for (const s of await getCollection('sessions')) {
   for (const name of s.data.luoghiVisitati) {
-    const url = slugMap.get(normalize(name))?.url;
-    if (url?.startsWith('/luoghi/')) visitedUrls.add(url);
+    const target = slugMap.get(normalize(name));
+    if (target?.collection === 'luoghi') visitedUrls.add(target.url);
     else console.warn(`[mappa] luoghiVisitati in ${s.id}: "${name}" is not a place`);
   }
 }
@@ -117,12 +118,12 @@ function smooth(pts: P[]) {
       </g>
 
       {nodes.map((n) => {
-        const visited = visitedUrls.has(`/luoghi/${n.id}`);
+        const visited = visitedUrls.has(entryUrl('luoghi', n.id));
         const title = n.entry!.data.titolo;
         const r = n.large ? 18 : 13;
         const labelWidth = title.length * 14.5 + 32;
         return (
-          <a href={`/luoghi/${n.id}`} class="map-pin-link">
+          <a href={entryUrl('luoghi', n.id)} class="map-pin-link">
             {n.large && <circle cx={n.x} cy={n.y} r={r * 4} fill="url(#castle-glow)" />}
             <circle
               cx={n.x}

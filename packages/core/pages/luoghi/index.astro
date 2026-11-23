@@ -1,4 +1,5 @@
 ---
+import { entryUrl } from '../../lib/collections.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import Card from '../../components/Card.astro';
@@ -14,7 +15,7 @@ const { title, heading, lede, description } = config.sections.luoghi;
   <CardGrid>
     {places.map((l) => (
       <Card
-        href={`/luoghi/${l.id}`}
+        href={entryUrl('luoghi', l.id)}
         title={l.data.titolo}
         excerpt={l.data.estratto}
         meta={[l.data.tipo, l.data.regione].filter(Boolean).join(' · ')}

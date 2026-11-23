@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import { entryUrl } from '@cronache/core/lib/collections.mjs';
 import NextSession from '@cronache/core/components/NextSession.astro';
 import SessionIndex from '@cronache/core/components/SessionIndex.astro';
 import { getCollection } from 'astro:content';
@@ -37,9 +38,9 @@ const castRows = [
         <span>Ultimo capitolo · {toRoman(latest.data.numero)}</span>
         <span>{longDate(latest.data.data)}</span>
       </p>
-      <h2><a href={`/diario/${latest.id}`}>{latest.data.titolo}</a></h2>
+      <h2><a href={entryUrl('sessions', latest.id)}>{latest.data.titolo}</a></h2>
       {latest.data.estratto && <p class="drop-cap">{latest.data.estratto}</p>}
-      <p class="read-more"><a href={`/diario/${latest.id}`}>Continua a leggere</a></p>
+      <p class="read-more"><a href={entryUrl('sessions', latest.id)}>Continua a leggere</a></p>
     </section>
   )}
 
@@ -50,7 +51,7 @@ const castRows = [
       {castRows.map((row) => (
         <div class="cast-grid">
           {row.map((p) => (
-            <a class="cast-portrait" href={`/personaggi/${p.id}`}>
+            <a class="cast-portrait" href={entryUrl('personaggi', p.id)}>
               <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={fullPortrait(p.id)} alt="" loading="lazy" />
               <span>{p.data.titolo}</span>
               {p.data.sottotitolo && <span class="cast-subtitle">{p.data.sottotitolo}</span>}
@@ -69,7 +70,7 @@ const castRows = [
       <ul class="dramatis">
         {characters.map((p) => (
           <li>
-            <a href={`/personaggi/${p.id}`}>{p.data.titolo}</a>
+            <a href={entryUrl('personaggi', p.id)}>{p.data.titolo}</a>
             {p.data.professione && <span> {p.data.professione}</span>}
             {!isAlive(p.data.stato) && <span class={`badge badge-${p.data.stato}`}> {p.data.stato}</span>}
           </li>

@@ -3,29 +3,24 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
+import { enabledCollections } from './lib/collections.mjs';
 import { resolveConfig } from './config.mjs';
 import rehypeHeadingLinks from './lib/rehype-heading-links.mjs';
 import remarkWikilinks from './lib/remark-wikilinks.mjs';
 
 export { defineCampaign } from './config.mjs';
 
-const ROUTES = [
-  ['/diario', 'diario/index.astro'],
-  ['/diario/[id]', 'diario/[id].astro'],
-  ['/personaggi', 'personaggi/index.astro'],
-  ['/personaggi/[id]', 'personaggi/[id].astro'],
-  ['/png', 'png/index.astro'],
-  ['/png/[id]', 'png/[id].astro'],
-  ['/luoghi', 'luoghi/index.astro'],
-  ['/luoghi/[id]', 'luoghi/[id].astro'],
-  ['/riassunto', 'riassunto.astro'],
-  ['/cerca', 'cerca.astro'],
-];
-
-const HANDOUT_ROUTES = [
-  ['/handout', 'handout/index.astro'],
-  ['/handout/[id]', 'handout/[id].astro'],
-];
+function routes(features) {
+  const pages = enabledCollections(features).flatMap(({ section, single }) =>
+    single
+      ? [[`/${section}`, `${section}.astro`]]
+      : [
+          [`/${section}`, `${section}/index.astro`],
+          [`/${section}/[id]`, `${section}/[id].astro`],
+        ]
+  );
+  return [...pages, ['/cerca', 'cerca.astro']];
+}
 
 function virtualModules(config, root) {
   const require = createRequire(path.join(root, 'package.json'));
@@ -59,7 +54,7 @@ export default function cronache(userConfig) {
           },
           vite: { plugins: [virtualModules(config, fileURLToPath(astroConfig.root))] },
         });
-        for (const [pattern, page] of [...ROUTES, ...(config.features.handout ? HANDOUT_ROUTES : [])]) {
+        for (const [pattern, page] of routes(config.features)) {
           injectRoute({ pattern, entrypoint: `@cronache/core/pages/${page}` });
         }
       },

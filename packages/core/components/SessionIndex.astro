@@ -1,4 +1,5 @@
 ---
+import { entryUrl } from '../lib/collections.mjs';
 import type { CollectionEntry } from 'astro:content';
 import config from 'virtual:cronache/config';
 import { toRoman } from '../lib/format';
@@ -16,7 +17,7 @@ const seasons = groupBySeason(Astro.props.sessions);
       {sessions.map((s) => (
         <li>
           <span class="session-index-number">{toRoman(s.data.numero)}</span>
-          <a href={`/diario/${s.id}`}>{s.data.titolo}</a>
+          <a href={entryUrl('sessions', s.id)}>{s.data.titolo}</a>
           <span class="session-index-leader" aria-hidden="true"></span>
           <span class="session-index-date">
             {s.data.data.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' })}

@@ -1,29 +1,20 @@
 import { getCollection, type CollectionKey } from 'astro:content';
 import config from 'virtual:cronache/config';
+import { enabledCollections, entryUrl } from './collections.mjs';
 import { getSlugMap, normalize, WIKILINK_RE } from './wikilinks.mjs';
 
-type Backlink = { title: string; url: string; numero?: number };
+type Backlink = { title: string; url: string; collection: string; numero?: number };
 
 let backlinkCache: Map<string, Backlink[]> | null = null;
-
-const COLLECTIONS = [
-  'sessions',
-  'personaggi',
-  'png',
-  'luoghi',
-  ...(config.features.handout ? ['handout'] : []),
-  'riassunto',
-] as const;
 
 async function buildBacklinkIndex() {
   const index = new Map<string, Backlink[]>();
   const slugMap = getSlugMap();
 
-  for (const collectionName of COLLECTIONS) {
-    const entries = await getCollection(collectionName as CollectionKey);
+  for (const { key } of enabledCollections(config.features)) {
+    const entries = await getCollection(key as CollectionKey);
     for (const entry of entries) {
-      const sourceEntry = slugMap.get(normalize(entry.data.titolo ?? entry.id));
-      if (!sourceEntry) continue;
+      const sourceEntry = { title: entry.data.titolo, url: entryUrl(key, entry.id) };
 
       const names = [...(entry.body ?? '').matchAll(WIKILINK_RE)].map((m) => m[1]);
       // Sessions often name the place they're in as plain text.
@@ -37,6 +28,7 @@ async function buildBacklinkIndex() {
           list.push({
             title: sourceEntry.title,
             url: sourceEntry.url,
+            collection: key,
             numero: 'numero' in entry.data ? entry.data.numero : undefined,
           });
         }

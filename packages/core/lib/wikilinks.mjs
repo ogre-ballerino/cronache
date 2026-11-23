@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { COLLECTIONS, entryUrl } from './collections.mjs';
 
 // Resolved from the current working directory rather than import.meta.url:
 // Astro moves this module under dist/.prerender/ during build, which would
@@ -7,15 +8,6 @@ import path from 'node:path';
 // and build) is always invoked from the project root, so process.cwd() is
 // the stable anchor here.
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content');
-
-const COLLECTION_ROUTES = {
-  sessions: '/diario',
-  personaggi: '/personaggi',
-  png: '/png',
-  luoghi: '/luoghi',
-  handout: '/handout',
-  riassunto: '/riassunto',
-};
 
 export const WIKILINK_RE = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
 
@@ -62,7 +54,7 @@ export function getSlugMap() {
   if (cache) return cache;
   cache = new Map();
 
-  for (const [collection, routeBase] of Object.entries(COLLECTION_ROUTES)) {
+  for (const { key: collection } of COLLECTIONS) {
     const dir = path.join(CONTENT_DIR, collection);
     if (!fs.existsSync(dir)) continue;
 
@@ -71,7 +63,7 @@ export function getSlugMap() {
       const id = file.replace(/\.md$/, '');
       const raw = fs.readFileSync(path.join(dir, file), 'utf-8');
       const title = frontmatterField(raw, 'titolo') ?? id;
-      const url = collection === 'riassunto' ? routeBase : `${routeBase}/${id}`;
+      const url = entryUrl(collection, id);
       const entry = {
         url,
         title,

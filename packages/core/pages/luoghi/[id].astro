@@ -19,7 +19,8 @@ const meta = [entry.data.tipo, entry.data.regione].filter(Boolean).join(' · ');
   description={entry.data.estratto}
   meta={meta}
   tags={entry.data.tag}
-  backlinksUrl={`/luoghi/${entry.id}`}
+  collection="luoghi"
+  id={entry.id}
 >
   <Content />
 </EntryLayout>
