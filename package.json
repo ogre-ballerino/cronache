@@ -10,6 +10,8 @@
   "scripts": {
     "build:all": "pnpm -r --filter './sites/*' build",
     "dev:strahd": "pnpm --filter strahd dev",
-    "build:strahd": "pnpm --filter strahd build"
+    "build:strahd": "pnpm --filter strahd build",
+    "dev:cthulhu": "pnpm --filter cthulhu dev",
+    "build:cthulhu": "pnpm --filter cthulhu build"
   }
 }
