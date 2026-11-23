@@ -22,7 +22,7 @@ export default defineCampaign({
     '@fontsource/im-fell-dw-pica/400.css',
     '@fontsource/im-fell-dw-pica/400-italic.css',
     '@fontsource/im-fell-great-primer/400.css',
-    './src/styles/global.css',
+    './src/styles/theme.css',
   ],
   footer: {
     ornament: '&#8258;',

@@ -13,7 +13,7 @@ export default defineCampaign({
     '@fontsource/cormorant-garamond/600.css',
     '@fontsource/unifrakturmaguntia/400.css',
     '@fontsource/reenie-beanie/400.css',
-    './src/styles/global.css',
+    './src/styles/theme.css',
   ],
   features: { handout: true },
   footer: {
