@@ -45,6 +45,7 @@ export default function cronache(userConfig) {
     hooks: {
       'astro:config:setup': ({ config: astroConfig, updateConfig, injectRoute }) => {
         updateConfig({
+          trailingSlash: 'always',
           integrations: [sitemap()],
           markdown: {
             processor: unified({

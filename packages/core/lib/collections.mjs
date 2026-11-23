@@ -15,11 +15,12 @@ export const enabledCollections = (features) => COLLECTIONS.filter((c) => !c.fea
 
 export const collectionByKey = (key) => COLLECTIONS.find((c) => c.key === key);
 
+// Trailing slashes match the built directories, the canonicals and the sitemap.
 export const sectionUrl = (section) => `/${section}/`;
 
 /** @param {string} key @param {string} [id] */
 export function entryUrl(key, id) {
   const collection = collectionByKey(key);
   if (!collection) throw new Error(`Unknown collection: ${key}`);
-  return collection.single ? sectionUrl(collection.section) : `/${collection.section}/${id}`;
+  return collection.single ? sectionUrl(collection.section) : `/${collection.section}/${id}/`;
 }

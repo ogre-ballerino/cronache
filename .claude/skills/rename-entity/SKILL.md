@@ -53,11 +53,11 @@ For every filename that changed or was removed, add a permanent redirect to the 
 ```toml
 [[redirects]]
   from = "/png/ismarc"
-  to = "/png/ismark-kolyanovich"
+  to = "/png/ismark-kolyanovich/"
   status = 301
 ```
 
-The section prefix is the collection's route: `/personaggi`, `/png`, `/luoghi`, `/diario`, `/handout`.
+The section prefix is the collection's route: `/personaggi`, `/png`, `/luoghi`, `/diario`, `/handout`. The `to` URL ends in `/` (every page URL does; without it the visitor gets a second redirect).
 
 ## 5. Verify
 
