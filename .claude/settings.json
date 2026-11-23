@@ -3,7 +3,7 @@
     "allow": [
       "Bash(pnpm build:all)",
       "Bash(pnpm -C sites/strahd build)",
-      "Bash(pnpm -C sites/cthulhu build)"
+      "Bash(pnpm -C sites/ombre build)"
     ]
   }
 }

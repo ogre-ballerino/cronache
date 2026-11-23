@@ -5,7 +5,7 @@ Companion sites for Italian-language tabletop RPG campaigns: session journal, ch
 | Site | Campaign | URL |
 |---|---|---|
 | [`sites/strahd`](./sites/strahd) | *Curse of Strahd* (D&D 5e) | [strahd.ogreballerino.com](https://strahd.ogreballerino.com) |
-| [`sites/cthulhu`](./sites/cthulhu) | *L'Equilibrio delle Ombre* (Call of Cthulhu 7e) | [ombre.ogreballerino.com](https://ombre.ogreballerino.com) |
+| [`sites/ombre`](./sites/ombre) | *L'Equilibrio delle Ombre* (Call of Cthulhu 7e) | [ombre.ogreballerino.com](https://ombre.ogreballerino.com) |
 
 The engine is [`packages/core`](./packages/core) (`@cronache/core`), an Astro integration: content schema, wikilinks, backlinks, margin notes, layouts, the shared pages and the base stylesheet. Each site brings its content, a `campaign.config.mjs` (name, labels, fonts, features), a theme and its home page.
 

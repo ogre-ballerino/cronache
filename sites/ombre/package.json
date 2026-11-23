@@ -1,5 +1,5 @@
 {
-  "name": "cthulhu",
+  "name": "ombre",
   "type": "module",
   "version": "0.1.0",
   "private": true,
@@ -26,6 +26,6 @@
   "repository": {
     "type": "git",
     "url": "github:sirlisko/cronache",
-    "directory": "sites/cthulhu"
+    "directory": "sites/ombre"
   }
 }
