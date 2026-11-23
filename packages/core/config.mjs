@@ -1,0 +1,113 @@
+/**
+ * @typedef {object} SectionText
+ * @property {string} label        Nav entry, search filter and backlink group.
+ * @property {string} [title]      Page <title>; defaults to `label`.
+ * @property {string} [heading]    Page <h1>; defaults to `title`.
+ * @property {string} [lede]
+ * @property {string} [description] Meta description.
+ */
+
+/**
+ * @typedef {object} CampaignConfig
+ * @property {string} name               Site name, used in <title> and Open Graph.
+ * @property {string} description        Default meta description.
+ * @property {string} ogImageAlt         Alt text of /images/og.png.
+ * @property {string} [headerTitle]      HTML of the header link on inner pages; defaults to `name`.
+ * @property {{ href: string, label: string }[]} [nav]
+ * @property {string[]} [css]            Stylesheets, in order: bare specifiers (fonts) or paths relative to the site root.
+ * @property {{ handout?: boolean }} [features]
+ * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
+ * @property {{ endpoint: string } | { at: string }} [nextSession]
+ *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
+ *   `at`: a fixed local wall-clock time, e.g. '2026-11-28T16:30:00'.
+ * @property {Partial<typeof defaults.labels>} [labels]
+ * @property {{ [K in keyof typeof defaults.sections]?: Partial<(typeof defaults.sections)[K]> }} [sections]
+ */
+
+const defaults = {
+  labels: {
+    session: 'Sessione',
+    season: 'Stagione',
+    mentionedIn: 'Menzionato in',
+    otherSessions: 'Altre sessioni',
+    nextSession: 'Prossima sessione',
+  },
+  sections: {
+    diario: {
+      label: 'Diario',
+      backlinks: 'Sessioni',
+      heading: 'Diario delle sessioni',
+      lede: 'Il resoconto di ogni serata di gioco, dalla più recente.',
+      description:
+        "Il diario di tutte le sessioni della campagna, dalla prima all'ultima, con il racconto di ciò che la compagnia ha vissuto.",
+    },
+    personaggi: {
+      label: 'Personaggi',
+      lede: 'Gli avventurieri del gruppo.',
+      description: 'I personaggi della compagnia: chi sono, da dove vengono e cosa hanno affrontato finora.',
+      // Frontmatter fields shown first in a character's meta line.
+      metaFields: ['classe'],
+    },
+    png: {
+      label: 'Png',
+      title: 'PNG',
+      heading: 'Personaggi Non Giocanti',
+      lede: 'Alleati, nemici e comparse incontrate lungo il cammino.',
+      description: 'I personaggi non giocanti incontrati dalla compagnia: alleati, nemici e figure misteriose.',
+    },
+    luoghi: {
+      label: 'Luoghi',
+      lede: 'Villaggi, città e altri luoghi della campagna.',
+      description: 'I luoghi visitati o sentiti nominare dalla compagnia nel corso della campagna.',
+    },
+    handout: {
+      label: 'Handout',
+      lede: "Documenti, fotografie e pagine, nell'ordine in cui sono arrivati sul tavolo.",
+      description: 'I documenti e le immagini che la compagnia ha avuto tra le mani nel corso della campagna.',
+    },
+    riassunto: {
+      label: 'Riassunto',
+      description: "Il riassunto della campagna: la storia della compagnia dalle origini fino all'ultima sessione giocata.",
+    },
+    cerca: {
+      label: 'Cerca',
+      lede: 'Cerca tra sessioni, personaggi, png e luoghi.',
+      description: 'Cerca tra sessioni, personaggi, PNG e luoghi della campagna.',
+      placeholder: 'Cerca…',
+    },
+  },
+};
+
+/** @param {CampaignConfig} config */
+export function defineCampaign(config) {
+  return config;
+}
+
+/** @param {CampaignConfig} user */
+export function resolveConfig(user) {
+  const features = { handout: false, ...user.features };
+  const sections = Object.fromEntries(
+    Object.entries(defaults.sections).map(([key, base]) => {
+      const merged = { ...base, ...user.sections?.[key] };
+      merged.title ??= merged.label;
+      merged.heading ??= merged.title;
+      return [key, merged];
+    })
+  );
+  const href = (key) => (key === 'riassunto' ? '/riassunto/' : `/${key}/`);
+  const navKeys = ['riassunto', 'diario', 'personaggi', 'png', 'luoghi', ...(features.handout ? ['handout'] : []), 'cerca'];
+
+  return {
+    ...user,
+    headerTitle: user.headerTitle ?? user.name,
+    nav: user.nav ?? navKeys.map((key) => ({ href: href(key), label: sections[key].label })),
+    css: user.css ?? [],
+    features,
+    footer: user.footer ?? { ornament: '', lines: [] },
+    nextSession: user.nextSession ?? null,
+    labels: { ...defaults.labels, ...user.labels },
+    sections,
+  };
+}
+
+/** @typedef {ReturnType<typeof resolveConfig>} ResolvedCampaignConfig */

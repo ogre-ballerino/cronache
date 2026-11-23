@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { characterMeta } from '../../lib/characters';
+
+const characters = (await getCollection('personaggi')).sort((a, b) =>
+  a.data.titolo.localeCompare(b.data.titolo)
+);
+const { title, heading, lede, description } = config.sections.personaggi;
+---
+<BaseLayout title={title} description={description}>
+  <h1 class="page-title">{heading}</h1>
+  <p class="page-lede">{lede}</p>
+  <CardGrid>
+    {characters.map((p) => (
+      <Card
+        href={`/personaggi/${p.id}`}
+        title={p.data.titolo}
+        excerpt={p.data.estratto}
+        meta={characterMeta(p.data)}
+        status={p.data.stato}
+        image={p.data.immagine}
+      />
+    ))}
+  </CardGrid>
+</BaseLayout>

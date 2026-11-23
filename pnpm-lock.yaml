@@ -166,6 +166,22 @@ importers:
 
   .: {}
 
+  packages/core:
+    dependencies:
+      '@astrojs/markdown-remark':
+        specifier: ^7.3.0
+        version: 7.3.1
+      '@astrojs/sitemap':
+        specifier: ^3.7.4
+        version: 3.7.4
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.1.0
+    devDependencies:
+      astro:
+        specifier: ^7.3.1
+        version: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.6)
+
   sites/cthulhu:
     dependencies:
       '@astrojs/markdown-remark':
@@ -196,12 +212,9 @@ importers:
 
   sites/strahd:
     dependencies:
-      '@astrojs/markdown-remark':
-        specifier: ^7.3.0
-        version: 7.3.1
-      '@astrojs/sitemap':
-        specifier: ^3.7.4
-        version: 3.7.4
+      '@cronache/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@fontsource/im-fell-dw-pica':
         specifier: ^5.3.0
         version: 5.3.0
@@ -221,9 +234,6 @@ importers:
       pagefind:
         specifier: ^1.5.2
         version: 1.5.2
-      unist-util-visit:
-        specifier: ^5.0.0
-        version: 5.1.0
     optionalDependencies:
       parakeet-coreml:
         specifier: ^2.2.0

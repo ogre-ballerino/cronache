@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { handoutMeta } from '../../lib/handout';
+
+const handouts = (await getCollection('handout')).sort(
+  (a, b) => a.data.capitolo - b.data.capitolo || a.data.titolo.localeCompare(b.data.titolo)
+);
+const { title, heading, lede, description } = config.sections.handout;
+---
+<BaseLayout title={title} description={description}>
+  <h1 class="page-title">{heading}</h1>
+  <p class="page-lede">{lede}</p>
+  <CardGrid>
+    {handouts.map((h) => (
+      <Card
+        href={`/handout/${h.id}`}
+        title={h.data.titolo}
+        excerpt={h.data.estratto}
+        meta={handoutMeta(h.data)}
+        image={h.data.immagine}
+      />
+    ))}
+  </CardGrid>
+</BaseLayout>

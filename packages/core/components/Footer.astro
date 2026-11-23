@@ -1,0 +1,9 @@
+---
+import config from 'virtual:cronache/config';
+
+const { ornament, lines } = config.footer;
+---
+<footer class="site-footer">
+  {ornament && <div class="ornament" aria-hidden="true" set:html={ornament} />}
+  {lines.map((line) => <p set:html={line} />)}
+</footer>

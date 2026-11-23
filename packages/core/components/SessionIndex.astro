@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { toRoman } from '../lib/format';
+import { groupBySeason } from '../lib/seasons';
+
+interface Props {
+  sessions: CollectionEntry<'sessions'>[];
+}
+const seasons = groupBySeason(Astro.props.sessions);
+---
+{seasons.map(({ stagione, sessions }) => (
+  <>
+    {stagione && <h3 class="season-heading">{config.labels.season} {toRoman(stagione)}</h3>}
+    <ol class="session-index">
+      {sessions.map((s) => (
+        <li>
+          <span class="session-index-number">{toRoman(s.data.numero)}</span>
+          <a href={`/diario/${s.id}`}>{s.data.titolo}</a>
+          <span class="session-index-leader" aria-hidden="true"></span>
+          <span class="session-index-date">
+            {s.data.data.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' })}
+          </span>
+        </li>
+      ))}
+    </ol>
+  </>
+))}

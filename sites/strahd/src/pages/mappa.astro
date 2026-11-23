@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import { getSlugMap, normalize } from '../lib/wikilinks.mjs';
+import { getSlugMap, normalize } from '@cronache/core/lib/wikilinks.mjs';
 
 const places = await getCollection('luoghi');
 const byId = Object.fromEntries(places.map((l) => [l.id, l]));

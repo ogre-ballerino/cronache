@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { isAlive, isDead } from '../../lib/status.mjs';
+
+const npcs = (await getCollection('png')).sort((a, b) => a.data.titolo.localeCompare(b.data.titolo));
+const { title, heading, lede, description } = config.sections.png;
+---
+<BaseLayout title={title} description={description}>
+  <h1 class="page-title">{heading}</h1>
+  <p class="page-lede">{lede}</p>
+  <ul class="playbill">
+    {npcs.map((p) => (
+      <li>
+        <a class="playbill-name" href={`/png/${p.id}`}>
+          {p.data.titolo}
+          {isDead(p.data.stato) && (
+            <><span class="playbill-dagger" aria-hidden="true">&dagger;</span><span class="sr-only">({p.data.stato})</span></>
+          )}
+        </a>
+        <span class="playbill-role">
+          {p.data.ruolo}
+          {!isAlive(p.data.stato) && !isDead(p.data.stato) && (
+            <>{p.data.ruolo && ' · '}<span class="playbill-status">{p.data.stato}</span></>
+          )}
+        </span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

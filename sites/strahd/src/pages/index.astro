@@ -1,8 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import NextSession from '@cronache/core/components/NextSession.astro';
+import SessionIndex from '@cronache/core/components/SessionIndex.astro';
 import { getCollection } from 'astro:content';
-import { toRoman, longDate } from '../lib/format';
-import { fullPortrait } from '../lib/portraits';
+import { toRoman, longDate } from '@cronache/core/lib/format';
+import { fullPortrait } from '@cronache/core/lib/portraits';
 
 const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
 const latest = sessions[0];
@@ -13,9 +15,12 @@ const characters = (await getCollection('personaggi')).sort((a, b) =>
 const party = characters.filter((p) => fullPortrait(p.id));
 ---
 <BaseLayout masthead>
-  <p class="next-session" id="next-session" hidden>
-    Prossima sessione: <span id="next-session-value"></span>
-  </p>
+  <Fragment slot="masthead">
+    <p class="masthead-kicker">diario di campagna</p>
+    <h1 class="masthead-title">La Maledizione<br /><em>di</em> Strahd</h1>
+  </Fragment>
+
+  <NextSession />
 
   {latest && (
     <section class="latest-session">
@@ -28,37 +33,6 @@ const party = characters.filter((p) => fullPortrait(p.id));
       <p class="read-more"><a href={`/diario/${latest.id}`}>Continua a leggere</a> &rarr;</p>
     </section>
   )}
-
-  <script>
-    const endpoint = 'https://cms.sirlisko.com/items/strahd';
-    const item = document.getElementById('next-session');
-    const valueEl = document.getElementById('next-session-value');
-
-    fetch(endpoint)
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .then(({ data }) => {
-        if (!data?.next_session || !item || !valueEl) return;
-        const sessionDate = new Date(data.next_session);
-        if (Number.isNaN(sessionDate.getTime())) return;
-        if (sessionDate.getTime() < Date.now()) return; // already happened
-
-        const day = sessionDate.toLocaleDateString('it-IT', {
-          weekday: 'long',
-          day: 'numeric',
-          month: 'long',
-        });
-        const time = sessionDate.toLocaleTimeString('it-IT', {
-          hour: '2-digit',
-          minute: '2-digit',
-        });
-
-        valueEl.textContent = `${day} alle ${time}`;
-        item.hidden = false;
-      })
-      .catch(() => {
-        // CMS unreachable: leave the next session hidden.
-      });
-  </script>
 
   {party.length > 0 && (
     <section>
@@ -78,17 +52,6 @@ const party = characters.filter((p) => fullPortrait(p.id));
   <section>
     <div class="ornament" aria-hidden="true">&#8258;</div>
     <h2 class="section-title">Indice delle sessioni</h2>
-    <ol class="session-index">
-      {sessions.map((s) => (
-        <li>
-          <span class="session-index-number">{toRoman(s.data.numero)}</span>
-          <a href={`/diario/${s.id}`}>{s.data.titolo}</a>
-          <span class="session-index-leader" aria-hidden="true"></span>
-          <span class="session-index-date">
-            {s.data.data.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' })}
-          </span>
-        </li>
-      ))}
-    </ol>
+    <SessionIndex sessions={sessions} />
   </section>
 </BaseLayout>

@@ -1,0 +1,15 @@
+---
+import { getEntry, render } from 'astro:content';
+import config from 'virtual:cronache/config';
+import EntryLayout from '../layouts/EntryLayout.astro';
+
+const entry = await getEntry('riassunto', 'overview');
+const { Content } = await render(entry);
+---
+<EntryLayout
+  title={entry.data.titolo}
+  description={config.sections.riassunto.description}
+  backlinksUrl="/riassunto"
+>
+  <Content />
+</EntryLayout>

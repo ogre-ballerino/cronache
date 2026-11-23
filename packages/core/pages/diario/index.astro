@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { toRoman, longDate } from '../../lib/format';
+import { groupBySeason } from '../../lib/seasons';
+
+const seasons = groupBySeason(await getCollection('sessions'));
+const { title, heading, lede, description } = config.sections.diario;
+---
+<BaseLayout title={title} description={description}>
+  <h1 class="page-title">{heading}</h1>
+  <p class="page-lede">{lede}</p>
+
+  {seasons.map(({ stagione, sessions }) => {
+    const timeline = (
+      <ol class="timeline">
+        {sessions.map((s) => (
+          <li class="timeline-item">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="timeline-body">
+              <span class="timeline-meta">{config.labels.session} {toRoman(s.data.numero)} · {longDate(s.data.data)}</span>
+              <a class="timeline-title" href={`/diario/${s.id}`}>{s.data.titolo}</a>
+              {s.data.estratto && <p class="timeline-excerpt">{s.data.estratto}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    );
+    return stagione ? (
+      <section class="season">
+        <h2 class="season-heading">{config.labels.season} {toRoman(stagione)}</h2>
+        {timeline}
+      </section>
+    ) : (
+      timeline
+    );
+  })}
+</BaseLayout>

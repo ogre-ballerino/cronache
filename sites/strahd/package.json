@@ -17,8 +17,7 @@
     "session": "node scripts/session.mjs"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.0",
-    "@astrojs/sitemap": "^3.7.4",
+    "@cronache/core": "workspace:*",
     "@fontsource/im-fell-dw-pica": "^5.3.0",
     "@fontsource/im-fell-english": "^5.3.0",
     "@fontsource/im-fell-english-sc": "^5.3.0",
@@ -29,7 +28,6 @@
     "parakeet-coreml": "^2.2.0"
   },
   "devDependencies": {
-    "pagefind": "^1.5.2",
-    "unist-util-visit": "^5.0.0"
+    "pagefind": "^1.5.2"
   }
 }

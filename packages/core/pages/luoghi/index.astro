@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+
+const places = (await getCollection('luoghi')).sort((a, b) => a.data.titolo.localeCompare(b.data.titolo));
+const { title, heading, lede, description } = config.sections.luoghi;
+---
+<BaseLayout title={title} description={description}>
+  <h1 class="page-title">{heading}</h1>
+  <p class="page-lede">{lede}</p>
+  <CardGrid>
+    {places.map((l) => (
+      <Card
+        href={`/luoghi/${l.id}`}
+        title={l.data.titolo}
+        excerpt={l.data.estratto}
+        meta={[l.data.tipo, l.data.regione].filter(Boolean).join(' · ')}
+      />
+    ))}
+  </CardGrid>
+</BaseLayout>

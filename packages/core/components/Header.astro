@@ -1,0 +1,23 @@
+---
+import config from 'virtual:cronache/config';
+
+interface Props {
+  masthead?: boolean;
+}
+const { masthead = false } = Astro.props;
+
+const path = Astro.url.pathname;
+const isWithin = (href: string) => path === href.slice(0, -1) || path.startsWith(href);
+---
+<header class:list={['site-header', { 'site-header-masthead': masthead }]}>
+  {masthead ? (
+    <slot name="masthead" />
+  ) : (
+    <a href="/" class="site-header-title" set:html={config.headerTitle} />
+  )}
+  <nav class="site-nav" aria-label="Navigazione principale">
+    {config.nav.map((l) => (
+      <a href={l.href} aria-current={isWithin(l.href) ? 'page' : undefined}>{l.label}</a>
+    ))}
+  </nav>
+</header>
