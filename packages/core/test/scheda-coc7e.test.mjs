@@ -53,9 +53,9 @@ describe('coc7e: history', () => {
     next.sanita.attuale = 41;
     next.abilita[0].valore = 64;
     next.stati.push('folliaTemporanea');
-    const groups = Object.fromEntries(diffSheets(sheet, next).map((g) => [g.titolo, g.voci]));
-    assert.deepEqual(groups['Valori'], ['Sanity 48 → 41']);
-    assert.deepEqual(groups['Abilità migliorate'], ['History 60 → 64']);
-    assert.deepEqual(groups['Nuovi stati'], ['Temporary Insanity']);
+    const groups = Object.fromEntries(diffSheets(sheet, next).map((g) => [g.key, g.voci]));
+    assert.deepEqual(groups.values, ['Sanity 48 → 41']);
+    assert.deepEqual(groups.raisedSkills, ['History 60 → 64']);
+    assert.deepEqual(groups.newStates, ['Temporary Insanity']);
   });
 });

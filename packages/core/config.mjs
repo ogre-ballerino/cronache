@@ -1,4 +1,5 @@
 import { enabledCollections, sectionUrl } from './lib/collections.mjs';
+import { SHEET_TEXT } from './lib/scheda/text.mjs';
 
 /**
  * @typedef {object} SectionText
@@ -38,6 +39,8 @@ const defaults = {
     sheetDownload: 'Scarica il PDF',
     sheetBack: 'Torna al personaggio',
     sheetFirst: 'Prima scheda registrata.',
+    /** The sheet pages' text for `features.schede`'s system: defaults in lib/scheda/text.mjs, override any key. */
+    sheetText: /** @type {Record<string, string>} */ ({}),
   },
   sections: {
     diario: {
@@ -111,7 +114,11 @@ export function resolveConfig(user) {
     features,
     footer: user.footer ?? { ornament: '', lines: [] },
     nextSession: user.nextSession ?? null,
-    labels: { ...defaults.labels, ...user.labels },
+    labels: {
+      ...defaults.labels,
+      ...user.labels,
+      sheetText: { ...(features.schede ? SHEET_TEXT[features.schede] : {}), ...user.labels?.sheetText },
+    },
     sections,
   };
 }

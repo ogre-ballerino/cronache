@@ -161,10 +161,10 @@ describe('diffSheets', () => {
       warlock({ extraItems: [{ type: 'feat', name: "Dark One's Own Luck", system: { type: { value: 'class' } } }] }),
       { data: '2026-11-24' }
     );
-    const groups = Object.fromEntries(diffSheets(before, after).map((g) => [g.titolo, g.voci]));
-    assert.deepEqual(groups['Valori'], ['Hit Points: 38 → 45']);
-    assert.deepEqual(groups['Nuovi privilegi'], ["Dark One's Own Luck"]);
-    assert.equal(groups['Oggetti nuovi'], undefined);
+    const groups = Object.fromEntries(diffSheets(before, after).map((g) => [g.key, g.voci]));
+    assert.deepEqual(groups.values, ['Hit Points: 38 → 45']);
+    assert.deepEqual(groups.newFeatures, ["Dark One's Own Luck"]);
+    assert.equal(groups.newItems, undefined);
   });
 });
 

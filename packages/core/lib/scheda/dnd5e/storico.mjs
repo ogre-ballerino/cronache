@@ -42,20 +42,20 @@ function proficiencies(prev, next) {
 }
 
 /**
- * @returns {{ titolo: string, voci: string[] }[]} only the non-empty groups
+ * @returns {{ key: string, voci: string[] }[]} only the non-empty groups, keyed by their `labels.sheetText` title
  */
 export function diffSheets(prev, next) {
   const spells = (s) => s.incantesimi?.elenco ?? [];
   const groups = [
-    { titolo: 'Valori', voci: numbers(prev, next) },
-    { titolo: 'Nuovi privilegi', voci: added(prev.privilegi, next.privilegi) },
-    { titolo: 'Privilegi rimossi', voci: added(next.privilegi, prev.privilegi) },
-    { titolo: 'Nuovi incantesimi', voci: added(spells(prev), spells(next)) },
-    { titolo: 'Incantesimi rimossi', voci: added(spells(next), spells(prev)) },
-    { titolo: 'Nuove abilità', voci: skills(prev, next) },
-    { titolo: 'Nuove competenze', voci: proficiencies(prev, next) },
-    { titolo: 'Oggetti nuovi', voci: added(prev.equipaggiamento, next.equipaggiamento) },
-    { titolo: 'Oggetti persi', voci: added(next.equipaggiamento, prev.equipaggiamento) },
+    { key: 'values', voci: numbers(prev, next) },
+    { key: 'newFeatures', voci: added(prev.privilegi, next.privilegi) },
+    { key: 'lostFeatures', voci: added(next.privilegi, prev.privilegi) },
+    { key: 'newSpells', voci: added(spells(prev), spells(next)) },
+    { key: 'lostSpells', voci: added(spells(next), spells(prev)) },
+    { key: 'newSkills', voci: skills(prev, next) },
+    { key: 'newProficiencies', voci: proficiencies(prev, next) },
+    { key: 'newItems', voci: added(prev.equipaggiamento, next.equipaggiamento) },
+    { key: 'lostItems', voci: added(next.equipaggiamento, prev.equipaggiamento) },
   ];
   return groups.filter((g) => g.voci.length > 0);
 }

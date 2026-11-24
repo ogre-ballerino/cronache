@@ -10,6 +10,7 @@ interface Props {
 }
 const { sheets } = Astro.props;
 const system = sheetSystem()!;
+const text = config.labels.sheetText;
 const sessions = await getCollection('sessions');
 const sessionLink = (numero?: number) => {
   if (!numero) return undefined;
@@ -20,7 +21,7 @@ const sessionLink = (numero?: number) => {
 const entries = sheets
   .map((sheet, i) => ({
     sheet,
-    heading: system.heading?.(sheet.data),
+    heading: system.heading?.(sheet.data, text),
     session: sessionLink(system.session(sheet.data)),
     changes: i === 0 ? [] : system.diff(sheets[i - 1].data, sheet.data),
     first: i === 0,
@@ -28,7 +29,7 @@ const entries = sheets
   .reverse();
 ---
 <section class="sheet-history">
-  <h2>{system.historyTitle}</h2>
+  <h2>{text.history}</h2>
   <ol class="sheet-history-list">
     {entries.map(({ sheet, heading, session, changes, first }) => {
       const sessionText = session && (session.href ? <a href={session.href}>{session.label}</a> : session.label);
@@ -43,7 +44,7 @@ const entries = sheets
           </p>
           {first && <p class="sheet-note">{config.labels.sheetFirst}</p>}
           {changes.map((group) => (
-            <p class="sheet-history-change"><strong>{group.titolo}:</strong> {group.voci.join(', ')}</p>
+            <p class="sheet-history-change"><strong>{text[group.key]}:</strong> {group.voci.join(', ')}</p>
           ))}
         </li>
       );

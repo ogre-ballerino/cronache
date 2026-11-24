@@ -1,4 +1,5 @@
 ---
+import config from 'virtual:cronache/config';
 import SheetTip from './SheetTip.astro';
 import { ABILITIES, ABILITY_NAMES, FEATURE_SOURCES, SKILLS } from '../lib/scheda/dnd5e/labels.mjs';
 import type { Sheet } from '../lib/scheda/dnd5e/schema';
@@ -137,7 +138,7 @@ const coins = Object.entries(sheet.monete).filter(([, n]) => n > 0);
           </section>
         ))}
       </div>
-      {spells.elenco.some((s) => s.livello > 0 && !s.preparato) && <p class="sheet-note">In grigio gli incantesimi non preparati.</p>}
+      {spells.elenco.some((s) => s.livello > 0 && !s.preparato) && <p class="sheet-note">{config.labels.sheetText.unprepared}</p>}
     </>
   )}
 

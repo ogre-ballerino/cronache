@@ -20,7 +20,7 @@ function values(prev, next) {
 }
 
 /**
- * @returns {{ titolo: string, voci: string[] }[]} only the non-empty groups
+ * @returns {{ key: string, voci: string[] }[]} only the non-empty groups, keyed by their `labels.sheetText` title
  */
 export function diffSheets(prev, next) {
   const before = byLabel(prev.abilita);
@@ -29,12 +29,12 @@ export function diffSheets(prev, next) {
   const added = [...after].filter(([l]) => !before.has(l)).map(([l, v]) => `${l} ${v}`);
   const state = (list) => list.map((k) => STATES[k][0]);
   const groups = [
-    { titolo: 'Valori', voci: values(prev, next) },
-    { titolo: 'Abilità migliorate', voci: raised },
-    { titolo: 'Nuove abilità', voci: added },
-    { titolo: 'Nuovi stati', voci: state(next.stati.filter((s) => !prev.stati.includes(s))) },
-    { titolo: 'Stati superati', voci: state(prev.stati.filter((s) => !next.stati.includes(s))) },
-    { titolo: 'Armi nuove', voci: next.armi.filter((w) => !prev.armi.some((p) => p.nome === w.nome)).map((w) => w.nome) },
+    { key: 'values', voci: values(prev, next) },
+    { key: 'raisedSkills', voci: raised },
+    { key: 'newSkills', voci: added },
+    { key: 'newStates', voci: state(next.stati.filter((s) => !prev.stati.includes(s))) },
+    { key: 'clearedStates', voci: state(prev.stati.filter((s) => !next.stati.includes(s))) },
+    { key: 'newWeapons', voci: next.armi.filter((w) => !prev.armi.some((p) => p.nome === w.nome)).map((w) => w.nome) },
   ];
   return groups.filter((g) => g.voci.length > 0);
 }

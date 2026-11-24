@@ -1,4 +1,5 @@
 ---
+import config from 'virtual:cronache/config';
 import { CHARACTERISTICS, SKILLS, SPECIALTIES, STATES, baseValue, fifth, half, skillLabel } from '../lib/scheda/coc7e/skills.mjs';
 import type { CocSheet } from '../lib/scheda/coc7e/schema';
 
@@ -7,6 +8,7 @@ interface Props {
   sheet: CocSheet;
 }
 const { sheet } = Astro.props;
+const text = config.labels.sheetText;
 
 const current = (now: number | undefined, max: number) => (now === undefined || now === max ? `${max}` : `${now} / ${max}`);
 const stats = [
@@ -80,7 +82,7 @@ const weapons = [{ nome: 'Brawl', valore: brawl, danni: '1D3 + DB', attacchi: '1
       </li>
     ))}
   </ul>
-  <p class="sheet-note">Valori: normale, <em>hard</em> (metà), <em>extreme</em> (un quinto). <span class="sheet-key is-proficient"></span> sopra il valore base.</p>
+  <p class="sheet-note"><Fragment set:html={text.skillValues} /> <span class="sheet-key is-proficient"></span> {text.aboveBase}</p>
 
   <h2>Combat</h2>
   <div class="sheet-table-wrap">

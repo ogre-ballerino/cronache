@@ -14,28 +14,27 @@ export type SheetData = Record<string, any>;
 export interface SheetSystem {
   /** Snapshot files in src/schede/<character>/, e.g. livello-06.json. */
   prefix: string;
-  historyTitle: string;
   /** Orders snapshots; also the number in the file name. */
   order: (data: SheetData) => number;
   /** The session the snapshot follows, linked from the history. */
   session: (data: SheetData) => number | undefined;
   /** The snapshot's title in the history; without one, the title is the linked session. */
-  heading?: (data: SheetData) => string;
+  heading?: (data: SheetData, text: Record<string, string>) => string;
   /** The line under the name on the sheet page. */
   summary: (data: SheetData) => string[];
   /** Replaces the site's own descriptive fields in a character's meta line, when set. */
   meta?: (data: SheetData) => string[];
-  diff: (prev: SheetData, next: SheetData) => { titolo: string; voci: string[] }[];
+  /** Groups keyed by their title in `labels.sheetText`. */
+  diff: (prev: SheetData, next: SheetData) => { key: string; voci: string[] }[];
   fill: (template: Uint8Array, data: SheetData, meta: { nome: string; ritratto?: Uint8Array }) => Promise<Uint8Array>;
 }
 
 export const SYSTEMS: Record<string, SheetSystem> = {
   dnd5e: {
     prefix: SNAPSHOTS.dnd5e.prefix,
-    historyTitle: 'Storico dei livelli',
     order: (d) => d.livello,
     session: (d) => d.sessione,
-    heading: (d) => `Livello ${d.livello}`,
+    heading: (d, text) => `${text.level} ${d.livello}`,
     summary: (d) => [classLine(d), d.razza, d.background],
     meta: (d) => [classLine(d), d.razza],
     diff: diffDnd5e,
@@ -43,7 +42,6 @@ export const SYSTEMS: Record<string, SheetSystem> = {
   },
   coc7e: {
     prefix: SNAPSHOTS.coc7e.prefix,
-    historyTitle: 'Storico della scheda',
     order: (d) => d.capitolo,
     session: (d) => d.capitolo,
     summary: (d) => [d.occupazione, d.eta && `${d.eta} anni${d.invecchiamento ? ` (+${d.invecchiamento})` : ''}`],
