@@ -22,6 +22,7 @@ export default defineCampaign({
     ornament: '',
     lines: [
       'Tenuto dagli investigatori · <a href="https://ogreballerino.com">ogreballerino.com</a>',
+      'Fatto con le manine sante di <a href="https://sirlisko.com">sirlisko</a> (alias <a href="/personaggi/maximilian-hirst/">Maximilian</a>)',
       'Materiale amatoriale non ufficiale. Call of Cthulhu è un marchio registrato di Chaosium Inc.',
     ],
   },
