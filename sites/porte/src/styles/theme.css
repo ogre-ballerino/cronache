@@ -1,0 +1,782 @@
+/* Two surfaces: the dark room (header, footer, home) and the paper of the
+   reports (every inner page). The paper redefines the same tokens, so the
+   engine's rules read correctly on either. */
+:root {
+  --color-bg: #0a0f0c;
+  --color-ink: #e2dcc8;
+  --color-ink-muted: #9a9f8d;
+  --color-rubric: #9fc46a;
+  --color-rule: #3a4a3f;
+  --color-hairline: rgba(226, 220, 200, 0.12);
+  --color-brass: #a88a4e;
+  --color-paper: #e6dfcc;
+  --color-paper-ink: #1e1b16;
+  --color-paper-muted: #625a4b;
+  --color-blood: #7d1d1d;
+  --color-clipping: #ddd3bb;
+  --color-folder: #d9cfb5;
+  --font-display: 'IM Fell English', Georgia, serif;
+  --font-sc: 'IM Fell English SC', Georgia, serif;
+  --font-body: 'Spectral', Georgia, serif;
+  --font-initial: 'IM Fell English', Georgia, serif;
+  --font-typed: 'Special Elite', 'Courier New', monospace;
+  --paper-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse 70% 40% at 30% 0%, rgba(110, 150, 70, 0.13), transparent 70%) no-repeat, var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* ---------- Header ---------- */
+
+.site-header-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-family: var(--font-sc);
+  font-size: 1.05rem;
+  color: var(--color-ink-muted);
+}
+
+.site-nav a {
+  color: var(--color-ink-muted);
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .site-nav {
+    justify-content: center;
+    gap: 0.25rem 1rem;
+  }
+}
+
+/* The home masthead: the door on the left, the title on the right, the
+   navigation above both. */
+.site-header-masthead {
+  max-width: 60rem;
+  padding: 1.1rem 1.5rem 0;
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  column-gap: 6rem;
+  align-items: center;
+  text-align: left;
+}
+
+.site-header-masthead .site-nav {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.masthead-kicker {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-sc);
+  font-size: 1.15rem;
+  color: var(--color-rubric);
+}
+
+.masthead-title {
+  margin: 0;
+  font-size: clamp(2.3rem, 9.5vw, 5.6rem);
+  line-height: 0.92;
+  color: #efe9d6;
+  text-shadow: 0 0 30px rgba(150, 190, 100, 0.15);
+}
+
+.masthead-title span {
+  display: block;
+  font-style: italic;
+}
+
+.masthead-lede {
+  max-width: 24rem;
+  margin: 1.4rem 0 0;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  text-wrap: balance;
+}
+
+@media (max-width: 720px) {
+  .site-header-masthead {
+    grid-template-columns: 6.5rem 1fr;
+    column-gap: 2.75rem;
+  }
+
+  .site-header-masthead .site-nav {
+    margin-bottom: 2rem;
+  }
+}
+
+/* ---------- The door ---------- */
+
+.door {
+  position: relative;
+  aspect-ratio: 1 / 2.05;
+  margin-bottom: 3.5rem;
+}
+
+.door-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+  border: 9px solid #2a2219;
+  border-bottom: 0;
+  box-shadow: inset 0 0 0 1px #3d3226;
+}
+
+/* Sickly light from beyond, brightest at the gap. */
+.door-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 30% 55% at 82% 55%, rgba(185, 225, 120, 0.75), rgba(100, 145, 60, 0.25) 55%, transparent 85%);
+}
+
+.door-leaf {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transform-origin: left center;
+  transform: perspective(600px) rotateY(55deg);
+  background: linear-gradient(90deg, #26352b, #1b261f 70%, #141c17);
+  box-shadow: inset 0 0 0 10px #1f2c24, inset 0 0 0 11px rgba(168, 138, 78, 0.35);
+}
+
+.door-panel {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  border: 1px solid rgba(168, 138, 78, 0.3);
+}
+
+.door-panel:nth-child(1) {
+  top: 7%;
+  height: 38%;
+}
+
+.door-panel:nth-child(2) {
+  top: 52%;
+  height: 40%;
+}
+
+.door-knob {
+  position: absolute;
+  right: 9%;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-brass);
+}
+
+/* The light through the gap, fanning out across the floor toward the viewer. */
+.door-spill {
+  position: absolute;
+  left: 0;
+  width: 160%;
+  top: 100%;
+  height: 4rem;
+  background: linear-gradient(180deg, rgba(160, 200, 100, 0.3), transparent 90%);
+  clip-path: polygon(28% 0, 61% 0, 100% 100%, 19% 100%);
+  filter: blur(3px);
+}
+
+.door-floor {
+  position: absolute;
+  left: -2rem;
+  right: -6rem;
+  top: 100%;
+  border-top: 1px solid var(--color-rule);
+}
+
+.door-tentacles {
+  position: absolute;
+  left: 44%;
+  top: 16%;
+  z-index: 3;
+  width: 9rem;
+  height: 82%;
+  overflow: visible;
+  /* The roots stay in the dark: only what reaches out is lit. */
+  mask-image: linear-gradient(90deg, transparent, #000 30%);
+}
+
+.door-tentacle {
+  fill: url(#door-flesh);
+  stroke: rgba(160, 200, 110, 0.45);
+  stroke-width: 0.8;
+}
+
+.door-suckers {
+  fill: rgba(150, 190, 100, 0.28);
+}
+
+@media (max-width: 720px) {
+  .door-tentacles {
+    width: 5rem;
+  }
+}
+
+/* One moment on arrival: the door swings, the light wakes, something reaches out. */
+@media (prefers-reduced-motion: no-preference) {
+  .door-leaf {
+    animation: door-creak 2.6s cubic-bezier(0.3, 0.1, 0.2, 1) 0.2s both;
+  }
+
+  .door-frame::before,
+  .door-spill {
+    animation: door-wake 2.6s ease-out 0.2s both;
+  }
+
+  .door-tentacles {
+    animation: door-seep 2.4s cubic-bezier(0.2, 0.7, 0.2, 1) 1.8s both;
+  }
+}
+
+@keyframes door-creak {
+  from { transform: perspective(600px) rotateY(0); }
+}
+
+@keyframes door-wake {
+  from { opacity: 0; }
+}
+
+@keyframes door-seep {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(-30% -30% -30% 0); }
+}
+
+/* ---------- Home: the investigation table ---------- */
+
+.site-header-masthead + main {
+  padding-top: 1rem;
+}
+
+.site-header-masthead + main .container {
+  max-width: 60rem;
+  padding: 0 1.5rem;
+}
+
+.next-session {
+  margin: 0 0 2.5rem;
+}
+
+.evidence {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.clipping,
+.case-file {
+  position: relative;
+  color: var(--color-paper-ink);
+  box-shadow: var(--paper-shadow);
+  --color-ink: var(--color-paper-ink);
+  --color-ink-muted: var(--color-paper-muted);
+  --color-rubric: var(--color-blood);
+  --color-rule: #8f846f;
+}
+
+.clipping {
+  padding: 1.6rem 1.75rem 1.4rem;
+  background: var(--color-clipping);
+  transform: rotate(-1.2deg);
+  clip-path: polygon(0 1%, 4% 0, 12% 1.2%, 30% 0.2%, 55% 1%, 78% 0, 100% 0.8%, 99.4% 30%, 100% 62%, 99.2% 100%, 70% 99%, 40% 100%, 15% 99.2%, 0 100%, 0.6% 60%);
+}
+
+/* A strip of tape holding the clipping to the table. */
+.clipping::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 6rem;
+  height: 1.1rem;
+  background: rgba(240, 232, 200, 0.6);
+  transform: rotate(3deg);
+}
+
+.clipping .kicker {
+  margin: 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-rule);
+  font-family: var(--font-typed);
+  font-size: 0.95rem;
+  color: var(--color-paper-muted);
+}
+
+.latest-session h2 {
+  margin: 0.7rem 0 0.6rem;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.latest-session .drop-cap {
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.latest-session .drop-cap::first-letter {
+  float: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.read-more {
+  margin: 0.9rem 0 0;
+  font-family: var(--font-typed);
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.read-more a {
+  text-decoration-color: var(--color-blood);
+}
+
+.case-file {
+  padding: 1.4rem 1.5rem 3.6rem;
+  background: var(--color-folder);
+  transform: rotate(1deg);
+  font-family: var(--font-typed);
+  font-size: 1rem;
+}
+
+.case-file h2 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-rule);
+  font-family: var(--font-typed);
+  font-size: 1.05rem;
+  color: var(--color-paper-ink);
+}
+
+.case-file p {
+  margin: 0;
+}
+
+.case-file .season-heading {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-typed);
+  font-size: 1rem;
+}
+
+.case-file .session-index {
+  margin-bottom: 1rem;
+  gap: 0.2rem;
+}
+
+.case-file .session-index li {
+  gap: 0.6rem;
+}
+
+.case-file .session-index-number {
+  min-width: 2rem;
+  color: var(--color-paper-muted);
+}
+
+.case-file .session-index a {
+  text-decoration: underline;
+  text-decoration-color: rgba(125, 29, 29, 0.5);
+}
+
+.case-file .session-index-date {
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+.stamp {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.1rem;
+  padding: 0.1rem 0.6rem;
+  border: 3px double var(--color-blood);
+  color: var(--color-blood);
+  font-family: var(--font-typed);
+  font-size: 1rem;
+  transform: rotate(-12deg);
+  opacity: 0.75;
+}
+
+.photo-board {
+  grid-column: 1 / -1;
+}
+
+.section-title {
+  margin: 0 0 1.1rem;
+  font-size: 1.7rem;
+  color: var(--color-ink);
+}
+
+.photo-board ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.photo-board li:nth-child(odd) {
+  transform: rotate(-1.6deg);
+}
+
+.photo-board li:nth-child(even) {
+  transform: rotate(1.4deg) translateY(0.6rem);
+}
+
+.photo-board a {
+  display: block;
+  padding: 0.55rem 0.55rem 0;
+  background: #e8e0cc;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
+  color: var(--color-paper-ink);
+  text-decoration: none;
+}
+
+.photo-board img,
+.photo-blank {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1) sepia(0.55) contrast(1.05);
+}
+
+/* No portrait yet: an old print too faded to make out who's in it. */
+.photo-blank {
+  background:
+    radial-gradient(ellipse 20% 15% at 50% 37%, rgba(55, 40, 25, 0.6), transparent),
+    radial-gradient(ellipse 48% 32% at 50% 98%, rgba(55, 40, 25, 0.55), transparent),
+    linear-gradient(#bda57d, #9d8460);
+  box-shadow: inset 0 0 28px rgba(40, 28, 15, 0.55);
+  filter: none;
+}
+
+.photo-board img.portrait-lost {
+  filter: grayscale(1) contrast(0.75) brightness(0.6) blur(0.5px);
+}
+
+.photo-label {
+  display: block;
+  padding: 0.5rem 0.1rem 0.6rem;
+  font-family: var(--font-typed);
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+
+.photo-label small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-paper-muted);
+}
+
+.photo-board a:hover .photo-label {
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .evidence {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-board ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Inner pages: the report on paper ---------- */
+
+main {
+  padding: 2.5rem 0.5rem 3rem;
+}
+
+main .container {
+  --color-ink: var(--color-paper-ink);
+  --color-ink-muted: var(--color-paper-muted);
+  --color-rubric: var(--color-blood);
+  --color-rule: #a89d86;
+  --color-hairline: rgba(30, 27, 22, 0.15);
+  position: relative;
+  max-width: 50rem;
+  padding: 3rem 3.5rem 3rem 5.75rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  box-shadow: var(--paper-shadow), inset 0 0 80px rgba(90, 70, 40, 0.25);
+}
+
+/* A column of alien glyphs down the margin of every report. */
+main .container::before {
+  content: '';
+  position: absolute;
+  left: 1.75rem;
+  top: 3rem;
+  bottom: 3rem;
+  width: 1.4rem;
+  background: url('/images/glifi.svg') top center / 100% auto repeat-y;
+  opacity: 0.5;
+}
+
+.site-header-masthead + main .container {
+  --color-ink: #e2dcc8;
+  --color-ink-muted: #9a9f8d;
+  --color-rubric: #9fc46a;
+  --color-rule: #3a4a3f;
+  background: none;
+  box-shadow: none;
+  color: var(--color-ink);
+}
+
+.site-header-masthead + main .container::before {
+  content: none;
+}
+
+@media (min-width: 1080px) {
+  main .container:has(.marginalia) {
+    max-width: calc(50rem + 15.5rem);
+    padding-right: calc(3.5rem + 15.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  main .container {
+    padding: 2rem 1.25rem 2rem 3rem;
+  }
+
+  main .container::before {
+    left: 0.8rem;
+    width: 1.1rem;
+  }
+}
+
+.page-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.3rem, 6vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.entry-header {
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.entry-meta,
+.timeline-meta {
+  font-family: var(--font-typed);
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+}
+
+.timeline-meta {
+  display: block;
+}
+
+.entry-image {
+  padding: 0.5rem;
+  background: #efe8d6;
+  box-shadow: 0 8px 18px rgba(30, 20, 10, 0.35);
+  filter: grayscale(1) sepia(0.55) contrast(1.05);
+  transform: rotate(-1.5deg);
+}
+
+.entry-content h2 {
+  margin: 2.25rem 0 0.5rem;
+  font-family: var(--font-sc);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--color-rubric);
+}
+
+.entry-content h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.drop-cap::first-letter,
+.entry-content > p:first-of-type::first-letter {
+  font-size: 4.6em;
+  line-height: 0.75;
+  padding: 0.1em 0.12em 0 0;
+}
+
+/* Handouts found in play, pinned into the report. */
+.entry-content img {
+  display: block;
+  max-width: min(100%, 520px);
+  height: auto;
+  margin: 2rem auto 0.5rem;
+  padding: 0.5rem;
+  background: #efe8d6;
+  box-shadow: 0 10px 24px rgba(30, 20, 10, 0.4);
+  filter: sepia(0.25);
+}
+
+.entry-content p:has(> img) + p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-indent: 0;
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+}
+
+/* Blockquotes read as notes typed on a slip and clipped to the report. */
+.entry-content blockquote {
+  margin: 1.75rem 0;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 252, 240, 0.55);
+  border-left: 3px solid var(--color-rubric);
+  font-family: var(--font-typed);
+  font-size: 1rem;
+  text-align: left;
+}
+
+.entry-content blockquote p + p {
+  text-indent: 0;
+  margin-top: 0.6rem;
+}
+
+.season-heading {
+  margin: 0 0 1rem;
+  font-family: var(--font-sc);
+  font-size: 1.6rem;
+  color: var(--color-rubric);
+}
+
+.season + .season {
+  margin-top: 3rem;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 1px solid var(--color-rule);
+}
+
+.session-index-number {
+  flex: none;
+  font-family: var(--font-typed);
+}
+
+.badge {
+  font-family: var(--font-typed);
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+
+.badge-morto,
+.badge-morta,
+.badge-folle {
+  color: var(--color-blood);
+}
+
+.backlinks {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-rule);
+}
+
+.backlinks h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-sc);
+  font-size: 1.15rem;
+  color: var(--color-ink-muted);
+}
+
+.backlinks dl {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.backlinks dt {
+  font-family: var(--font-typed);
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+
+@media (max-width: 520px) {
+  .backlinks dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .backlinks dd {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  color: #6d7468;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: #8d9585;
+}
+
+/* ---------- Search ---------- */
+
+.search {
+  --pf-text: var(--color-ink);
+  --pf-text-secondary: var(--color-ink-muted);
+  --pf-text-muted: var(--color-ink-muted);
+  --pf-background: var(--color-paper);
+  --pf-border: var(--color-rule);
+  --pf-border-focus: var(--color-ink);
+  --pf-skeleton: var(--color-hairline);
+  --pf-skeleton-shine: var(--color-paper);
+  --pf-hover: rgba(30, 27, 22, 0.05);
+  --pf-mark: rgba(125, 29, 29, 0.2);
+  --pf-outline-focus: var(--color-rubric);
+  --pf-shadow-sm: none;
+  --pf-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --pf-font: var(--font-body);
+  --pf-input-height: 48px;
+  --pf-input-font-size: 1.15rem;
+  --pf-summary-font-size: 0.95rem;
+  --pf-result-title-font-size: 1.3rem;
+  --pf-result-excerpt-font-size: 1rem;
+  --pf-border-radius: 0;
+  --pf-results-gap: 1rem;
+}

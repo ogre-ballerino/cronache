@@ -24,6 +24,8 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
  * @property {{ endpoint: string } | { at: string }} [nextSession]
  *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
  *   `at`: a fixed local wall-clock time, e.g. '2026-11-28T16:30:00'.
+ * @property {Record<number, string>} [seasons]
+ *   Season titles by `stagione` number, e.g. one per scenario; untitled seasons read "<labels.season> <roman>".
  * @property {Partial<typeof defaults.labels>} [labels]
  * @property {{ [K in keyof typeof defaults.sections]?: Partial<(typeof defaults.sections)[K]> }} [sections]
  */
@@ -114,6 +116,7 @@ export function resolveConfig(user) {
     features,
     footer: user.footer ?? { ornament: '', lines: [] },
     nextSession: user.nextSession ?? null,
+    seasons: user.seasons ?? {},
     labels: {
       ...defaults.labels,
       ...user.labels,

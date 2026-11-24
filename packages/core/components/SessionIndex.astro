@@ -2,7 +2,7 @@
 import { entryUrl } from '../lib/collections.mjs';
 import type { CollectionEntry } from 'astro:content';
 import config from 'virtual:cronache/config';
-import { toRoman } from '../lib/format';
+import { toRoman, seasonTitle } from '../lib/format';
 import { groupBySeason } from '../lib/seasons';
 
 interface Props {
@@ -12,7 +12,7 @@ const seasons = groupBySeason(Astro.props.sessions);
 ---
 {seasons.map(({ stagione, sessions }) => (
   <>
-    {stagione && <h3 class="season-heading">{config.labels.season} {toRoman(stagione)}</h3>}
+    {stagione && <h3 class="season-heading">{seasonTitle(stagione, config)}</h3>}
     <ol class="session-index">
       {sessions.map((s) => (
         <li>

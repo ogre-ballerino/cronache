@@ -26,6 +26,7 @@ describe('resolveConfig', () => {
     assert.equal(config.nav, nav);
     assert.equal(config.labels.session, 'Capitolo');
     assert.equal(config.labels.season, 'Stagione');
+    assert.deepEqual(config.seasons, {});
   });
 });
 

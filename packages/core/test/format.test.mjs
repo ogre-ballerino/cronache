@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { toRoman } from '../lib/format.ts';
+import { toRoman, seasonTitle } from '../lib/format.ts';
 import { groupBySeason } from '../lib/seasons.ts';
 
 describe('toRoman', () => {
@@ -26,5 +26,14 @@ describe('groupBySeason', () => {
   it('returns one group without a season when the campaign has none', () => {
     const groups = groupBySeason([session(1), session(2)]);
     assert.deepEqual(groups.map((g) => g.stagione), [undefined]);
+  });
+});
+
+describe('seasonTitle', () => {
+  const config = { labels: { season: 'Avventura' }, seasons: { 1: 'Genius Loci' } };
+
+  it('uses the configured title, else the label and a roman numeral', () => {
+    assert.equal(seasonTitle(1, config), 'Genius Loci');
+    assert.equal(seasonTitle(2, config), 'Avventura II');
   });
 });

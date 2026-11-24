@@ -18,3 +18,10 @@ export function toRoman(n: number): string {
 export function longDate(d: Date): string {
   return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
 }
+
+export function seasonTitle(
+  stagione: number,
+  config: { labels: { season: string }; seasons: Record<number, string> }
+): string {
+  return config.seasons[stagione] ?? `${config.labels.season} ${toRoman(stagione)}`;
+}
