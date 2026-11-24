@@ -1,5 +1,5 @@
 ---
-titolo: Artemis
+titolo: Artemis Baenre
 stato: vivo
 estratto: Infiltratore del gruppo, abile nel furtivo e nell'invisibilità.
 immagine: /images/personaggi/artemis.webp
