@@ -1,9 +1,11 @@
 ---
 import { getCollection, render } from 'astro:content';
+import config from 'virtual:cronache/config';
 import EntryLayout from '../../layouts/EntryLayout.astro';
 import { ogImage } from '../../lib/og';
 import { fullPortrait } from '../../lib/portraits';
 import { characterMeta } from '../../lib/characters';
+import { sheetPdfUrl, sheetsByCharacter, sheetUrl } from '../../lib/schede';
 
 export async function getStaticPaths() {
   const characters = await getCollection('personaggi');
@@ -16,6 +18,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const meta = [characterMeta(entry.data), entry.data.fazione].filter(Boolean).join(' · ');
+const sheet = (await sheetsByCharacter()).get(entry.id)?.at(-1);
 ---
 <EntryLayout
   title={entry.data.titolo}
@@ -28,5 +31,12 @@ const meta = [characterMeta(entry.data), entry.data.fazione].filter(Boolean).joi
   og={ogImage(entry.data)}
   image={fullPortrait(entry.id) ?? entry.data.immagine}
 >
+  {sheet && (
+    <p class="sheet-actions" slot="header" data-pagefind-ignore>
+      <a href={sheetUrl(entry.id)}>{config.labels.sheet}</a>
+      {' · '}
+      <a href={sheetPdfUrl(entry.id, sheet.data.livello)} download>{config.labels.sheetDownload}</a>
+    </p>
+  )}
   <Content />
 </EntryLayout>

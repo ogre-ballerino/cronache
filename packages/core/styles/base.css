@@ -595,3 +595,302 @@ main {
   font-style: italic;
   color: var(--color-ink-muted);
 }
+
+/* Character sheet */
+
+.sheet-actions {
+  margin: 0.75rem 0 0;
+  font-style: italic;
+  text-align: center;
+}
+
+.sheet h2,
+.sheet-history h2 {
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.sheet h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  color: var(--color-rubric);
+}
+
+.sheet-num {
+  font-variant-numeric: tabular-nums;
+}
+
+.sheet-note {
+  margin: 0.5rem 0 0;
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.sheet-abilities {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .sheet-abilities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sheet-ability {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.25rem;
+  border: 1px solid var(--color-rule);
+}
+
+.sheet-ability abbr {
+  font-family: var(--font-sc);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-muted);
+}
+
+.sheet-ability-mod {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.sheet-ability-save {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+
+.sheet-ability.is-proficient .sheet-ability-save {
+  color: var(--color-rubric);
+}
+
+.sheet-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.5rem 1rem;
+  margin: 1.5rem 0 0;
+  text-align: center;
+}
+
+.sheet-stats dt {
+  font-family: var(--font-sc);
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+}
+
+.sheet-stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.sheet-skills {
+  columns: 2 14rem;
+  column-gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sheet-skill {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  break-inside: avoid;
+  border-bottom: 1px dotted var(--color-hairline);
+}
+
+.sheet-skill.is-none {
+  color: var(--color-ink-muted);
+}
+
+.sheet-skill > span:first-child::before,
+.sheet-key::before {
+  content: '';
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin-right: 0.5em;
+  vertical-align: 0.15em;
+  border: 1px solid var(--color-rule);
+}
+
+.sheet-skill.is-proficient > span:first-child::before,
+.sheet-key.is-proficient::before {
+  background: var(--color-rubric);
+  border-color: var(--color-rubric);
+}
+
+.sheet-skill.is-expertise > span:first-child::before,
+.sheet-key.is-expertise::before {
+  background: var(--color-rubric);
+  border-color: var(--color-rubric);
+  transform: rotate(45deg);
+}
+
+.sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sheet-table th {
+  font-family: var(--font-sc);
+  font-weight: 400;
+  text-align: left;
+  color: var(--color-ink-muted);
+}
+
+.sheet-table td,
+.sheet-table th {
+  padding: 0.3rem 0.75rem 0.3rem 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.sheet-columns {
+  columns: 2 16rem;
+  column-gap: 2.5rem;
+}
+
+.sheet-columns section {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+
+.sheet-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sheet-inventory {
+  columns: 2 14rem;
+  column-gap: 2.5rem;
+}
+
+.sheet-list .is-unprepared {
+  color: var(--color-ink-muted);
+}
+
+.sheet-list .is-magic {
+  font-style: italic;
+  color: var(--color-rubric);
+}
+
+.sheet-aside {
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+.sheet-defs {
+  margin: 0;
+}
+
+.sheet-defs div {
+  margin-bottom: 0.5rem;
+}
+
+.sheet-defs dt {
+  display: inline;
+  font-family: var(--font-sc);
+  color: var(--color-ink-muted);
+}
+
+.sheet-defs dt::after {
+  content: ': ';
+}
+
+.sheet-defs dd {
+  display: inline;
+  margin: 0;
+}
+
+.sheet-history-list {
+  margin: 0 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.sheet-history-title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.sheet-history-change {
+  margin: 0.4rem 0 0;
+}
+
+.sheet-tip {
+  position: relative;
+  cursor: help;
+  text-decoration: underline dotted var(--color-rule);
+  text-underline-offset: 0.2em;
+}
+
+.sheet-tip-body {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 0.3rem);
+  left: 0;
+  width: max-content;
+  max-width: min(24rem, 80vw);
+  padding: 0.6rem 0.8rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 0.15);
+  font-size: 0.95rem;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--color-ink);
+}
+
+.sheet-tip:hover .sheet-tip-body,
+.sheet-tip:focus .sheet-tip-body {
+  display: block;
+}
+
+.sheet-tip-line {
+  display: block;
+}
+
+.sheet-tip-line + .sheet-tip-line {
+  margin-top: 0.35rem;
+}
+
+.sheet-tip-line:first-child {
+  font-style: italic;
+  color: var(--color-ink-muted);
+}
+
+/* On a phone the note would run off the column's edge: pin it to the screen. */
+@media (max-width: 600px) {
+  .sheet-tip-body {
+    position: fixed;
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: none;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
+
+.sheet-credits {
+  margin: 2.5rem 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+}

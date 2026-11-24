@@ -7,6 +7,7 @@ import config from 'virtual:cronache/config';
 import { publicDir } from 'virtual:cronache/paths';
 import { STATI_PERSONAGGI, STATI_PNG } from './lib/status.mjs';
 import { curlyQuotes } from './lib/wikilinks.mjs';
+import { sheetSchema } from './lib/scheda/schema';
 
 type Fields = Record<string, z.ZodTypeAny>;
 
@@ -71,13 +72,18 @@ export function campaignCollections(extra: CollectionFields = {}) {
     luoghi: collection('luoghi', { tipo: z.string().optional(), regione: z.string().optional() }, extra.luoghi),
     riassunto: defineCollection({ loader: loader('riassunto'), schema: z.object({ titolo: z.string() }) }),
   };
-  if (!config.features.handout) return collections;
   return {
     ...collections,
-    handout: collection(
-      'handout',
-      { capitolo: z.number().int().positive(), fonte: z.string().optional() },
-      extra.handout
-    ),
+    ...(config.features.handout && {
+      handout: collection(
+        'handout',
+        { capitolo: z.number().int().positive(), fonte: z.string().optional() },
+        extra.handout
+      ),
+    }),
+    // One snapshot per character and level: src/schede/<character id>/livello-NN.json.
+    ...(config.features.schede && {
+      schede: defineCollection({ loader: glob({ pattern: '*/livello-*.json', base: './src/schede' }), schema: sheetSchema }),
+    }),
   };
 }

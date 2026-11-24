@@ -1,0 +1,183 @@
+---
+import SheetTip from './SheetTip.astro';
+import { ABILITIES, ABILITY_NAMES, FEATURE_SOURCES, SKILLS } from '../lib/scheda/labels.mjs';
+import type { Sheet } from '../lib/scheda/schema';
+
+// Game terms are in English, as on Foundry and the printed sheet.
+interface Props {
+  sheet: Sheet;
+}
+const { sheet } = Astro.props;
+const sign = (n: number) => (n >= 0 ? `+${n}` : `${n}`);
+const SUFFIX: Record<number, string> = { 1: 'st', 2: 'nd', 3: 'rd' };
+const ordinal = (n: number) => `${n}${SUFFIX[n] ?? 'th'}`;
+const levelHeading = (level: number) => (level === 0 ? 'Cantrips' : `${ordinal(level)} level`);
+
+const stats = [
+  ['Armor Class', sheet.ca],
+  ['Hit Points', sheet.pf],
+  ['Initiative', sign(sheet.iniziativa)],
+  ['Speed', sheet.velocita],
+  ['Proficiency', sign(sheet.competenza)],
+  ['Passive Perception', sheet.percezionePassiva],
+  ['Hit Dice', sheet.dadiVita],
+];
+
+const spells = sheet.incantesimi;
+const spellLevels = spells ? [...new Set(spells.elenco.map((s) => s.livello))].sort((a, b) => a - b) : [];
+const slots = spells
+  ? [
+      ...Object.entries(spells.slot).map(([level, n]) => `${ordinal(Number(level))} ×${n}`),
+      ...(spells.patto ? [`pact ×${spells.patto.slot} at ${ordinal(spells.patto.livello)} level`] : []),
+    ]
+  : [];
+const DETAIL_LABELS: Record<string, string> = {
+  casting: 'Casting time',
+  range: 'Range',
+  components: 'Components',
+  duration: 'Duration',
+  effect: 'Effect',
+  ritual: 'Ritual',
+};
+const spellLines = (s: NonNullable<Sheet['incantesimi']>['elenco'][number]) => {
+  const { school, ...rest } = s.dettagli;
+  const head = [s.livello === 0 ? `${school ?? ''} cantrip`.trim() : `${levelHeading(s.livello)}${school ? ` ${school.toLowerCase()}` : ''}`];
+  return [...head, ...Object.entries(rest).map(([k, v]) => `${DETAIL_LABELS[k] ?? k}: ${v}`)];
+};
+
+const featureGroups = (Object.keys(FEATURE_SOURCES) as (keyof typeof FEATURE_SOURCES)[])
+  .map((source) => ({ label: FEATURE_SOURCES[source], items: sheet.privilegi.filter((p) => p.fonte === source) }))
+  .filter((g) => g.items.length > 0);
+const hasSrdText = sheet.privilegi.some((p) => p.descrizione);
+
+const proficiencies = [
+  ['Armor', sheet.competenze.armature],
+  ['Weapons', sheet.competenze.armi],
+  ['Tools', sheet.competenze.strumenti],
+  ['Languages', sheet.competenze.lingue],
+].filter(([, list]) => list.length > 0) as [string, string[]][];
+
+const COINS: Record<string, string> = { mp: 'pp', mo: 'gp', me: 'ep', ma: 'sp', mr: 'cp' };
+const coins = Object.entries(sheet.monete).filter(([, n]) => n > 0);
+---
+<div class="sheet">
+  <ul class="sheet-abilities">
+    {Object.entries(sheet.caratteristiche).map(([key, a]) => (
+      <li class:list={['sheet-ability', { 'is-proficient': a.competente }]}>
+        <abbr title={ABILITY_NAMES[key as keyof typeof ABILITY_NAMES]}>{ABILITIES[key as keyof typeof ABILITIES]}</abbr>
+        <span class="sheet-ability-mod">{sign(a.mod)}</span>
+        <span class="sheet-ability-score">{a.valore}</span>
+        <span class="sheet-ability-save" title="Saving throw">Save {sign(a.salvezza)}</span>
+      </li>
+    ))}
+  </ul>
+
+  <dl class="sheet-stats">
+    {stats.map(([label, value]) => (
+      <div>
+        <dt>{label}</dt>
+        <dd>{value}</dd>
+      </div>
+    ))}
+  </dl>
+  {sheet.sensi.length > 0 && <p class="sheet-note">Senses: {sheet.sensi.join(', ')}</p>}
+
+  <h2>Skills</h2>
+  <ul class="sheet-skills">
+    {Object.entries(SKILLS).map(([key, [label, ability, hint]]) => {
+      const skill = sheet.abilita[key];
+      const level = skill.competenza >= 2 ? 'expertise' : skill.competenza >= 1 ? 'proficient' : 'none';
+      return (
+        <li class={`sheet-skill is-${level}`}>
+          <span class="sheet-skill-name"><SheetTip lines={[`${label} (${ABILITIES[ability as keyof typeof ABILITIES]})`, hint]}>{label}</SheetTip></span>
+          <span class="sheet-num">{sign(skill.bonus)}</span>
+        </li>
+      );
+    })}
+  </ul>
+  <p class="sheet-note"><span class="sheet-key is-proficient"></span> proficient · <span class="sheet-key is-expertise"></span> expertise</p>
+
+  {sheet.attacchi.length > 0 && (
+    <>
+      <h2>Attacks</h2>
+      <table class="sheet-table">
+        <thead>
+          <tr><th>Weapon</th><th>To hit</th><th>Damage</th></tr>
+        </thead>
+        <tbody>
+          {sheet.attacchi.map((a) => (
+            <tr><td>{a.nome}</td><td class="sheet-num">{sign(a.bonus)}</td><td>{a.danni}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  )}
+
+  {spells && (
+    <>
+      <h2>Spells</h2>
+      <p class="sheet-note">
+        {ABILITY_NAMES[spells.caratteristica]} · save DC {spells.cd} · attack {sign(spells.attacco)}
+        {slots.length > 0 && <> · slots {slots.join(', ')}</>}
+      </p>
+      <div class="sheet-columns">
+        {spellLevels.map((level) => (
+          <section>
+            <h3>{levelHeading(level)}</h3>
+            <ul class="sheet-list">
+              {spells.elenco.filter((s) => s.livello === level).map((s) => (
+                <li class:list={{ 'is-unprepared': level > 0 && !s.preparato }}>
+                  <SheetTip lines={spellLines(s)}>{s.nome}</SheetTip>
+                  {(s.sempre || s.usi) && <span class="sheet-aside"> {[s.sempre && 'always prepared', s.usi].filter(Boolean).join(', ')}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+      {spells.elenco.some((s) => s.livello > 0 && !s.preparato) && <p class="sheet-note">In grigio gli incantesimi non preparati.</p>}
+    </>
+  )}
+
+  <h2>Features &amp; Traits</h2>
+  <div class="sheet-columns">
+    {featureGroups.map((g) => (
+      <section>
+        <h3>{g.label}</h3>
+        <ul class="sheet-list">
+          {g.items.map((p) => (
+            <li><SheetTip lines={p.descrizione ? [p.nome, ...p.descrizione.split('\n\n')] : []}>{p.nome}</SheetTip></li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <h2>Proficiencies</h2>
+  <dl class="sheet-defs">
+    {proficiencies.map(([label, list]) => (
+      <div>
+        <dt>{label}</dt>
+        <dd>{list.join(', ')}</dd>
+      </div>
+    ))}
+  </dl>
+
+  <h2>Equipment</h2>
+  <ul class="sheet-list sheet-inventory">
+    {sheet.equipaggiamento.map((i) => (
+      <li class:list={{ 'is-magic': i.magico }}>
+        {i.nome}
+        {i.quantita > 1 && <span class="sheet-aside"> ×{i.quantita}</span>}
+        {i.sintonia && <span class="sheet-aside"> attuned</span>}
+      </li>
+    ))}
+  </ul>
+  {coins.length > 0 && <p class="sheet-note">{coins.map(([coin, n]) => `${n} ${COINS[coin]}`).join(', ')}</p>}
+
+  {hasSrdText && (
+    <p class="sheet-credits">
+      Le descrizioni dei privilegi includono materiale tratto dal System Reference Document 5.1 (“SRD 5.1”) di Wizards of the Coast LLC, disponibile su <a href="https://dnd.wizards.com/resources/systems-reference-document">dnd.wizards.com</a> e distribuito con licenza <a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International</a>.
+    </p>
+  )}
+</div>

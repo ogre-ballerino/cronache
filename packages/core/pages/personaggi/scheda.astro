@@ -1,0 +1,38 @@
+---
+import { getEntry } from 'astro:content';
+import config from 'virtual:cronache/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SheetHistory from '../../components/SheetHistory.astro';
+import SheetView from '../../components/SheetView.astro';
+import { entryUrl } from '../../lib/collections.mjs';
+import { classLine } from '../../lib/scheda/labels.mjs';
+import { sheetPdfUrl, sheetsByCharacter } from '../../lib/schede';
+
+export async function getStaticPaths() {
+  return [...(await sheetsByCharacter())].map(([id, sheets]) => ({ params: { id }, props: { sheets } }));
+}
+
+const { sheets } = Astro.props;
+const { id } = Astro.params;
+const character = await getEntry('personaggi', id);
+if (!character) throw new Error(`[schede] src/schede/${id}/ has no matching character in personaggi/`);
+
+const name = character.data.titolo;
+const latest = sheets.at(-1)!;
+const summary = [classLine(latest.data), latest.data.razza, latest.data.background].filter(Boolean).join(' · ');
+---
+<BaseLayout title={`${config.labels.sheet}: ${name}`} description={`${config.labels.sheet} di ${name}: ${summary}, livello ${latest.data.livello}.`}>
+  <article>
+    <header class="entry-header">
+      <h1 class="page-title">{name}</h1>
+      <p class="entry-meta">{summary}</p>
+      <p class="sheet-actions">
+        <a href={entryUrl('personaggi', id)}>Torna al personaggio</a>
+        {' · '}
+        <a href={sheetPdfUrl(id, latest.data.livello)} download>{config.labels.sheetDownload}</a>
+      </p>
+    </header>
+    <SheetView sheet={latest.data} />
+    <SheetHistory sheets={sheets} />
+  </article>
+</BaseLayout>

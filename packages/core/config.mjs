@@ -17,7 +17,8 @@ import { enabledCollections, sectionUrl } from './lib/collections.mjs';
  * @property {string} [headerTitle]      HTML of the header link on inner pages; defaults to `name`.
  * @property {{ href: string, label: string }[]} [nav]
  * @property {string[]} [css]            Stylesheets, in order: bare specifiers (fonts) or paths relative to the site root.
- * @property {{ handout?: boolean }} [features]
+ * @property {{ handout?: boolean, schede?: boolean }} [features]
+ *   `schede`: D&D 5e character sheets from Foundry exports, under each character page.
  * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
  * @property {{ endpoint: string } | { at: string }} [nextSession]
  *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
@@ -33,6 +34,9 @@ const defaults = {
     mentionedIn: 'Menzionato in',
     otherSessions: 'Altre sessioni',
     nextSession: 'Prossima sessione',
+    sheet: 'Scheda del personaggio',
+    sheetDownload: 'Scarica il PDF',
+    sheetHistory: 'Storico dei livelli',
   },
   sections: {
     diario: {
@@ -87,7 +91,7 @@ export function defineCampaign(config) {
 
 /** @param {CampaignConfig} user */
 export function resolveConfig(user) {
-  const features = { handout: false, ...user.features };
+  const features = { handout: false, schede: false, ...user.features };
   const sections = Object.fromEntries(
     Object.entries(defaults.sections).map(([key, base]) => {
       const merged = { ...base, ...user.sections?.[key] };
