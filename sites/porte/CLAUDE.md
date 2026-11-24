@@ -17,6 +17,6 @@ Companion site for the group's run through *Doors to Darkness*, Chaosium's book 
 
 ## Site-specific notes
 
-- Investigators without a `-full.webp` portrait show as a faded blank photograph on the home page. Portraits go in sepia, to match the photographs.
+- The investigators' portraits are the photographs of the book's pre-generated characters (Italian edition, `PERSONAGGI.pdf`), cropped inside their deckled frames: they are excluded from the content license in `LICENSE-CONTENT`. Their pages paraphrase the book's descriptions, never copy them. An investigator without a `-full.webp` shows as a faded blank photograph on the home page.
 - Investigator sheets are on (`features.schede: 'coc7e'`): use the `update-sheets` skill.
 - No next session date yet: set `nextSession.at` in `campaign.config.mjs` when the group fixes one.

@@ -2,8 +2,9 @@
 titolo: Maximilian Hirst
 professione: Parapsicologo
 stato: vivo
-estratto: Maximilian Hirst, parapsicologo di 26 anni, è uno degli investigatori che aprono la prima porta in Genius Loci.
+estratto: Maximilian «Max» Hirst, parapsicologo di 26 anni, dà la caccia all'inspiegabile da quando è tornato dalla Grande Guerra.
 tag: []
+immagine: /images/personaggi/maximilian-hirst.webp
 ---
 
-Parapsicologo di 26 anni, tra gli investigatori di Genius Loci.
+Max, per gli amici, ha 26 anni e fa il parapsicologo. In Francia, durante la Grande Guerra, oltre agli orrori del fronte ha trovato qualcosa che non sa spiegare, in una chiesa abbandonata dove era entrato per una breve sortita. Tornato a casa ha dedicato la vita, e i pochi soldi che ha, alla ricerca dell'insolito e dell'inspiegabile.
