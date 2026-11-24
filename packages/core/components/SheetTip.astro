@@ -1,0 +1,18 @@
+---
+// A term with a note shown on hover, on keyboard focus and on tap (focus), no JS.
+interface Props {
+  lines: string[];
+}
+const { lines } = Astro.props;
+const id = `tip-${Math.random().toString(36).slice(2, 9)}`;
+---
+{lines.length > 0 ? (
+  <span class="sheet-tip" tabindex="0" aria-describedby={id}>
+    <slot />
+    <span class="sheet-tip-body" role="tooltip" id={id}>
+      {lines.map((line) => <span class="sheet-tip-line">{line}</span>)}
+    </span>
+  </span>
+) : (
+  <slot />
+)}

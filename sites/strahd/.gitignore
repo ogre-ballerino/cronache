@@ -23,6 +23,9 @@ src/content/.obsidian/
 # session recordings and their raw transcripts
 audio/
 
+# Foundry VTT exports, one folder per level: they carry the books' text
+foundry/
+
 # OS
 .DS_Store
 

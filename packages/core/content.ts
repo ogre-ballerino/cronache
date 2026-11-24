@@ -7,6 +7,7 @@ import config from 'virtual:cronache/config';
 import { publicDir } from 'virtual:cronache/paths';
 import { STATI_PERSONAGGI, STATI_PNG } from './lib/status.mjs';
 import { curlyQuotes } from './lib/wikilinks.mjs';
+import { SNAPSHOTS } from './lib/scheda/schemas';
 
 type Fields = Record<string, z.ZodTypeAny>;
 
@@ -36,6 +37,12 @@ const loader = (collection: string) => glob({ pattern: '[^_]*.md', base: `./src/
 
 const collection = (name: string, fields: Fields, extra: Fields = {}) =>
   defineCollection({ loader: loader(name), schema: z.object({ ...baseFields, ...fields, ...extra }) });
+
+function sheetCollection(system: string) {
+  const snapshot = SNAPSHOTS[system as keyof typeof SNAPSHOTS];
+  if (!snapshot) throw new Error(`[schede] unknown system "${system}": use one of ${Object.keys(SNAPSHOTS).join(', ')}`);
+  return defineCollection({ loader: glob({ pattern: `*/${snapshot.prefix}-*.json`, base: './src/schede' }), schema: snapshot.schema });
+}
 
 export function campaignCollections(extra: CollectionFields = {}) {
   const collections = {
@@ -71,13 +78,16 @@ export function campaignCollections(extra: CollectionFields = {}) {
     luoghi: collection('luoghi', { tipo: z.string().optional(), regione: z.string().optional() }, extra.luoghi),
     riassunto: defineCollection({ loader: loader('riassunto'), schema: z.object({ titolo: z.string() }) }),
   };
-  if (!config.features.handout) return collections;
   return {
     ...collections,
-    handout: collection(
-      'handout',
-      { capitolo: z.number().int().positive(), fonte: z.string().optional() },
-      extra.handout
-    ),
+    ...(config.features.handout && {
+      handout: collection(
+        'handout',
+        { capitolo: z.number().int().positive(), fonte: z.string().optional() },
+        extra.handout
+      ),
+    }),
+    // Snapshots per character: src/schede/<character id>/livello-NN.json (dnd5e), capitolo-NN.json (coc7e).
+    ...(config.features.schede && { schede: sheetCollection(config.features.schede) }),
   };
 }

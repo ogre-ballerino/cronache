@@ -1,0 +1,89 @@
+{
+  "capitolo": 8,
+  "data": "2026-11-22",
+  "occupazione": "Archeologist",
+  "eta": 47,
+  "caratteristiche": {
+    "str": 78,
+    "con": 60,
+    "siz": 70,
+    "dex": 47,
+    "app": 35,
+    "int": 50,
+    "pow": 60,
+    "edu": 58
+  },
+  "pf": {
+    "max": 13
+  },
+  "pm": {
+    "max": 12
+  },
+  "fortuna": {
+    "iniziale": 60
+  },
+  "sanita": {
+    "iniziale": 60,
+    "soglia": 12
+  },
+  "stati": [],
+  "movimento": 7,
+  "corporatura": 1,
+  "bonusDanno": "+1D4",
+  "abilita": [
+    {
+      "nome": "Anthropology",
+      "valore": 40
+    },
+    {
+      "nome": "Archaeology",
+      "valore": 70
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 40
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 60
+    },
+    {
+      "nome": "Firearms (Rifle/Shotgun)",
+      "valore": 45
+    },
+    {
+      "nome": "First Aid",
+      "valore": 50
+    },
+    {
+      "nome": "History",
+      "valore": 50
+    },
+    {
+      "nome": "Intimidate",
+      "valore": 60
+    },
+    {
+      "nome": "Mech. Repair",
+      "valore": 40
+    },
+    {
+      "nome": "Occult",
+      "valore": 25
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 50
+    },
+    {
+      "nome": "Track",
+      "valore": 50
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "arabic",
+      "valore": 21
+    }
+  ],
+  "armi": []
+}

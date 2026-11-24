@@ -1,0 +1,611 @@
+{
+  "livello": 6,
+  "data": "2026-10-29",
+  "sessione": 12,
+  "classi": [
+    {
+      "nome": "Wizard",
+      "sottoclasse": "School of Divination",
+      "livelli": 6,
+      "dadoVita": 6
+    }
+  ],
+  "razza": "Halfling (Ghostwise)",
+  "background": "Sage",
+  "allineamento": "",
+  "pe": 14000,
+  "competenza": 3,
+  "caratteristiche": {
+    "str": {
+      "valore": 8,
+      "mod": -1,
+      "salvezza": -1,
+      "competente": false
+    },
+    "dex": {
+      "valore": 14,
+      "mod": 2,
+      "salvezza": 2,
+      "competente": false
+    },
+    "con": {
+      "valore": 14,
+      "mod": 2,
+      "salvezza": 2,
+      "competente": false
+    },
+    "int": {
+      "valore": 16,
+      "mod": 3,
+      "salvezza": 6,
+      "competente": true
+    },
+    "wis": {
+      "valore": 12,
+      "mod": 1,
+      "salvezza": 4,
+      "competente": true
+    },
+    "cha": {
+      "valore": 10,
+      "mod": 0,
+      "salvezza": 0,
+      "competente": false
+    }
+  },
+  "abilita": {
+    "acr": {
+      "bonus": 2,
+      "competenza": 0
+    },
+    "ani": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "arc": {
+      "bonus": 6,
+      "competenza": 1
+    },
+    "ath": {
+      "bonus": -1,
+      "competenza": 0
+    },
+    "dec": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "his": {
+      "bonus": 6,
+      "competenza": 1
+    },
+    "ins": {
+      "bonus": 4,
+      "competenza": 1
+    },
+    "itm": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "inv": {
+      "bonus": 6,
+      "competenza": 1
+    },
+    "med": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "nat": {
+      "bonus": 3,
+      "competenza": 0
+    },
+    "prc": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "prf": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "per": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "rel": {
+      "bonus": 3,
+      "competenza": 0
+    },
+    "slt": {
+      "bonus": 2,
+      "competenza": 0
+    },
+    "ste": {
+      "bonus": 2,
+      "competenza": 0
+    },
+    "sur": {
+      "bonus": 1,
+      "competenza": 0
+    }
+  },
+  "pf": 38,
+  "ca": 12,
+  "iniziativa": 2,
+  "velocita": "25 ft",
+  "sensi": [],
+  "dadiVita": "6d6",
+  "attacchi": [
+    {
+      "nome": "Quarterstaff",
+      "bonus": 2,
+      "danni": "1d6-1 bludgeoning (1d8-1 two-handed)"
+    }
+  ],
+  "incantesimi": {
+    "caratteristica": "int",
+    "cd": 14,
+    "attacco": 6,
+    "slot": {
+      "1": 4,
+      "2": 3,
+      "3": 3
+    },
+    "patto": null,
+    "elenco": [
+      {
+        "nome": "Create Bonfire",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 action",
+          "range": "60 ft (5-foot cube)",
+          "components": "V, S",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "DEX save, 1d8 fire"
+        }
+      },
+      {
+        "nome": "Fire Bolt",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "Instantaneous",
+          "effect": "ranged spell attack, 1d10 fire"
+        }
+      },
+      {
+        "nome": "Mage Hand",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 action",
+          "range": "30 ft",
+          "components": "V, S",
+          "duration": "1 minute"
+        }
+      },
+      {
+        "nome": "Mind Sliver",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 action",
+          "range": "60 ft",
+          "components": "V",
+          "duration": "1 round",
+          "effect": "INT save, 1d6 psychic"
+        }
+      },
+      {
+        "nome": "Minor Illusion",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Illusion",
+          "casting": "1 action",
+          "range": "30 ft (5-foot cube)",
+          "components": "S, M",
+          "duration": "1 minute"
+        }
+      },
+      {
+        "nome": "Absorb Elements",
+        "livello": 1,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage",
+          "range": "Self",
+          "components": "S",
+          "duration": "1 round"
+        }
+      },
+      {
+        "nome": "Alarm",
+        "livello": 1,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 minute",
+          "range": "30 ft (20-foot cube)",
+          "components": "V, S, M",
+          "duration": "8 hours",
+          "ritual": "yes"
+        }
+      },
+      {
+        "nome": "Chromatic Orb",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "90 ft",
+          "components": "V, S, M (50 gp)",
+          "duration": "Instantaneous",
+          "effect": "ranged spell attack, 3d8 acid/cold/fire/lightning/poison/thunder"
+        }
+      },
+      {
+        "nome": "Find Familiar",
+        "livello": 1,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 hour",
+          "range": "10 ft",
+          "components": "V, S, M (10 gp, consumed)",
+          "duration": "Instantaneous",
+          "ritual": "yes"
+        }
+      },
+      {
+        "nome": "Identify",
+        "livello": 1,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Divination",
+          "casting": "1 minute",
+          "range": "Touch",
+          "components": "V, S, M (100 gp)",
+          "duration": "Instantaneous",
+          "ritual": "yes"
+        }
+      },
+      {
+        "nome": "Mage Armor",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S, M",
+          "duration": "8 hours"
+        }
+      },
+      {
+        "nome": "Magic Missile",
+        "livello": 1,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "Instantaneous",
+          "effect": "(1d4+1)*(2+@item.level) force"
+        }
+      },
+      {
+        "nome": "Shield",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell",
+          "range": "Self",
+          "components": "V, S",
+          "duration": "1 round"
+        }
+      },
+      {
+        "nome": "Silvery Barbs",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 reaction, which you take when a creature you can see within 60 feet of yourself succeeds on an attack roll, an ability check, or a saving throw",
+          "range": "60 ft",
+          "components": "V",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Dragon's Breath",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Transmutation",
+          "casting": "1 bonus action",
+          "range": "Touch (15-foot cone)",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "DEX save, 3d6 acid/cold/fire/lightning/poison"
+        }
+      },
+      {
+        "nome": "Mind Spike",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Divination",
+          "casting": "1 action",
+          "range": "60 ft",
+          "components": "S",
+          "duration": "Concentration, up to 1 hour",
+          "effect": "WIS save, 3d8 psychic"
+        }
+      },
+      {
+        "nome": "Misty Step",
+        "livello": 2,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 bonus action",
+          "range": "Self",
+          "components": "V",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Suggestion",
+        "livello": 2,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 action",
+          "range": "30 ft",
+          "components": "V, M",
+          "duration": "Concentration, up to 8 hours",
+          "effect": "WIS save"
+        }
+      },
+      {
+        "nome": "Counterspell",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 reaction, which you take when you see a creature within 60 feet of you casting a spell",
+          "range": "60 ft",
+          "components": "S",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Dispel Magic",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Fireball",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "150 ft (20-foot sphere)",
+          "components": "V, S, M",
+          "duration": "Instantaneous",
+          "effect": "DEX save, 8d6 fire"
+        }
+      },
+      {
+        "nome": "Hypnotic Pattern",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Illusion",
+          "casting": "1 action",
+          "range": "120 ft (30-foot cube)",
+          "components": "S, M",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "WIS save"
+        }
+      }
+    ]
+  },
+  "privilegi": [
+    {
+      "nome": "Lucky",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Brave",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Halfling Nimbleness",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Silent Speech",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Arcane Recovery",
+      "fonte": "classe",
+      "usi": "1/long rest",
+      "descrizione": "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.\n\nFor example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots."
+    },
+    {
+      "nome": "Spellcasting",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Divination Savant",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Portent",
+      "fonte": "classe",
+      "usi": "2/long rest"
+    },
+    {
+      "nome": "Cantrip Formulas",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Bountiful Luck",
+      "fonte": "talento"
+    },
+    {
+      "nome": "Researcher",
+      "fonte": "background"
+    },
+    {
+      "nome": "Expert Divination",
+      "fonte": "classe"
+    }
+  ],
+  "competenze": {
+    "armature": [],
+    "armi": [
+      "Daggers",
+      "Darts",
+      "Light crossbows",
+      "Quarterstaffs",
+      "Slings"
+    ],
+    "strumenti": [],
+    "lingue": [
+      "Celestial",
+      "Common",
+      "Halfling",
+      "Infernal"
+    ]
+  },
+  "equipaggiamento": [
+    {
+      "nome": "Quarterstaff",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Component Pouch",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Backpack",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Book",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Ink (1-ounce bottle)",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Ink Pen",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Parchment (one sheet)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Little Bag of Sand",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Small Knife",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Spellbook",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Common Clothes",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Pouch",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Quill",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Letter from a Dead Colleague Posing a Question You Have Not Yet Been Able to Answer",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Hat of Wizardry",
+      "quantita": 1,
+      "magico": true,
+      "sintonia": true
+    }
+  ],
+  "monete": {
+    "mp": 0,
+    "mo": 10,
+    "me": 0,
+    "ma": 0,
+    "mr": 0
+  },
+  "percezionePassiva": 11
+}

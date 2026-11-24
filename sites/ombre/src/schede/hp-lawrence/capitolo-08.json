@@ -1,0 +1,132 @@
+{
+  "capitolo": 8,
+  "data": "2026-11-22",
+  "occupazione": "Psychologist",
+  "eta": 39,
+  "caratteristiche": {
+    "str": 40,
+    "con": 70,
+    "siz": 60,
+    "dex": 60,
+    "app": 40,
+    "int": 70,
+    "pow": 70,
+    "edu": 78
+  },
+  "pf": {
+    "max": 13,
+    "attuali": 10
+  },
+  "pm": {
+    "max": 14,
+    "attuali": 1
+  },
+  "fortuna": {
+    "iniziale": 65,
+    "attuale": 18
+  },
+  "sanita": {
+    "iniziale": 81,
+    "attuale": 67,
+    "massima": 98,
+    "soglia": 16
+  },
+  "stati": [
+    "folliaIndefinita"
+  ],
+  "movimento": 8,
+  "corporatura": 0,
+  "bonusDanno": "0",
+  "abilita": [
+    {
+      "nome": "Anthropology",
+      "valore": 41
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Photography",
+      "valore": 49
+    },
+    {
+      "nome": "Climb",
+      "valore": 25
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 25
+    },
+    {
+      "nome": "Cthulhu Mythos",
+      "valore": 3
+    },
+    {
+      "nome": "Dodge",
+      "valore": 40
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 55
+    },
+    {
+      "nome": "Firearms (Handgun)",
+      "valore": 40
+    },
+    {
+      "nome": "History",
+      "valore": 60
+    },
+    {
+      "nome": "Jump",
+      "valore": 30
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "German",
+      "valore": 19
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "English",
+      "valore": 78
+    },
+    {
+      "nome": "Listen",
+      "valore": 51
+    },
+    {
+      "nome": "Occult",
+      "valore": 11
+    },
+    {
+      "nome": "Persuade",
+      "valore": 60
+    },
+    {
+      "nome": "Psychoanalysis",
+      "valore": 31
+    },
+    {
+      "nome": "Psychology",
+      "valore": 80
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 25
+    },
+    {
+      "nome": "Track",
+      "valore": 35
+    }
+  ],
+  "armi": [
+    {
+      "nome": ".38 Automatic",
+      "valore": 40,
+      "danni": "1D10",
+      "attacchi": "1 (3)",
+      "gittata": "15 yds",
+      "munizioni": "8",
+      "malfunzionamento": "99"
+    }
+  ]
+}

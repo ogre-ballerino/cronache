@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content';
+import config from 'virtual:cronache/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SheetHistory from '../../components/SheetHistory.astro';
+import SheetCoc7e from '../../components/SheetCoc7e.astro';
+import SheetDnd5e from '../../components/SheetDnd5e.astro';
+import { entryUrl } from '../../lib/collections.mjs';
+import { ogImage } from '../../lib/og';
+import { sheetPdfName, sheetPdfUrl, sheetSystem, sheetsByCharacter } from '../../lib/schede';
+
+export async function getStaticPaths() {
+  return [...(await sheetsByCharacter())].map(([id, sheets]) => ({ params: { id }, props: { sheets } }));
+}
+
+const { sheets } = Astro.props;
+const { id } = Astro.params;
+const character = await getEntry('personaggi', id);
+if (!character) throw new Error(`[schede] src/schede/${id}/ has no matching character in personaggi/`);
+
+const name = character.data.titolo;
+const latest = sheets.at(-1)!;
+const system = sheetSystem()!;
+const summary = system.summary(latest.data).filter(Boolean).join(' · ');
+const VIEWS = { dnd5e: SheetDnd5e, coc7e: SheetCoc7e };
+const View = VIEWS[config.features.schede as keyof typeof VIEWS];
+---
+<BaseLayout
+  title={`${config.labels.sheet}: ${name}`}
+  description={`${config.labels.sheet} di ${name}: ${summary}.`}
+  type="article"
+  og={ogImage(character.data)}
+>
+  <article>
+    <header class="entry-header">
+      <h1 class="page-title">{name}</h1>
+      <p class="entry-meta">{summary}</p>
+      <p class="sheet-actions">
+        <a href={entryUrl('personaggi', id)}>{config.labels.sheetBack}</a>
+        {' · '}
+        <a href={sheetPdfUrl(latest)} download={sheetPdfName(latest)}>{config.labels.sheetDownload}</a>
+      </p>
+    </header>
+    <View sheet={latest.data} />
+    <SheetHistory sheets={sheets} />
+  </article>
+</BaseLayout>

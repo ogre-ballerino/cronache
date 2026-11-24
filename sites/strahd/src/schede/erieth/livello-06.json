@@ -1,0 +1,527 @@
+{
+  "livello": 6,
+  "data": "2026-10-29",
+  "sessione": 12,
+  "classi": [
+    {
+      "nome": "Warlock",
+      "sottoclasse": "The Fiend",
+      "livelli": 6,
+      "dadoVita": 8
+    }
+  ],
+  "razza": "Elf (Drow)",
+  "background": "Criminal",
+  "allineamento": "",
+  "pe": 14000,
+  "competenza": 3,
+  "caratteristiche": {
+    "str": {
+      "valore": 8,
+      "mod": -1,
+      "salvezza": -1,
+      "competente": false
+    },
+    "dex": {
+      "valore": 16,
+      "mod": 3,
+      "salvezza": 3,
+      "competente": false
+    },
+    "con": {
+      "valore": 14,
+      "mod": 2,
+      "salvezza": 2,
+      "competente": false
+    },
+    "int": {
+      "valore": 10,
+      "mod": 0,
+      "salvezza": 0,
+      "competente": false
+    },
+    "wis": {
+      "valore": 10,
+      "mod": 0,
+      "salvezza": 3,
+      "competente": true
+    },
+    "cha": {
+      "valore": 18,
+      "mod": 4,
+      "salvezza": 7,
+      "competente": true
+    }
+  },
+  "abilita": {
+    "acr": {
+      "bonus": 3,
+      "competenza": 0
+    },
+    "ani": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "arc": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "ath": {
+      "bonus": -1,
+      "competenza": 0
+    },
+    "dec": {
+      "bonus": 7,
+      "competenza": 1
+    },
+    "his": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "ins": {
+      "bonus": 3,
+      "competenza": 1
+    },
+    "itm": {
+      "bonus": 7,
+      "competenza": 1
+    },
+    "inv": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "med": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "nat": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "prc": {
+      "bonus": 3,
+      "competenza": 1
+    },
+    "prf": {
+      "bonus": 4,
+      "competenza": 0
+    },
+    "per": {
+      "bonus": 4,
+      "competenza": 0
+    },
+    "rel": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "slt": {
+      "bonus": 3,
+      "competenza": 0
+    },
+    "ste": {
+      "bonus": 6,
+      "competenza": 1
+    },
+    "sur": {
+      "bonus": 0,
+      "competenza": 0
+    }
+  },
+  "pf": 45,
+  "ca": 14,
+  "iniziativa": 3,
+  "velocita": "30 ft",
+  "sensi": [
+    "Darkvision 120 ft"
+  ],
+  "dadiVita": "6d8",
+  "attacchi": [
+    {
+      "nome": "+1 Rapier",
+      "bonus": 7,
+      "danni": "1d8+4 piercing"
+    },
+    {
+      "nome": "+1 Shortsword",
+      "bonus": 7,
+      "danni": "1d6+4 piercing"
+    }
+  ],
+  "incantesimi": {
+    "caratteristica": "cha",
+    "cd": 16,
+    "attacco": 8,
+    "slot": {},
+    "patto": {
+      "livello": 3,
+      "slot": 2
+    },
+    "elenco": [
+      {
+        "nome": "Booming Blade",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "Self",
+          "components": "S, M",
+          "duration": "1 round",
+          "effect": "1d8 thunder"
+        }
+      },
+      {
+        "nome": "Dancing Lights",
+        "livello": 0,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Illusion",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 1 minute"
+        }
+      },
+      {
+        "nome": "Eldritch Blast",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "Instantaneous",
+          "effect": "ranged spell attack, 1d10 force"
+        }
+      },
+      {
+        "nome": "Mage Hand",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 action",
+          "range": "30 ft",
+          "components": "V, S",
+          "duration": "1 minute"
+        }
+      },
+      {
+        "nome": "Command",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 action",
+          "range": "60 ft",
+          "components": "V",
+          "duration": "1 round",
+          "effect": "WIS save"
+        }
+      },
+      {
+        "nome": "Faerie Fire",
+        "livello": 1,
+        "preparato": true,
+        "sempre": true,
+        "usi": "1/long rest",
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "60 ft (20-foot cube)",
+          "components": "V",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "DEX save"
+        }
+      },
+      {
+        "nome": "Darkness",
+        "livello": 2,
+        "preparato": true,
+        "sempre": true,
+        "usi": "1/long rest",
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "60 ft (15-foot sphere)",
+          "components": "V, M",
+          "duration": "Concentration, up to 10 minutes"
+        }
+      },
+      {
+        "nome": "Invisibility",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Illusion",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 1 hour"
+        }
+      },
+      {
+        "nome": "Misty Step",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 bonus action",
+          "range": "Self",
+          "components": "V",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Scorching Ray",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "Instantaneous",
+          "effect": "ranged spell attack, 2d6 fire"
+        }
+      },
+      {
+        "nome": "Fireball",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "150 ft (20-foot sphere)",
+          "components": "V, S, M",
+          "duration": "Instantaneous",
+          "effect": "DEX save, 8d6 fire"
+        }
+      },
+      {
+        "nome": "Hypnotic Pattern",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Illusion",
+          "casting": "1 action",
+          "range": "120 ft (30-foot cube)",
+          "components": "S, M",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "WIS save"
+        }
+      },
+      {
+        "nome": "Spirit Shroud",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Necromancy",
+          "casting": "1 bonus action",
+          "range": "Self",
+          "components": "V, S",
+          "duration": "Concentration, up to 1 minute"
+        }
+      }
+    ]
+  },
+  "privilegi": [
+    {
+      "nome": "Fey Ancestry",
+      "fonte": "razza",
+      "descrizione": "You have advantage on saving throws against being charmed, and magic can’t put you to sleep."
+    },
+    {
+      "nome": "Keen Senses",
+      "fonte": "razza",
+      "descrizione": "You have proficiency in the Perception skill."
+    },
+    {
+      "nome": "Trance",
+      "fonte": "razza",
+      "descrizione": "Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+    },
+    {
+      "nome": "Criminal Contact",
+      "fonte": "background"
+    },
+    {
+      "nome": "Pact Magic",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Dark One's Blessing",
+      "fonte": "classe",
+      "descrizione": "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)."
+    },
+    {
+      "nome": "Eldritch Invocations",
+      "fonte": "classe",
+      "descrizione": "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability.\n\nAt 2nd level, you gain two eldritch invocations of your choice. Your invocation options are detailed at the end of the class description. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table.\n\nAdditionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level.\n\nIf an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class."
+    },
+    {
+      "nome": "Eldritch Invocations: Agonizing Blast",
+      "fonte": "classe",
+      "descrizione": "Prerequisite: eldritch blast cantrip\n\nWhen you cast eldritch blast, add your Charisma modifier to the damage it deals on a hit."
+    },
+    {
+      "nome": "Eldritch Invocations: Repelling Blast",
+      "fonte": "classe",
+      "descrizione": "Prerequisite: eldritch blast cantrip\n\nWhen you hit a creature with eldritch blast, you can push the creature up to 10 feet away from you in a straight line."
+    },
+    {
+      "nome": "Pact Boon: Pact of the Blade",
+      "fonte": "classe",
+      "usi": "4/long rest"
+    },
+    {
+      "nome": "Eldritch Versatility",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Eldritch Invocations: Devil's Sight",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Dark One's Own Luck",
+      "fonte": "classe",
+      "usi": "1/short rest",
+      "descrizione": "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.\n\nOnce you use this feature, you can't use it again until you finish a short or long rest."
+    },
+    {
+      "nome": "Superior Darkvision",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Sunlight Sensitivity",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Drow Magic",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Drow Weapon Training",
+      "fonte": "razza"
+    }
+  ],
+  "competenze": {
+    "armature": [
+      "Light armor",
+      "Medium armor",
+      "Shields"
+    ],
+    "armi": [
+      "Simple weapons",
+      "Rapiers",
+      "Shortswords",
+      "Hand crossbows",
+      "Martial weapons"
+    ],
+    "strumenti": [],
+    "lingue": [
+      "Undercommon",
+      "Infernal",
+      "Common",
+      "Elvish"
+    ]
+  },
+  "equipaggiamento": [
+    {
+      "nome": "Component Pouch",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Backpack",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Book",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Ink (1-ounce bottle)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Ink Pen",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Parchment (one sheet)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Little Bag of Sand",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Small Knife",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Leather Armor",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "+1 Rod of the Pact Keeper",
+      "quantita": 1,
+      "magico": true,
+      "sintonia": true
+    },
+    {
+      "nome": "Potion of Healing",
+      "quantita": 1,
+      "magico": true
+    },
+    {
+      "nome": "Holy Water (flask)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Potion of Fire Breath",
+      "quantita": 1,
+      "magico": true
+    },
+    {
+      "nome": "+1 Rapier",
+      "quantita": 1,
+      "magico": true
+    },
+    {
+      "nome": "+1 Shortsword",
+      "quantita": 1,
+      "magico": true
+    }
+  ],
+  "monete": {
+    "mp": 0,
+    "mo": 9814,
+    "me": 0,
+    "ma": 0,
+    "mr": 0
+  },
+  "percezionePassiva": 13
+}

@@ -6,10 +6,12 @@ import Card from '../../components/Card.astro';
 import { getCollection } from 'astro:content';
 import config from 'virtual:cronache/config';
 import { characterMeta } from '../../lib/characters';
+import { sheetsByCharacter } from '../../lib/schede';
 
 const characters = (await getCollection('personaggi')).sort((a, b) =>
   a.data.titolo.localeCompare(b.data.titolo)
 );
+const sheets = await sheetsByCharacter();
 const { title, heading, lede, description } = config.sections.personaggi;
 ---
 <BaseLayout title={title} description={description}>
@@ -21,7 +23,7 @@ const { title, heading, lede, description } = config.sections.personaggi;
         href={entryUrl('personaggi', p.id)}
         title={p.data.titolo}
         excerpt={p.data.estratto}
-        meta={characterMeta(p.data)}
+        meta={characterMeta(p.data, sheets.get(p.id)?.at(-1))}
         status={p.data.stato}
         image={p.data.immagine}
       />

@@ -1,0 +1,410 @@
+{
+  "livello": 6,
+  "data": "2026-10-29",
+  "sessione": 12,
+  "classi": [
+    {
+      "nome": "Rogue",
+      "sottoclasse": "Swashbuckler",
+      "livelli": 6,
+      "dadoVita": 8
+    }
+  ],
+  "razza": "Elf (Drow)",
+  "background": "Soldier",
+  "allineamento": "Chaotic Neutral",
+  "pe": 14000,
+  "competenza": 3,
+  "caratteristiche": {
+    "str": {
+      "valore": 8,
+      "mod": -1,
+      "salvezza": -1,
+      "competente": false
+    },
+    "dex": {
+      "valore": 18,
+      "mod": 4,
+      "salvezza": 7,
+      "competente": true
+    },
+    "con": {
+      "valore": 14,
+      "mod": 2,
+      "salvezza": 2,
+      "competente": false
+    },
+    "int": {
+      "valore": 12,
+      "mod": 1,
+      "salvezza": 4,
+      "competente": true
+    },
+    "wis": {
+      "valore": 12,
+      "mod": 1,
+      "salvezza": 1,
+      "competente": false
+    },
+    "cha": {
+      "valore": 14,
+      "mod": 2,
+      "salvezza": 2,
+      "competente": false
+    }
+  },
+  "abilita": {
+    "acr": {
+      "bonus": 10,
+      "competenza": 2
+    },
+    "ani": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "arc": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "ath": {
+      "bonus": 2,
+      "competenza": 1
+    },
+    "dec": {
+      "bonus": 2,
+      "competenza": 0
+    },
+    "his": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "ins": {
+      "bonus": 4,
+      "competenza": 1
+    },
+    "itm": {
+      "bonus": 5,
+      "competenza": 1
+    },
+    "inv": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "med": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "nat": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "prc": {
+      "bonus": 7,
+      "competenza": 2
+    },
+    "prf": {
+      "bonus": 2,
+      "competenza": 0
+    },
+    "per": {
+      "bonus": 2,
+      "competenza": 0
+    },
+    "rel": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "slt": {
+      "bonus": 7,
+      "competenza": 1
+    },
+    "ste": {
+      "bonus": 10,
+      "competenza": 2
+    },
+    "sur": {
+      "bonus": 1,
+      "competenza": 0
+    }
+  },
+  "pf": 45,
+  "ca": 15,
+  "iniziativa": 6,
+  "velocita": "30 ft",
+  "sensi": [
+    "Darkvision 120 ft"
+  ],
+  "dadiVita": "6d8",
+  "attacchi": [
+    {
+      "nome": "+1 Dagger",
+      "bonus": 8,
+      "danni": "1d4+5 piercing"
+    },
+    {
+      "nome": "Scimitar",
+      "bonus": 7,
+      "danni": "1d6+4 piercing"
+    }
+  ],
+  "incantesimi": {
+    "caratteristica": "cha",
+    "cd": 13,
+    "attacco": 5,
+    "slot": {},
+    "patto": null,
+    "elenco": [
+      {
+        "nome": "Dancing Lights",
+        "livello": 0,
+        "preparato": false,
+        "sempre": false,
+        "dettagli": {
+          "school": "Illusion",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 1 minute"
+        }
+      },
+      {
+        "nome": "Faerie Fire",
+        "livello": 1,
+        "preparato": true,
+        "sempre": true,
+        "usi": "1/long rest",
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "60 ft (20-foot cube)",
+          "components": "V",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "DEX save"
+        }
+      },
+      {
+        "nome": "Darkness",
+        "livello": 2,
+        "preparato": true,
+        "sempre": true,
+        "usi": "1/long rest",
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "60 ft (15-foot sphere)",
+          "components": "V, M",
+          "duration": "Concentration, up to 10 minutes"
+        }
+      }
+    ]
+  },
+  "privilegi": [
+    {
+      "nome": "Fey Ancestry",
+      "fonte": "razza",
+      "descrizione": "You have advantage on saving throws against being charmed, and magic can’t put you to sleep."
+    },
+    {
+      "nome": "Keen Senses",
+      "fonte": "razza",
+      "descrizione": "You have proficiency in the Perception skill."
+    },
+    {
+      "nome": "Trance",
+      "fonte": "razza",
+      "descrizione": "Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+    },
+    {
+      "nome": "Expertise",
+      "fonte": "classe",
+      "descrizione": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\n\nAt 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit."
+    },
+    {
+      "nome": "Sneak Attack",
+      "fonte": "classe",
+      "descrizione": "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\n\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.\n\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table."
+    },
+    {
+      "nome": "Thieves' Cant",
+      "fonte": "classe",
+      "descrizione": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.\n\nIn addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."
+    },
+    {
+      "nome": "Cunning Action",
+      "fonte": "classe",
+      "descrizione": "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action."
+    },
+    {
+      "nome": "Steady Aim",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Fancy Footwork (Passi Aggraziati)",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Rakish Audacity (Audacia Sfrontata)",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Uncanny Dodge",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Expertise (6th level)",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Superior Darkvision",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Sunlight Sensitivity",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Drow Magic",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Drow Weapon Training",
+      "fonte": "razza"
+    },
+    {
+      "nome": "Military Rank",
+      "fonte": "background"
+    }
+  ],
+  "competenze": {
+    "armature": [
+      "Light armor"
+    ],
+    "armi": [
+      "Hand crossbows",
+      "Rapiers",
+      "Shortswords",
+      "Simple weapons",
+      "Whips",
+      "Longswords"
+    ],
+    "strumenti": [
+      "Thieves' tools",
+      "Dice set",
+      "Vehicles (land)"
+    ],
+    "lingue": [
+      "Common",
+      "Goblin",
+      "Thieves' Cant",
+      "Undercommon",
+      "Elvish",
+      "Common Sign Language"
+    ]
+  },
+  "equipaggiamento": [
+    {
+      "nome": "Backpack",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Ball Bearings (bag of 1,000)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "10 Feet of String",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Bell",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Candle",
+      "quantita": 5,
+      "magico": false
+    },
+    {
+      "nome": "Crowbar",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Hammer",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Piton",
+      "quantita": 10,
+      "magico": false
+    },
+    {
+      "nome": "Hooded Lantern",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Oil (flask)",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Rations (1 day)",
+      "quantita": 5,
+      "magico": false
+    },
+    {
+      "nome": "Tinderbox",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Waterskin",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Hempen Rope (50 feet)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Leather Armor",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "+1 Dagger",
+      "quantita": 1,
+      "magico": true
+    },
+    {
+      "nome": "Thieves' Tools",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Scimitar",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Platinum Hilt",
+      "quantita": 1,
+      "magico": true,
+      "sintonia": false
+    }
+  ],
+  "monete": {
+    "mp": 0,
+    "mo": 0,
+    "me": 0,
+    "ma": 0,
+    "mr": 0
+  },
+  "percezionePassiva": 17
+}

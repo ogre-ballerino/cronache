@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { entryUrl } from '../lib/collections.mjs';
+import { longDate } from '../lib/format';
+import { sheetPdfName, sheetPdfUrl, sheetSystem, type SheetEntry } from '../lib/schede';
+
+interface Props {
+  sheets: SheetEntry[];
+}
+const { sheets } = Astro.props;
+const system = sheetSystem()!;
+const text = config.labels.sheetText;
+const sessions = await getCollection('sessions');
+const sessionLink = (numero?: number) => {
+  if (!numero) return undefined;
+  const session = sessions.find((s) => s.data.numero === numero);
+  return { href: session && entryUrl('sessions', session.id), label: `${config.labels.session} ${numero}` };
+};
+
+const entries = sheets
+  .map((sheet, i) => ({
+    sheet,
+    heading: system.heading?.(sheet.data, text),
+    session: sessionLink(system.session(sheet.data)),
+    changes: i === 0 ? [] : system.diff(sheets[i - 1].data, sheet.data),
+    first: i === 0,
+  }))
+  .reverse();
+---
+<section class="sheet-history">
+  <h2>{text.history}</h2>
+  <ol class="sheet-history-list">
+    {entries.map(({ sheet, heading, session, changes, first }) => {
+      const sessionText = session && (session.href ? <a href={session.href}>{session.label}</a> : session.label);
+      return (
+        <li class="timeline-item">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <h3 class="sheet-history-title">{heading ?? sessionText}</h3>
+          <p class="sheet-note">
+            {longDate(sheet.data.data)}
+            {heading && sessionText && <> · {sessionText}</>}
+            {' · '}<a href={sheetPdfUrl(sheet)} download={sheetPdfName(sheet)}>PDF</a>
+          </p>
+          {first && <p class="sheet-note">{config.labels.sheetFirst}</p>}
+          {changes.map((group) => (
+            <p class="sheet-history-change"><strong>{text[group.key]}:</strong> {group.voci.join(', ')}</p>
+          ))}
+        </li>
+      );
+    })}
+  </ol>
+</section>

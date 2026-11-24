@@ -1,0 +1,108 @@
+---
+import config from 'virtual:cronache/config';
+import { CHARACTERISTICS, SKILLS, SPECIALTIES, STATES, baseValue, fifth, half, skillLabel } from '../lib/scheda/coc7e/skills.mjs';
+import type { CocSheet } from '../lib/scheda/coc7e/schema';
+
+// Game terms are in English, as on Chaosium's sheet.
+interface Props {
+  sheet: CocSheet;
+}
+const { sheet } = Astro.props;
+const text = config.labels.sheetText;
+
+const current = (now: number | undefined, max: number) => (now === undefined || now === max ? `${max}` : `${now} / ${max}`);
+const stats = [
+  ['Hit Points', current(sheet.pf.attuali, sheet.pf.max)],
+  ['Magic Points', current(sheet.pm.attuali, sheet.pm.max)],
+  ['Luck', sheet.fortuna.attuale ?? sheet.fortuna.iniziale],
+  ['Sanity', sheet.sanita.attuale ?? sheet.sanita.iniziale],
+  ['Move', sheet.movimento],
+  ['Build', sheet.corporatura],
+  ['Damage Bonus', sheet.bonusDanno],
+];
+const notes = [
+  `Starting Sanity ${sheet.sanita.iniziale}`,
+  sheet.sanita.massima !== undefined && `Max Sanity ${sheet.sanita.massima}`,
+  sheet.fortuna.attuale !== undefined && `Starting Luck ${sheet.fortuna.iniziale}`,
+].filter(Boolean);
+
+// The printed list, each skill at the investigator's value or its base,
+// then the specialties and the investigator's own skills.
+const standard = SKILLS.map(([nome, base]) => {
+  const own = sheet.abilita.find((s) => s.nome === nome && !s.specialita);
+  const start = baseValue(base, sheet.caratteristiche) ?? 0;
+  return { label: nome, valore: own?.valore ?? start, raised: (own?.valore ?? start) > start };
+});
+const printed = new Set(SKILLS.map(([nome]) => nome));
+const extra = sheet.abilita
+  .filter((s) => !(printed.has(s.nome) && !s.specialita))
+  .map((s) => {
+    const base = s.nome in SPECIALTIES ? baseValue(SPECIALTIES[s.nome as keyof typeof SPECIALTIES][0], sheet.caratteristiche) : undefined;
+    return { label: skillLabel(s), valore: s.valore, raised: base === undefined || s.valore > base };
+  });
+const skills = [...standard, ...extra].sort((a, b) => a.label.localeCompare(b.label));
+const brawl = standard.find((s) => s.label === 'Fighting (Brawl)')!.valore;
+const weapons = [{ nome: 'Brawl', valore: brawl, danni: '1D3 + DB', attacchi: '1' }, ...sheet.armi];
+---
+<div class="sheet sheet-coc">
+  <ul class="sheet-abilities sheet-characteristics">
+    {Object.entries(CHARACTERISTICS).map(([key, abbr]) => {
+      const value = sheet.caratteristiche[key as keyof typeof sheet.caratteristiche];
+      return (
+        <li class="sheet-ability">
+          <abbr>{abbr}</abbr>
+          <span class="sheet-ability-mod">{value}</span>
+          <span class="sheet-ability-save" title="Hard / Extreme">{half(value)} · {fifth(value)}</span>
+        </li>
+      );
+    })}
+  </ul>
+
+  <dl class="sheet-stats">
+    {stats.map(([label, value]) => (
+      <div>
+        <dt>{label}</dt>
+        <dd>{value}</dd>
+      </div>
+    ))}
+  </dl>
+  <p class="sheet-note">{notes.join(' · ')}</p>
+  {sheet.stati.length > 0 && (
+    <div class="badge-row sheet-states">
+      {sheet.stati.map((s) => <span class="badge">{STATES[s][0]}</span>)}
+    </div>
+  )}
+
+  <h2>Skills</h2>
+  <ul class="sheet-skills sheet-skills-coc">
+    {skills.map((s) => (
+      <li class:list={['sheet-skill', s.raised ? 'is-proficient' : 'is-none']}>
+        <span>{s.label}</span>
+        <span class="sheet-num">{s.valore} <span class="sheet-aside">{half(s.valore)} · {fifth(s.valore)}</span></span>
+      </li>
+    ))}
+  </ul>
+  <p class="sheet-note"><Fragment set:html={text.skillValues} /> <span class="sheet-key is-proficient"></span> {text.aboveBase}</p>
+
+  <h2>Combat</h2>
+  <div class="sheet-table-wrap">
+    <table class="sheet-table">
+      <thead>
+        <tr><th>Weapon</th><th>Skill</th><th>Damage</th><th>Attacks</th><th>Range</th><th>Ammo</th><th>Malf.</th></tr>
+      </thead>
+      <tbody>
+        {weapons.map((w) => (
+          <tr>
+            <td>{w.nome}</td>
+            <td class="sheet-num">{w.valore} <span class="sheet-aside">{half(w.valore)} · {fifth(w.valore)}</span></td>
+            <td>{w.danni}</td>
+            <td>{w.attacchi ?? ''}</td>
+            <td>{'gittata' in w ? w.gittata ?? '' : '–'}</td>
+            <td>{'munizioni' in w ? w.munizioni ?? '' : '–'}</td>
+            <td>{'malfunzionamento' in w ? w.malfunzionamento ?? '' : '–'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>

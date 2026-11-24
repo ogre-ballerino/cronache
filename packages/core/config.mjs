@@ -1,4 +1,5 @@
 import { enabledCollections, sectionUrl } from './lib/collections.mjs';
+import { SHEET_TEXT } from './lib/scheda/text.mjs';
 
 /**
  * @typedef {object} SectionText
@@ -17,7 +18,8 @@ import { enabledCollections, sectionUrl } from './lib/collections.mjs';
  * @property {string} [headerTitle]      HTML of the header link on inner pages; defaults to `name`.
  * @property {{ href: string, label: string }[]} [nav]
  * @property {string[]} [css]            Stylesheets, in order: bare specifiers (fonts) or paths relative to the site root.
- * @property {{ handout?: boolean }} [features]
+ * @property {{ handout?: boolean, schede?: false | 'dnd5e' | 'coc7e' }} [features]
+ *   `schede`: the game system of the character sheets shown under each character page (lib/scheda/systems.ts).
  * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
  * @property {{ endpoint: string } | { at: string }} [nextSession]
  *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
@@ -33,6 +35,12 @@ const defaults = {
     mentionedIn: 'Menzionato in',
     otherSessions: 'Altre sessioni',
     nextSession: 'Prossima sessione',
+    sheet: 'Scheda del personaggio',
+    sheetDownload: 'Scarica il PDF',
+    sheetBack: 'Torna al personaggio',
+    sheetFirst: 'Prima scheda registrata.',
+    /** The sheet pages' text for `features.schede`'s system: defaults in lib/scheda/text.mjs, override any key. */
+    sheetText: /** @type {Record<string, string>} */ ({}),
   },
   sections: {
     diario: {
@@ -87,7 +95,7 @@ export function defineCampaign(config) {
 
 /** @param {CampaignConfig} user */
 export function resolveConfig(user) {
-  const features = { handout: false, ...user.features };
+  const features = { handout: false, schede: false, ...user.features };
   const sections = Object.fromEntries(
     Object.entries(defaults.sections).map(([key, base]) => {
       const merged = { ...base, ...user.sections?.[key] };
@@ -106,7 +114,11 @@ export function resolveConfig(user) {
     features,
     footer: user.footer ?? { ornament: '', lines: [] },
     nextSession: user.nextSession ?? null,
-    labels: { ...defaults.labels, ...user.labels },
+    labels: {
+      ...defaults.labels,
+      ...user.labels,
+      sheetText: { ...(features.schede ? SHEET_TEXT[features.schede] : {}), ...user.labels?.sheetText },
+    },
     sections,
   };
 }

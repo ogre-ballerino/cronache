@@ -1,0 +1,86 @@
+{
+  "capitolo": 8,
+  "data": "2026-11-22",
+  "occupazione": "Cartomante",
+  "eta": 75,
+  "invecchiamento": 17,
+  "caratteristiche": {
+    "str": 40,
+    "con": 40,
+    "siz": 50,
+    "dex": 40,
+    "app": 40,
+    "int": 60,
+    "pow": 75,
+    "edu": 67
+  },
+  "pf": {
+    "max": 9
+  },
+  "pm": {
+    "max": 15
+  },
+  "fortuna": {
+    "iniziale": 35,
+    "attuale": 79
+  },
+  "sanita": {
+    "iniziale": 75,
+    "attuale": 75,
+    "massima": 80
+  },
+  "stati": [],
+  "movimento": 3,
+  "corporatura": 0,
+  "bonusDanno": "0",
+  "abilita": [
+    {
+      "nome": "Charm",
+      "valore": 25
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 30
+    },
+    {
+      "nome": "Cthulhu Mythos",
+      "valore": 19
+    },
+    {
+      "nome": "History",
+      "valore": 35
+    },
+    {
+      "nome": "Library Use",
+      "valore": 88
+    },
+    {
+      "nome": "Occult",
+      "valore": 90
+    },
+    {
+      "nome": "Persuade",
+      "valore": 85
+    },
+    {
+      "nome": "Psychology",
+      "valore": 60
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 25
+    },
+    {
+      "nome": "Hypnosis",
+      "valore": 81
+    }
+  ],
+  "armi": [
+    {
+      "nome": "Bastone",
+      "valore": 25,
+      "danni": "1D6+DB",
+      "attacchi": "1"
+    }
+  ]
+}

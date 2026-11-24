@@ -20,16 +20,27 @@ function routes(features) {
           [`/${section}/[id]`, `${section}/[id].astro`],
         ]
   );
-  return [...pages, ['/cerca', 'cerca.astro']];
+  const sheets = features.schede
+    ? [
+        ['/personaggi/[id]/scheda', 'personaggi/scheda.astro'],
+        ['/personaggi/[id]/scheda/[snapshot].pdf', 'personaggi/scheda-pdf.ts'],
+      ]
+    : [];
+  return [...pages, ...sheets, ['/cerca', 'cerca.astro']];
 }
 
-function virtualModules(config, { root, contentDir, publicDir }) {
+function virtualModules(config, { root, contentDir, publicDir, sheetTemplate, coreDir }) {
   const require = createRequire(path.join(root, 'package.json'));
   // Relative paths are the site's own files; anything else is a package (fonts).
   const resolveCss = (spec) => (spec.startsWith('.') ? path.resolve(root, spec) : require.resolve(spec));
   const modules = {
     'virtual:cronache/config': `export default ${JSON.stringify(config)};`,
-    'virtual:cronache/paths': `export const contentDir = ${JSON.stringify(contentDir)};\nexport const publicDir = ${JSON.stringify(publicDir)};`,
+    'virtual:cronache/paths': [
+      `export const contentDir = ${JSON.stringify(contentDir)};`,
+      `export const publicDir = ${JSON.stringify(publicDir)};`,
+      `export const sheetTemplate = ${JSON.stringify(sheetTemplate)};`,
+      `export const coreDir = ${JSON.stringify(coreDir)};`,
+    ].join('\n'),
     'virtual:cronache/styles': config.css.map((spec) => `import ${JSON.stringify(resolveCss(spec))};`).join('\n'),
   };
   return {
@@ -60,6 +71,10 @@ export default function cronache(userConfig) {
           root,
           contentDir: path.join(root, 'src', 'content'),
           publicDir: fileURLToPath(astroConfig.publicDir),
+          coreDir: fileURLToPath(new URL('.', import.meta.url)),
+          sheetTemplate: config.features.schede
+            ? fileURLToPath(new URL(`./assets/scheda-${config.features.schede}.pdf`, import.meta.url))
+            : '',
         };
         if (command === 'build') assertLinksResolve(paths.contentDir);
 

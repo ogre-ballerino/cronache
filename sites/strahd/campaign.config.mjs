@@ -32,6 +32,7 @@ export default defineCampaign({
     ],
   },
   nextSession: { endpoint: 'https://cms.sirlisko.com/items/strahd' },
+  features: { schede: 'dnd5e' },
   sections: {
     png: { lede: 'Alleati, nemici e comparse incontrate a Barovia.' },
     luoghi: { lede: 'Villaggi, castelli, foreste e altri luoghi di Barovia.' },

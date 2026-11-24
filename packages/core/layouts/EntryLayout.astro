@@ -38,6 +38,7 @@ const section = config.sections[collectionByKey(collection)!.section as keyof ty
           {tags.map((t) => <span class="badge">{t}</span>)}
         </div>
       )}
+      <slot name="header" />
     </header>
     <div class="entry-content">
       <slot />
