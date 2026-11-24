@@ -2,12 +2,12 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { describe, it } from 'node:test';
 import { PDFDocument } from 'pdf-lib';
-import { fromFoundry } from '../lib/scheda/foundry.mjs';
-import { fillSheetPdf } from '../lib/scheda/pdf.mjs';
-import { evalBonus, pactSlots, proficiencyBonus, spellSlots } from '../lib/scheda/rules.mjs';
-import { spellDetails } from '../lib/scheda/spells.mjs';
-import { isSrdFeature, plainText } from '../lib/scheda/srd.mjs';
-import { diffSheets } from '../lib/scheda/storico.mjs';
+import { fromFoundry } from '../lib/scheda/dnd5e/foundry.mjs';
+import { fillSheetPdf } from '../lib/scheda/dnd5e/pdf.mjs';
+import { evalBonus, pactSlots, proficiencyBonus, spellSlots } from '../lib/scheda/dnd5e/rules.mjs';
+import { spellDetails } from '../lib/scheda/dnd5e/spells.mjs';
+import { isSrdFeature, plainText } from '../lib/scheda/dnd5e/srd.mjs';
+import { diffSheets } from '../lib/scheda/dnd5e/storico.mjs';
 
 const abilities = (scores) =>
   Object.fromEntries(Object.entries(scores).map(([k, [value, proficient]]) => [k, { value, proficient: proficient ? 1 : 0 }]));
@@ -170,7 +170,7 @@ describe('diffSheets', () => {
 
 describe('fillSheetPdf', () => {
   it('fills the named fields and the spell page', async () => {
-    const template = fs.readFileSync(new URL('../assets/scheda-5e.pdf', import.meta.url));
+    const template = fs.readFileSync(new URL('../assets/scheda-dnd5e.pdf', import.meta.url));
     const sheet = fromFoundry(warlock(), { data: '2026-11-24' });
     const form = (await PDFDocument.load(await fillSheetPdf(template, sheet, { nome: 'Erieth' }))).getForm();
     const value = (name) => form.getFields().find((f) => f.getName().trim().replace(/\s+/g, ' ') === name).getText();

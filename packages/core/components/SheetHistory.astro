@@ -3,39 +3,39 @@ import { getCollection } from 'astro:content';
 import config from 'virtual:cronache/config';
 import { entryUrl } from '../lib/collections.mjs';
 import { longDate } from '../lib/format';
-import { diffSheets } from '../lib/scheda/storico.mjs';
-import { sheetPdfName, sheetPdfUrl, type SheetEntry } from '../lib/schede';
+import { sheetPdfName, sheetPdfUrl, sheetSystem, type SheetEntry } from '../lib/schede';
 
 interface Props {
   sheets: SheetEntry[];
 }
 const { sheets } = Astro.props;
+const system = sheetSystem()!;
 const sessions = await getCollection('sessions');
 const sessionLink = (numero?: number) => {
   const session = numero && sessions.find((s) => s.data.numero === numero);
   return session ? { href: entryUrl('sessions', session.id), label: `${config.labels.session} ${numero}` } : undefined;
 };
 
-const levels = sheets
+const entries = sheets
   .map((sheet, i) => ({
     sheet,
-    session: sessionLink(sheet.data.sessione),
-    changes: i === 0 ? [] : diffSheets(sheets[i - 1].data, sheet.data),
+    session: sessionLink(system.session(sheet.data)),
+    changes: i === 0 ? [] : system.diff(sheets[i - 1].data, sheet.data),
     first: i === 0,
   }))
   .reverse();
 ---
 <section class="sheet-history">
-  <h2>{config.labels.sheetHistory}</h2>
+  <h2>{system.historyTitle}</h2>
   <ol class="sheet-history-list">
-    {levels.map(({ sheet, session, changes, first }) => (
+    {entries.map(({ sheet, session, changes, first }) => (
       <li class="timeline-item">
         <span class="timeline-marker" aria-hidden="true"></span>
-        <h3 class="sheet-history-title">Livello {sheet.data.livello}</h3>
+        <h3 class="sheet-history-title">{system.heading(sheet.data, config.labels.session)}</h3>
         <p class="sheet-note">
           {longDate(sheet.data.data)}
           {session && <> · dopo la <a href={session.href}>{session.label}</a></>}
-          {' · '}<a href={sheetPdfUrl(sheet.character, sheet.data.livello)} download={sheetPdfName(sheet.character, sheet.data.livello)}>PDF</a>
+          {' · '}<a href={sheetPdfUrl(sheet)} download={sheetPdfName(sheet)}>PDF</a>
         </p>
         {first && <p class="sheet-note">Prima scheda registrata.</p>}
         {changes.map((group) => (

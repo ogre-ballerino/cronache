@@ -18,4 +18,5 @@ Companion site for *L'Equilibrio delle Ombre*, an ongoing Call of Cthulhu 7e cam
 - Portraits of investigators who are dead, missing or retired are dimmed, and the home page shows them in a second row.
 - When no investigator has a `-full.webp` portrait, the home page shows a "Dramatis personae" list instead.
 - There's no map yet. A 1920s world map (US and Berlin) may come later; `luoghiVisitati` is kept on sessions for it.
+- Investigator sheets are on (`features.schede: 'coc7e'`): a snapshot after a chapter, `pnpm scheda <sheet.pdf> ombre <id> --sessione N` for a filled Chaosium PDF, or transcribed by hand from a photo. The players' sheets and photos go in `sources/schede/capitolo-NN/` (gitignored: they hold the backstory, which stays off the site).
 - The next session date is fixed in `campaign.config.mjs` (`nextSession.at`, a local wall-clock time): update it after each session. The home page hides it once it has passed.

@@ -17,8 +17,8 @@ import { enabledCollections, sectionUrl } from './lib/collections.mjs';
  * @property {string} [headerTitle]      HTML of the header link on inner pages; defaults to `name`.
  * @property {{ href: string, label: string }[]} [nav]
  * @property {string[]} [css]            Stylesheets, in order: bare specifiers (fonts) or paths relative to the site root.
- * @property {{ handout?: boolean, schede?: boolean }} [features]
- *   `schede`: D&D 5e character sheets from Foundry exports, under each character page.
+ * @property {{ handout?: boolean, schede?: false | 'dnd5e' | 'coc7e' }} [features]
+ *   `schede`: the game system of the character sheets shown under each character page (lib/scheda/systems.ts).
  * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
  * @property {{ endpoint: string } | { at: string }} [nextSession]
  *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
@@ -36,7 +36,6 @@ const defaults = {
     nextSession: 'Prossima sessione',
     sheet: 'Scheda del personaggio',
     sheetDownload: 'Scarica il PDF',
-    sheetHistory: 'Storico dei livelli',
   },
   sections: {
     diario: {

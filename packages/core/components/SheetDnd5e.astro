@@ -1,7 +1,7 @@
 ---
 import SheetTip from './SheetTip.astro';
-import { ABILITIES, ABILITY_NAMES, FEATURE_SOURCES, SKILLS } from '../lib/scheda/labels.mjs';
-import type { Sheet } from '../lib/scheda/schema';
+import { ABILITIES, ABILITY_NAMES, FEATURE_SOURCES, SKILLS } from '../lib/scheda/dnd5e/labels.mjs';
+import type { Sheet } from '../lib/scheda/dnd5e/schema';
 
 // Game terms are in English, as on Foundry and the printed sheet.
 interface Props {
@@ -100,16 +100,18 @@ const coins = Object.entries(sheet.monete).filter(([, n]) => n > 0);
   {sheet.attacchi.length > 0 && (
     <>
       <h2>Attacks</h2>
-      <table class="sheet-table">
-        <thead>
-          <tr><th>Weapon</th><th>To hit</th><th>Damage</th></tr>
-        </thead>
-        <tbody>
-          {sheet.attacchi.map((a) => (
-            <tr><td>{a.nome}</td><td class="sheet-num">{sign(a.bonus)}</td><td>{a.danni}</td></tr>
-          ))}
-        </tbody>
-      </table>
+      <div class="sheet-table-wrap">
+        <table class="sheet-table">
+          <thead>
+            <tr><th>Weapon</th><th>To hit</th><th>Damage</th></tr>
+          </thead>
+          <tbody>
+            {sheet.attacchi.map((a) => (
+              <tr><td>{a.nome}</td><td class="sheet-num">{sign(a.bonus)}</td><td>{a.danni}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   )}
 

@@ -7,7 +7,7 @@ import config from 'virtual:cronache/config';
 import { publicDir } from 'virtual:cronache/paths';
 import { STATI_PERSONAGGI, STATI_PNG } from './lib/status.mjs';
 import { curlyQuotes } from './lib/wikilinks.mjs';
-import { sheetSchema } from './lib/scheda/schema';
+import { SNAPSHOTS } from './lib/scheda/schemas';
 
 type Fields = Record<string, z.ZodTypeAny>;
 
@@ -37,6 +37,12 @@ const loader = (collection: string) => glob({ pattern: '[^_]*.md', base: `./src/
 
 const collection = (name: string, fields: Fields, extra: Fields = {}) =>
   defineCollection({ loader: loader(name), schema: z.object({ ...baseFields, ...fields, ...extra }) });
+
+function sheetCollection(system: string) {
+  const snapshot = SNAPSHOTS[system as keyof typeof SNAPSHOTS];
+  if (!snapshot) throw new Error(`[schede] unknown system "${system}": use one of ${Object.keys(SNAPSHOTS).join(', ')}`);
+  return defineCollection({ loader: glob({ pattern: `*/${snapshot.prefix}-*.json`, base: './src/schede' }), schema: snapshot.schema });
+}
 
 export function campaignCollections(extra: CollectionFields = {}) {
   const collections = {
@@ -81,9 +87,7 @@ export function campaignCollections(extra: CollectionFields = {}) {
         extra.handout
       ),
     }),
-    // One snapshot per character and level: src/schede/<character id>/livello-NN.json.
-    ...(config.features.schede && {
-      schede: defineCollection({ loader: glob({ pattern: '*/livello-*.json', base: './src/schede' }), schema: sheetSchema }),
-    }),
+    // Snapshots per character: src/schede/<character id>/livello-NN.json (dnd5e), capitolo-NN.json (coc7e).
+    ...(config.features.schede && { schede: sheetCollection(config.features.schede) }),
   };
 }

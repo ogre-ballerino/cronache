@@ -23,7 +23,7 @@ function routes(features) {
   const sheets = features.schede
     ? [
         ['/personaggi/[id]/scheda', 'personaggi/scheda.astro'],
-        ['/personaggi/[id]/scheda/livello-[livello].pdf', 'personaggi/scheda-pdf.ts'],
+        ['/personaggi/[id]/scheda/[snapshot].pdf', 'personaggi/scheda-pdf.ts'],
       ]
     : [];
   return [...pages, ...sheets, ['/cerca', 'cerca.astro']];
@@ -70,7 +70,9 @@ export default function cronache(userConfig) {
           root,
           contentDir: path.join(root, 'src', 'content'),
           publicDir: fileURLToPath(astroConfig.publicDir),
-          sheetTemplate: fileURLToPath(new URL('./assets/scheda-5e.pdf', import.meta.url)),
+          sheetTemplate: config.features.schede
+            ? fileURLToPath(new URL(`./assets/scheda-${config.features.schede}.pdf`, import.meta.url))
+            : '',
         };
         if (command === 'build') assertLinksResolve(paths.contentDir);
 

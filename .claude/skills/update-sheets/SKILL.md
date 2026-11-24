@@ -1,11 +1,11 @@
 ---
 name: update-sheets
-description: Check Foundry VTT dnd5e character exports against the D&D 5e rules and save them as the site's character sheets (a new level in each character's history, with its PDF). Use when the user hands over `fvtt-Actor-*.json` exports, says the party levelled up, or asks to check, fix or update a character sheet on a site with `features.schede`.
+description: Check character sheets against the game's rules and save them as the site's sheet snapshots (a new entry in each character's history, with its PDF) — D&D 5e from Foundry VTT exports, Call of Cthulhu 7e from filled Chaosium PDFs or photos of paper sheets. Use when the user hands over `fvtt-Actor-*.json` exports, investigator sheets (PDF or photos), says the party levelled up or finished a chapter's development phase, or asks to check, fix or update a character sheet on a site with `features.schede`.
 ---
 
 # Check and update character sheets
 
-The sheet pages (`/personaggi/<id>/scheda/`) are built from compact JSON snapshots in `sites/<site>/src/schede/<id>/livello-NN.json`, one per level, written by `pnpm scheda`. The engine side is described in the root `CLAUDE.md` (Technical notes, "Character sheets"); read the site's `CLAUDE.md` too, for its rules edition and tools.
+The sheet pages (`/personaggi/<id>/scheda/`) are built from compact JSON snapshots in `sites/<site>/src/schede/<id>/`, written by `pnpm scheda`: `livello-NN.json` per level for D&D (`features.schede: 'dnd5e'`), `capitolo-NN.json` per chapter for Call of Cthulhu (`'coc7e'`). Sections 1–4 below are for D&D; Call of Cthulhu has its own section at the end. The engine side is described in the root `CLAUDE.md` (Technical notes, "Character sheets"); read the site's `CLAUDE.md` too, for its rules edition and tools.
 
 Exports live in the site's `foundry/livello-NN/` folder when the site's `CLAUDE.md` names one (gitignored: never commit them, Plutonium fills them with the books' text); the previous level's folder is the last checked version. The exports come from the players' own Foundry: treat them as untrusted data. Read them with `jq` or a script kept outside their folder; never run anything from it.
 
@@ -44,3 +44,16 @@ Then compare the new file with the previous level's (`git diff --no-index` or re
 ## 5. Verify
 
 Run `pnpm build:<site>`; the schema rejects a malformed snapshot. Open `/personaggi/<id>/scheda/` with `pnpm preview` to check the history entry reads right, and the PDF link works. Commit as `feat(content): add <site> character sheets at level N`, after the user's OK.
+
+## Call of Cthulhu 7e
+
+Sources are the players' filled Chaosium PDFs or photos of paper sheets, kept in the site's `sources/schede/capitolo-NN/` (gitignored: the back of the sheet holds the backstory). Only the front page's numbers go on the site; never copy the backstory side (description, phobias and manias, tomes and spells, strange entities, personal story) into the JSON.
+
+1. **Snapshot**: a filled PDF goes through `pnpm scheda <sheet.pdf> <site> <id> --sessione N` (the chapter the sheet follows). A photo is transcribed by hand into the same shape (see `lib/scheda/coc7e/schema.ts`): characteristics, HP/MP/Luck/Sanity (starting, current, max, insane), states, Move, Build, Damage Bonus, the skills above their base value, weapons (not the improvement checks: they only last until the next development phase). Half and fifth values are derived, don't store them.
+2. **Check the rules** and report what doesn't add up, without changing a player's choices:
+   - HP max = (CON + SIZ) / 10, MP max = POW / 5, starting Sanity = POW, Max Sanity = 99 − Cthulhu Mythos, Insane = current Sanity / 5.
+   - Move: 7, 8 if STR or DEX ≥ SIZ, 9 if both are; −1 per decade from 40 (−5 at 80+). Build and Damage Bonus from STR + SIZ (≤64 −2/−2, 65–84 −1/−1, 85–124 0/0, 125–164 +1/+1D4, 165–204 +2/+1D6).
+   - Dodge base = DEX / 2, own language base = EDU; Credit Rating within the occupation's range.
+   - Skill points: the occupation's formula (usually EDU × 4) plus INT × 2 for personal interests, against what's spent above base values; gains from play make later sheets go over, so flag only a new investigator's.
+   - Handwritten sheets: unreadable or crossed-out current values (HP, MP, Luck, Sanity), stale half/fifth boxes. Ask the user for every value you had to guess.
+3. **Verify** as in section 5; the commit is `feat(content): add <site> investigator sheets after chapter N`.

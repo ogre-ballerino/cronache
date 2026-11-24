@@ -15,7 +15,7 @@ export default defineCampaign({
     '@fontsource/reenie-beanie/400.css',
     './src/styles/theme.css',
   ],
-  features: { handout: true },
+  features: { handout: true, schede: 'coc7e' },
   footer: {
     ornament: '&#10022; &#10022; &#10022;',
     lines: [

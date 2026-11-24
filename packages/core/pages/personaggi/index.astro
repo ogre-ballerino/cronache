@@ -23,7 +23,7 @@ const { title, heading, lede, description } = config.sections.personaggi;
         href={entryUrl('personaggi', p.id)}
         title={p.data.titolo}
         excerpt={p.data.estratto}
-        meta={characterMeta(p.data, sheets.get(p.id)?.at(-1)?.data)}
+        meta={characterMeta(p.data, sheets.get(p.id)?.at(-1))}
         status={p.data.stato}
         image={p.data.immagine}
       />

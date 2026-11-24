@@ -3,11 +3,11 @@ import { getEntry } from 'astro:content';
 import config from 'virtual:cronache/config';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SheetHistory from '../../components/SheetHistory.astro';
-import SheetView from '../../components/SheetView.astro';
+import SheetCoc7e from '../../components/SheetCoc7e.astro';
+import SheetDnd5e from '../../components/SheetDnd5e.astro';
 import { entryUrl } from '../../lib/collections.mjs';
 import { ogImage } from '../../lib/og';
-import { classLine } from '../../lib/scheda/labels.mjs';
-import { sheetPdfName, sheetPdfUrl, sheetsByCharacter } from '../../lib/schede';
+import { sheetPdfName, sheetPdfUrl, sheetSystem, sheetsByCharacter } from '../../lib/schede';
 
 export async function getStaticPaths() {
   return [...(await sheetsByCharacter())].map(([id, sheets]) => ({ params: { id }, props: { sheets } }));
@@ -20,11 +20,14 @@ if (!character) throw new Error(`[schede] src/schede/${id}/ has no matching char
 
 const name = character.data.titolo;
 const latest = sheets.at(-1)!;
-const summary = [classLine(latest.data), latest.data.razza, latest.data.background].filter(Boolean).join(' · ');
+const system = sheetSystem()!;
+const summary = system.summary(latest.data).filter(Boolean).join(' · ');
+const VIEWS = { dnd5e: SheetDnd5e, coc7e: SheetCoc7e };
+const View = VIEWS[config.features.schede as keyof typeof VIEWS];
 ---
 <BaseLayout
   title={`${config.labels.sheet}: ${name}`}
-  description={`${config.labels.sheet} di ${name}: ${summary}, livello ${latest.data.livello}.`}
+  description={`${config.labels.sheet} di ${name}: ${summary}.`}
   type="article"
   og={ogImage(character.data)}
 >
@@ -35,10 +38,10 @@ const summary = [classLine(latest.data), latest.data.razza, latest.data.backgrou
       <p class="sheet-actions">
         <a href={entryUrl('personaggi', id)}>Torna al personaggio</a>
         {' · '}
-        <a href={sheetPdfUrl(id, latest.data.livello)} download={sheetPdfName(id, latest.data.livello)}>{config.labels.sheetDownload}</a>
+        <a href={sheetPdfUrl(latest)} download={sheetPdfName(latest)}>{config.labels.sheetDownload}</a>
       </p>
     </header>
-    <SheetView sheet={latest.data} />
+    <View sheet={latest.data} />
     <SheetHistory sheets={sheets} />
   </article>
 </BaseLayout>

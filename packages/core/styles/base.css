@@ -737,9 +737,17 @@ main {
   transform: rotate(45deg);
 }
 
+.sheet-table-wrap {
+  overflow-x: auto;
+}
+
 .sheet-table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.sheet-table .sheet-num {
+  white-space: nowrap;
 }
 
 .sheet-table th {
@@ -893,4 +901,23 @@ main {
   font-size: 0.85rem;
   font-style: italic;
   color: var(--color-ink-muted);
+}
+
+.sheet-characteristics {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@media (max-width: 600px) {
+  .sheet-characteristics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sheet-states {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.sheet-skills-coc .sheet-aside {
+  margin-left: 0.3em;
 }
