@@ -1,0 +1,650 @@
+{
+  "livello": 6,
+  "data": "2026-10-29",
+  "sessione": 12,
+  "classi": [
+    {
+      "nome": "Cleric",
+      "sottoclasse": "Life Domain",
+      "livelli": 6,
+      "dadoVita": 8
+    }
+  ],
+  "razza": "Human (Variant)",
+  "background": "Acolyte",
+  "allineamento": "",
+  "pe": 14000,
+  "competenza": 3,
+  "caratteristiche": {
+    "str": {
+      "valore": 13,
+      "mod": 1,
+      "salvezza": 1,
+      "competente": false
+    },
+    "dex": {
+      "valore": 8,
+      "mod": -1,
+      "salvezza": -1,
+      "competente": false
+    },
+    "con": {
+      "valore": 14,
+      "mod": 2,
+      "salvezza": 2,
+      "competente": false
+    },
+    "int": {
+      "valore": 13,
+      "mod": 1,
+      "salvezza": 1,
+      "competente": false
+    },
+    "wis": {
+      "valore": 18,
+      "mod": 4,
+      "salvezza": 7,
+      "competente": true
+    },
+    "cha": {
+      "valore": 10,
+      "mod": 0,
+      "salvezza": 3,
+      "competente": true
+    }
+  },
+  "abilita": {
+    "acr": {
+      "bonus": -1,
+      "competenza": 0
+    },
+    "ani": {
+      "bonus": 4,
+      "competenza": 0
+    },
+    "arc": {
+      "bonus": 4,
+      "competenza": 1
+    },
+    "ath": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "dec": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "his": {
+      "bonus": 4,
+      "competenza": 1
+    },
+    "ins": {
+      "bonus": 7,
+      "competenza": 1
+    },
+    "itm": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "inv": {
+      "bonus": 4,
+      "competenza": 1
+    },
+    "med": {
+      "bonus": 7,
+      "competenza": 1
+    },
+    "nat": {
+      "bonus": 1,
+      "competenza": 0
+    },
+    "prc": {
+      "bonus": 7,
+      "competenza": 1
+    },
+    "prf": {
+      "bonus": 0,
+      "competenza": 0
+    },
+    "per": {
+      "bonus": 3,
+      "competenza": 1
+    },
+    "rel": {
+      "bonus": 4,
+      "competenza": 1
+    },
+    "slt": {
+      "bonus": -1,
+      "competenza": 0
+    },
+    "ste": {
+      "bonus": -1,
+      "competenza": 0
+    },
+    "sur": {
+      "bonus": 4,
+      "competenza": 0
+    }
+  },
+  "pf": 45,
+  "ca": 18,
+  "iniziativa": -1,
+  "velocita": "30 ft",
+  "sensi": [],
+  "dadiVita": "6d8",
+  "attacchi": [
+    {
+      "nome": "Silvered Mace",
+      "bonus": 4,
+      "danni": "1d6+1 bludgeoning"
+    },
+    {
+      "nome": "Dagger",
+      "bonus": 4,
+      "danni": "1d4+1 piercing"
+    }
+  ],
+  "incantesimi": {
+    "caratteristica": "wis",
+    "cd": 15,
+    "attacco": 7,
+    "slot": {
+      "1": 4,
+      "2": 3,
+      "3": 3
+    },
+    "patto": null,
+    "elenco": [
+      {
+        "nome": "Guidance",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Divination",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S",
+          "duration": "Concentration, up to 1 minute"
+        }
+      },
+      {
+        "nome": "Light",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, M",
+          "duration": "1 hour",
+          "effect": "DEX save"
+        }
+      },
+      {
+        "nome": "Sacred Flame",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "60 ft",
+          "components": "V, S",
+          "duration": "Instantaneous",
+          "effect": "DEX save, 1d8 radiant"
+        }
+      },
+      {
+        "nome": "Thaumaturgy",
+        "livello": 0,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Transmutation",
+          "casting": "1 action",
+          "range": "30 ft",
+          "components": "V",
+          "duration": "1 minute"
+        }
+      },
+      {
+        "nome": "Bless",
+        "livello": 1,
+        "preparato": true,
+        "sempre": true,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 action",
+          "range": "30 ft",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 1 minute"
+        }
+      },
+      {
+        "nome": "Create or Destroy Water",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Transmutation",
+          "casting": "1 action",
+          "range": "30 ft (30-foot cube)",
+          "components": "V, S, M",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Cure Wounds",
+        "livello": 1,
+        "preparato": true,
+        "sempre": true,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S",
+          "duration": "Instantaneous",
+          "effect": "heals 1d8+mod"
+        }
+      },
+      {
+        "nome": "Detect Evil and Good",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Divination",
+          "casting": "1 action",
+          "range": "Self (30-foot radius)",
+          "components": "V, S",
+          "duration": "Concentration, up to 10 minutes"
+        }
+      },
+      {
+        "nome": "Detect Magic",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Divination",
+          "casting": "1 action",
+          "range": "Self (30-foot radius)",
+          "components": "V, S",
+          "duration": "Concentration, up to 10 minutes",
+          "ritual": "yes"
+        }
+      },
+      {
+        "nome": "Guiding Bolt",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "1 round",
+          "effect": "ranged spell attack, 4d6 radiant"
+        }
+      },
+      {
+        "nome": "Healing Word",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 bonus action",
+          "range": "60 ft",
+          "components": "V",
+          "duration": "Instantaneous",
+          "effect": "heals 1d4+mod"
+        }
+      },
+      {
+        "nome": "Sanctuary",
+        "livello": 1,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 bonus action",
+          "range": "30 ft",
+          "components": "V, S, M",
+          "duration": "1 minute",
+          "effect": "WIS save"
+        }
+      },
+      {
+        "nome": "Calm Emotions",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 action",
+          "range": "60 ft (20-foot sphere)",
+          "components": "V, S",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "CHA save"
+        }
+      },
+      {
+        "nome": "Hold Person",
+        "livello": 2,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Enchantment",
+          "casting": "1 action",
+          "range": "60 ft",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 1 minute",
+          "effect": "WIS save"
+        }
+      },
+      {
+        "nome": "Lesser Restoration",
+        "livello": 2,
+        "preparato": true,
+        "sempre": true,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Spiritual Weapon",
+        "livello": 2,
+        "preparato": true,
+        "sempre": true,
+        "dettagli": {
+          "school": "Evocation",
+          "casting": "1 bonus action",
+          "range": "60 ft (5-foot square)",
+          "components": "V, S",
+          "duration": "1 minute",
+          "effect": "(floor((@item.level)/2))d8+mod force"
+        }
+      },
+      {
+        "nome": "Beacon of Hope",
+        "livello": 3,
+        "preparato": true,
+        "sempre": true,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 action",
+          "range": "30 ft",
+          "components": "V, S",
+          "duration": "Concentration, up to 1 minute"
+        }
+      },
+      {
+        "nome": "Dispel Magic",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 action",
+          "range": "120 ft",
+          "components": "V, S",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Remove Curse",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Abjuration",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S",
+          "duration": "Instantaneous"
+        }
+      },
+      {
+        "nome": "Revivify",
+        "livello": 3,
+        "preparato": true,
+        "sempre": true,
+        "dettagli": {
+          "school": "Necromancy",
+          "casting": "1 action",
+          "range": "Touch",
+          "components": "V, S, M (300 gp, consumed)",
+          "duration": "Instantaneous",
+          "effect": "heals 1"
+        }
+      },
+      {
+        "nome": "Speak with Dead",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Necromancy",
+          "casting": "1 action",
+          "range": "10 ft",
+          "components": "V, S, M",
+          "duration": "10 minutes"
+        }
+      },
+      {
+        "nome": "Spirit Guardians",
+        "livello": 3,
+        "preparato": true,
+        "sempre": false,
+        "dettagli": {
+          "school": "Conjuration",
+          "casting": "1 action",
+          "range": "Self (15-foot radius)",
+          "components": "V, S, M",
+          "duration": "Concentration, up to 10 minutes",
+          "effect": "WIS save, 3d8 radiant"
+        }
+      }
+    ]
+  },
+  "privilegi": [
+    {
+      "nome": "Cantrip Versatility",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Shelter of the Faithful",
+      "fonte": "background",
+      "descrizione": "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.\n\nYou might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
+    },
+    {
+      "nome": "Spellcasting",
+      "fonte": "classe"
+    },
+    {
+      "nome": "Bonus Proficiency",
+      "fonte": "classe",
+      "descrizione": "When you choose this domain at 1st level, you gain proficiency with heavy armor."
+    },
+    {
+      "nome": "Disciple of Life",
+      "fonte": "classe",
+      "descrizione": "Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level."
+    },
+    {
+      "nome": "Channel Divinity",
+      "fonte": "classe",
+      "descrizione": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\n\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\n\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\n\nBeginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.\n\nChannel Divinity: Turn Undead"
+    },
+    {
+      "nome": "Channel Divinity: Turn Undead",
+      "fonte": "classe",
+      "descrizione": "As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\n\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
+    },
+    {
+      "nome": "Channel Divinity: Preserve Life",
+      "fonte": "classe",
+      "descrizione": "Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.\n\nAs an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct."
+    },
+    {
+      "nome": "Destroy Undead (CR 1/2)",
+      "fonte": "classe",
+      "descrizione": "Starting at 5th level, when an undead of CR 1/2 or lower fails its saving throw against your Turn Undead feature, the creature is instantly destroyed."
+    },
+    {
+      "nome": "Blessed Healer",
+      "fonte": "classe",
+      "descrizione": "Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level."
+    },
+    {
+      "nome": "Skilled",
+      "fonte": "talento"
+    }
+  ],
+  "competenze": {
+    "armature": [
+      "Heavy armor",
+      "Light armor",
+      "Medium armor",
+      "Shields"
+    ],
+    "armi": [
+      "Simple weapons"
+    ],
+    "strumenti": [],
+    "lingue": [
+      "Common",
+      "Dwarvish",
+      "Elvish"
+    ]
+  },
+  "equipaggiamento": [
+    {
+      "nome": "Silvered Mace",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Shield",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Chain Mail",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Ink (1-ounce bottle)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Ink Pen",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Flask",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Backpack",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Common Clothes",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Lamp",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Robes",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Tinderbox",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Emblem",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Blanket",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Rations (1 day)",
+      "quantita": 6,
+      "magico": false
+    },
+    {
+      "nome": "Waterskin",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Dagger",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Holy Symbol (A Gift to You When You Entered the Priesthood)",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Candle",
+      "quantita": 10,
+      "magico": false
+    },
+    {
+      "nome": "Alms Box",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Block of Incense",
+      "quantita": 2,
+      "magico": false
+    },
+    {
+      "nome": "Censer",
+      "quantita": 1,
+      "magico": false
+    },
+    {
+      "nome": "Vestments",
+      "quantita": 1,
+      "magico": false
+    }
+  ],
+  "monete": {
+    "mp": 0,
+    "mo": 35,
+    "me": 15,
+    "ma": 0,
+    "mr": 50
+  },
+  "percezionePassiva": 17
+}
