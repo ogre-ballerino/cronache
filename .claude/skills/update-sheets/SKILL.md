@@ -39,7 +39,7 @@ Write corrected copies to the site's `foundry/livello-NN/` folder (or, without o
 pnpm scheda <export.json> <site> <character id> --sessione N --data YYYY-MM-DD
 ```
 
-Then compare the new file with the previous level's (`git diff --no-index` or read both): HP, AC, save DC and attack bonuses should move the way the level-up says. If a derived value is wrong because the script can't model a rule, correct it by hand in the JSON and mention it. Feature descriptions are kept only for SRD 5.1 features with 2014 PHB wording (`lib/scheda/srd.mjs`); never paste rules text from the books into the JSON yourself.
+Then compare the new file with the previous level's (`git diff --no-index` or read both): HP, AC, save DC and attack bonuses should move the way the level-up says. If a derived value is wrong because the script can't model a rule, correct it by hand in the JSON and mention it. Feature descriptions are kept only for SRD 5.1 features with 2014 PHB wording (`lib/scheda/dnd5e/srd.mjs`); never paste rules text from the books into the JSON yourself.
 
 ## 5. Verify
 
