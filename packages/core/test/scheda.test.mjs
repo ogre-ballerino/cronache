@@ -160,6 +160,7 @@ describe('fillSheetPdf', () => {
     assert.equal(value('AC'), '14');
     assert.equal(value('SpellSaveDC 2'), '16');
     assert.equal(value('Wpn1 AtkBonus'), '+7');
+    assert.equal(value('Stealth'), '+9');
     assert.ok(form.getCheckBox('Check Box 22').isChecked(), 'Charisma save proficiency');
     assert.equal(value('SlotsTotal 21'), '2');
   });

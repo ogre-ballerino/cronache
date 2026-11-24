@@ -14,6 +14,7 @@ const SKILL_FIELDS = {
 const ABILITY_FIELDS = { str: 'STR', dex: 'DEX', con: 'CON', int: 'INT', wis: 'WIS', cha: 'CHA' };
 const MOD_FIELDS = { str: 'STRmod', dex: 'DEXmod', con: 'CONmod', int: 'INTmod', wis: 'WISmod', cha: 'CHamod' };
 const SAVE_FIELDS = { str: 'ST Strength', dex: 'ST Dexterity', con: 'ST Constitution', int: 'ST Intelligence', wis: 'ST Wisdom', cha: 'ST Charisma' };
+const SMALL_BOXES = new Set([...Object.values(SKILL_FIELDS), ...Object.values(SAVE_FIELDS)]);
 const WEAPON_ROWS = [
   ['Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'],
   ['Wpn Name 2', 'Wpn2 AtkBonus', 'Wpn2 Damage'],
@@ -32,6 +33,9 @@ const FONT_SIZES = {
   AttacksSpellcasting: 8, ProficienciesLang: 8, Equipment: 8, 'Features and Traits': 8,
   'Feat+Traits': 8, Treasure: 8,
 };
+// Save and skill boxes are 14pt wide: at the template's size "+10" loses a
+// digit. Size 0 means "fit the box", which viewers that redraw fields honor too.
+const SMALL_BOX_SIZE = 0;
 
 // Some fields have no default appearance at all, which pdf-lib's own
 // setFontSize refuses; the font name is irrelevant, the embedded one is used.
@@ -56,7 +60,8 @@ export async function fillSheetPdf(template, sheet, { nome }) {
   const text = (name, value) => {
     const field = fields.get(name);
     if (!(field instanceof PDFTextField) || value == null || value === '') return;
-    if (FONT_SIZES[name]) setFontSize(field, FONT_SIZES[name]);
+    const size = FONT_SIZES[name] ?? (SMALL_BOXES.has(name) ? SMALL_BOX_SIZE : undefined);
+    if (size !== undefined) setFontSize(field, size);
     field.setText(printable(value));
   };
   const check = (name, on) => {
