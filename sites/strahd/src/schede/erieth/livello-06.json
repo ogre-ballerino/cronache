@@ -372,7 +372,8 @@
     },
     {
       "nome": "Eldritch Invocations: Agonizing Blast",
-      "fonte": "classe"
+      "fonte": "classe",
+      "descrizione": "Prerequisite: eldritch blast cantrip\n\nWhen you cast eldritch blast, add your Charisma modifier to the damage it deals on a hit."
     },
     {
       "nome": "Eldritch Invocations: Repelling Blast",
@@ -381,7 +382,8 @@
     },
     {
       "nome": "Pact Boon: Pact of the Blade",
-      "fonte": "classe"
+      "fonte": "classe",
+      "usi": "4/long rest"
     },
     {
       "nome": "Eldritch Versatility",
@@ -394,6 +396,7 @@
     {
       "nome": "Dark One's Own Luck",
       "fonte": "classe",
+      "usi": "1/short rest",
       "descrizione": "Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.\n\nOnce you use this feature, you can't use it again until you finish a short or long rest."
     },
     {
