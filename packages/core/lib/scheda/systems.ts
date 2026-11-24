@@ -25,7 +25,7 @@ export interface SheetSystem {
   /** Replaces the site's own descriptive fields in a character's meta line, when set. */
   meta?: (data: SheetData) => string[];
   diff: (prev: SheetData, next: SheetData) => { titolo: string; voci: string[] }[];
-  fill: (template: Uint8Array, data: SheetData, meta: { nome: string }) => Promise<Uint8Array>;
+  fill: (template: Uint8Array, data: SheetData, meta: { nome: string; ritratto?: Uint8Array }) => Promise<Uint8Array>;
 }
 
 export const SYSTEMS: Record<string, SheetSystem> = {

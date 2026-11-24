@@ -1,7 +1,7 @@
 // Fills Chaosium's fillable "1920s Era Investigator" sheet with a compact
 // sheet: the front page only, as the site publishes nothing else.
 
-import { PDFCheckBox, PDFDocument, PDFTextField, StandardFonts } from 'pdf-lib';
+import { PDFButton, PDFCheckBox, PDFDocument, PDFTextField, StandardFonts } from 'pdf-lib';
 import { CHARACTERISTICS, CUSTOM_SLOTS, SKILLS, SPECIALTIES, STATES, baseValue, fifth, half } from './skills.mjs';
 
 // Helvetica only encodes WinAnsi: drop what it can't draw rather than fail.
@@ -20,9 +20,9 @@ function fitToBox(field) {
 /**
  * @param {Uint8Array} template the blank fillable sheet
  * @param {any} sheet a compact sheet (see schema.ts)
- * @param {{ nome: string }} meta the investigator's name as the site shows it
+ * @param {{ nome: string, ritratto?: Uint8Array }} meta the investigator's name as the site shows it, and a JPEG portrait
  */
-export async function fillSheetPdf(template, sheet, { nome }) {
+export async function fillSheetPdf(template, sheet, { nome, ritratto }) {
   const doc = await PDFDocument.load(template);
   const form = doc.getForm();
   const fields = new Map(form.getFields().map((f) => [f.getName().trim(), f]));
@@ -80,6 +80,9 @@ export async function fillSheetPdf(template, sheet, { nome }) {
   text('MOV', sheet.movimento);
   text('Build', sheet.corporatura);
   text('DamageBonus', sheet.bonusDanno);
+
+  const portrait = fields.get('Portrait');
+  if (ritratto && portrait instanceof PDFButton) portrait.setImage(await doc.embedJpg(ritratto));
 
   form.updateFieldAppearances(await doc.embedFont(StandardFonts.Helvetica));
   return doc.save();

@@ -2,7 +2,7 @@
 // Page 1 and 2 fields are named; the spell page is read from the template's
 // layout, since its field numbers don't follow the printed order.
 
-import { PDFCheckBox, PDFDocument, PDFTextField, StandardFonts } from 'pdf-lib';
+import { PDFButton, PDFCheckBox, PDFDocument, PDFTextField, StandardFonts } from 'pdf-lib';
 import { ABILITIES, FEATURE_SOURCES, SKILLS, classLine } from './labels.mjs';
 
 const SAVE_BOXES = { str: 11, dex: 18, con: 19, int: 20, wis: 21, cha: 22 };
@@ -51,9 +51,9 @@ const fieldKey = (name) => name.trim().replace(/\s+/g, ' ');
 /**
  * @param {Uint8Array} template the blank fillable sheet
  * @param {any} sheet a compact sheet (see foundry.mjs)
- * @param {{ nome: string }} meta the character's name as the site shows it
+ * @param {{ nome: string, ritratto?: Uint8Array }} meta the character's name as the site shows it, and a JPEG portrait
  */
-export async function fillSheetPdf(template, sheet, { nome }) {
+export async function fillSheetPdf(template, sheet, { nome, ritratto }) {
   const doc = await PDFDocument.load(template);
   const form = doc.getForm();
   const fields = new Map(form.getFields().map((f) => [fieldKey(f.getName()), f]));
@@ -72,6 +72,9 @@ export async function fillSheetPdf(template, sheet, { nome }) {
   fillFront(sheet, nome, text, check);
   fillDetails(sheet, nome, text);
   if (sheet.incantesimi) fillSpells(doc, form, sheet, text, check);
+
+  const portrait = fields.get('CHARACTER IMAGE');
+  if (ritratto && portrait instanceof PDFButton) portrait.setImage(await doc.embedJpg(ritratto));
 
   form.updateFieldAppearances(await doc.embedFont(StandardFonts.Helvetica));
   return doc.save();

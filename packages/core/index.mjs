@@ -29,7 +29,7 @@ function routes(features) {
   return [...pages, ...sheets, ['/cerca', 'cerca.astro']];
 }
 
-function virtualModules(config, { root, contentDir, publicDir, sheetTemplate }) {
+function virtualModules(config, { root, contentDir, publicDir, sheetTemplate, coreDir }) {
   const require = createRequire(path.join(root, 'package.json'));
   // Relative paths are the site's own files; anything else is a package (fonts).
   const resolveCss = (spec) => (spec.startsWith('.') ? path.resolve(root, spec) : require.resolve(spec));
@@ -39,6 +39,7 @@ function virtualModules(config, { root, contentDir, publicDir, sheetTemplate }) 
       `export const contentDir = ${JSON.stringify(contentDir)};`,
       `export const publicDir = ${JSON.stringify(publicDir)};`,
       `export const sheetTemplate = ${JSON.stringify(sheetTemplate)};`,
+      `export const coreDir = ${JSON.stringify(coreDir)};`,
     ].join('\n'),
     'virtual:cronache/styles': config.css.map((spec) => `import ${JSON.stringify(resolveCss(spec))};`).join('\n'),
   };
@@ -70,6 +71,7 @@ export default function cronache(userConfig) {
           root,
           contentDir: path.join(root, 'src', 'content'),
           publicDir: fileURLToPath(astroConfig.publicDir),
+          coreDir: fileURLToPath(new URL('.', import.meta.url)),
           sheetTemplate: config.features.schede
             ? fileURLToPath(new URL(`./assets/scheda-${config.features.schede}.pdf`, import.meta.url))
             : '',

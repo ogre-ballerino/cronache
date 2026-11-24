@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import type { APIRoute } from 'astro';
 import { getEntry } from 'astro:content';
 import { sheetTemplate } from 'virtual:cronache/paths';
+import { portraitJpeg } from '../../lib/scheda/portrait';
 import { sheetSystem, sheetsByCharacter, type SheetEntry } from '../../lib/schede';
 
 export async function getStaticPaths() {
@@ -15,6 +16,9 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ params, props }) => {
   const { sheet } = props as { sheet: SheetEntry };
   const character = await getEntry('personaggi', params.id!);
-  const pdf = await sheetSystem()!.fill(fs.readFileSync(sheetTemplate), sheet.data, { nome: character?.data.titolo ?? params.id! });
+  const pdf = await sheetSystem()!.fill(fs.readFileSync(sheetTemplate), sheet.data, {
+    nome: character?.data.titolo ?? params.id!,
+    ritratto: await portraitJpeg(params.id!, character?.data.immagine),
+  });
   return new Response(pdf, { headers: { 'Content-Type': 'application/pdf' } });
 };
