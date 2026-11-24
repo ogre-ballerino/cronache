@@ -25,8 +25,11 @@ export async function sheetsByCharacter(): Promise<Map<string, SheetEntry[]>> {
   if (!system) return byCharacter;
   for (const entry of await getCollection('schede' as never)) {
     const { id, data } = entry as unknown as { id: string; data: SheetData };
-    const character = id.split('/')[0];
-    byCharacter.set(character, [...(byCharacter.get(character) ?? []), { character, slug: snapshotSlug(system, data), data }]);
+    const [character, slug] = id.split('/');
+    // The file name is the URL: a hand-edited number that disagrees with it would publish a second, wrong snapshot.
+    const expected = snapshotSlug(system, data);
+    if (slug !== expected) throw new Error(`[schede] src/schede/${id}.json holds ${expected}: rename the file or fix the number`);
+    byCharacter.set(character, [...(byCharacter.get(character) ?? []), { character, slug, data }]);
   }
   for (const list of byCharacter.values()) list.sort((a, b) => system.order(a.data) - system.order(b.data));
   return byCharacter;
