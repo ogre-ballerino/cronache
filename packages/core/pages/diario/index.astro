@@ -3,7 +3,7 @@ import { entryUrl } from '../../lib/collections.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import config from 'virtual:cronache/config';
-import { toRoman, longDate } from '../../lib/format';
+import { toRoman, longDate, seasonTitle } from '../../lib/format';
 import { groupBySeason } from '../../lib/seasons';
 
 const seasons = groupBySeason(await getCollection('sessions'));
@@ -30,7 +30,7 @@ const { title, heading, lede, description } = config.sections.diario;
     );
     return stagione ? (
       <section class="season">
-        <h2 class="season-heading">{config.labels.season} {toRoman(stagione)}</h2>
+        <h2 class="season-heading">{seasonTitle(stagione, config)}</h2>
         {timeline}
       </section>
     ) : (
