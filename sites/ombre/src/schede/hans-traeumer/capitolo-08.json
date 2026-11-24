@@ -1,0 +1,87 @@
+{
+  "capitolo": 8,
+  "data": "2026-11-22",
+  "occupazione": "Professor (Linguistics)",
+  "eta": 26,
+  "caratteristiche": {
+    "str": 40,
+    "con": 65,
+    "siz": 60,
+    "dex": 55,
+    "app": 65,
+    "int": 80,
+    "pow": 50,
+    "edu": 80
+  },
+  "pf": {
+    "max": 12
+  },
+  "pm": {
+    "max": 10,
+    "attuali": 9
+  },
+  "fortuna": {
+    "iniziale": 55
+  },
+  "sanita": {
+    "iniziale": 50,
+    "attuale": 48,
+    "soglia": 10
+  },
+  "stati": [],
+  "movimento": 7,
+  "corporatura": 0,
+  "bonusDanno": "0",
+  "abilita": [
+    {
+      "nome": "Credit Rating",
+      "valore": 30
+    },
+    {
+      "nome": "History",
+      "valore": 60
+    },
+    {
+      "nome": "Library Use",
+      "valore": 70
+    },
+    {
+      "nome": "Occult",
+      "valore": 12
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Pianoforte",
+      "valore": 50
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "German",
+      "valore": 73
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "Latino",
+      "valore": 60
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "Greco Antico",
+      "valore": 60
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "Inglese",
+      "valore": 80
+    },
+    {
+      "nome": "Arabo (Language)",
+      "valore": 60
+    },
+    {
+      "nome": "Geroglifici Egizi",
+      "valore": 45
+    }
+  ],
+  "armi": []
+}
