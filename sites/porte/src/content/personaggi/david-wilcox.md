@@ -10,3 +10,5 @@ immagine: /images/personaggi/david-wilcox.webp
 ---
 
 A differenza di quasi tutti i suoi colleghi, scettici di mestiere, David si è dato alla magia perché sente che la realtà non si esaurisce in quello che la gente vede. Anni di ricerche non gli hanno ancora mostrato nulla di davvero magico, ma non si arrende: indaga su fatti bizzarri, misteri e chiunque dica di avere dei poteri, sperando un giorno di vedere oltre il velo.
+
+In *Genius Loci*, nel giardino del [[Danvers State Hospital]], un paziente lo schiaccia a terra chiedendogli perché sono lì, e lui se ne libera da escapologo; una paziente gli regala il disegno del drago che vede in sogno. È lui a far scoppiare la fuga, gettando la polvere accecante negli occhi degli inservienti davanti alla cella di [[Larry Croswell]].
