@@ -14,6 +14,7 @@ Each site's `CLAUDE.md` adds to this file: read it before touching that site's c
 These apply to every content edit, in every site, by hand or through a skill.
 
 - **Session updates:** when the user pastes a session transcript or points at one (e.g. `sites/strahd/audio/session-NN.txt`), use the `new-session` skill (`.claude/skills/new-session/SKILL.md`). It covers the whole procedure: session file, new and updated entities, overview, map, verification.
+- **Character sheets:** when the user hands over Foundry exports or says the party levelled up, use the `update-sheets` skill (`.claude/skills/update-sheets/SKILL.md`): it checks the sheets against the rules before saving them.
 - **Renames and merges:** to rename an entity or merge duplicates, use the `rename-entity` skill (`.claude/skills/rename-entity/SKILL.md`). Never change a `titolo` or a filename by hand: wikilinks, backlinks and the page URL (already indexed by search engines) depend on them.
 - **No real names:** the sites are public and indexed. Players appear only as their characters — never write a player's real name anywhere in `src/content/`, even though transcripts are full of them. Leave `giocatore` empty unless the user explicitly gives a name or nickname to show there.
 - **Wikilinks:** ALWAYS link entities with Obsidian-style wikilinks: `[[Nome Entità]]` for plain text, `[[Nome Entità|testo visualizzato]]` for an alias (e.g. to inflect a name). Use the entity's exact `titolo` (or its filename) as the target — resolution is case/accent-insensitive but works best with a near-exact match.
