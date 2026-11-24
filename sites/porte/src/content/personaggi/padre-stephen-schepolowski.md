@@ -1,6 +1,7 @@
 ---
 titolo: Padre Stephen Schepolowski
 professione: Sacerdote cattolico
+giocatore: Lassem12
 stato: vivo
 estratto: Padre Stephen Schepolowski, 25 anni, giovane sacerdote cattolico che si sente chiamato ad aiutare le anime in pena.
 tag: []

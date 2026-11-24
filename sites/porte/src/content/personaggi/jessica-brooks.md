@@ -1,6 +1,7 @@
 ---
 titolo: Jessica Brooks
 professione: Scrittrice
+giocatore: Monica
 stato: viva
 estratto: Jessica Brooks, 52 anni, scrive gialli e racconti del mistero e ha buoni contatti in diversi dipartimenti di polizia.
 tag: []

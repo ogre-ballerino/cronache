@@ -2,6 +2,7 @@
 titolo: David Wilcox
 professione: Illusionista
 sottotitolo: «The Amazing Kraygen»
+giocatore: Arcadio
 stato: vivo
 estratto: David Wilcox, 36 anni, illusionista che in scena si fa chiamare «The Amazing Kraygen», cerca da anni una magia vera, al di là dei trucchi.
 tag: []

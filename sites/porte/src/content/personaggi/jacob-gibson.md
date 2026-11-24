@@ -1,6 +1,7 @@
 ---
 titolo: Jacob Gibson
 professione: Bidello
+giocatore: luke74
 stato: vivo
 estratto: Jacob Gibson, 36 anni, bidello e tuttofare dell'università, che non perde la calma e sa aprire più di una serratura.
 tag: []

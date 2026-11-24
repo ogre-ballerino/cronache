@@ -1,6 +1,7 @@
 ---
 titolo: Maximilian Hirst
 professione: Parapsicologo
+giocatore: sirlisko
 stato: vivo
 estratto: Maximilian «Max» Hirst, parapsicologo di 26 anni, dà la caccia all'inspiegabile da quando è tornato dalla Grande Guerra.
 tag: []
