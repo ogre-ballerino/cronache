@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import { entryUrl } from '@cronache/core/lib/collections.mjs';
+import NextSession from '@cronache/core/components/NextSession.astro';
+import SessionIndex from '@cronache/core/components/SessionIndex.astro';
+import { getCollection } from 'astro:content';
+import { toRoman, longDate } from '@cronache/core/lib/format';
+import { fullPortrait } from '@cronache/core/lib/portraits';
+import { isAlive, isLost } from '@cronache/core/lib/status.mjs';
+import Door from '../components/Door.astro';
+
+const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
+const latest = sessions[0];
+
+const characters = (await getCollection('personaggi')).sort((a, b) =>
+  a.data.titolo.localeCompare(b.data.titolo)
+);
+---
+<BaseLayout masthead>
+  <Fragment slot="masthead">
+    <Door class="masthead-door" />
+    <div class="masthead-text">
+      <p class="masthead-kicker">Call of Cthulhu</p>
+      <h1 class="masthead-title">Porte <span>sull'Oscurità</span></h1>
+      <p class="masthead-lede">Cinque porte. Dietro la prima, qualcosa aspettava già.</p>
+    </div>
+  </Fragment>
+
+  <NextSession />
+
+  <div class="evidence">
+    {latest && (
+      <section class="latest-session clipping">
+        <p class="kicker kicker-split">
+          <span>Ultimo capitolo · {toRoman(latest.data.numero)}</span>
+          <span>{longDate(latest.data.data)}</span>
+        </p>
+        <h2><a href={entryUrl('sessions', latest.id)}>{latest.data.titolo}</a></h2>
+        {latest.data.estratto && <p class="drop-cap">{latest.data.estratto}</p>}
+        <p class="read-more"><a href={entryUrl('sessions', latest.id)}>Leggi il rapporto completo</a></p>
+      </section>
+    )}
+
+    <aside class="case-file">
+      <h2>Indice delle indagini</h2>
+      {sessions.length > 0 ? <SessionIndex sessions={sessions} /> : <p>Nessuna porta è stata ancora aperta.</p>}
+      <span class="stamp">Aperto</span>
+    </aside>
+
+    {characters.length > 0 && (
+      <section class="photo-board">
+        <h2 class="section-title">Gli investigatori</h2>
+        <ul>
+          {characters.map((p) => {
+            const portrait = fullPortrait(p.id);
+            return (
+              <li>
+                <a href={entryUrl('personaggi', p.id)}>
+                  {portrait ? (
+                    <img class:list={{ 'portrait-lost': isLost(p.data.stato) }} src={portrait} alt="" loading="lazy" />
+                  ) : (
+                    <span class="photo-blank" />
+                  )}
+                  <span class="photo-label">
+                    {p.data.titolo}
+                    {p.data.professione && <small>{p.data.professione}</small>}
+                    {!isAlive(p.data.stato) && <small class={`badge badge-${p.data.stato}`}>{p.data.stato}</small>}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>

@@ -1,0 +1,9 @@
+# Netlify UI: Package directory = sites/porte, Base directory unset, so install
+# and build run at the workspace root.
+[build]
+  command = "pnpm --filter porte build"
+  publish = "sites/porte/dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- sites/porte packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml"
+
+[build.environment]
+  NODE_VERSION = "24"

@@ -13,6 +13,8 @@
     "build:strahd": "pnpm --filter strahd build",
     "dev:ombre": "pnpm --filter ombre dev",
     "build:ombre": "pnpm --filter ombre build",
+    "dev:porte": "pnpm --filter porte dev",
+    "build:porte": "pnpm --filter porte build",
     "transcribe": "node scripts/transcribe.mjs",
     "session": "node scripts/session.mjs",
     "test": "pnpm --filter @cronache/core test",
