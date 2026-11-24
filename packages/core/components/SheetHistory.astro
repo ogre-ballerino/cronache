@@ -12,13 +12,15 @@ const { sheets } = Astro.props;
 const system = sheetSystem()!;
 const sessions = await getCollection('sessions');
 const sessionLink = (numero?: number) => {
-  const session = numero && sessions.find((s) => s.data.numero === numero);
-  return session ? { href: entryUrl('sessions', session.id), label: `${config.labels.session} ${numero}` } : undefined;
+  if (!numero) return undefined;
+  const session = sessions.find((s) => s.data.numero === numero);
+  return { href: session && entryUrl('sessions', session.id), label: `${config.labels.session} ${numero}` };
 };
 
 const entries = sheets
   .map((sheet, i) => ({
     sheet,
+    heading: system.heading?.(sheet.data),
     session: sessionLink(system.session(sheet.data)),
     changes: i === 0 ? [] : system.diff(sheets[i - 1].data, sheet.data),
     first: i === 0,
@@ -28,20 +30,23 @@ const entries = sheets
 <section class="sheet-history">
   <h2>{system.historyTitle}</h2>
   <ol class="sheet-history-list">
-    {entries.map(({ sheet, session, changes, first }) => (
-      <li class="timeline-item">
-        <span class="timeline-marker" aria-hidden="true"></span>
-        <h3 class="sheet-history-title">{system.heading(sheet.data, config.labels.session)}</h3>
-        <p class="sheet-note">
-          {longDate(sheet.data.data)}
-          {session && <> · dopo la <a href={session.href}>{session.label}</a></>}
-          {' · '}<a href={sheetPdfUrl(sheet)} download={sheetPdfName(sheet)}>PDF</a>
-        </p>
-        {first && <p class="sheet-note">Prima scheda registrata.</p>}
-        {changes.map((group) => (
-          <p class="sheet-history-change"><strong>{group.titolo}:</strong> {group.voci.join(', ')}</p>
-        ))}
-      </li>
-    ))}
+    {entries.map(({ sheet, heading, session, changes, first }) => {
+      const sessionText = session && (session.href ? <a href={session.href}>{session.label}</a> : session.label);
+      return (
+        <li class="timeline-item">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <h3 class="sheet-history-title">{heading ?? sessionText}</h3>
+          <p class="sheet-note">
+            {longDate(sheet.data.data)}
+            {heading && sessionText && <> · {sessionText}</>}
+            {' · '}<a href={sheetPdfUrl(sheet)} download={sheetPdfName(sheet)}>PDF</a>
+          </p>
+          {first && <p class="sheet-note">Prima scheda registrata.</p>}
+          {changes.map((group) => (
+            <p class="sheet-history-change"><strong>{group.titolo}:</strong> {group.voci.join(', ')}</p>
+          ))}
+        </li>
+      );
+    })}
   </ol>
 </section>

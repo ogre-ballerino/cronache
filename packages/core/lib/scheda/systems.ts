@@ -19,7 +19,8 @@ export interface SheetSystem {
   order: (data: SheetData) => number;
   /** The session the snapshot follows, linked from the history. */
   session: (data: SheetData) => number | undefined;
-  heading: (data: SheetData, sessionLabel: string) => string;
+  /** The snapshot's title in the history; without one, the title is the linked session. */
+  heading?: (data: SheetData) => string;
   /** The line under the name on the sheet page. */
   summary: (data: SheetData) => string[];
   /** Replaces the site's own descriptive fields in a character's meta line, when set. */
@@ -45,7 +46,6 @@ export const SYSTEMS: Record<string, SheetSystem> = {
     historyTitle: 'Storico della scheda',
     order: (d) => d.capitolo,
     session: (d) => d.capitolo,
-    heading: (d, sessionLabel) => `Dopo il ${sessionLabel.toLowerCase()} ${d.capitolo}`,
     summary: (d) => [d.occupazione, d.eta && `${d.eta} anni${d.invecchiamento ? ` (+${d.invecchiamento})` : ''}`],
     diff: diffCoc7e,
     fill: fillCoc7e,
