@@ -120,6 +120,7 @@ a {
   margin: 1.4rem 0 0;
   font-style: italic;
   color: var(--color-ink-muted);
+  text-wrap: balance;
 }
 
 @media (max-width: 720px) {
