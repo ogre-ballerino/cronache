@@ -17,8 +17,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const meta = [characterMeta(entry.data), entry.data.fazione].filter(Boolean).join(' · ');
 const sheet = (await sheetsByCharacter()).get(entry.id)?.at(-1);
+const meta = [characterMeta(entry.data, sheet?.data), entry.data.fazione].filter(Boolean).join(' · ');
 ---
 <EntryLayout
   title={entry.data.titolo}

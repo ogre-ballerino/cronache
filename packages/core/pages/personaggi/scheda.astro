@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SheetHistory from '../../components/SheetHistory.astro';
 import SheetView from '../../components/SheetView.astro';
 import { entryUrl } from '../../lib/collections.mjs';
+import { ogImage } from '../../lib/og';
 import { classLine } from '../../lib/scheda/labels.mjs';
 import { sheetPdfUrl, sheetsByCharacter } from '../../lib/schede';
 
@@ -21,7 +22,12 @@ const name = character.data.titolo;
 const latest = sheets.at(-1)!;
 const summary = [classLine(latest.data), latest.data.razza, latest.data.background].filter(Boolean).join(' · ');
 ---
-<BaseLayout title={`${config.labels.sheet}: ${name}`} description={`${config.labels.sheet} di ${name}: ${summary}, livello ${latest.data.livello}.`}>
+<BaseLayout
+  title={`${config.labels.sheet}: ${name}`}
+  description={`${config.labels.sheet} di ${name}: ${summary}, livello ${latest.data.livello}.`}
+  type="article"
+  og={ogImage(character.data)}
+>
   <article>
     <header class="entry-header">
       <h1 class="page-title">{name}</h1>
