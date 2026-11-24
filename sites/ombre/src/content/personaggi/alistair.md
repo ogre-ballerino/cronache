@@ -1,6 +1,7 @@
 ---
 titolo: Alistair
-stato: morto
+stato: scomparso
+sottotitolo: nelle Terre del Sogno
 estratto: Paga l'albergo a Berlino e insegue nel sogno la musica e il sorriso della madre. Liberato dal bozzolo, sceglie di restare nelle Terre del Sogno, e nel suo corpo si risveglia Hans Traeumer.
 immagine: /images/personaggi/alistair.webp
 ---
