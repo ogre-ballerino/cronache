@@ -5,7 +5,7 @@ import EntryLayout from '../../layouts/EntryLayout.astro';
 import { ogImage } from '../../lib/og';
 import { fullPortrait } from '../../lib/portraits';
 import { characterMeta } from '../../lib/characters';
-import { sheetPdfUrl, sheetsByCharacter, sheetUrl } from '../../lib/schede';
+import { sheetPdfName, sheetPdfUrl, sheetsByCharacter, sheetUrl } from '../../lib/schede';
 
 export async function getStaticPaths() {
   const characters = await getCollection('personaggi');
@@ -35,7 +35,7 @@ const meta = [characterMeta(entry.data, sheet?.data), entry.data.fazione].filter
     <p class="sheet-actions" slot="header" data-pagefind-ignore>
       <a href={sheetUrl(entry.id)}>{config.labels.sheet}</a>
       {' · '}
-      <a href={sheetPdfUrl(entry.id, sheet.data.livello)} download>{config.labels.sheetDownload}</a>
+      <a href={sheetPdfUrl(entry.id, sheet.data.livello)} download={sheetPdfName(entry.id, sheet.data.livello)}>{config.labels.sheetDownload}</a>
     </p>
   )}
   <Content />

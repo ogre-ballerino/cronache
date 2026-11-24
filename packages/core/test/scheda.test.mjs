@@ -135,6 +135,25 @@ describe('fromFoundry', () => {
   });
 });
 
+describe('feature uses', () => {
+  it('resolves class scale values and ability modifiers', () => {
+    const actor = warlock({
+      extraItems: [
+        { type: 'feat', name: 'Pact Boon', system: { type: { value: 'class' }, uses: { max: '@abilities.cha.mod', recovery: [{ period: 'lr' }] } } },
+        { type: 'feat', name: 'Channel Divinity', system: { type: { value: 'class' }, uses: { max: '@scale.warlock.channel', recovery: [{ period: 'sr' }] } } },
+      ],
+    });
+    actor.items.find((i) => i.type === 'class').system.advancement.s1 = {
+      type: 'ScaleValue',
+      configuration: { identifier: 'channel', scale: { 2: { value: 1 }, 6: { value: 2 }, 18: { value: 3 } } },
+    };
+    const uses = Object.fromEntries(fromFoundry(actor, { data: '2026-11-24' }).privilegi.map((p) => [p.nome, p.usi]));
+    assert.equal(uses['Pact Boon'], '4/long rest');
+    assert.equal(uses['Channel Divinity'], '2/short rest');
+    assert.equal(uses['Agonizing Blast'], undefined);
+  });
+});
+
 describe('diffSheets', () => {
   it('reports what changed between two levels', () => {
     const before = fromFoundry(warlock({ level: 5 }), { data: '2026-10-01' });

@@ -4,7 +4,7 @@ import config from 'virtual:cronache/config';
 import { entryUrl } from '../lib/collections.mjs';
 import { longDate } from '../lib/format';
 import { diffSheets } from '../lib/scheda/storico.mjs';
-import { sheetPdfUrl, type SheetEntry } from '../lib/schede';
+import { sheetPdfName, sheetPdfUrl, type SheetEntry } from '../lib/schede';
 
 interface Props {
   sheets: SheetEntry[];
@@ -35,7 +35,7 @@ const levels = sheets
         <p class="sheet-note">
           {longDate(sheet.data.data)}
           {session && <> · dopo la <a href={session.href}>{session.label}</a></>}
-          {' · '}<a href={sheetPdfUrl(sheet.character, sheet.data.livello)} download>PDF</a>
+          {' · '}<a href={sheetPdfUrl(sheet.character, sheet.data.livello)} download={sheetPdfName(sheet.character, sheet.data.livello)}>PDF</a>
         </p>
         {first && <p class="sheet-note">Prima scheda registrata.</p>}
         {changes.map((group) => (

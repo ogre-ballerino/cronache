@@ -24,3 +24,6 @@ export async function sheetsByCharacter(): Promise<Map<string, SheetEntry[]>> {
 export const sheetUrl = (character: string) => `${entryUrl('personaggi', character)}scheda/`;
 
 export const sheetPdfUrl = (character: string, livello: number) => `${sheetUrl(character)}livello-${livello}.pdf`;
+
+/** The downloaded file's name, so four players' PDFs don't all save as livello-6.pdf. */
+export const sheetPdfName = (character: string, livello: number) => `${character}-livello-${livello}.pdf`;

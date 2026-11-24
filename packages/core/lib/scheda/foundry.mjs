@@ -47,7 +47,7 @@ export function fromFoundry(actor, { data, sessione }) {
     dadiVita: ctx.classes.map(({ item }) => `${item.system.levels}${item.system.hd.denomination}`).join(' + '),
     attacchi: attacks(actor, ctx),
     incantesimi: spellcasting(actor, ctx),
-    privilegi: features(actor),
+    privilegi: features(actor, ctx),
     competenze: proficiencies(actor),
     equipaggiamento: inventory(actor),
     monete: coins(actor.system.currency),
@@ -67,7 +67,25 @@ function context(actor) {
   const mods = Object.fromEntries(ABILITY_KEYS.map((k) => [k, modifier(actor.system.abilities[k].value)]));
   const ctx = { classes, level, mods, prof: proficiencyBonus(level), race: actor.items.find((i) => i.type === 'race') };
   ctx.effects = activeChanges(actor);
+  ctx.scales = scaleValues(classes);
   return ctx;
+}
+
+// "@scale.cleric.channel-divinity" → its numeric value at the class's level.
+function scaleValues(classes) {
+  const scales = {};
+  for (const { item, subclass } of classes) {
+    for (const owner of [item, subclass].filter(Boolean)) {
+      for (const adv of values(owner.system.advancement)) {
+        if (adv.type !== 'ScaleValue') continue;
+        const reached = Object.entries(adv.configuration?.scale ?? {})
+          .filter(([lvl]) => Number(lvl) <= item.system.levels)
+          .sort(([a], [b]) => Number(b) - Number(a))[0]?.[1];
+        if (typeof reached?.value === 'number') scales[`${owner.system.identifier}.${adv.configuration.identifier}`] = reached.value;
+      }
+    }
+  }
+  return scales;
 }
 
 // Changes from effects that apply passively: features always, items only
@@ -227,7 +245,7 @@ function spellcasting(actor, ctx) {
         livello: s.system.level,
         preparato: (s.system.prepared ?? 0) >= 1,
         sempre: s.system.level > 0 && (s.system.prepared === 2 || ['innate', 'atwill'].includes(s.system.method)),
-        ...usesText(s.system.uses),
+        ...usesText(s.system.uses, ctx),
         dettagli: spellDetails(s),
       }))
       .sort((a, b) => a.livello - b.livello || a.nome.localeCompare(b.nome)),
@@ -241,18 +259,25 @@ function listedSpell(spell) {
   return prepared >= 1 || method !== 'spell' || sourceItem.startsWith('race:') || sourceItem === 'class:wizard';
 }
 
-function usesText(uses) {
+function usesText(uses, ctx) {
   if (!uses?.max) return {};
+  const max = evalBonus(String(uses.max).replace(/@scale\.([\w-]+\.[\w-]+)/g, (_, key) => String(ctx.scales[key] ?? 0)), ctx);
+  if (max <= 0) return {};
   const period = uses.recovery?.[0]?.period;
-  return { usi: `${uses.max}/${label(RECOVERY, period)}` };
+  return { usi: period ? `${max}/${label(RECOVERY, period)}` : String(max) };
 }
 
-function features(actor) {
+function features(actor, ctx) {
   return actor.items
     .filter((i) => i.type === 'feat' && FEATURE_SOURCE[i.system.type?.value] && !FILLER_FEATURES.has(i.name))
     .map((i) => {
       const descrizione = isSrdFeature(i) ? plainText(i.system.description?.value) : '';
-      return { nome: i.name, fonte: FEATURE_SOURCE[i.system.type.value], ...(descrizione ? { descrizione } : {}) };
+      return {
+        nome: i.name,
+        fonte: FEATURE_SOURCE[i.system.type.value],
+        ...usesText(i.system.uses, ctx),
+        ...(descrizione ? { descrizione } : {}),
+      };
     });
 }
 

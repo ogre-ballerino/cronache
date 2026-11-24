@@ -138,7 +138,10 @@ function fillFront(sheet, nome, text, check) {
 
 function features(sheet, sources) {
   return sources
-    .map((source) => [FEATURE_SOURCES[source], sheet.privilegi.filter((p) => p.fonte === source).map((p) => p.nome)])
+    .map((source) => [
+      FEATURE_SOURCES[source],
+      sheet.privilegi.filter((p) => p.fonte === source).map((p) => (p.usi ? `${p.nome} (${p.usi})` : p.nome)),
+    ])
     .filter(([, list]) => list.length)
     .map(([label, list]) => `${label}\n${list.map((n) => `• ${n}`).join('\n')}`)
     .join('\n\n');
