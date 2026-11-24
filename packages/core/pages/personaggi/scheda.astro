@@ -36,7 +36,7 @@ const View = VIEWS[config.features.schede as keyof typeof VIEWS];
       <h1 class="page-title">{name}</h1>
       <p class="entry-meta">{summary}</p>
       <p class="sheet-actions">
-        <a href={entryUrl('personaggi', id)}>Torna al personaggio</a>
+        <a href={entryUrl('personaggi', id)}>{config.labels.sheetBack}</a>
         {' · '}
         <a href={sheetPdfUrl(latest)} download={sheetPdfName(latest)}>{config.labels.sheetDownload}</a>
       </p>

@@ -36,6 +36,8 @@ const defaults = {
     nextSession: 'Prossima sessione',
     sheet: 'Scheda del personaggio',
     sheetDownload: 'Scarica il PDF',
+    sheetBack: 'Torna al personaggio',
+    sheetFirst: 'Prima scheda registrata.',
   },
   sections: {
     diario: {

@@ -41,7 +41,7 @@ const entries = sheets
             {heading && sessionText && <> · {sessionText}</>}
             {' · '}<a href={sheetPdfUrl(sheet)} download={sheetPdfName(sheet)}>PDF</a>
           </p>
-          {first && <p class="sheet-note">Prima scheda registrata.</p>}
+          {first && <p class="sheet-note">{config.labels.sheetFirst}</p>}
           {changes.map((group) => (
             <p class="sheet-history-change"><strong>{group.titolo}:</strong> {group.voci.join(', ')}</p>
           ))}
