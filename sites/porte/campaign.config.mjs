@@ -23,6 +23,7 @@ export default defineCampaign({
     lines: [
       'Ospitato dall\'<a href="https://ogreballerino.com">Ogre Ballerino</a>',
       'Fatto con le manine sante di <a href="https://sirlisko.com">sirlisko</a> (alias <a href="/personaggi/maximilian-hirst/">Maximilian</a>)',
+      'Le chiavi di tutte le porte le tiene Giuseppe, il Keeper',
       'Materiale amatoriale non ufficiale. Call of Cthulhu è un marchio registrato di Chaosium Inc.',
     ],
   },
