@@ -1,0 +1,37 @@
+---
+import config from 'virtual:cronache/config';
+import { contentDir } from 'virtual:cronache/paths';
+import { coinList } from '../lib/loot.mjs';
+import { getSlugMap, normalize } from '../lib/wikilinks.mjs';
+
+interface Props {
+  loot?: { monete?: Record<string, number | undefined>; oggetti: { nome: string; chi?: string }[] };
+}
+const { loot } = Astro.props;
+const slugMap = getSlugMap(contentDir);
+const rows = [
+  ...coinList(loot?.monete).map((c) => ({ label: c.name, value: String(c.amount), coin: true })),
+  ...(loot?.oggetti ?? []).map(({ nome, chi }) => ({ label: nome, value: chi, url: chi && slugMap.get(normalize(chi))?.url })),
+];
+---
+{rows.length > 0 && (
+  <>
+    {/* A sibling of the scene headings, so each theme draws it as the session's last scene. */}
+    <h2 id="bottino">{config.labels.loot}</h2>
+    <ul class="loot">
+      {rows.map((row) => (
+        <li>
+          <span class="loot-label">{row.label}</span>
+          {row.value && (
+            <>
+              <span class="loot-leader" aria-hidden="true" />
+              <span class:list={['loot-value', { 'loot-amount': row.coin }]}>
+                {row.url ? <a href={row.url}>{row.value}</a> : row.value}
+              </span>
+            </>
+          )}
+        </li>
+      ))}
+    </ul>
+  </>
+)}

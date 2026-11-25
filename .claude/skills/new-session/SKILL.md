@@ -38,8 +38,15 @@ data: <YYYY-MM-DD — the real session date if known; interactively, ask if unkn
 estratto: <1-2 sentences, max 300 characters (schema-enforced)>
 luoghiVisitati: [<titolo of each place the group was physically in — this is what marks a place as visited, on a map too if the site has one>]
 tag: [<optional, short>]
+bottino:  # D&D sites only (`features.schede: 'dnd5e'`); omit when nothing was kept
+  monete: { mo: <N>, ma: <N> }  # any of mp, mo, me, ma, mr
+  oggetti:
+    - nome: <short name, as the group knows it: what it is, not its story (that's in the body); plain text, no wikilinks>
+      chi: <the character who took it, by titolo; omit if shared or unclear>
 ---
 ```
+
+`bottino` lists what the group found and kept this session, shown in a box at the end of the page: coins and items picked up, not money spent, documents read and left, or things left where they were.
 
 Body: a third-person narrative in Italian that summarises what happened, split into `##` sections by scene. Past tense or narrative present consistent with earlier sessions. Keep it readable prose — no raw transcript, no out-of-character table talk, no rules chatter unless it matters to the story. Link every entity on its first mention in each section.
 

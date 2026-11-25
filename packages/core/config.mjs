@@ -38,6 +38,7 @@ const defaults = {
     season: 'Stagione',
     mentionedIn: 'Menzionato in',
     otherSessions: 'Altre sessioni',
+    loot: 'Bottino',
     nextSession: 'Prossima sessione',
     sheet: 'Scheda del personaggio',
     sheetDownload: 'Scarica il PDF',

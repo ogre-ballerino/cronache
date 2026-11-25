@@ -25,7 +25,7 @@ These apply to every content edit, in every site, by hand or through a skill.
 
 ### Frontmatter (all sites)
 
-- `sessions/sessione-NN.md`: `titolo`, `numero`, `stagione` (optional; when present, sessions are grouped by season), `data` (real session date), `estratto` (≤300 chars), `luoghiVisitati`, `tag`. Body: third-person Italian narrative in `##` sections by scene.
+- `sessions/sessione-NN.md`: `titolo`, `numero`, `stagione` (optional; when present, sessions are grouped by season), `data` (real session date), `estratto` (≤300 chars), `luoghiVisitati`, `tag`, `bottino` (optional, D&D sites: `monete` by denomination `mp`/`mo`/`me`/`ma`/`mr`, `oggetti` as `nome` plus `chi`, the character who took it; shown as a box at the end of the page). Body: third-person Italian narrative in `##` sections by scene.
 - `personaggi/`: `titolo`, `giocatore`, `stato`, `fazione`, `estratto`, `tag`, `immagine` only if the file exists, plus the site's own fields (see its `CLAUDE.md`).
 - `png/`: `titolo`, `ruolo`, `stato`, `fazione`, `luogo`, `estratto`, `tag`.
 - `luoghi/`: `titolo`, `tipo`, `regione`, `estratto`, `tag`.

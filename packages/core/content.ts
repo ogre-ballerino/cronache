@@ -8,6 +8,7 @@ import { publicDir } from 'virtual:cronache/paths';
 import { STATI_PERSONAGGI, STATI_PNG } from './lib/status.mjs';
 import { curlyQuotes } from './lib/wikilinks.mjs';
 import { SNAPSHOTS } from './lib/scheda/schemas';
+import { COINS } from './lib/loot.mjs';
 
 type Fields = Record<string, z.ZodTypeAny>;
 
@@ -35,6 +36,16 @@ const baseFields = {
 // Top-level files only, as the wikilink slug map reads them; `_` marks a draft.
 const loader = (collection: string) => glob({ pattern: '[^_]*.md', base: `./src/content/${collection}` });
 
+const coins = z.object(Object.fromEntries(COINS.map(([key]) => [key, z.number().int().positive().optional()]))).strict();
+
+const loot = z
+  .object({
+    monete: coins.optional(),
+    // `chi`: who took the item, by name; omitted when the group shares it.
+    oggetti: z.array(z.object({ nome: z.string().transform(curlyQuotes), chi: z.string().optional() }).strict()).default([]),
+  })
+  .strict();
+
 const collection = (name: string, fields: Fields, extra: Fields = {}) =>
   defineCollection({ loader: loader(name), schema: z.object({ ...baseFields, ...fields, ...extra }) });
 
@@ -53,6 +64,7 @@ export function campaignCollections(extra: CollectionFields = {}) {
         stagione: z.number().int().positive().optional(),
         data: z.coerce.date(),
         luoghiVisitati: z.array(z.string()).default([]),
+        bottino: loot.optional(),
       },
       extra.sessions
     ),
