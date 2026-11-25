@@ -21,6 +21,8 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
  * @property {{ handout?: boolean, schede?: false | 'dnd5e' | 'coc7e' }} [features]
  *   `schede`: the game system of the character sheets shown under each character page (lib/scheda/systems.ts).
  * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
+ * @property {{ label: string, title: string, html: string }} [about]
+ *   A "?" at the end of the nav opening a popover: `label` names the button, `html` is the body.
  * @property {{ endpoint: string } | { at: string }} [nextSession]
  *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
  *   `at`: a fixed local wall-clock time, e.g. '2026-11-28T16:30:00'.
@@ -115,6 +117,7 @@ export function resolveConfig(user) {
     css: user.css ?? [],
     features,
     footer: user.footer ?? { ornament: '', lines: [] },
+    about: user.about ?? null,
     nextSession: user.nextSession ?? null,
     seasons: user.seasons ?? {},
     labels: {

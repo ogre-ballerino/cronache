@@ -5,6 +5,7 @@ interface Props {
   masthead?: boolean;
 }
 const { masthead = false } = Astro.props;
+const { about } = config;
 
 const path = Astro.url.pathname;
 const isWithin = (href: string) => path === href.slice(0, -1) || path.startsWith(href);
@@ -19,5 +20,15 @@ const isWithin = (href: string) => path === href.slice(0, -1) || path.startsWith
     {config.nav.map((l) => (
       <a href={l.href} aria-current={isWithin(l.href) ? 'page' : undefined}>{l.label}</a>
     ))}
+    {about && (
+      <button type="button" class="site-about-toggle" popovertarget="site-about" aria-label={about.label}>?</button>
+    )}
   </nav>
+  {about && (
+    <div id="site-about" class="site-about" popover>
+      <button type="button" class="site-about-close" popovertarget="site-about" popovertargetaction="hide" aria-label="Chiudi">×</button>
+      <h2>{about.title}</h2>
+      <div set:html={about.html} />
+    </div>
+  )}
 </header>
