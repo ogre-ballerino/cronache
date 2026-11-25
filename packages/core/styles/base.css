@@ -154,7 +154,13 @@ main {
 }
 
 .site-about li + li {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.site-about li small {
+  display: block;
+  color: var(--color-ink-muted);
+  font-size: 0.85em;
 }
 
 .site-about-close {
