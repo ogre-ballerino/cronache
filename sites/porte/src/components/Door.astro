@@ -4,7 +4,7 @@ interface Props {
 }
 const { class: className } = Astro.props;
 ---
-<div class:list={['door', className]} aria-hidden="true">
+<div class:list={['door', 'door-busy', className]} role="button" tabindex="0" aria-label="Chiudi la porta" aria-disabled="true">
   <div class="door-frame">
     <div class="door-leaf">
       <span class="door-panel"></span>
@@ -36,3 +36,34 @@ const { class: className } = Astro.props;
     </g>
   </svg>
 </div>
+
+<script>
+  // The door can be shut, but not for long: after a moment of dark it creaks open again.
+  // It ignores clicks while it moves (on arrival too): shutting it mid-swing would make the leaf jump.
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SHUT_FOR = 3000;
+  const SWING_FOR = still ? 0 : 4200;
+
+  for (const door of document.querySelectorAll<HTMLElement>('.door')) {
+    const setBusy = (busy: boolean) => {
+      door.classList.toggle('door-busy', busy);
+      door.setAttribute('aria-disabled', String(busy));
+    };
+    const shut = () => {
+      if (door.classList.contains('door-busy')) return;
+      setBusy(true);
+      door.classList.add('door-closed');
+      setTimeout(() => {
+        door.classList.remove('door-closed');
+        setTimeout(() => setBusy(false), SWING_FOR);
+      }, SHUT_FOR);
+    };
+    setTimeout(() => setBusy(false), SWING_FOR);
+    door.addEventListener('click', shut);
+    door.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      shut();
+    });
+  }
+</script>

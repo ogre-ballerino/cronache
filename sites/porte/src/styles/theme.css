@@ -261,6 +261,61 @@ a {
   }
 }
 
+/* The easter egg: the door can be shut (Door.astro reopens it). */
+.door:not(.door-busy) {
+  cursor: pointer;
+}
+
+.door:focus-visible {
+  outline: 1px dashed var(--color-brass);
+  outline-offset: 6px;
+}
+
+.door:not(.door-busy):hover .door-frame::before {
+  filter: brightness(1.2);
+}
+
+.door-closed .door-leaf {
+  transform: perspective(600px) rotateY(0);
+}
+
+.door-closed .door-frame::before,
+.door-closed .door-spill,
+.door-closed .door-tentacles {
+  opacity: 0;
+}
+
+/* Explicit keyframes: the closed values above would otherwise be the implicit start. */
+@media (prefers-reduced-motion: no-preference) {
+  .door-closed .door-tentacles {
+    animation: door-retract 0.5s ease-in both;
+  }
+
+  .door-closed .door-leaf {
+    animation: door-shut 0.45s cubic-bezier(0.6, 0, 1, 1) 0.4s both;
+  }
+
+  .door-closed .door-frame::before,
+  .door-closed .door-spill {
+    animation: door-dim 0.45s ease-in 0.4s both;
+  }
+}
+
+@keyframes door-retract {
+  from { clip-path: inset(-30% -30% -30% 0); opacity: 1; }
+  to { clip-path: inset(0 100% 0 0); opacity: 1; }
+}
+
+@keyframes door-shut {
+  from { transform: perspective(600px) rotateY(55deg); }
+  to { transform: perspective(600px) rotateY(0); }
+}
+
+@keyframes door-dim {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 @keyframes door-creak {
   from { transform: perspective(600px) rotateY(0); }
 }
