@@ -71,3 +71,5 @@ L'ospedale non sporge nessuna denuncia, e nessuno viene a cercarli. Qualche sett
 Pochi giorni dopo, sul giornale, Jessica legge che [[Morte all'istituto psichiatrico di Danvers|MacBride è stato trovato morto]] nella sua cella: suicidio, secondo il direttore. A quel punto non ha più dubbi che le sue paure fossero fondate. Grazie ai giornali parte un'inchiesta sull'ospedale, ma dopo un po' si chiude con un nulla di fatto.
 
 Chi torna a cercare negli archivi scopre che su quella collina, ai tempi delle streghe, era andato ad abitare un giudice stimato e per bene: dopo qualche settimana era diventato il più fervido sostenitore della caccia alle streghe, e alla fine aveva ucciso tutta la sua famiglia.
+
+Larry è libero, ma gli investigatori non hanno svelato l'orrore che si cela dietro le inferriate delle finestre, le porte di metallo, le urla e i pianti dei pazienti: la creatura che abita l'ospedale resta senza nome.

@@ -1,0 +1,114 @@
+{
+  "capitolo": 1,
+  "data": "2026-11-24",
+  "occupazione": "Scrittrice",
+  "eta": 52,
+  "caratteristiche": {
+    "str": 60,
+    "con": 70,
+    "siz": 70,
+    "dex": 55,
+    "app": 55,
+    "int": 75,
+    "pow": 65,
+    "edu": 87
+  },
+  "pf": {
+    "max": 14
+  },
+  "pm": {
+    "max": 13
+  },
+  "fortuna": {
+    "iniziale": 60
+  },
+  "sanita": {
+    "iniziale": 65,
+    "massima": 99
+  },
+  "stati": [],
+  "movimento": 5,
+  "corporatura": 1,
+  "bonusDanno": "+1D4",
+  "abilita": [
+    {
+      "nome": "Accounting",
+      "valore": 16
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 35
+    },
+    {
+      "nome": "Dodge",
+      "valore": 30
+    },
+    {
+      "nome": "Fast Talk",
+      "valore": 55
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 30
+    },
+    {
+      "nome": "History",
+      "valore": 45
+    },
+    {
+      "nome": "Library Use",
+      "valore": 40
+    },
+    {
+      "nome": "Listen",
+      "valore": 40
+    },
+    {
+      "nome": "Occult",
+      "valore": 20
+    },
+    {
+      "nome": "Persuade",
+      "valore": 60
+    },
+    {
+      "nome": "Psychology",
+      "valore": 35
+    },
+    {
+      "nome": "Stealth",
+      "valore": 30
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Literature",
+      "valore": 65
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Sketching",
+      "valore": 55
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "Latin",
+      "valore": 40
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "English",
+      "valore": 87
+    },
+    {
+      "nome": "Science",
+      "specialita": "Biology",
+      "valore": 36
+    },
+    {
+      "nome": "Science",
+      "specialita": "Chemistry",
+      "valore": 31
+    }
+  ],
+  "armi": []
+}

@@ -1,0 +1,113 @@
+{
+  "capitolo": 1,
+  "data": "2026-11-24",
+  "occupazione": "Illusionista",
+  "eta": 36,
+  "caratteristiche": {
+    "str": 70,
+    "con": 60,
+    "siz": 45,
+    "dex": 80,
+    "app": 80,
+    "int": 60,
+    "pow": 55,
+    "edu": 79
+  },
+  "pf": {
+    "max": 10
+  },
+  "pm": {
+    "max": 11
+  },
+  "fortuna": {
+    "iniziale": 50
+  },
+  "sanita": {
+    "iniziale": 55,
+    "massima": 99
+  },
+  "stati": [],
+  "movimento": 9,
+  "corporatura": 0,
+  "bonusDanno": "0",
+  "abilita": [
+    {
+      "nome": "Charm",
+      "valore": 55
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 30
+    },
+    {
+      "nome": "Fast Talk",
+      "valore": 50
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 40
+    },
+    {
+      "nome": "Firearms (Handgun)",
+      "valore": 30
+    },
+    {
+      "nome": "Listen",
+      "valore": 27
+    },
+    {
+      "nome": "Locksmith",
+      "valore": 50
+    },
+    {
+      "nome": "Natural World",
+      "valore": 25
+    },
+    {
+      "nome": "Occult",
+      "valore": 35
+    },
+    {
+      "nome": "Psychology",
+      "valore": 35
+    },
+    {
+      "nome": "Sleight of Hand",
+      "valore": 65
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 40
+    },
+    {
+      "nome": "Stealth",
+      "valore": 30
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Magician",
+      "valore": 70
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Woodwork",
+      "valore": 30
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "English",
+      "valore": 79
+    }
+  ],
+  "armi": [
+    {
+      "nome": ".38 Revolver",
+      "valore": 30,
+      "danni": "1D10",
+      "attacchi": "1 (3)",
+      "gittata": "15 yds",
+      "munizioni": "6",
+      "malfunzionamento": "100"
+    }
+  ]
+}

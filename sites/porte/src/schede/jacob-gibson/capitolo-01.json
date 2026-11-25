@@ -1,0 +1,100 @@
+{
+  "capitolo": 1,
+  "data": "2026-11-24",
+  "occupazione": "Bidello",
+  "eta": 36,
+  "caratteristiche": {
+    "str": 70,
+    "con": 65,
+    "siz": 65,
+    "dex": 45,
+    "app": 55,
+    "int": 50,
+    "pow": 70,
+    "edu": 70
+  },
+  "pf": {
+    "max": 13
+  },
+  "pm": {
+    "max": 14
+  },
+  "fortuna": {
+    "iniziale": 60
+  },
+  "sanita": {
+    "iniziale": 70,
+    "massima": 99
+  },
+  "stati": [],
+  "movimento": 8,
+  "corporatura": 1,
+  "bonusDanno": "+1D4",
+  "abilita": [
+    {
+      "nome": "Charm",
+      "valore": 40
+    },
+    {
+      "nome": "Climb",
+      "valore": 40
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 15
+    },
+    {
+      "nome": "Dodge",
+      "valore": 45
+    },
+    {
+      "nome": "Drive Auto",
+      "valore": 40
+    },
+    {
+      "nome": "Elec. Repair",
+      "valore": 50
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 60
+    },
+    {
+      "nome": "Listen",
+      "valore": 35
+    },
+    {
+      "nome": "Locksmith",
+      "valore": 40
+    },
+    {
+      "nome": "Mech. Repair",
+      "valore": 70
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 45
+    },
+    {
+      "nome": "Stealth",
+      "valore": 50
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "English",
+      "valore": 70
+    },
+    {
+      "nome": "Operate Heavy Machinery",
+      "valore": 39
+    }
+  ],
+  "armi": [
+    {
+      "nome": "Wrench",
+      "valore": 60,
+      "danni": "1D8+DB",
+      "attacchi": "1"
+    }
+  ]
+}

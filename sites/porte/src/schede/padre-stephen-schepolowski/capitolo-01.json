@@ -1,0 +1,107 @@
+{
+  "capitolo": 1,
+  "data": "2026-11-24",
+  "occupazione": "Sacerdote cattolico",
+  "eta": 25,
+  "caratteristiche": {
+    "str": 70,
+    "con": 75,
+    "siz": 70,
+    "dex": 55,
+    "app": 50,
+    "int": 70,
+    "pow": 70,
+    "edu": 70
+  },
+  "pf": {
+    "max": 14
+  },
+  "pm": {
+    "max": 14
+  },
+  "fortuna": {
+    "iniziale": 50
+  },
+  "sanita": {
+    "iniziale": 70,
+    "massima": 99
+  },
+  "stati": [],
+  "movimento": 8,
+  "corporatura": 1,
+  "bonusDanno": "+1D4",
+  "abilita": [
+    {
+      "nome": "Accounting",
+      "valore": 35
+    },
+    {
+      "nome": "Charm",
+      "valore": 30
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 20
+    },
+    {
+      "nome": "Dodge",
+      "valore": 40
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 50
+    },
+    {
+      "nome": "First Aid",
+      "valore": 40
+    },
+    {
+      "nome": "History",
+      "valore": 45
+    },
+    {
+      "nome": "Library Use",
+      "valore": 40
+    },
+    {
+      "nome": "Listen",
+      "valore": 40
+    },
+    {
+      "nome": "Occult",
+      "valore": 30
+    },
+    {
+      "nome": "Persuade",
+      "valore": 50
+    },
+    {
+      "nome": "Psychology",
+      "valore": 40
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 34
+    },
+    {
+      "nome": "Throw",
+      "valore": 45
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "Italian",
+      "valore": 30
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "Latin",
+      "valore": 70
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "English",
+      "valore": 70
+    }
+  ],
+  "armi": []
+}

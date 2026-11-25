@@ -1,0 +1,104 @@
+{
+  "capitolo": 1,
+  "data": "2026-11-24",
+  "occupazione": "Parapsicologo",
+  "eta": 26,
+  "caratteristiche": {
+    "str": 45,
+    "con": 75,
+    "siz": 80,
+    "dex": 50,
+    "app": 60,
+    "int": 75,
+    "pow": 70,
+    "edu": 70
+  },
+  "pf": {
+    "max": 15
+  },
+  "pm": {
+    "max": 14
+  },
+  "fortuna": {
+    "iniziale": 50
+  },
+  "sanita": {
+    "iniziale": 70,
+    "massima": 99
+  },
+  "stati": [],
+  "movimento": 7,
+  "corporatura": 1,
+  "bonusDanno": "+1D4",
+  "abilita": [
+    {
+      "nome": "Anthropology",
+      "valore": 25
+    },
+    {
+      "nome": "Credit Rating",
+      "valore": 16
+    },
+    {
+      "nome": "Dodge",
+      "valore": 40
+    },
+    {
+      "nome": "Fast Talk",
+      "valore": 55
+    },
+    {
+      "nome": "Fighting (Brawl)",
+      "valore": 50
+    },
+    {
+      "nome": "History",
+      "valore": 30
+    },
+    {
+      "nome": "Library Use",
+      "valore": 40
+    },
+    {
+      "nome": "Natural World",
+      "valore": 40
+    },
+    {
+      "nome": "Occult",
+      "valore": 65
+    },
+    {
+      "nome": "Persuade",
+      "valore": 30
+    },
+    {
+      "nome": "Psychology",
+      "valore": 57
+    },
+    {
+      "nome": "Spot Hidden",
+      "valore": 45
+    },
+    {
+      "nome": "Art/Craft",
+      "specialita": "Photography",
+      "valore": 45
+    },
+    {
+      "nome": "Language (Other)",
+      "specialita": "French",
+      "valore": 20
+    },
+    {
+      "nome": "Language (Own)",
+      "specialita": "English",
+      "valore": 70
+    },
+    {
+      "nome": "Science",
+      "specialita": "Physics",
+      "valore": 20
+    }
+  ],
+  "armi": []
+}
