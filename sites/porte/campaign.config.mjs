@@ -1,4 +1,5 @@
 import { defineCampaign } from '@cronache/core';
+import { ogreBallerinoAbout } from '../ogre-ballerino.mjs';
 
 const name = "Porte sull'Oscurità";
 
@@ -18,6 +19,7 @@ export default defineCampaign({
     './src/styles/theme.css',
   ],
   features: { handout: true, schede: 'coc7e' },
+  about: ogreBallerinoAbout(name),
   footer: {
     ornament: '',
     lines: [

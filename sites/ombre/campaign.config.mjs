@@ -1,4 +1,5 @@
 import { defineCampaign } from '@cronache/core';
+import { ogreBallerinoAbout } from '../ogre-ballerino.mjs';
 
 const name = "L'Equilibrio delle Ombre";
 
@@ -16,6 +17,7 @@ export default defineCampaign({
     './src/styles/theme.css',
   ],
   features: { handout: true, schede: 'coc7e' },
+  about: ogreBallerinoAbout(name),
   footer: {
     ornament: '&#10022; &#10022; &#10022;',
     lines: [

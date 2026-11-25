@@ -1,4 +1,5 @@
 import { defineCampaign } from '@cronache/core';
+import { ogreBallerinoAbout } from '../ogre-ballerino.mjs';
 
 export default defineCampaign({
   name: 'La Maledizione di Strahd',
@@ -24,6 +25,7 @@ export default defineCampaign({
     '@fontsource/im-fell-great-primer/400.css',
     './src/styles/theme.css',
   ],
+  about: ogreBallerinoAbout('La Maledizione di Strahd'),
   footer: {
     ornament: '&#8258;',
     lines: [

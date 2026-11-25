@@ -3,7 +3,7 @@
 [build]
   command = "pnpm --filter porte build"
   publish = "sites/porte/dist"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- sites/porte packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- sites/porte sites/ogre-ballerino.mjs packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml"
 
 [build.environment]
   NODE_VERSION = "24"
