@@ -5,6 +5,20 @@ data: 2026-11-18
 estratto: Vallaki è caduta nel caos dopo una rivolta e un attacco di lupi; il gruppo esplora la locanda saccheggiata di Urwin, trova il diario di Rictavio e uno scrigno nascosto, perde il carro e si barrica per la notte in una casupola.
 luoghiVisitati: [Vallaki, Locanda di Urwin]
 tag: [vallaki, rivolta, lupi, elsa, rictavio]
+bottino:
+  oggetti:
+    - nome: Diario di Rictavio
+      chi: Erieth
+    - nome: Due elisir
+      chi: Artemis
+    - nome: Sacca grigia di pezze
+      chi: Artemis
+    - nome: Pozione curativa
+      chi: Tariq
+    - nome: Pozione curativa
+      chi: Don Matteor
+    - nome: Pozione curativa
+      chi: Erieth
 ---
 
 ## Impronte nel fango

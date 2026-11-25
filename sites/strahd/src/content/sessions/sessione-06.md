@@ -4,6 +4,10 @@ numero: 6
 data: 2026-05-20
 estratto: Il gruppo consegna (in parte) il carico del Wizard of Wines a Urwin, riceve un invito a cena da Strahd e pianifica l'infiltrazione nella villa del borgomastro.
 luoghiVisitati: [Vallaki, Wizard of Wines, Locanda di Urwin, Chiesa di Vallaki]
+bottino:
+  oggetti:
+    - nome: Carro del Wizard of Wines
+    - nome: Una botte e mezza di vino e alcune bottiglie
 ---
 
 ## Arrivo alla locanda

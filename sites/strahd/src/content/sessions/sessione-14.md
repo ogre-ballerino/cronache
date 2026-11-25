@@ -5,6 +5,10 @@ data: 2026-11-11
 estratto: Il gruppo sbaraglia zombie, cavaliere non-morto e orrore della palude, ma perde i cavalli; l'elsa parla a Don Matteor, e a sera il carro arriva a Vallaki, trovando il cancello aperto e nessuna guardia.
 luoghiVisitati: [Vallaki]
 tag: [imboscata, non-morti, elsa, vallaki]
+bottino:
+  oggetti:
+    - nome: Medaglione d'oro con stemma
+      chi: Tariq
 ---
 
 ## Il fuoco e la luce

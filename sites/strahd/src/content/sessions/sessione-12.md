@@ -5,6 +5,12 @@ data: 2026-10-29
 estratto: Madama Eva legge al gruppo i tarocchi di Barovia e indica un tesoro nascosto nel campo; nella notte Artemis ruba dai Vistani un'elsa senziente che brama la morte di Strahd e una pozione di soffio di fuoco.
 luoghiVisitati: [Accampamento dei Vistani]
 tag: [vistani, profezia, furto]
+bottino:
+  oggetti:
+    - nome: Elsa senziente
+      chi: Artemis
+    - nome: Pozione di soffio di fuoco
+      chi: Erieth
 ---
 
 ## La tenda di Madama Eva
