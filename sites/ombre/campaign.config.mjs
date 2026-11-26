@@ -29,6 +29,11 @@ export default defineCampaign({
   },
   // Wall-clock time; the home page hides it once it has passed.
   nextSession: { at: '2026-11-28T16:30:00' },
+  discord: {
+    annuncio: '🐈‍⬛ Il gatto nero ha lasciato qualcosa sulla soglia: un nuovo capitolo delle Ombre!',
+    leggi: 'Leggi il capitolo',
+    colore: 0x2f4a3a,
+  },
   labels: { session: 'Capitolo' },
   sections: {
     diario: {
