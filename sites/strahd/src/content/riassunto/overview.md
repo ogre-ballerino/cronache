@@ -75,3 +75,18 @@ Il gruppo sopravvive all'imboscata ma perde i cavalli; sul cavaliere non-morto t
 ## Vallaki in rivolta
 
 Il gruppo scopre che [[Vallaki]] è in piena guerra civile: parte del popolo è insorta, alcune guardie sono state linciate e [[Barone Vargas]] si è asserragliato nella [[Villa del Borgomastro]]. [[I Veri Nobili di Vallaki|Gli incappucciati]], che dicono di seguire il «vero» capo della città, hanno aperto le porte dall'interno, e i lupi sono entrati portando via molti bambini; in città si attribuisce la morte di [[Padre Lucian Petrovich]] al diavolo Strahd. La [[Locanda di Urwin]] è saccheggiata e vuota: di [[Urwin]] e di [[Rictavio]] non c'è traccia, resta solo il diario di quest'ultimo. Il gruppo perde il carro e metà del vino, si barrica per la notte in una casupola e sente, tutti insieme, la voce dell'elsa chiedere vendetta; [[Don Matteor]] scopre che si tratta di un'arma consacrata. Tra [[Tariq]] ed [[Erieth]] la tensione esplode: per un lapsus, Tariq scopre che Erieth è un warlock.
+
+## Questioni aperte
+
+- **L'elsa.** Chi è il nobile dai capelli neri che ha mostrato a [[Don Matteor]], e chi vuole che uccidano?
+- **Vallaki in rivolta.** Chi è il «vero» capo della città a cui obbediscono [[I Veri Nobili di Vallaki|gli incappucciati]], e dove sono stati portati i bambini rapiti dai lupi?
+- **Gli scomparsi.** Che fine hanno fatto [[Urwin]] e [[Rictavio]]? Che cosa nascondeva il carro chiuso di Rictavio, e chi abita la [[Torre Abbandonata]]?
+- **Le reliquie di Sant'Andral.** Sono ancora custodite sotto la [[Chiesa di Vallaki]], ora che [[Padre Lucian Petrovich]] è morto?
+- **Il nobile incappucciato.** Chi ha lanciato a mani nude la magia di trasporto davanti al [[Figlio di Vargas (nome sconosciuto)|figlio di Vargas]], e c'entra con il bagliore viola del [[Casolare fuori Goya|casolare]]?
+- **[[P. (identità sconosciuta)|"P."]]** Chi ordinava a [[Van der Vort]] bare piene di terra, e dov'è finito il becchino?
+- **Le carte di Madama Eva.** Dove sono il tesoro dei Vistani e il bambino scomparso che ne ha la chiave, il simbolo sacro custodito dal drago di pietra, la spada di luce solare nascosta all'accampamento, e chi è l'alleata dell'abbazia?
+- **Il medaglione di Sukran.** Che cosa ci faceva lo stemma di una casata quasi estinta del continente del sud al collo di un cavaliere non-morto di Barovia?
+- **Il mago pazzo del lago.** È davvero il mago che guidò i contadini contro il [[Castello Ravenloft]], sopravvissuto alla caduta nel fiume?
+- **Il cadavere con il volto di Don Matteor.** Che cosa significava, e perché solo lui lo ha visto così? E perché ora il suo legame con la sua signora si sente appannato?
+- **[[Baba Lysaga]].** «La madre di Strahd» è un'alleata contro i druidi o un'altra pedina del conte?
+- **L'invito di [[Strahd von Zarovich|Strahd]].** La lettera è ancora senza risposta: è una trappola, o davvero una via d'uscita da Barovia?

@@ -70,3 +70,14 @@ dove conosce [[Giovanni Belzoni]] e [[Albin Grau]], e dove la danza di
 [[Anita Berber]] trascina tutta la sala, loro compresi, in un baccanale:
 un incantesimo di magia sessuale e di sangue. Solo Grau e il barone ne
 restano fuori.
+
+## Questioni aperte
+
+- **La danza di Astarte.** A quale scopo l'incantesimo della [[Weiße Maus]] ha incanalato l'energia dei presenti, e perché solo [[Albin Grau]] e il [[Barone Grünau|barone Grünau]] ne sono rimasti fuori?
+- **I reperti egizi.** Perché il barone Grünau paga di tasca sua il viaggio in America dei pezzi inediti del [[Museo di Etnologia]], e che cosa c'è davvero nelle casse che partono sulla Mauretania?
+- **La cortesia di Kurt.** Che cosa vorrà [[Kurt Weber]] in cambio dello Specchio di Luce Pura, e perché ha mandato il gruppo proprio da [[Anita Berber]]?
+- **La notte di HP.** Come è finito nel dormitorio di quella chiesa, e chi ha scritto, con la sua calligrafia, la pagina del taccuino?
+- **[[Chung]].** È davvero lei, quella che è tornata dal sogno nel corpo di [[Rita Peacock|Rita]]?
+- **[[Salem]].** Che cosa vuole Nomearod, il gatto di Saturno che lo abita?
+- **La spedizione del 1865.** Che cosa è successo in Egitto, che [[Hans Traeumer|Hans]] non ricorda più? Che fine hanno fatto [[Evelyn Hayes]] e [[Simon Fairbanks]], e che cosa ha portato [[Randolph Allen]] e poi [[Marion Allen]] a New Orleans?
+- **L'uomo con gli occhiali da sole.** Chi ha lasciato a [[HP Lawrence|HP]], a Boston, il biglietto con il nome di Hans?
