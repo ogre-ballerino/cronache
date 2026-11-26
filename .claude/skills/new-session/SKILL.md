@@ -46,7 +46,7 @@ bottino:  # D&D sites only (`features.schede: 'dnd5e'`); omit when nothing was k
 ---
 ```
 
-`bottino` lists what the group found and kept this session, shown in a box at the end of the page: coins and items picked up, not money spent, documents read and left, or things left where they were.
+`bottino` lists what the group found and kept this session, shown in a box at the end of the page: coins and items picked up, not money spent, documents read and left, or things left where they were. Each item with a `chi` also appears under "Bottino raccolto" on that character's page, so `chi` must resolve to the character's file like a wikilink would.
 
 Body: a third-person narrative in Italian that summarises what happened, split into `##` sections by scene. Past tense or narrative present consistent with earlier sessions. Keep it readable prose — no raw transcript, no out-of-character table talk, no rules chatter unless it matters to the story. Link every entity on its first mention in each section.
 
