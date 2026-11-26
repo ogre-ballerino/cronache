@@ -35,6 +35,11 @@ export default defineCampaign({
     ],
   },
   nextSession: { endpoint: 'https://cms.sirlisko.com/items/strahd' },
+  discord: {
+    annuncio: '🦇 Un pipistrello porta notizie da Barovia: il diario ha un nuovo capitolo!',
+    leggi: 'Leggi il diario',
+    colore: 0x6b4f2a,
+  },
   features: { schede: 'dnd5e' },
   sections: {
     png: { lede: 'Alleati, nemici e comparse incontrate a Barovia.' },
