@@ -5,6 +5,7 @@ stagione: 1
 data: 2025-06-11
 estratto: Nel sogno, Agatha legge i tarocchi, Rita affronta la verità sulla sorella e Jade quella sulla sua. Tre porte si aprono, due restano chiuse.
 luoghiVisitati: [Terre del Sogno]
+anteprima: /images/sessioni/sessione-05.png
 ---
 
 ## I tarocchi di Agatha

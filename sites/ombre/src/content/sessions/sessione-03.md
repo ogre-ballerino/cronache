@@ -5,6 +5,7 @@ stagione: 1
 data: 2025-05-09
 estratto: Dalla Boston Psychoanalytic Society al caveau della Deutsche Bank, passando per una biblioteca che non vuole lasciar andare gli investigatori. Agatha perde un dito, Rita rivede la sorella morta.
 luoghiVisitati: [Boston Psychoanalytic Society, Arkham, Berlino, Anhalter Bahnhof, Hotel Savoy, Deutsche Bank, Cabaret Schwarze Katze, Biblioteca di Stato Prussiana]
+anteprima: /images/sessioni/sessione-03.png
 ---
 
 ## La Boston Psychoanalytic Society

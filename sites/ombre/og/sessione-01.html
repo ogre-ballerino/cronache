@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Capitolo I · La scatola di Rupert</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">Capitolo I</p>
+      <h1 class="title">La scatola di Rupert</h1>
+      <p class="where">Arkham e una fattoria fuori città</p>
+    </div>
+
+    <!-- the farmhouse outside Arkham burning at midnight, the pentagon of the exorcism on the ground -->
+    <svg class="woodcut" viewBox="0 0 1200 630" data-arte="300 100 1200 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.055  0 0 0 0 0.09  0 0 0 0 0.082  9 0 0 0 -6.1" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-400" y="-40" width="2000" height="720" fill="#0e1715" />
+
+          <!-- night sky, lightening towards the horizon -->
+          <g data-sky="10 392" data-left="-300" data-width="2000" data-seed="1" stroke="#d8cfb6" fill="none" stroke-linecap="round"></g>
+
+          <!-- the moon, behind the smoke -->
+          <circle cx="1046" cy="150" r="38" fill="#d8cfb6" />
+
+          <!-- smoke rising from the house and drifting across the moon -->
+          <path fill="#0e1715" d="M806 300 C790 250 820 214 806 176 C796 148 826 120 870 118 C910 116 944 98 990 112 C1030 124 1064 118 1100 132 C1080 150 1040 148 1012 160 C980 172 940 160 912 176 C884 192 868 222 872 262 C874 280 860 296 840 304 Z" />
+          <g stroke="#d8cfb6" stroke-width="1.4" fill="none" stroke-linecap="round">
+            <path d="M826 178 C846 156 880 146 916 140 M832 214 C848 196 870 188 892 184 M934 128 C968 120 1000 126 1040 130" />
+          </g>
+
+          <!-- the fields, rolling to the horizon -->
+          <path d="M-400 404 C-100 396 200 406 500 398 C700 392 900 400 1100 394 C1300 390 1500 398 1600 396 V680 H-400 Z" fill="#0e1715" />
+
+          <!-- the farmhouse: gabled house, chimney, low barn -->
+          <path fill="#0e1715" d="M760 402 V330 L760 330 L838 262 L916 330 V402 Z" />
+          <path fill="#0e1715" d="M886 300 V250 H906 V318 Z" />
+          <path fill="#0e1715" d="M916 402 V350 L938 322 L990 312 L1042 322 L1064 350 V402 Z" />
+          <!-- weatherboards cut into the walls -->
+          <g stroke="#d8cfb6" stroke-width="1.2" fill="none" stroke-linecap="round">
+            <path d="M766 344 H910 M766 358 H910 M766 372 H910 M766 386 H910" />
+            <path d="M922 364 H1058 M922 378 H1058 M922 392 H1058" />
+            <path d="M760 330 L838 262 L916 330" stroke-width="2.4" />
+          </g>
+          <!-- the windows, lit from inside by the fire -->
+          <g fill="#b0904e">
+            <rect x="782" y="346" width="20" height="26" />
+            <rect x="874" y="346" width="20" height="26" />
+            <rect x="828" y="300" width="20" height="20" />
+          </g>
+          <path d="M792 346 V372 M782 359 H802 M884 346 V372 M874 359 H894 M838 300 V320" stroke="#0e1715" stroke-width="2.4" />
+          <!-- barn door, ajar on the dark -->
+          <path d="M972 402 V352 H1008 V402" fill="none" stroke="#d8cfb6" stroke-width="2" />
+          <path d="M972 352 L1008 402 M1008 352 L972 402" stroke="#d8cfb6" stroke-width="1.2" />
+
+          <!-- fire breaking through the roof -->
+          <path fill="#b0904e" d="M790 318 C786 296 798 284 794 262 C808 276 812 258 808 238 C828 258 834 240 836 222 C846 246 852 262 846 282 C858 272 862 262 860 246 C876 268 874 292 866 310 L850 296 L838 312 L824 290 L812 314 L800 300 Z" />
+          <path fill="#d8cfb6" d="M806 304 C804 290 812 282 810 268 C820 280 826 270 828 256 C836 272 840 286 834 300 L826 290 Z" />
+
+          <!-- a dead tree and a broken fence -->
+          <path d="M688 404 C690 360 686 330 692 290 M690 340 C676 320 664 312 650 306 M691 318 C704 300 712 290 726 284 M692 300 C686 284 684 272 676 262 M664 314 L656 296 M712 292 L718 276" stroke="#0e1715" stroke-width="5" fill="none" stroke-linecap="round" />
+          <g stroke="#0e1715" stroke-width="4" stroke-linecap="round">
+            <path d="M600 404 V368 M640 404 V370 M1090 400 V366 M1130 400 V364 M1170 400 V368" />
+            <path d="M594 378 L646 382 M1086 374 L1176 372" stroke-width="2.6" />
+          </g>
+
+          <!-- furrows running towards the house -->
+          <g stroke="#d8cfb6" fill="none" stroke-linecap="round" stroke-width="1.4">
+            <path d="M840 420 C760 470 620 540 480 640" />
+            <path d="M860 420 C820 480 760 560 700 640" />
+            <path d="M880 420 C880 490 890 570 900 640" />
+            <path d="M900 420 C950 480 1040 560 1120 640" />
+            <path d="M920 420 C1010 470 1150 540 1300 640" />
+            <path d="M820 420 C700 460 500 520 300 620" />
+            <path d="M-100 440 C200 432 500 438 760 428 M1000 428 C1200 434 1400 432 1600 436" stroke-width="1" />
+          </g>
+
+          <!-- the pentagon of the exorcism, drawn on the ground -->
+          <g transform="translate(900 512) scale(1 .32)" fill="none" stroke="#b0904e" stroke-width="5" stroke-linejoin="round">
+            <circle r="100" />
+            <path d="M0 -84 L80 -26 L49 68 L-49 68 L-80 -26 Z" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>
