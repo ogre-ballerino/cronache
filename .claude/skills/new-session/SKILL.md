@@ -69,6 +69,7 @@ For each existing entity that appears again:
 ## 5. Overview and map
 
 - Update `src/content/riassunto/overview.md` only if the campaign's overall state changed meaningfully (goal reached, new faction, new region, major death). Append or adjust the relevant section; don't rewrite it.
+- Always review the overview's last section, `## Questioni aperte`: one bullet per mystery or unanswered question, `- **Short topic.** The question?`, with wikilinks, most pressing first. Add the questions this session raised; remove a bullet once play answers it (the answer lives in the session and the narrative above, so no "resolved" list); reword it if the answer is partial. Only questions the group has, or could ask from what it saw: never hint at what the reference material says, and leave out player characters' own secrets. List the changes in the report, since the user knows best what the group considers open.
 - If the site has a map, update it as its `CLAUDE.md` describes; don't invent coordinates for new pins — list them in the report so the user can place them.
 
 ## 6. Verify
