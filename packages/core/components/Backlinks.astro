@@ -35,7 +35,7 @@ const sections = enabledCollections(config.features)
               {s.links.map((link) =>
                 link.numero ? (
                   <li>
-                    <a href={link.url} title={link.title} aria-label={`${config.labels.session} ${toRoman(link.numero)}: ${link.title}`}>
+                    <a href={link.url} aria-label={`${config.labels.session} ${toRoman(link.numero)}: ${link.title}`}>
                       {toRoman(link.numero)}
                     </a>
                   </li>

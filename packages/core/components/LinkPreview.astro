@@ -50,7 +50,9 @@
   }
 
   const wikilink = (target: EventTarget | null) =>
-    target instanceof Element ? target.closest<HTMLAnchorElement>('a.wikilink') : null;
+    target instanceof Element
+      ? target.closest<HTMLAnchorElement>('a.wikilink, .marginalia a, .backlinks a')
+      : null;
 
   function enter(event: Event, delay: number) {
     const link = wikilink(event.target);
