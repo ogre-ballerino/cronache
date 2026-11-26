@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione XV · La città caduta</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">XV</p>
+      <h1 class="title">La città caduta</h1>
+      <p class="where">Vallaki, la piazza</p>
+    </div>
+
+    <!-- the pillory in the deserted square, a papier-mâché donkey head in the mud, posters torn down -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 60 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 300" data-left="-660" data-width="1560" data-seed="15" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the dead houses round the square, no smoke from any chimney -->
+          <path d="M-680 330 V211 L-626 171 L-571 211 V330 Z M-565 330 V211 L-511 171 L-456 211 V330 Z M-444 330 V260 L-392 220 L-340 260 V330 Z M-371 250 V214 h10 V250 Z M-332 330 V224 L-282 184 L-233 224 V330 Z M-263 214 V178 h10 V214 Z M-226 330 V254 L-174 214 L-122 254 V330 Z M-115 330 V236 L-62 196 L-8 236 V330 Z M-41 226 V190 h10 V226 Z M1 330 V214 L44 174 L88 214 V330 Z M62 204 V168 h10 V204 Z M96 330 V257 L143 217 L189 257 V330 Z M198 330 V260 L250 220 L302 260 V330 Z M271 250 V214 h10 V250 Z M318 330 V217 L353 177 L388 217 V330 Z M367 207 V171 h10 V207 Z M404 330 V246 L452 206 L501 246 V330 Z M472 236 V200 h10 V236 Z M511 330 V215 L564 175 L617 215 V330 Z M585 205 V169 h10 V205 Z M621 330 V252 L666 212 L710 252 V330 Z M683 242 V206 h10 V242 Z M719 330 V219 L764 179 L809 219 V330 Z M817 330 V226 L857 186 L897 226 V330 Z M904 330 V227 L957 187 L1011 227 V330 Z M979 217 V181 h10 V217 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2" stroke-linejoin="round" />
+
+          <!-- the square -->
+          <path d="M-680 334 C-300 322 0 336 260 330 C520 324 700 334 920 330 V600 H-680 Z" fill="#2a2016" />
+          <path d="M-680 353 C-556 351 -433 361 -309 357 M-250 353 C-125 351 1 361 126 358 M248 359 C362 351 477 361 591 354 M672 355 C773 351 874 361 976 355 M-680 376 C-566 369 -451 379 -337 376 M-270 374 C-150 369 -30 379 90 372 M185 371 C261 369 338 379 414 374 M497 377 C587 369 676 379 765 375 M854 377 C969 369 1084 379 1199 374 M-680 399 C-638 396 -597 406 -555 399 M-403 402 C-303 396 -203 406 -103 400 M-4 399 C113 396 230 406 347 399 M393 403 C473 396 554 406 635 401 M723 399 C806 396 890 406 973 404 M-680 440 C-620 436 -559 446 -499 443 M-421 441 C-302 436 -184 446 -65 441 M-16 443 C102 436 221 446 339 441 M393 441 C476 436 559 446 641 444 M793 440 C897 436 1001 446 1105 439 M-680 500 C-558 497 -436 507 -314 502 M-217 500 C-92 497 33 507 157 500 M298 502 C388 497 477 507 566 504 M678 501 C778 497 878 507 978 500" stroke="#efe6d0" stroke-width="1.3" fill="none" stroke-linecap="round" />
+
+          <!-- the pillory -->
+          <path d="M160 420 V200 M360 420 V200" stroke="#efe6d0" stroke-width="18" stroke-linecap="round" />
+          <path d="M160 420 V200 M360 420 V200" stroke="#2a2016" stroke-width="12" stroke-linecap="round" />
+          <path d="M140 230 H380 V262 H140 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M140 246 H380" stroke="#efe6d0" stroke-width="1.4" />
+          <path d="M210 246 a14 14 0 0 1 28 0 M286 246 a14 14 0 0 1 28 0" fill="#efe6d0" />
+          <path d="M184 238 a6 6 0 0 1 12 0 M252 238 a6 6 0 0 1 12 0 M326 238 a6 6 0 0 1 12 0" fill="#efe6d0" />
+          <path d="M160 420 L120 440 M160 420 L200 440 M360 420 L320 440 M360 420 L400 440" stroke="#efe6d0" stroke-width="3" />
+          <!-- the donkey head, fallen in the mud -->
+          <path d="M70 470 C60 440 80 420 110 420 C140 420 160 434 166 450 C170 462 160 476 140 478 L90 482 C80 482 72 478 70 470 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" />
+          <path d="M100 422 L92 380 L112 418 M124 420 L126 378 L136 422" fill="#efe6d0" stroke="#2a2016" stroke-width="2" />
+          <circle cx="118" cy="440" r="4" fill="#2a2016" />
+          <path d="M146 464 a4 4 0 1 0 0.1 0" stroke="#2a2016" stroke-width="2" fill="none" />
+          <!-- torn posters -->
+          <path d="M340 470 l40 -8 l6 34 l-40 8 Z M420 440 l34 6 l-4 28 l-34 -6 Z M230 486 l36 -4 l2 24 l-36 4 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="1.6" />
+          <path d="M350 476 h20 M352 484 h16 M428 452 h18 M240 494 h18" stroke="#2a2016" stroke-width="1.6" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

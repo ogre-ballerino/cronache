@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione III · Il cancello incantato</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">III</p>
+      <h1 class="title">Il cancello incantato</h1>
+      <p class="where">Sulla strada da Goya</p>
+    </div>
+
+    <!-- the great gate opening by itself as the mist thins -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 320" data-left="-660" data-width="1560" data-seed="3" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the road -->
+          <path d="M-680 334 C-300 322 0 336 260 330 C520 324 700 334 920 330 V600 H-680 Z" fill="#2a2016" />
+
+          <!-- the road running through the gate -->
+          <path d="M238 332 L282 332 L420 600 L100 600 Z" fill="#efe6d0" />
+          <path d="M252 340 L190 600 M268 340 L330 600 M260 360 V600" stroke="#2a2016" stroke-width="2" />
+
+          <path d="M-269 336 C-266 251 -262 187 -259 167 C-256 187 -254 251 -251 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M-260 256 q-21 -12 -41 -33 M-259 230 q11 -7 22 -18 M-260 292 q-28 -17 -55 -44 M-260 267 q16 -9 31 -25 M-259 193 q-14 -8 -28 -23" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M-159 336 C-156 228 -153 139 -150 119 C-147 139 -144 228 -141 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M-150 199 q-12 -7 -25 -20 M-150 199 q22 -13 44 -35 M-150 214 q-21 -13 -43 -34 M-150 194 q11 -7 22 -18 M-150 183 q-17 -10 -35 -28" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M31 336 C34 249 28 182 31 162 C34 182 46 249 49 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M33 202 q-15 -9 -30 -24 M34 217 q21 -13 43 -34 M34 218 q-22 -13 -44 -35 M35 251 q23 -14 47 -38 M35 246 q-25 -15 -50 -40" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M71 336 C74 226 69 136 72 116 C75 136 86 226 89 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M77 263 q-16 -10 -32 -26 M73 153 q14 -8 28 -22 M75 198 q-14 -9 -29 -23 M76 214 q16 -10 33 -26 M76 235 q-21 -12 -41 -33" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M461 336 C464 238 475 159 478 139 C481 159 476 238 479 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M475 206 q-23 -14 -45 -36 M476 186 q22 -13 43 -34 M475 208 q-12 -7 -25 -20 M476 185 q21 -13 42 -34 M476 180 q-16 -10 -32 -25" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M511 336 C514 232 511 149 514 129 C517 149 526 232 529 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M516 181 q-17 -10 -33 -26 M518 249 q13 -8 26 -21 M516 178 q-22 -13 -43 -34 M518 273 q26 -16 53 -42 M517 233 q-14 -8 -27 -22" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M631 336 C634 249 642 182 645 162 C648 182 646 249 649 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M644 202 q-10 -6 -19 -16 M643 229 q11 -7 22 -18 M644 218 q-14 -9 -29 -23 M644 201 q21 -13 42 -34 M643 240 q-25 -15 -51 -40" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+          <path d="M751 336 C754 249 749 181 752 161 C755 181 766 249 769 336 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M755 229 q-11 -7 -22 -17 M757 272 q19 -11 38 -30 M755 228 q-13 -8 -25 -20 M758 288 q28 -17 56 -45 M756 259 q-27 -16 -53 -43" stroke="#2a2016" stroke-width="5.0" stroke-linecap="round" fill="none" />
+
+          <!-- stone pillars -->
+          <path d="M112 332 V150 H164 V332 Z M356 332 V150 H408 V332 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M104 150 H172 V138 H104 Z M348 150 H416 V138 H348 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M138 138 V112 M382 138 V112" stroke="#efe6d0" stroke-width="4" />
+          <circle cx="138" cy="106" r="9" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <circle cx="382" cy="106" r="9" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M120 190 H156 M120 240 H156 M120 290 H156 M364 190 H400 M364 240 H400 M364 290 H400" stroke="#efe6d0" stroke-width="1.4" />
+          <!-- the two leaves, swung inward -->
+          <path d="M164 332 V176 l-4 8 M164 176 l4 8 M172 332 V180 l-4 8 M172 180 l4 8 M181 332 V184 l-4 8 M181 184 l4 8 M189 332 V188 l-4 8 M189 188 l4 8 M197 332 V192 l-4 8 M197 192 l4 8 M206 332 V196 l-4 8 M206 196 l4 8 M214 332 V200 l-4 8 M214 200 l4 8 M164 202 L214 226 M164 302 L214 297" stroke="#efe6d0" stroke-width="3" fill="none" stroke-linecap="round" />
+          <path d="M356 332 V176 l-4 8 M356 176 l4 8 M348 332 V180 l-4 8 M348 180 l4 8 M339 332 V184 l-4 8 M339 184 l4 8 M331 332 V188 l-4 8 M331 188 l4 8 M323 332 V192 l-4 8 M323 192 l4 8 M314 332 V196 l-4 8 M314 196 l4 8 M306 332 V200 l-4 8 M306 200 l4 8 M356 202 L306 226 M356 302 L306 297" stroke="#efe6d0" stroke-width="3" fill="none" stroke-linecap="round" />
+
+          <!-- mist -->
+          <g stroke="#efe6d0" fill="none" stroke-linecap="round">
+            <path d="M-680 318 C-656 311 -632 324 -608 318 C-578 314 -547 322 -517 319 C-492 313 -468 327 -444 318 C-410 312 -376 325 -342 317 C-311 310 -281 325 -250 319 C-219 314 -188 326 -157 318 C-132 314 -107 326 -82 318 C-50 310 -18 326 14 320 C41 310 67 324 94 320 C129 314 163 323 198 317 C234 312 270 325 306 317 C335 312 363 324 392 318 C421 309 451 325 481 320 C515 309 549 325 584 317 C618 309 652 327 687 318 C719 313 750 326 782 318 C807 314 832 326 857 320 C878 310 900 324 921 317" stroke-width="6" />
+            <path d="M-680 342 C-655 334 -630 350 -605 340 C-575 338 -545 350 -515 341 C-480 333 -445 349 -411 344 C-385 338 -360 349 -335 340 C-312 336 -288 349 -265 341 C-244 334 -224 348 -203 344 C-168 336 -133 348 -98 342 C-67 335 -37 349 -6 342 C30 335 65 348 101 343 C125 336 149 351 173 342 C202 338 231 348 260 342 C281 335 301 349 321 340 C352 336 382 349 413 341 C444 334 476 346 508 340 C539 333 571 347 602 342 C632 336 662 348 691 341 C718 335 744 348 770 342 C803 338 836 349 869 343 C894 337 919 350 944 341" stroke-width="4" />
+            <path d="M-680 372 C-657 366 -634 379 -611 370 C-585 366 -560 380 -535 372 C-500 367 -466 378 -432 373 C-397 366 -362 377 -328 370 C-299 367 -270 380 -241 373 C-218 367 -195 380 -172 373 C-138 366 -105 377 -72 371 C-38 367 -5 378 28 372 C55 366 82 381 109 371 C129 363 149 380 169 374 C197 363 224 381 251 371 C284 364 316 379 348 372 C373 366 398 377 423 370 C453 367 482 380 512 370 C547 365 582 381 617 374 C652 365 687 376 722 373 C745 367 768 379 791 372 C818 363 845 379 872 371 C896 364 920 378 944 373" stroke-width="3" />
+            <path d="M-680 410 C-654 405 -628 417 -602 411 C-580 402 -557 419 -534 411 C-500 406 -466 417 -433 411 C-412 405 -391 415 -370 410 C-343 404 -316 418 -289 408 C-268 405 -247 415 -226 408 C-190 402 -154 414 -118 410 C-92 404 -67 416 -42 411 C-12 404 18 415 48 409 C70 403 92 418 114 410 C135 405 156 416 178 410 C211 404 244 418 277 410 C304 404 331 416 358 411 C385 403 412 416 439 409 C468 403 497 414 526 410 C553 402 580 419 608 409 C643 402 678 415 712 410 C735 402 757 417 779 412 C812 403 845 418 878 410 C900 403 922 414 943 409" stroke-width="2" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@ numero: 11
 data: 2026-10-05
 estratto: Sulla strada per l'accampamento dei Vistani il gruppo cade in una trappola di lupi mannari e vampiri travestiti da vittime, poi viene accolto al fuoco dei Vistani, che raccontano la fine del mago che sfidò Strahd.
 luoghiVisitati: [Vallaki, Accampamento dei Vistani]
+anteprima: /images/sessioni/sessione-11.png
 tag: [combattimento, vistani]
 ---
 

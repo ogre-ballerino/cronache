@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione XII · Le carte di Madama Eva</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">XII</p>
+      <h1 class="title">Le carte di Madama Eva</h1>
+      <p class="where">L'accampamento dei Vistani</p>
+    </div>
+
+    <!-- Madame Eva's cards laid in a cross on the table of her tent, the hanged man's noose at the centre -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 130 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- the folds of the tent -->
+          <path d="M-680 -60 L260 -60 M260 -60 C200 60 80 200 -680 300 M260 -60 C320 60 440 200 920 300 M260 -60 C180 80 0 220 -400 300 M260 -60 C340 80 520 220 800 300 M260 -60 C240 100 160 240 60 300 M260 -60 C280 100 360 240 460 300" stroke="#efe6d0" stroke-width="1.6" fill="none" />
+          <!-- the table cloth with its fringe -->
+          <path d="M-680 300 H920" stroke="#efe6d0" stroke-width="4" />
+          <path d="M-680 312 H920 M-680 330 H920" stroke="#efe6d0" stroke-width="1.2" stroke-dasharray="4 8" />
+          <!-- the cross of cards -->
+          <path d="M116 358 h68 v104 h-68 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M124 366 h52 v88 h-52 Z" fill="none" stroke="#2a2016" stroke-width="1.2" /><path d="M150 386 L166 410 L150 434 L134 410 Z" fill="#2a2016" /><circle cx="150" cy="410" r="5" fill="#efe6d0" /><path d="M336 358 h68 v104 h-68 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M344 366 h52 v88 h-52 Z" fill="none" stroke="#2a2016" stroke-width="1.2" /><path d="M370 386 L386 410 L370 434 L354 410 Z" fill="#2a2016" /><circle cx="370" cy="410" r="5" fill="#efe6d0" /><path d="M226 248 h68 v104 h-68 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M234 256 h52 v88 h-52 Z" fill="none" stroke="#2a2016" stroke-width="1.2" /><path d="M260 276 L276 300 L260 324 L244 300 Z" fill="#2a2016" /><circle cx="260" cy="300" r="5" fill="#efe6d0" /><path d="M226 468 h68 v104 h-68 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M234 476 h52 v88 h-52 Z" fill="none" stroke="#2a2016" stroke-width="1.2" /><path d="M260 496 L276 520 L260 544 L244 520 Z" fill="#2a2016" /><circle cx="260" cy="520" r="5" fill="#efe6d0" /><path d="M226 358 h68 v104 h-68 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M234 366 h52 v88 h-52 Z" fill="none" stroke="#2a2016" stroke-width="1.2" /><path d="M260 370 V404 M260 404 a10 13 0 1 0 0.1 0" stroke="#2a2016" stroke-width="3" fill="none" /><path d="M256 400 h8 M256 394 h8" stroke="#2a2016" stroke-width="2" />
+          <path d="M62 188 L84 188 M60 197 L80 206 M55 204 L69 221 M47 209 L54 230 M38 210 L35 232 M29 207 L18 226 M22 201 L4 214 M18 193 L-3 197 M18 183 L-3 179 M22 175 L4 162 M29 169 L18 150 M38 166 L35 144 M47 167 L54 146 M55 172 L69 155 M60 179 L80 170" stroke="#efe6d0" stroke-width="2" stroke-linecap="round" /><path d="M30 304 V210 H50 V304 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M40 170 C48 182 50 196 40 206 C30 196 32 182 40 170 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="1.6" /><path d="M502 158 L524 158 M500 167 L520 176 M495 174 L509 191 M487 179 L494 200 M478 180 L475 202 M469 177 L458 196 M462 171 L444 184 M458 163 L437 167 M458 153 L437 149 M462 145 L444 132 M469 139 L458 120 M478 136 L475 114 M487 137 L494 116 M495 142 L509 125 M500 149 L520 140" stroke="#efe6d0" stroke-width="2" stroke-linecap="round" /><path d="M470 304 V180 H490 V304 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" /><path d="M480 140 C488 152 490 166 480 176 C470 166 472 152 480 140 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="1.6" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

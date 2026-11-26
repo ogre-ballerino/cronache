@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione I · L'agguato a casa del padre di Artemis</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">I</p>
+      <h1 class="title">L'agguato a casa del padre di Artemis</h1>
+      <p class="where">A Goya</p>
+    </div>
+
+    <!-- the father's house in Goya by night, a bandit's dagger planted in the yard -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 330" data-left="-660" data-width="1560" data-seed="1" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- moon -->
+          <circle cx="420" cy="80" r="40" fill="#2a2016" />
+          <circle cx="420" cy="80" r="34" fill="#efe6d0" />
+
+          <!-- the yard -->
+          <path d="M-680 344 C-300 332 0 346 260 340 C520 334 700 344 920 340 V600 H-680 Z" fill="#2a2016" />
+          <path d="M-680 366 C-601 361 -522 371 -442 369 M-347 367 C-262 361 -178 371 -94 364 M7 368 C102 361 196 371 291 364 M367 368 C415 361 463 371 511 367 M556 369 C681 361 806 371 931 367 M-680 381 C-626 379 -573 389 -519 384 M-472 382 C-415 379 -359 389 -302 381 M-207 386 C-129 379 -50 389 28 384 M145 385 C228 379 311 389 395 384 M468 387 C594 379 721 389 847 386 M-680 409 C-613 406 -545 416 -478 410 M-430 410 C-323 406 -217 416 -110 413 M-24 413 C99 406 222 416 345 408 M410 411 C529 406 648 416 767 414 M855 412 C901 406 947 416 994 413 M-680 450 C-632 446 -585 456 -537 454 M-406 450 C-356 446 -306 456 -256 449 M-209 450 C-99 446 10 456 119 452 M212 453 C269 446 325 456 382 449 M499 451 C549 446 599 456 650 450 M722 453 C846 446 970 456 1094 450" stroke="#efe6d0" stroke-width="1.3" fill="none" stroke-linecap="round" />
+
+          <!-- the house: whitewashed walls cut out of the block, black roof and door -->
+          <path d="M150 342 V236 H400 V342 Z" fill="#efe6d0" />
+          <path d="M150 236 V342 M400 236 V342" stroke="#2a2016" stroke-width="3" />
+          <path d="M132 240 L210 168 H344 L418 240 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" />
+          <path d="M318 168 V128 H342 V190" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <g stroke="#efe6d0" stroke-width="1.4" fill="none">
+            <path d="M160 226 L222 178 M190 230 L248 180 M226 230 L276 180 M262 230 L306 180 M298 230 L338 182 M334 230 L372 196 M370 230 L396 210" />
+          </g>
+          <path d="M246 342 V280 Q264 262 282 280 V342 Z" fill="#2a2016" />
+          <path d="M176 262 H222 V300 H176 Z M330 262 H376 V300 H330 Z" fill="#2a2016" />
+          <path d="M199 262 V300 M176 281 H222" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M340 270 l6 22 M356 266 l4 24" stroke="#efe6d0" stroke-width="2" />
+          <g stroke="#2a2016" stroke-width="1.6" fill="none">
+            <path d="M158 300 h20 M170 318 h26 M362 316 h22 M318 330 h18" />
+          </g>
+          <!-- the dagger, planted in the yard -->
+          <g stroke-linejoin="round">
+            <path d="M88 330 h28 l-6 -10 h-16 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+            <path d="M94 320 V270 h16 V320" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+            <circle cx="102" cy="262" r="10" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+            <path d="M72 330 H132 V340 H72 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+            <path d="M92 340 L102 420 L112 340 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="1.6" />
+            <path d="M102 344 V404" stroke="#2a2016" stroke-width="1.4" />
+            <path d="M98 286 l8 6 M98 298 l8 6 M98 310 l8 6" stroke="#efe6d0" stroke-width="1.6" />
+            <path d="M60 424 C80 416 124 416 146 424" stroke="#efe6d0" stroke-width="2" fill="none" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

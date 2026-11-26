@@ -4,6 +4,7 @@ numero: 13
 data: 2026-11-04
 estratto: Dopo una notte di pioggia e una colazione tesa da Madama Eva, il gruppo lascia l'accampamento verso Vallaki; su una strada allagata un albero caduto lo ferma, e zombie, un cavaliere non-morto e un orrore della palude lo circondano.
 luoghiVisitati: [Accampamento dei Vistani]
+anteprima: /images/sessioni/sessione-13.png
 tag: [vistani, imboscata, non-morti]
 ---
 

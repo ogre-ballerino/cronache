@@ -4,6 +4,7 @@ numero: 15
 data: 2026-11-18
 estratto: Vallaki è caduta nel caos dopo una rivolta e un attacco di lupi; il gruppo esplora la locanda saccheggiata di Urwin, trova il diario di Rictavio e uno scrigno nascosto, perde il carro e si barrica per la notte in una casupola.
 luoghiVisitati: [Vallaki, Locanda di Urwin]
+anteprima: /images/sessioni/sessione-15.png
 tag: [vallaki, rivolta, lupi, elsa, rictavio]
 bottino:
   oggetti:

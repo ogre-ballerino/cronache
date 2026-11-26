@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione XI · L'imboscata del vecchio e il fuoco dei Vistani</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">XI</p>
+      <h1 class="title">L'imboscata del vecchio e il fuoco dei Vistani</h1>
+      <p class="where">Da Vallaki all'accampamento dei Vistani</p>
+    </div>
+
+    <!-- the ruined mill on the road out of Vallaki, sails broken and shutters closed -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 330" data-left="-660" data-width="1560" data-seed="11" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the hill -->
+          <path d="M-680 380 C-300 360 0 340 140 300 C220 278 300 278 380 300 C520 340 700 350 920 360 V600 H-680 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2" />
+          <!-- the mill -->
+          <path d="M226 300 L240 170 H300 L314 300 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" />
+          <path d="M228 172 Q270 120 312 172 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M256 234 h18 v22 h-18 Z M262 192 h14 v16 h-14 Z" fill="#efe6d0" />
+          <path d="M265 234 v22 M256 245 h18 M262 200 h14" stroke="#2a2016" stroke-width="2.4" />
+          <path d="M260 300 V272 Q270 262 280 272 V300" fill="none" stroke="#efe6d0" stroke-width="2" />
+          <path d="M270 160 L174 45 M275 156 L190 31 L174 45 M246 131 l8 -7 M231 114 l10 -8 M217 97 l12 -10 M203 80 l13 -11 M188 62 l15 -13 M174 45 l17 -14 M270 160 L329 111 M274 165 L343 127 L329 111 M285 148 l7 8 M294 140 l8 10 M302 133 l10 12 M311 125 l11 13 M320 118 l13 15 M329 111 l14 17 M270 160 L366 275 M265 164 L350 289 L366 275 M294 189 l-8 7 M309 206 l-10 8 M323 223 l-12 10 M337 240 l-13 11 M352 258 l-15 13 M366 275 l-17 14 M270 160 L219 202 M266 155 L205 186 L219 202 M257 171 l-7 -8 M250 177 l-8 -10 M242 183 l-10 -12 M235 190 l-11 -13 M227 196 l-13 -15 M219 202 l-14 -17" stroke="#efe6d0" stroke-width="2.6" fill="none" stroke-linecap="round" />
+          <circle cx="270" cy="160" r="7" fill="#efe6d0" />
+          <!-- the road at its foot -->
+          <path d="M-680 470 C-200 440 100 420 260 410 C420 400 700 420 920 440" stroke="#efe6d0" stroke-width="7" fill="none" />
+          <path d="M-680 486 C-200 456 100 436 260 426 C420 416 700 436 920 456" stroke="#efe6d0" stroke-width="2" fill="none" />
+          <path d="M-301 381 l4 -10 M-270 381 l-2 -10 M-238 384 l-2 -9 M-217 384 l3 -7 M-172 386 l2 -11 M-155 374 l1 -7 M-125 377 l-3 -10 M-91 384 l1 -11 M-60 382 l1 -9 M-22 386 l4 -11 M-3 377 l-1 -7 M34 379 l4 -9 M67 384 l-3 -8 M97 380 l5 -9 M113 382 l3 -9 M143 378 l5 -12 M174 377 l-2 -7 M215 376 l1 -10 M235 383 l-2 -11 M264 379 l-1 -9 M308 384 l-1 -12 M325 379 l4 -11 M354 386 l-1 -9 M394 378 l-1 -7 M413 381 l-1 -11 M448 379 l5 -10 M481 384 l-2 -8 M517 384 l-1 -8 M544 385 l-1 -13 M576 381 l0 -8 M593 386 l-1 -11 M626 384 l2 -9 M655 383 l-2 -8 M691 384 l2 -9 M727 376 l-3 -9 M749 375 l-2 -9 M781 376 l-0 -12 M818 382 l3 -11 M834 374 l-3 -12 M873 386 l-3 -11" stroke="#efe6d0" stroke-width="1.6" stroke-linecap="round" fill="none" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

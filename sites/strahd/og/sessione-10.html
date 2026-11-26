@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione X · Il figlio del Borgomastro e la fuga da Vallaki</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">X</p>
+      <h1 class="title">Il figlio del Borgomastro e la fuga da Vallaki</h1>
+      <p class="where">La villa del Borgomastro, a Vallaki</p>
+    </div>
+
+    <!-- the attic window of the villa, crows thronging the glass, the escape rope down the wall -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 300" data-left="-660" data-width="1560" data-seed="10" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the gable of the villa, shingled -->
+          <path d="M-20 600 V260 L260 40 L540 260 V600 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.6" stroke-linejoin="round" />
+          <path d="M40 260 H480 M10 300 H510 M-10 340 H530 M100 214 H420 M160 166 H360 M216 122 H304" stroke="#efe6d0" stroke-width="1.2" stroke-dasharray="18 6" />
+          <!-- the window -->
+          <path d="M196 340 V230 Q260 176 324 230 V340 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="3" />
+          <path d="M260 196 V340 M196 270 H324 M196 306 H324" stroke="#2a2016" stroke-width="3" />
+          <path d="M184 340 H336 V352 H184 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2" />
+          <!-- the rope, down to the alley -->
+          <path d="M300 346 C304 400 296 460 302 600" stroke="#efe6d0" stroke-width="5" fill="none" />
+          <path d="M300 360 l6 6 M300 384 l6 6 M300 408 l6 6 M300 432 l6 6 M301 456 l6 6 M302 480 l6 6" stroke="#2a2016" stroke-width="1.6" />
+          <path transform="translate(170 262) scale(1.6 1.6)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.25" stroke-linejoin="round" /><path transform="translate(350 250) scale(-1.5 1.5)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.33" stroke-linejoin="round" /><path transform="translate(176 330) scale(1.4 1.4)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.43" stroke-linejoin="round" /><path transform="translate(346 326) scale(-1.5 1.5)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.33" stroke-linejoin="round" /><path transform="translate(230 120) scale(1.2 1.2)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.67" stroke-linejoin="round" /><path transform="translate(300 96) scale(-1.2 1.2)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.67" stroke-linejoin="round" /><path transform="translate(110 170) scale(1.1 1.1)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.82" stroke-linejoin="round" /><path transform="translate(420 160) scale(-1.1 1.1)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.82" stroke-linejoin="round" /><path transform="translate(50 236) scale(1 1)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.00" stroke-linejoin="round" /><path transform="translate(480 226) scale(-1 1)" d="M-20 4 L-34 12 L-30 2 L-36 -6 L-18 -4 C-10 -12 6 -14 16 -8 L28 -10 L18 -2 C16 8 4 14 -8 12 Z M-8 -6 L-22 -34 L-4 -20 L4 -36 L8 -10 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.00" stroke-linejoin="round" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

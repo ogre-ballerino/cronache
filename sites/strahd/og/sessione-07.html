@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione VII · Indagini a Vallaki e la morte di Padre Lucian Petrovich</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">VII</p>
+      <h1 class="title">Indagini a Vallaki e la morte di Padre Lucian Petrovich</h1>
+      <p class="where">Vallaki, la chiesa</p>
+    </div>
+
+    <!-- the church of Vallaki by night, crows wheeling across the moon -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 330" data-left="-660" data-width="1560" data-seed="7" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- moon -->
+          <circle cx="360" cy="90" r="56" fill="#2a2016" />
+          <circle cx="360" cy="90" r="50" fill="#efe6d0" />
+
+          <path d="M300 70 q7 -7 14 0 q7 -7 14 0 M340 96 q6 -6 12 0 q6 -6 12 0 M372 60 q5 -5 11 0 q5 -5 11 0 M420 120 q5 -5 10 0 q5 -5 10 0 M266 112 q5 -5 10 0 q5 -5 10 0" stroke="#2a2016" stroke-width="4" fill="none" stroke-linecap="round" />
+
+          <!-- the churchyard -->
+          <path d="M-680 344 C-300 332 0 346 260 340 C520 334 700 344 920 340 V600 H-680 Z" fill="#2a2016" />
+
+          <!-- the bell tower and nave -->
+          <path fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" d="M150 342 V140 L186 40 L222 140 V250 L320 190 L470 250 V342 Z" />
+          <path d="M150 140 H222" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M174 176 V156 Q186 142 198 156 V176 Z" fill="#efe6d0" />
+          <path d="M186 160 V176" stroke="#2a2016" stroke-width="2" />
+          <g fill="none" stroke="#efe6d0" stroke-width="2.2">
+            <path d="M262 312 V270 Q276 252 290 270 V312 Z M330 312 V262 Q346 242 362 262 V312 Z M400 312 V270 Q414 252 428 270 V312 Z" />
+            <path d="M172 342 V298 Q186 280 200 298 V342" />
+          </g>
+          <path d="M346 256 V312 M330 284 H362" stroke="#efe6d0" stroke-width="1.6" />
+          <!-- gravestones -->
+          <path d="M60 372 V344 Q74 330 88 344 V372 Z M480 384 V360 Q492 348 504 360 V384 Z M-40 380 V356 Q-28 344 -16 356 V380 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2" />
+          <path d="M74 346 v14 M68 352 h12" stroke="#efe6d0" stroke-width="2" />
+          <path d="M-303 392 l2 -7 M-263 394 l-3 -10 M-235 395 l-2 -8 M-193 400 l-2 -8 M-154 401 l2 -9 M-112 391 l4 -9 M-90 391 l-1 -12 M-53 397 l2 -9 M-11 391 l-3 -8 M27 395 l-0 -11 M59 394 l3 -11 M92 397 l1 -12 M136 393 l5 -8 M167 399 l-2 -10 M197 398 l3 -10 M246 394 l3 -11 M277 395 l4 -13 M312 398 l-3 -11 M350 402 l4 -9 M382 398 l-3 -10 M415 391 l-3 -12 M450 393 l0 -12 M485 395 l1 -12 M533 400 l-1 -9 M562 401 l5 -8 M595 393 l-1 -10 M637 393 l-3 -10 M670 397 l5 -11 M708 397 l2 -7 M750 399 l4 -12 M778 395 l-2 -11 M809 391 l-1 -8 M849 391 l-3 -8 M882 394 l-3 -12" stroke="#efe6d0" stroke-width="1.6" stroke-linecap="round" fill="none" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

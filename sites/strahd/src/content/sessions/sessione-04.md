@@ -4,6 +4,7 @@ numero: 4
 data: 2026-04-15
 estratto: Il gruppo raggiunge un villaggio abbandonato dagli dei, incontra Mary e Ismark Kolyanovich, e sente per la prima volta il nome del "diavolo Strahd".
 luoghiVisitati: [Villaggio di Barovia]
+anteprima: /images/sessioni/sessione-04.png
 ---
 
 ## Il villaggio sotto le nubi
