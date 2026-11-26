@@ -1,0 +1,67 @@
+<div id="link-preview" class="link-preview" aria-hidden="true" hidden></div>
+
+<script>
+  import { previewUrl, renderPreview } from '../lib/link-preview';
+
+  const card = document.getElementById('link-preview')!;
+  // Touch screens follow the link at the first tap: there is no hover to preview on.
+  const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  let previews: Promise<Record<string, any>> | undefined;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let current: HTMLAnchorElement | undefined;
+
+  const load = () =>
+    (previews ??= fetch(previewUrl)
+      .then((res) => (res.ok ? res.json() : {}))
+      .catch(() => ({})));
+
+  function place(link: HTMLAnchorElement) {
+    const rect = link.getClientRects()[0] ?? link.getBoundingClientRect();
+    const gap = 8;
+    const width = card.offsetWidth;
+    const left = Math.min(Math.max(gap, rect.left), document.documentElement.clientWidth - width - gap);
+    const below = rect.bottom + gap + card.offsetHeight < innerHeight;
+    card.style.left = `${left + scrollX}px`;
+    card.style.top = `${(below ? rect.bottom + gap : rect.top - gap - card.offsetHeight) + scrollY}px`;
+  }
+
+  async function show(link: HTMLAnchorElement) {
+    const preview = (await load())[new URL(link.href).pathname];
+    if (!preview || current !== link) return;
+    card.replaceChildren(renderPreview(preview));
+    card.hidden = false;
+    place(link);
+  }
+
+  function hide() {
+    clearTimeout(timer);
+    current = undefined;
+    card.hidden = true;
+  }
+
+  const wikilink = (target: EventTarget | null) =>
+    target instanceof Element ? target.closest<HTMLAnchorElement>('a.wikilink') : null;
+
+  function enter(event: Event, delay: number) {
+    const link = wikilink(event.target);
+    if (!link || link === current) return;
+    hide();
+    current = link;
+    timer = setTimeout(() => show(link), delay);
+  }
+
+  function leave(event: Event) {
+    if (wikilink(event.target) === current) hide();
+  }
+
+  if (canHover) {
+    document.addEventListener('pointerover', (e) => enter(e, 350));
+    document.addEventListener('pointerout', leave);
+  }
+  document.addEventListener('focusin', (e) => {
+    if ((e.target as Element).matches?.(':focus-visible')) enter(e, 0);
+  });
+  document.addEventListener('focusout', leave);
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && hide());
+  addEventListener('blur', hide);
+</script>
