@@ -23,7 +23,7 @@ export default defineCampaign({
   footer: {
     ornament: '',
     lines: [
-      'Avvisi appesi all\'<a href="https://ogreballerino.com">Ogre Ballerino</a>, una serata alla volta',
+      'Bacheca dell\'<a href="https://ogreballerino.com">Ogre Ballerino</a> · chi stacca un avviso offre il prossimo giro',
       'Fatto con le manine sante di <a href="https://sirlisko.com">sirlisko</a> (alias <a href="/personaggi/pip/">Pip</a>)',
     ],
   },
