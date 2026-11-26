@@ -74,11 +74,11 @@ For each existing entity that appears again:
 
 ## 6. Woodcut
 
-Only if the site has an `og/` folder (e.g. `sites/strahd/og/`); otherwise skip this step. Each session gets a woodcut of its key scene, used as the link preview (with the title on a paper cartouche) and as the frontispiece on the session page (without text).
+Only if the site has an `og/` folder (e.g. `sites/strahd/og/`); otherwise skip this step. Each session gets a woodcut of its key scene, used as the link preview (with the title on a cartouche) and as the frontispiece on the session page (without text).
 
-1. Copy the latest `og/sessione-NN.html` to `og/sessione-<N>.html`. Change the `<title>`, the roman numeral, the title and the `where` line (the places of `luoghiVisitati`, e.g. "Da Vallaki ad Argynvostholt").
-2. Redraw the SVG scene for this session: the image the group will remember, seen as they saw it (a place, a creature, an object). Keep the woodcut language of the site's `og.css` and `woodcut.js`: solid ink masses, light cut out in paper-coloured lines, the generated sky, no colour but ink and paper. Silhouettes must read at 400px wide. Nothing the group hasn't seen: no hidden villain, no room they didn't enter.
-3. Run `pnpm og sites/<site>/og/sessione-<N>.html`: it writes `public/images/sessioni/sessione-<N>.png` (1200×630 card) and `sessione-<N>-arte.webp` (1200×450 frontispiece, the `data-arte` crop of the same block, picked up by the session page automatically).
+1. Copy the latest `og/sessione-NN.html` to `og/sessione-<N>.html`. Change the `<title>`, the roman numeral ("Capitolo VIII" on ombre), the title and the `where` line (the places of `luoghiVisitati`, e.g. "Da Vallaki ad Argynvostholt").
+2. Redraw the SVG scene for this session: the image the group will remember, seen as they saw it (a place, a creature, an object). Keep the woodcut language of the site's `og.css` and `woodcut.js`: solid ink masses, light cut out in paper-coloured lines, the generated sky, no colour but the site's own: ink and paper on strahd; bone on green-black on ombre, with its gold only for fire and light; bone on black on porte, with its sick green for light and the text typed on a report. A light shape that overflows its frame (a window, a doorway) goes in a `clipPath`. Silhouettes must read at 400px wide. Nothing the group hasn't seen: no hidden villain, no room they didn't enter.
+3. Run `pnpm og sites/<site>/og/sessione-<N>.html`: it writes `public/images/sessioni/sessione-<N>.png` (1200×630 card) and `sessione-<N>-arte.webp` (1200×450 frontispiece, the `data-arte` crop of the same block, any 8:3 box, so a narrow scene can be zoomed with e.g. `800 300`; picked up by the session page automatically).
 4. Read both images and fix what doesn't read: shapes merging into each other, the scene off-centre in the frontispiece, lines stopping short of its edges, art cut off at the borders. Render again.
 5. Set `anteprima: /images/sessioni/sessione-<N>.png` in the session's frontmatter.
 
