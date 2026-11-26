@@ -11,7 +11,7 @@ bottino:
       chi: Erieth
     - nome: Due elisir
       chi: Artemis
-    - nome: Sacca grigia di pezze
+    - nome: Borsa dei trucchi grigia
       chi: Artemis
     - nome: Pozione curativa
       chi: Tariq

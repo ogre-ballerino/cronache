@@ -10,3 +10,5 @@ Bottega di [[Van der Vort]] a [[Vallaki]]. Alla prima visita il gruppo vi trova 
 Alla seconda visita la bottega risulta vuota: Van der Vort è scomparso. [[Erieth]] e [[Artemis]] vi trovano un foglio con un ordine di riempire bare di terra, firmato [[P. (identità sconosciuta)|"P."]], due statuette con liquidi misteriosi (poi identificate da [[Tariq]] come una pozione di cura ferite e una pozione che riduce la Forza) e 50 monete d'oro sotto il letto.
 
 La notte prima di lasciare [[Vallaki]], ormai libera dai vampiri, fa da nascondiglio al gruppo, sorvegliata da qualche corvo di [[Urwin]].
+
+Nella [[sessione-16|sessione 16]], uscendo da [[Vallaki]], il gruppo l'ha trovata con la porta principale aperta e i vetri del piano di sopra tutti rotti: abbandonata.

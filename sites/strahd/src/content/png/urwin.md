@@ -20,3 +20,5 @@ Al mattino della partenza ha ceduto ad [[Artemis]] un barile di vino e delle raz
 Nella [[sessione-14|sessione 14]] i due cavalli del carro sono stati uccisi da un cavaliere non-morto sulla strada per [[Vallaki]]: [[Don Matteor]] intende ripagarglieli.
 
 Nella [[sessione-15|sessione 15]] il gruppo ha trovato la [[Locanda di Urwin]] saccheggiata e vuota: della famiglia di Urwin nessuna traccia, ma dalle camere sembra che una parte dei vestiti sia stata portata via, forse in una fuga. Sulla sua scrivania sono rimasti il registro dei conti e due penne di lunghissime piume nere; nel fienile, ormai abbandonato dai corvi, era nascosto sotto lo sterco uno scrigno con pozioni e una strana sacca grigia.
+
+Nella [[sessione-16|sessione 16]] [[Erieth]] ha notato che i corvi sono spariti da tutta [[Vallaki]]; convinto che Urwin e [[Rictavio]] siano riusciti a fuggire, ha proposto di passare dal rifugio della sua famiglia sulla strada per l'abbazia.

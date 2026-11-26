@@ -13,3 +13,5 @@ Rivela al gruppo che le reliquie di Sant'Andral — quelle che tenevano consacra
 Ucciso durante la messa da [[Erieth]] (invisibile, sotto Darkness), su ordine del patrono di quest'ultimo, che aveva comandato di uccidere "il prete" senza specificare quale. Il punteruolo lasciato vicino al corpo, rubato dalla bottega di [[Van der Vort]], punta i sospetti su di lui. La sua morte scatena il caos in città: nubi nere si addensano sul cielo e i fedeli fuggono urlando che "il diavolo è tra noi".
 
 Nella [[sessione-15|sessione 15]] [[Don Matteor]] ha saputo della sua morte da un abitante di [[Vallaki]]: in città si dice che sia stato ucciso dal diavolo Strahd. Delle reliquie di Sant'Andral non si sa più nulla.
+
+Nella [[sessione-16|sessione 16]] il gruppo ha visto attraverso il gufo di [[Tariq]] la sua chiesa ridotta a un mattatoio; [[Don Matteor]] spera che almeno i due ragazzi che lo assistevano si siano salvati.
