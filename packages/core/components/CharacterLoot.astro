@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import { contentDir } from 'virtual:cronache/paths';
+import { entryUrl } from '../lib/collections.mjs';
+import { toRoman } from '../lib/format';
+import { itemsTakenBy } from '../lib/loot.mjs';
+import { getSlugMap, normalize } from '../lib/wikilinks.mjs';
+
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const slugMap = getSlugMap(contentDir);
+const url = entryUrl('personaggi', id);
+const sessions = (await getCollection('sessions')).map((s) => ({ id: s.id, ...s.data }));
+const items = itemsTakenBy(sessions, (chi) => slugMap.get(normalize(chi))?.url === url);
+---
+{items.length > 0 && (
+  <>
+    <h2 id="bottino">{config.labels.lootTaken}</h2>
+    <ul class="loot">
+      {items.map((item) => (
+        <li>
+          <span class="loot-label">{item.nome}</span>
+          <span class="loot-leader" aria-hidden="true" />
+          <span class="loot-value">
+            <a href={`${entryUrl('sessions', item.session)}#bottino`}>{config.labels.session} {toRoman(item.numero)}</a>
+          </span>
+        </li>
+      ))}
+    </ul>
+  </>
+)}
