@@ -5,6 +5,7 @@ import 'virtual:cronache/styles';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import LinkPreview from '../components/LinkPreview.astro';
+import Umami from '../components/Umami.astro';
 import { defaultOgImage, type OgImage } from '../lib/og';
 
 interface Props {
@@ -46,16 +47,7 @@ const ogImageURL = new URL(og.src, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:image:alt" content={og.alt} />
-    {config.umami && (
-      <script
-        is:inline
-        defer
-        src={config.umami.script}
-        data-website-id={config.umami.websiteId}
-        data-domains={Astro.site?.hostname}
-        data-exclude-hash="true"
-      ></script>
-    )}
+    <Umami />
   </head>
   <body>
     <Header masthead={masthead}>

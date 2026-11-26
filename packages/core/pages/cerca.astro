@@ -36,6 +36,22 @@ const { title, heading, lede, description, placeholder } = config.sections.cerca
       instance.setTranslations({ clear_search: 'Cancella' });
       const q = new URLSearchParams(location.search).get('q');
       if (q) instance.triggerSearch(q);
+
+      // Results arrive on every keystroke: only a query left standing for a moment counts.
+      let term = '';
+      let sent = '';
+      let timer;
+      instance.on('search', (t) => { term = t; });
+      instance.on('results', (r) => {
+        clearTimeout(timer);
+        const query = term.trim();
+        if (!query || query === sent) return;
+        const results = r.results.length;
+        timer = setTimeout(() => {
+          sent = query;
+          window.umami?.track('search', { query, results });
+        }, 1000);
+      });
     }
   </script>
 </BaseLayout>

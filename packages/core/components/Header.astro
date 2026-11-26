@@ -26,7 +26,7 @@ const last = config.nav.at(-1)!;
     {about ? (
       <span class="site-nav-end">
         <a href={last.href} aria-current={isWithin(last.href) ? 'page' : undefined}>{last.label}</a>
-        <button type="button" class="site-about-toggle" popovertarget="site-about" aria-label={about.label}>?</button>
+        <button type="button" class="site-about-toggle" popovertarget="site-about" aria-label={about.label} data-umami-event="about">?</button>
       </span>
     ) : (
       <a href={last.href} aria-current={isWithin(last.href) ? 'page' : undefined}>{last.label}</a>

@@ -1,0 +1,25 @@
+---
+import config from 'virtual:cronache/config';
+
+const { umami } = config;
+const domain = Astro.site?.hostname;
+---
+{umami && (
+  <Fragment>
+    <script
+      is:inline
+      defer
+      src={umami.script}
+      data-website-id={umami.websiteId}
+      data-domains={domain}
+      data-exclude-hash="true"
+    ></script>
+    <script is:inline>
+      // Not data-umami-event: the tracker would cancel the click and navigate itself, losing `download`.
+      document.addEventListener('click', (e) => {
+        const link = e.target instanceof Element && e.target.closest('a[download]');
+        if (link) window.umami?.track('download', { file: link.getAttribute('download') });
+      });
+    </script>
+  </Fragment>
+)}

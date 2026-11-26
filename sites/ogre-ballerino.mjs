@@ -27,7 +27,7 @@ export function ogreBallerinoAbout(siteName) {
     title: "Cos'è questo sito?",
     html: [
       '<p>L\'<a href="https://ogreballerino.com">Ogre Ballerino</a> è un gruppo di amici che gioca di ruolo. Ogni campagna ha il suo diario: dopo ogni sessione si aggiunge un capitolo, e personaggi, luoghi e documenti si collegano tra loro, così si può ritrovare chi era quel tizio di tre sessioni fa.</p>',
-      `<p>Vuoi un diario così anche per il tuo gruppo? Basta la registrazione delle vostre sessioni, una trascrizione o anche solo gli appunti: <a href="${mailto}">chiedi a sirlisko</a> (${EMAIL}).</p>`,
+      `<p>Vuoi un diario così anche per il tuo gruppo? Basta la registrazione delle vostre sessioni, una trascrizione o anche solo gli appunti: <a href="${mailto}" data-umami-event="contact">chiedi a sirlisko</a> (${EMAIL}).</p>`,
       `<p class="site-about-more">Le altre cronache</p><ul>${others}</ul>`,
     ].join(''),
   };
