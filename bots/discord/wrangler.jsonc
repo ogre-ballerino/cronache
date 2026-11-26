@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cronache-bot",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "observability": { "enabled": true },
+  // Secrets (wrangler secret put): NETLIFY_JWS_SECRET, and DISCORD_WEBHOOK_<CAMPAGNA> for each campaign.
+  "vars": {
+    "CAMPAGNE": {
+      "strahd": "https://strahd.ogreballerino.com",
+      "ombre": "https://ombre.ogreballerino.com"
+    }
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "CAMPAGNA", "class_name": "Campagna" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Campagna"] }]
+}

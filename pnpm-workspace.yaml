@@ -1,6 +1,8 @@
 packages:
   - packages/*
   - sites/*
+  - bots/*
 
 allowBuilds:
   esbuild: true
+  workerd: true
