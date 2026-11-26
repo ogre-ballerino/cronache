@@ -11,7 +11,7 @@ import { findUnresolvedLinks } from './lib/wikilinks.mjs';
 
 export { defineCampaign } from './config.mjs';
 
-function routes(features) {
+function routes({ features, discord }) {
   const pages = enabledCollections(features).flatMap(({ section, single }) =>
     single
       ? [[`/${section}`, `${section}.astro`]]
@@ -26,7 +26,8 @@ function routes(features) {
         ['/personaggi/[id]/scheda/[snapshot].pdf', 'personaggi/scheda-pdf.ts'],
       ]
     : [];
-  return [...pages, ...sheets, ['/cerca', 'cerca.astro'], ['/anteprime.json', 'anteprime.json.ts']];
+  const bot = discord ? [['/bot.json', 'bot.json.ts']] : [];
+  return [...pages, ...sheets, ...bot, ['/cerca', 'cerca.astro'], ['/anteprime.json', 'anteprime.json.ts']];
 }
 
 function virtualModules(config, { root, contentDir, publicDir, sheetTemplate, coreDir }) {
@@ -89,7 +90,7 @@ export default function cronache(userConfig) {
           },
           vite: { plugins: [virtualModules(config, paths)] },
         });
-        for (const [pattern, page] of routes(config.features)) {
+        for (const [pattern, page] of routes(config)) {
           injectRoute({ pattern, entrypoint: `@cronache/core/pages/${page}` });
         }
       },

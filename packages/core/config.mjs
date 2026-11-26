@@ -27,12 +27,21 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
  * @property {{ endpoint: string } | { at: string }} [nextSession]
  *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
  *   `at`: a fixed local wall-clock time, e.g. '2026-11-28T16:30:00'.
+ * @property {DiscordConfig} [discord]
+ *   The campaign's Discord bot (bots/discord): with it, the build publishes /bot.json for the bot to read.
  * @property {{ script: string, websiteId: string }} [umami]
  *   Umami tracking; only counted on the site's own domain, so `astro dev` and deploy previews stay out.
  * @property {Record<number, string>} [seasons]
  *   Season titles by `stagione` number, e.g. one per scenario; untitled seasons read "<labels.season> <roman>".
  * @property {Partial<typeof defaults.labels>} [labels]
  * @property {{ [K in keyof typeof defaults.sections]?: Partial<(typeof defaults.sections)[K]> }} [sections]
+ */
+
+/**
+ * @typedef {object} DiscordConfig
+ * @property {string} annuncio  Message posted with a new session.
+ * @property {string} leggi     Text of the link at the end of the announcement.
+ * @property {number} colore    Embed colour, e.g. 0x6b4f2a.
  */
 
 const defaults = {
@@ -125,6 +134,7 @@ export function resolveConfig(user) {
     about: user.about ?? null,
     nextSession: user.nextSession ?? null,
     umami: user.umami ?? null,
+    discord: user.discord ?? null,
     seasons: user.seasons ?? {},
     labels: {
       ...defaults.labels,
