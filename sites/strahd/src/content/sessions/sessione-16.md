@@ -4,6 +4,7 @@ numero: 16
 data: 2026-11-25
 estratto: Il gruppo lascia Vallaki, passando davanti a una chiesa ridotta a un mattatoio, e raggiunge Argynvostholt. Superato il drago di pietra, viene attaccato dai cavalieri non-morti che sperava di farsi alleati.
 luoghiVisitati: [Vallaki, Argynvostholt]
+anteprima: /images/sessioni/sessione-16.png
 tag: [vallaki, argynvostholt, cavalieri, drago, chiesa]
 ---
 

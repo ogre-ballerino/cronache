@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione V · La processione degli spettri</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">V</p>
+      <h1 class="title">La processione degli spettri</h1>
+      <p class="where">Il Villaggio di Barovia</p>
+    </div>
+
+    <!-- a file of spectral warriors marching up towards the castle on its crag -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 360" data-left="-660" data-width="1560" data-seed="5" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the crag and Castle Ravenloft -->
+          <path d="M260 600 C300 400 340 260 380 210 L400 190 L430 200 L470 150 L520 170 L600 230 L700 330 L920 400 V600 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2" stroke-linejoin="round" />
+          <path fill="#2a2016" stroke="#efe6d0" stroke-width="2" stroke-linejoin="round" d="M392 196 V110 L400 96 L408 110 V150 H430 V80 L440 40 L450 80 V150 H466 V120 L474 104 L482 120 V176 H498 V96 L506 70 L514 96 V200 Z" />
+          <path d="M440 100 v14 M474 136 v10 M506 120 v12" stroke="#efe6d0" stroke-width="2.4" />
+
+          <!-- the valley floor -->
+          <path d="M-680 384 C-300 372 0 386 260 380 C520 374 700 384 920 380 V600 H-680 Z" fill="#2a2016" />
+
+          <!-- the road up the slope -->
+          <path d="M-200 600 C-60 520 120 470 180 430 C240 390 200 350 260 320 C320 290 360 250 380 220" stroke="#efe6d0" stroke-width="6" fill="none" stroke-linecap="round" />
+          <path d="M-200 600 C-60 520 120 470 180 430 C240 390 200 350 260 320 C320 290 360 250 380 220" stroke="#2a2016" stroke-width="2" fill="none" stroke-dasharray="10 14" />
+          <path d="M-40 450 a9.6 9.6 0 1 1 0.1 0 Z M-54.4 465.6 L-25.6 465.6 L-20.8 520.0 L-59.2 520.0 Z" fill="#efe6d0" /><path d="M-17.6 523.2 V420.8 l-4 10 M-17.6 420.8 l4 10" stroke="#efe6d0" stroke-width="3.2" fill="none" /><path d="M40 418 a8.7 8.7 0 1 1 0.1 0 Z M27.0 432.7 L53.0 432.7 L57.4 482.0 L22.6 482.0 Z" fill="#efe6d0" /><path d="M60.3 484.9 V392.1 l-4 10 M60.3 392.1 l4 10" stroke="#efe6d0" stroke-width="2.9" fill="none" /><path d="M118 391 a7.8 7.8 0 1 1 0.1 0 Z M106.3 403.8 L129.7 403.8 L133.6 448.0 L102.4 448.0 Z" fill="#efe6d0" /><path d="M136.2 450.6 V367.4 l-4 10 M136.2 367.4 l4 10" stroke="#efe6d0" stroke-width="2.6" fill="none" /><path d="M176 367 a6.9 6.9 0 1 1 0.1 0 Z M165.7 378.9 L186.3 378.9 L189.8 418.0 L162.2 418.0 Z" fill="#efe6d0" /><path d="M192.1 420.3 V346.7 l-4 10 M192.1 346.7 l4 10" stroke="#efe6d0" stroke-width="2.3" fill="none" /><path d="M210 342 a6.0 6.0 0 1 1 0.1 0 Z M201.0 352.0 L219.0 352.0 L222.0 386.0 L198.0 386.0 Z" fill="#efe6d0" /><path d="M224.0 388.0 V324.0 l-4 10 M224.0 324.0 l4 10" stroke="#efe6d0" stroke-width="2.0" fill="none" /><path d="M226 312 a5.4 5.4 0 1 1 0.1 0 Z M217.9 321.4 L234.1 321.4 L236.8 352.0 L215.2 352.0 Z" fill="#efe6d0" /><path d="M238.6 353.8 V296.2 l-4 10 M238.6 296.2 l4 10" stroke="#efe6d0" stroke-width="1.8" fill="none" /><path d="M268 288 a4.7 4.7 0 1 1 0.1 0 Z M261.0 295.5 L275.0 295.5 L277.4 322.0 L258.6 322.0 Z" fill="#efe6d0" /><path d="M278.9 323.6 V273.6 l-4 10 M278.9 273.6 l4 10" stroke="#efe6d0" stroke-width="1.6" fill="none" /><path d="M312 262 a4.1 4.1 0 1 1 0.1 0 Z M305.9 268.9 L318.1 268.9 L320.2 292.0 L303.8 292.0 Z" fill="#efe6d0" /><path d="M321.5 293.4 V249.8 l-4 10 M321.5 249.8 l4 10" stroke="#efe6d0" stroke-width="1.4" fill="none" /><path d="M346 236 a3.5 3.5 0 1 1 0.1 0 Z M340.8 242.3 L351.2 242.3 L353.0 262.0 L339.0 262.0 Z" fill="#efe6d0" /><path d="M354.1 263.2 V226.0 l-4 10 M354.1 226.0 l4 10" stroke="#efe6d0" stroke-width="1.2" fill="none" /><path d="M368 214 a3.0 3.0 0 1 1 0.1 0 Z M363.5 219.0 L372.5 219.0 L374.0 236.0 L362.0 236.0 Z" fill="#efe6d0" /><path d="M375.0 237.0 V205.0 l-4 10 M375.0 205.0 l4 10" stroke="#efe6d0" stroke-width="1.0" fill="none" />
+
+          <!-- mist -->
+          <g stroke="#efe6d0" fill="none" stroke-linecap="round">
+            <path d="M-680 392 C-650 384 -619 400 -589 394 C-557 383 -524 396 -492 392 C-456 385 -420 401 -385 390 C-357 387 -329 399 -301 392 C-281 387 -261 397 -241 394 C-208 387 -175 400 -142 391 C-112 387 -82 396 -51 393 C-28 387 -4 401 19 393 C44 383 69 399 94 393 C117 383 140 399 164 394 C199 387 234 398 268 391 C291 388 313 398 336 392 C356 385 376 398 396 391 C430 386 463 398 497 392 C529 388 560 401 592 390 C625 384 657 396 690 393 C716 385 742 396 768 390 C791 383 814 397 837 393 C872 383 908 398 943 391" stroke-width="4" />
+            <path d="M-680 420 C-651 412 -623 425 -594 421 C-560 412 -527 424 -494 422 C-472 414 -451 427 -429 422 C-404 411 -378 427 -352 419 C-327 415 -302 424 -277 419 C-245 411 -214 425 -182 418 C-146 413 -109 426 -73 419 C-43 412 -13 426 17 420 C38 411 59 424 80 420 C114 415 148 428 182 422 C212 412 243 425 273 420 C296 412 318 425 341 420 C377 412 414 429 451 420 C479 412 507 426 535 419 C562 415 589 426 615 422 C651 413 687 426 723 419 C745 415 766 428 788 421 C814 412 840 428 866 421 C897 412 928 426 959 421" stroke-width="2.4" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

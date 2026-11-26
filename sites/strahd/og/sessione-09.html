@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione IX · La soffitta segreta della villa</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">IX</p>
+      <h1 class="title">La soffitta segreta della villa</h1>
+      <p class="where">La villa del Borgomastro, a Vallaki</p>
+    </div>
+
+    <!-- the attic door with its carved skull and the hanging sign -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- rafters of the attic, running to the door -->
+          <path d="M-680 -40 L260 140 L1200 -40 M-680 100 L180 190 M1200 100 L340 190 M-300 -60 L230 150 M820 -60 L290 150" stroke="#efe6d0" stroke-width="2" fill="none" />
+          <path d="M-680 600 L170 420 M920 600 L350 420 M-200 600 L210 420 M700 600 L310 420 M260 600 V420" stroke="#efe6d0" stroke-width="1.6" fill="none" />
+          <path d="M-680 420 H920" stroke="#efe6d0" stroke-width="2" />
+          <!-- the door -->
+          <path d="M168 420 V196 Q260 128 352 196 V420 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="3" />
+          <path d="M204 418 V172 M240 418 V152 M280 418 V152 M316 418 V172" stroke="#efe6d0" stroke-width="1.2" />
+          <path d="M170 250 H350 M170 370 H350" stroke="#efe6d0" stroke-width="5" />
+          <circle cx="330" cy="314" r="7" fill="none" stroke="#efe6d0" stroke-width="2.4" />
+          <!-- the carved skull -->
+          <path d="M260 196 C286 196 298 214 296 232 C294 246 286 250 284 262 H236 C234 250 226 246 224 232 C222 214 234 196 260 196 Z" fill="#efe6d0" />
+          <path d="M238 228 a8 9 0 1 0 16 0 a8 9 0 1 0 -16 0 M266 228 a8 9 0 1 0 16 0 a8 9 0 1 0 -16 0" fill="#2a2016" />
+          <path d="M260 238 l-5 10 h10 Z" fill="#2a2016" />
+          <path d="M244 262 v-8 M252 262 v-8 M260 262 v-8 M268 262 v-8 M276 262 v-8" stroke="#2a2016" stroke-width="2" />
+          <!-- the hanging sign -->
+          <path d="M236 272 L222 290 M284 272 L298 290" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M206 290 H314 V326 H206 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="1.6" />
+          <text x="260" y="314" text-anchor="middle" fill="#2a2016" font-family="IM Fell English" font-style="italic" font-size="17">Non va tutto bene</text>
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

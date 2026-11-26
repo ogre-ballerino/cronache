@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Capitolo VIII · La danza di Astarte</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">Capitolo VIII</p>
+      <h1 class="title">La danza di Astarte</h1>
+      <p class="where">Berlino, agosto 1925</p>
+    </div>
+
+    <!-- the stage of the Weiße Maus seen from the dark hall: Astarte against the spotlight, plumed helmet, cloak spread like wings -->
+    <svg class="woodcut" viewBox="0 0 1200 630" data-arte="330 -2 1200 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.055  0 0 0 0 0.09  0 0 0 0 0.082  9 0 0 0 -6.1" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-400" y="-40" width="2000" height="720" fill="#0e1715" />
+          <!-- the spotlight, a full moon on the backcloth -->
+          <clipPath id="spot"><circle cx="930" cy="236" r="178" /></clipPath>
+          <g clip-path="url(#spot)" data-sky="-260 410" data-left="730" data-width="400" data-seed="81" stroke="#d8cfb6" fill="none" stroke-linecap="round"></g>
+          <circle cx="930" cy="236" r="178" stroke="#d8cfb6" stroke-width="2" fill="none" />
+          <!-- Astarte: arms flung up, the cloak spread like wings behind her -->
+          <path d="M862 142 C820 190 790 260 770 404 L812 386 L846 406 L880 380 L912 300 Z M998 132 C1040 180 1074 250 1096 400 L1054 384 L1022 404 L990 380 L948 300 Z" fill="#0e1715" stroke="#d8cfb6" stroke-width="2.2" stroke-linejoin="round" />
+          <g stroke="#d8cfb6" stroke-width="1.3" fill="none" stroke-linecap="round">
+            <path d="M862 142 L800 360 M862 142 L836 380 M862 142 L874 350 M998 132 L1064 370 M998 132 L1030 386 M998 132 L994 350" />
+          </g>
+          <path d="M914 240 Q882 200 862 142 M950 236 Q980 196 998 132" stroke="#d8cfb6" stroke-width="13" stroke-linecap="round" fill="none" />
+          <path d="M914 240 Q882 200 862 142 M950 236 Q980 196 998 132" stroke="#0e1715" stroke-width="8" stroke-linecap="round" fill="none" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2.2" stroke-linejoin="round" d="M912 238 C916 232 946 228 952 234 C956 252 948 270 944 288 C948 296 952 302 950 306 L1000 408 C1030 410 1060 406 1090 412 L1040 416 H862 C878 370 896 330 906 304 C904 298 908 292 912 288 C908 270 906 252 912 238 Z" />
+          <g stroke="#d8cfb6" stroke-width="1.2" fill="none" stroke-linecap="round"><path d="M914 312 C904 350 890 380 882 410 M932 312 C934 350 940 380 946 410 M946 310 C970 350 1000 380 1030 410" /></g>
+          <path d="M924 236 L926 222 H940 L942 234 Z" fill="#0e1715" stroke="#d8cfb6" stroke-width="1.6" />
+          <ellipse cx="934" cy="206" rx="15" ry="18" transform="rotate(-14 934 206)" fill="#0e1715" stroke="#d8cfb6" stroke-width="2.2" />
+          <path d="M918 204 C914 184 944 176 952 194 L950 200 L920 208 Z" fill="#d8cfb6" />
+          <path d="M922 212 L946 206" stroke="#d8cfb6" stroke-width="1" />
+          <path d="M926 186 Q889.0 159.0 880 120 Q913.0 149.0 926 186 Z" fill="#d8cfb6" stroke="#0e1715" stroke-width="1.2" />
+          <path d="M932 182 Q902.0 149.0 900 104 Q926.0 139.0 932 182 Z" fill="#d8cfb6" stroke="#0e1715" stroke-width="1.2" />
+          <path d="M938 182 Q920.0 145.0 930 96 Q944.0 135.0 938 182 Z" fill="#d8cfb6" stroke="#0e1715" stroke-width="1.2" />
+          <path d="M862 142 l-8 -10 M862 142 l-2 -14 M998 132 l4 -14 M998 132 l10 -8" stroke="#d8cfb6" stroke-width="2.4" stroke-linecap="round" />
+          <!-- the stage, the footlights along its edge -->
+          <path d="M-400 420 H1600 V454 H-400 Z" fill="#0e1715" />
+          <path d="M-400 420 H1600 M-400 454 H1600" stroke="#d8cfb6" stroke-width="2.4" />
+          <path d="M-392 420 A12 12 0 0 1 -368 420 Z" fill="#b0904e" />
+          <path d="M-346 420 A12 12 0 0 1 -322 420 Z" fill="#b0904e" />
+          <path d="M-300 420 A12 12 0 0 1 -276 420 Z" fill="#b0904e" />
+          <path d="M-254 420 A12 12 0 0 1 -230 420 Z" fill="#b0904e" />
+          <path d="M-208 420 A12 12 0 0 1 -184 420 Z" fill="#b0904e" />
+          <path d="M-162 420 A12 12 0 0 1 -138 420 Z" fill="#b0904e" />
+          <path d="M-116 420 A12 12 0 0 1 -92 420 Z" fill="#b0904e" />
+          <path d="M-70 420 A12 12 0 0 1 -46 420 Z" fill="#b0904e" />
+          <path d="M-24 420 A12 12 0 0 1 0 420 Z" fill="#b0904e" />
+          <path d="M22 420 A12 12 0 0 1 46 420 Z" fill="#b0904e" />
+          <path d="M68 420 A12 12 0 0 1 92 420 Z" fill="#b0904e" />
+          <path d="M114 420 A12 12 0 0 1 138 420 Z" fill="#b0904e" />
+          <path d="M160 420 A12 12 0 0 1 184 420 Z" fill="#b0904e" />
+          <path d="M206 420 A12 12 0 0 1 230 420 Z" fill="#b0904e" />
+          <path d="M252 420 A12 12 0 0 1 276 420 Z" fill="#b0904e" />
+          <path d="M298 420 A12 12 0 0 1 322 420 Z" fill="#b0904e" />
+          <path d="M344 420 A12 12 0 0 1 368 420 Z" fill="#b0904e" />
+          <path d="M390 420 A12 12 0 0 1 414 420 Z" fill="#b0904e" />
+          <path d="M436 420 A12 12 0 0 1 460 420 Z" fill="#b0904e" />
+          <path d="M482 420 A12 12 0 0 1 506 420 Z" fill="#b0904e" />
+          <path d="M528 420 A12 12 0 0 1 552 420 Z" fill="#b0904e" />
+          <path d="M574 420 A12 12 0 0 1 598 420 Z" fill="#b0904e" />
+          <path d="M620 420 A12 12 0 0 1 644 420 Z" fill="#b0904e" />
+          <path d="M666 420 A12 12 0 0 1 690 420 Z" fill="#b0904e" />
+          <path d="M712 420 A12 12 0 0 1 736 420 Z" fill="#b0904e" />
+          <path d="M758 420 A12 12 0 0 1 782 420 Z" fill="#b0904e" />
+          <path d="M804 420 A12 12 0 0 1 828 420 Z" fill="#b0904e" />
+          <path d="M850 420 A12 12 0 0 1 874 420 Z" fill="#b0904e" />
+          <path d="M896 420 A12 12 0 0 1 920 420 Z" fill="#b0904e" />
+          <path d="M942 420 A12 12 0 0 1 966 420 Z" fill="#b0904e" />
+          <path d="M988 420 A12 12 0 0 1 1012 420 Z" fill="#b0904e" />
+          <path d="M1034 420 A12 12 0 0 1 1058 420 Z" fill="#b0904e" />
+          <path d="M1080 420 A12 12 0 0 1 1104 420 Z" fill="#b0904e" />
+          <path d="M1126 420 A12 12 0 0 1 1150 420 Z" fill="#b0904e" />
+          <path d="M1172 420 A12 12 0 0 1 1196 420 Z" fill="#b0904e" />
+          <path d="M1218 420 A12 12 0 0 1 1242 420 Z" fill="#b0904e" />
+          <path d="M1264 420 A12 12 0 0 1 1288 420 Z" fill="#b0904e" />
+          <path d="M1310 420 A12 12 0 0 1 1334 420 Z" fill="#b0904e" />
+          <path d="M1356 420 A12 12 0 0 1 1380 420 Z" fill="#b0904e" />
+          <path d="M1402 420 A12 12 0 0 1 1426 420 Z" fill="#b0904e" />
+          <path d="M1448 420 A12 12 0 0 1 1472 420 Z" fill="#b0904e" />
+          <path d="M1494 420 A12 12 0 0 1 1518 420 Z" fill="#b0904e" />
+          <path d="M1540 420 A12 12 0 0 1 1564 420 Z" fill="#b0904e" />
+          <path d="M1586 420 A12 12 0 0 1 1610 420 Z" fill="#b0904e" />
+          <!-- the curtains, drawn back -->
+          <path fill="#0e1715" d="M230 -40 H680 C670 120 640 220 590 300 C620 340 610 380 600 420 H230 Z" />
+          <g stroke="#d8cfb6" fill="none" stroke-linecap="round">
+            <path d="M680 -40 C670 120 640 220 590 300 C620 340 610 380 600 420" stroke-width="2.4" />
+            <path d="M654 -40 C646 120 624 220 568 296 C578 340 572 380 566 420" stroke-width="1.45" />
+            <path d="M628 -40 C620 120 598 220 546 296 C556 340 550 380 544 420" stroke-width="1.30" />
+            <path d="M602 -40 C594 120 572 220 524 296 C534 340 528 380 522 420" stroke-width="1.15" />
+            <path d="M576 -40 C568 120 546 220 502 296 C512 340 506 380 500 420" stroke-width="1.00" />
+            <path d="M550 -40 C542 120 520 220 480 296 C490 340 484 380 478 420" stroke-width="0.85" />
+          </g>
+          <path d="M604 296 l-40 -6 l-4 14 l40 6 Z" fill="#b0904e" />
+          <path fill="#0e1715" d="M1630 -40 H1180 C1190 120 1220 220 1270 300 C1240 340 1250 380 1260 420 H1630 Z" />
+          <g stroke="#d8cfb6" fill="none" stroke-linecap="round">
+            <path d="M1180 -40 C1190 120 1220 220 1270 300 C1240 340 1250 380 1260 420" stroke-width="2.4" />
+            <path d="M1206 -40 C1214 120 1236 220 1292 296 C1282 340 1288 380 1294 420" stroke-width="1.45" />
+            <path d="M1232 -40 C1240 120 1262 220 1314 296 C1304 340 1310 380 1316 420" stroke-width="1.30" />
+            <path d="M1258 -40 C1266 120 1288 220 1336 296 C1326 340 1332 380 1338 420" stroke-width="1.15" />
+            <path d="M1284 -40 C1292 120 1314 220 1358 296 C1348 340 1354 380 1360 420" stroke-width="1.00" />
+            <path d="M1310 -40 C1318 120 1340 220 1380 296 C1370 340 1376 380 1382 420" stroke-width="0.85" />
+          </g>
+          <path d="M1256 296 l40 -6 l4 14 l-40 6 Z" fill="#b0904e" />
+          <!-- the pelmet, the white mouse in its medallion -->
+          <path d="M-400 -40 H1600 V44 C1400 60 1300 40 1180 56 C1080 68 1000 48 930 62 C860 48 780 68 680 56 C560 40 460 60 -400 44 Z" fill="#0e1715" />
+          <path d="M-400 44 C460 60 560 40 680 56 C780 68 860 48 930 62 C1000 48 1080 68 1180 56 C1300 40 1400 60 1600 44" stroke="#d8cfb6" stroke-width="2" fill="none" />
+          <circle cx="930" cy="28" r="26" fill="#0e1715" stroke="#b0904e" stroke-width="2.4" />
+          <path d="M912 38 C911 26 925 20 936 26 L948 33 L937 38 Z" fill="#d8cfb6" />
+          <circle cx="933" cy="23" r="5" fill="#d8cfb6" stroke="#0e1715" stroke-width="1.2" />
+          <path d="M912 36 C904 36 904 44 910 46" stroke="#d8cfb6" stroke-width="1.6" fill="none" />
+          <!-- the audience in the dark -->
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M763 680 C765 571 782 558 807 552 L809 541 C797 530 797 495 820 493 C843 495 843 530 831 541 L833 552 C858 558 875 571 877 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M580 680 C582 584 600 570 626 564 L628 552 C616 540 616 504 640 502 C664 504 664 540 652 552 L654 564 C680 570 698 584 700 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M1110 680 C1112 584 1130 570 1156 564 L1158 552 C1146 540 1146 504 1170 502 C1194 504 1194 540 1182 552 L1184 564 C1210 570 1228 584 1230 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M947 680 C949 597 968 582 995 576 L997 563 C985 550 985 513 1010 511 C1035 513 1035 550 1023 563 L1025 576 C1052 582 1071 597 1073 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M661 680 C663 637 684 621 714 614 L716 600 C702 586 702 545 730 543 C758 545 758 586 744 600 L746 614 C776 621 797 637 799 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M488 680 C490 645 512 628 543 621 L546 606 C531 592 531 549 560 546 C589 549 589 592 574 606 L577 621 C608 628 630 645 632 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M1178 680 C1180 645 1202 628 1233 621 L1236 606 C1221 592 1221 549 1250 546 C1279 549 1279 592 1264 606 L1267 621 C1298 628 1320 645 1322 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M1018 680 C1020 650 1042 633 1073 626 L1076 611 C1061 597 1061 554 1090 551 C1119 554 1119 597 1104 611 L1107 626 C1138 633 1160 650 1162 680 Z" />
+          <path fill="#0e1715" stroke="#d8cfb6" stroke-width="2" d="M825 680 C828 658 850 640 882 632 L885 618 C870 602 870 558 900 555 C930 558 930 602 915 618 L918 632 C950 640 972 658 975 680 Z" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

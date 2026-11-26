@@ -5,6 +5,7 @@ stagione: 1
 data: 2026-11-24
 estratto: Una lettera scritta a matita porta gli investigatori al Danvers State Hospital, dove il loro amico Larry Croswell è rinchiuso tra i pazienti più pericolosi. Lo liberano con una fuga dalla finestra, tre giorni prima della luna nuova.
 luoghiVisitati: [Danvers, Danvers State Hospital, Chiesa cattolica di Danvers, Peabody Institute Library]
+anteprima: /images/sessioni/sessione-01.png
 tag: [Genius Loci]
 ---
 

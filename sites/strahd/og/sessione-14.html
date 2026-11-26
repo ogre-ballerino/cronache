@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione XIV · Il cancello aperto</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">XIV</p>
+      <h1 class="title">Il cancello aperto</h1>
+      <p class="where">Le porte di Vallaki</p>
+    </div>
+
+    <!-- the gate of Vallaki standing open at dusk, no guard in sight -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 330" data-left="-660" data-width="1560" data-seed="14" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the road in -->
+          <path d="M-680 354 C-300 342 0 356 260 350 C520 344 700 354 920 350 V600 H-680 Z" fill="#2a2016" />
+
+          <!-- the palisade of sharpened logs -->
+          <path d="M-680 350 V238 L-670 220 L-659 238 V350 Z M-659 350 V241 L-647 223 L-635 241 V350 Z M-635 350 V233 L-625 215 L-614 233 V350 Z M-614 350 V238 L-602 220 L-589 238 V350 Z M-589 350 V238 L-579 220 L-568 238 V350 Z M-568 350 V239 L-556 221 L-545 239 V350 Z M-545 350 V233 L-535 215 L-525 233 V350 Z M-525 350 V234 L-512 216 L-499 234 V350 Z M-499 350 V240 L-488 222 L-478 240 V350 Z M-478 350 V232 L-466 214 L-454 232 V350 Z M-454 350 V238 L-442 220 L-430 238 V350 Z M-430 350 V238 L-420 220 L-409 238 V350 Z M-409 350 V234 L-399 216 L-389 234 V350 Z M-389 350 V232 L-378 214 L-368 232 V350 Z M-368 350 V235 L-355 217 L-342 235 V350 Z M-342 350 V235 L-329 217 L-316 235 V350 Z M-316 350 V240 L-305 222 L-293 240 V350 Z M-293 350 V231 L-281 213 L-269 231 V350 Z M-269 350 V238 L-257 220 L-245 238 V350 Z M-245 350 V231 L-235 213 L-224 231 V350 Z M-224 350 V236 L-211 218 L-199 236 V350 Z M-199 350 V235 L-188 217 L-178 235 V350 Z M-178 350 V240 L-167 222 L-156 240 V350 Z M-156 350 V231 L-145 213 L-133 231 V350 Z M-133 350 V231 L-121 213 L-108 231 V350 Z M-108 350 V230 L-98 212 L-87 230 V350 Z M-87 350 V231 L-74 213 L-62 231 V350 Z M-62 350 V231 L-51 213 L-39 231 V350 Z M-39 350 V238 L-28 220 L-16 238 V350 Z M-16 350 V235 L-5 217 L7 235 V350 Z M7 350 V235 L18 217 L30 235 V350 Z M30 350 V231 L42 213 L53 231 V350 Z M53 350 V233 L65 215 L76 233 V350 Z M76 350 V241 L89 223 L102 241 V350 Z M102 350 V232 L112 214 L122 232 V350 Z M122 350 V237 L134 219 L146 237 V350 Z M146 350 V238 L156 220 L166 238 V350 Z M340 350 V234 L351 216 L363 234 V350 Z M363 350 V241 L374 223 L386 241 V350 Z M386 350 V234 L397 216 L408 234 V350 Z M408 350 V238 L418 220 L429 238 V350 Z M429 350 V233 L440 215 L451 233 V350 Z M451 350 V230 L463 212 L474 230 V350 Z M474 350 V242 L485 224 L496 242 V350 Z M496 350 V233 L507 215 L519 233 V350 Z M519 350 V234 L532 216 L545 234 V350 Z M545 350 V230 L556 212 L566 230 V350 Z M566 350 V232 L577 214 L587 232 V350 Z M587 350 V240 L598 222 L609 240 V350 Z M609 350 V233 L619 215 L630 233 V350 Z M630 350 V241 L642 223 L654 241 V350 Z M654 350 V239 L665 221 L676 239 V350 Z M676 350 V237 L687 219 L698 237 V350 Z M698 350 V241 L710 223 L721 241 V350 Z M721 350 V236 L734 218 L746 236 V350 Z M746 350 V234 L758 216 L771 234 V350 Z M771 350 V242 L782 224 L793 242 V350 Z M793 350 V239 L805 221 L817 239 V350 Z M817 350 V241 L827 223 L838 241 V350 Z M838 350 V233 L850 215 L862 233 V350 Z M862 350 V236 L875 218 L888 236 V350 Z M888 350 V233 L899 215 L910 233 V350 Z M910 350 V232 L920 214 L930 232 V350 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="1.8" stroke-linejoin="round" />
+          <!-- the gate towers -->
+          <path d="M150 350 V150 H200 V350 Z M320 350 V150 H370 V350 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M140 150 H210 V132 H140 Z M310 150 H380 V132 H310 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M146 132 V116 H158 V132 M170 132 V116 H182 V132 M194 132 V116 H206 V132 M316 132 V116 H328 V132 M340 132 V116 H352 V132 M364 132 V116 H376 V132" fill="#2a2016" stroke="#efe6d0" stroke-width="2" />
+          <path d="M164 190 h22 v24 h-22 Z M334 190 h22 v24 h-22 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2" />
+          <!-- the dark gateway and its leaves, hanging open -->
+          <path d="M200 350 V190 H320 V350 Z" fill="#2a2016" />
+          <path d="M200 190 H320" stroke="#efe6d0" stroke-width="4" />
+          <path d="M200 350 L232 334 V214 L200 196 Z M320 350 L288 334 V214 L320 196 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <path d="M210 210 V340 M222 214 V338 M310 210 V340 M298 214 V338" stroke="#efe6d0" stroke-width="1.2" />
+          <!-- the road, through the gate -->
+          <path d="M240 350 H280 L400 600 H120 Z" fill="#efe6d0" />
+          <path d="M252 360 L200 600 M268 360 L320 600" stroke="#2a2016" stroke-width="2" />
+          <!-- unlit torches -->
+          <path d="M140 200 l-18 -10 M380 200 l18 -10" stroke="#efe6d0" stroke-width="4" stroke-linecap="round" />
+          <path d="M-306 402 l2 -13 M-268 397 l3 -11 M-231 402 l0 -12 M-198 397 l4 -9 M-160 404 l2 -8 M-119 402 l-2 -11 M-90 398 l-2 -8 M-40 399 l5 -10 M-10 404 l2 -8 M25 402 l-2 -8 M66 400 l-1 -10 M91 404 l1 -8 M137 395 l-1 -7 M172 395 l1 -8 M204 402 l1 -10 M240 399 l2 -8 M276 397 l4 -13 M305 396 l3 -10 M340 402 l5 -10 M382 401 l5 -9 M417 396 l2 -10 M452 399 l-3 -9 M500 401 l-1 -13 M526 397 l-3 -8 M559 397 l4 -9 M596 401 l4 -9 M640 398 l1 -11 M679 403 l1 -12 M706 399 l5 -10 M748 398 l4 -11 M776 405 l1 -9 M812 395 l-1 -11 M846 397 l1 -10 M886 403 l-1 -9" stroke="#efe6d0" stroke-width="1.6" stroke-linecap="round" fill="none" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

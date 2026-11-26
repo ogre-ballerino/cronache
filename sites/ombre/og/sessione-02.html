@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Capitolo II · La casa di Hans Traeumer</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">Capitolo II</p>
+      <h1 class="title">La casa di Hans Traeumer</h1>
+      <p class="where">Boston e il North End di Arkham</p>
+    </div>
+
+    <!-- Hans's study above the laundry: the sheets of symbols over the old piano, the receipt half-burnt in the grate -->
+    <svg class="woodcut" viewBox="0 0 1200 630" data-arte="300 60 1200 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.055  0 0 0 0 0.09  0 0 0 0 0.082  9 0 0 0 -6.1" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-400" y="-40" width="2000" height="720" fill="#0e1715" />
+          <!-- lamplight on the wallpaper, brightest along the skirting -->
+          <g data-sky="0 468" data-left="-300" data-width="2000" data-seed="2" stroke="#d8cfb6" fill="none" stroke-linecap="round"></g>
+
+          <!-- the floor, boards running to the window wall -->
+          <path d="M-400 470 H1600 V680 H-400 Z" fill="#0e1715" />
+          <g stroke="#d8cfb6" stroke-width="1.3" fill="none" stroke-linecap="round">
+            <path d="M-400 470 H1600" stroke-width="2.4" />
+            <path d="M860 474 L640 640 M900 474 L800 640 M940 474 L960 640 M980 474 L1120 640 M1020 474 L1290 640 M820 474 L480 640 M780 474 L320 640 M1060 474 L1460 640" />
+          </g>
+          <!-- unopened post on the floor -->
+          <g fill="#d8cfb6" stroke="#0e1715" stroke-width="2">
+            <path d="M690 540 l58 -10 l8 34 l-58 10 Z" />
+            <path d="M760 566 l54 6 l-4 30 l-54 -6 Z" />
+            <path d="M1010 600 l70 -4 l2 26 l-70 4 Z" />
+          </g>
+          <path d="M694 544 l26 14 l32 -22 M764 570 l25 12 l23 -8" stroke="#0e1715" stroke-width="1.4" fill="none" />
+
+          <!-- the sheets pinned over the piano, the same symbols over and over -->
+          <g stroke="#0e1715" stroke-width="3" fill="#d8cfb6">
+            <path d="M712 128 l86 -6 l6 98 l-86 6 Z" />
+            <path d="M818 150 l84 8 l-8 96 l-84 -8 Z" />
+            <path d="M922 120 l80 4 l-4 92 l-80 -4 Z" />
+            <path d="M740 248 l70 -2 l2 40 l-70 2 Z" />
+          </g>
+          <g stroke="#0e1715" stroke-width="3.4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <!-- the circle with the mountain, cut deeper than the rest -->
+            <circle cx="758" cy="172" r="26" stroke-width="5.5" />
+            <path d="M738 186 L758 160 L778 186" stroke-width="5.5" />
+            <path d="M860 178 L886 226 L834 226 Z" />
+            <path d="M852 220 l10 -20 l12 18" stroke-width="2.6" />
+            <path d="M962 136 L986 154 L978 184 L946 184 L938 154 Z" />
+            <path d="M944 166 H980" />
+            <circle cx="962" cy="166" r="11" stroke-width="2.6" />
+            <path d="M760 256 l10 12 l-10 12 l-10 -12 Z M762 260 l-4 8 h6 l-4 8" stroke-width="2.2" />
+            <path d="M784 262 l12 0 M784 272 l18 0" stroke-width="2" />
+          </g>
+
+          <!-- the little upright piano -->
+          <path fill="#0e1715" d="M700 470 V300 H950 V470 H934 V398 H716 V470 Z" />
+          <path fill="#0e1715" d="M690 376 H960 V398 H690 Z" />
+          <g stroke="#d8cfb6" fill="none" stroke-linecap="round">
+            <path d="M700 300 H950" stroke-width="2.6" />
+            <path d="M716 318 H934 V368 H716 Z" stroke-width="1.4" />
+            <path d="M690 398 H960" stroke-width="2" />
+          </g>
+          <rect x="694" y="380" width="262" height="14" fill="#d8cfb6" />
+          <path d="M706 380 v8 M718 380 v8 M736 380 v8 M748 380 v8 M760 380 v8 M778 380 v8 M790 380 v8 M808 380 v8 M820 380 v8 M832 380 v8 M850 380 v8 M862 380 v8 M880 380 v8 M892 380 v8 M904 380 v8 M922 380 v8 M934 380 v8 M946 380 v8" stroke="#0e1715" stroke-width="4" />
+          <!-- music on the stand: Mozart's Thamos -->
+          <path d="M780 334 l90 0 l0 40 l-90 0 Z" fill="#d8cfb6" />
+          <path d="M786 344 h78 M786 352 h78 M786 360 h78" stroke="#0e1715" stroke-width="1" />
+          <path d="M796 350 v-10 M812 356 v-14 M830 348 v-10 M848 358 v-14" stroke="#0e1715" stroke-width="1.6" />
+          <circle cx="794" cy="351" r="2.8" fill="#0e1715" /><circle cx="810" cy="357" r="2.8" fill="#0e1715" /><circle cx="828" cy="349" r="2.8" fill="#0e1715" /><circle cx="846" cy="359" r="2.8" fill="#0e1715" />
+          <!-- a candle burning on the lid -->
+          <path d="M916 300 V270 H928 V300" fill="#d8cfb6" />
+          <path d="M922 268 C914 256 918 246 922 236 C928 248 930 258 922 268 Z" fill="#b0904e" />
+
+          <!-- the study fireplace, a half-burnt sheet in the grate -->
+          <path fill="#0e1715" d="M1030 470 V330 H1016 V314 H1210 V330 H1196 V470 Z" />
+          <path d="M1016 314 H1210 M1030 330 H1196" stroke="#d8cfb6" stroke-width="2" fill="none" />
+          <path d="M1062 470 V366 C1062 352 1074 346 1112 346 C1150 346 1164 352 1164 366 V470" stroke="#d8cfb6" stroke-width="2" fill="none" />
+          <path d="M1072 468 C1068 454 1076 446 1074 434 C1082 442 1084 432 1082 420 C1092 432 1094 440 1092 448 C1098 440 1100 428 1098 412 C1110 428 1114 440 1108 452 C1114 448 1118 440 1118 432 C1126 446 1124 460 1118 468 Z" fill="#b0904e" />
+          <path d="M1086 466 C1084 456 1090 450 1090 442 C1096 450 1100 456 1098 466 Z" fill="#d8cfb6" />
+          <path d="M1102 448 l40 -10 l8 22 l-14 2 l-6 -6 l-8 6 l-6 -4 l-10 6 Z" fill="#d8cfb6" />
+          <path d="M1102 448 l2 8 l-4 6 l4 6" stroke="#b0904e" stroke-width="3" fill="none" />
+          <path d="M1110 450 h26 M1112 456 h22" stroke="#0e1715" stroke-width="1" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

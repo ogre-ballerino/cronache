@@ -451,6 +451,13 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.entry-frontispiece {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
 .entry-meta {
   margin: 0;
   font-style: italic;

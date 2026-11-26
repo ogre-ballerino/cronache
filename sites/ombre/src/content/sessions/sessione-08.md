@@ -5,6 +5,7 @@ stagione: 2
 data: 2026-11-22
 estratto: Hans si sveglia nel corpo di Alistair, Chung in quello di Rita, e Jade riporta a casa la sorella. Gli altri restano a Berlino fino a domenica, e una lettera di Kurt Weber li porta alla Weiße Maus, dove la danza di Anita Berber travolge tutti.
 luoghiVisitati: [Hotel Savoy, Grunewald, Neues Schauspielhaus, Galleria Nazionale, Museo di Etnologia, Romanisches Café, Eldorado, Weiße Maus]
+anteprima: /images/sessioni/sessione-08.png
 tag: [inizio della stagione]
 ---
 
@@ -86,6 +87,10 @@ Agatha si fa dare dal concierge una rivista di cinema, e con HP passa il gioved�
 ## La Weiße Maus
 
 Venerdì sera pioviggina, e la Friedrichstraße bagnata è uno specchio nero in cui si riflettono le insegne. A HP ricorda lo specchio di ossidiana, e per un istante non sa più se sia sveglio o nel sogno. In Jägerstraße lampeggia un'insegna bianca: la Weiße Maus. Una ragazza mascherata offre maschere bianche e nere, per chi preferisce restare anonimo. Agatha ne prende una nera per sé e una bianca per Salem; HP e Hans la rifiutano, e al loro tavolo, davanti al palco, sono gli unici a viso scoperto.
+
+![Incisione: la Friedrichstraße di notte sotto la pioggia, tra due file di facciate con qualche finestra accesa; i lampioni e l'insegna verticale bianca della Weiße Maus, con un topo in cima, si riflettono sull'asfalto bagnato](/images/sessioni/sessione-08-pioggia-arte.webp)
+
+*La Friedrichstraße, venerdì sera.*
 
 In sala ci sono signori anziani mascherati, commessi viaggiatori già ubriachi, tre paramilitari in uniforme con ragazze che ridono troppo, un circolo di signore sulla cinquantina, e al tavolo accanto un uomo sulla quarantina, senza maschera, con un garofano rosso. Uno solo dei palchetti è occupato, da un uomo grasso sulla sessantina con due ragazze di trent'anni più giovani. Al bancone, da solo, siede un gigante: [[Giovanni Belzoni]].
 

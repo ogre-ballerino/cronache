@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione II · L'imboscata al casolare</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">II</p>
+      <h1 class="title">L'imboscata al casolare</h1>
+      <p class="where">Il casolare fuori Goya</p>
+    </div>
+
+    <!-- the farmhouse outside Goya, a violet glare bursting from its inner room -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 330" data-left="-660" data-width="1560" data-seed="2" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- the fields -->
+          <path d="M-680 344 C-300 332 0 346 260 340 C520 334 700 344 920 340 V600 H-680 Z" fill="#2a2016" />
+          <path d="M-680 367 C-599 361 -518 371 -437 367 M-379 365 C-339 361 -298 371 -257 365 M-119 367 C-20 361 80 371 180 366 M299 366 C352 361 405 371 457 364 M606 368 C651 361 696 371 741 363 M864 365 C933 361 1002 371 1071 368 M-680 386 C-635 379 -589 389 -544 384 M-493 387 C-368 379 -242 389 -117 382 M-26 383 C26 379 78 389 129 385 M189 381 C289 379 390 389 490 382 M628 384 C703 379 777 389 852 385 M-680 408 C-607 406 -533 416 -460 412 M-304 412 C-179 406 -55 416 70 410 M154 412 C253 406 353 416 453 409 M521 411 C593 406 664 416 736 413 M836 413 C878 406 920 416 963 411 M-680 451 C-621 446 -561 456 -502 451 M-370 452 C-321 446 -272 456 -223 450 M-99 450 C-56 446 -13 456 30 451 M147 451 C191 446 236 456 280 450 M354 454 C435 446 517 456 598 451 M752 454 C807 446 862 456 916 451" stroke="#efe6d0" stroke-width="1.3" fill="none" stroke-linecap="round" />
+
+          <!-- light breaking from the windows -->
+          <path d="M206 279 L147 269 M208 274 L129 239 M211 268 L122 201 M215 264 L177 218 M221 261 L183 183 M226 259 L202 149 M232 258 L234 198 M239 259 L260 176 M244 261 L297 162 M249 265 L289 220 M253 269 L324 220 M256 274 L360 233 M258 280 L317 272 M292 279 L233 269 M294 274 L215 239 M297 268 L208 201 M301 264 L263 218 M307 261 L269 183 M312 259 L288 149 M318 258 L320 198 M325 259 L346 176 M330 261 L383 162 M335 265 L375 220 M339 269 L410 220 M342 274 L446 233 M344 280 L403 272" stroke="#efe6d0" stroke-width="3" stroke-linecap="round" />
+          <!-- the farmhouse and its barn -->
+          <path d="M120 342 V268 L160 236 H380 L420 268 V342 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" />
+          <path d="M420 342 V286 L452 262 L484 286 V342 Z" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" />
+          <path d="M160 236 V214 H178 V236" fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" />
+          <g stroke="#efe6d0" stroke-width="1.3" fill="none">
+            <path d="M138 260 H402 M150 250 H390" />
+            <path d="M436 300 l32 32 M468 300 l-32 32" stroke-width="2" />
+          </g>
+          <path d="M214 266 H250 V302 H214 Z M300 266 H336 V302 H300 Z" fill="#efe6d0" />
+          <path d="M232 266 V302 M214 284 H250 M318 266 V302 M300 284 H336" stroke="#2a2016" stroke-width="3" />
+          <path d="M150 342 V300 H178 V342" fill="#efe6d0" />
+          <path d="M164 300 V342" stroke="#2a2016" stroke-width="2" />
+          <path d="M-293 405 l-3 -8 M-261 403 l2 -9 M-230 401 l2 -8 M-199 399 l3 -13 M-157 401 l1 -9 M-137 394 l1 -9 M-98 405 l1 -10 M-66 394 l-0 -8 M-28 406 l2 -8 M12 404 l3 -12 M44 403 l-0 -13 M81 396 l3 -11 M107 400 l1 -13 M142 404 l-0 -12 M182 400 l2 -13 M214 400 l-1 -9 M247 396 l4 -9 M285 398 l5 -11 M312 400 l2 -11 M343 396 l1 -13 M382 395 l4 -11 M421 396 l3 -7 M450 397 l-1 -12 M476 400 l4 -8 M511 405 l0 -11 M543 398 l-2 -11 M577 405 l-3 -11 M610 397 l4 -8 M647 402 l0 -7 M694 396 l-3 -9 M722 403 l-2 -9 M746 399 l3 -11 M794 403 l4 -11 M822 397 l2 -9 M850 399 l4 -8 M891 399 l1 -8" stroke="#efe6d0" stroke-width="1.6" stroke-linecap="round" fill="none" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

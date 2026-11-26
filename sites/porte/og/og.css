@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'IM Fell English';
+  src: url('../node_modules/@fontsource/im-fell-english/files/im-fell-english-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Special Elite';
+  src: url('../node_modules/@fontsource/special-elite/files/special-elite-latin-400-normal.woff2') format('woff2');
+}
+
+:root {
+  --bg: #0a0f0c;
+  --paper: #e6dfcc;
+  --paper-ink: #1e1b16;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: 'IM Fell English', Georgia, serif;
+}
+
+.card {
+  position: relative;
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+}
+
+.woodcut {
+  position: absolute;
+  inset: 0;
+  width: 1200px;
+  height: 630px;
+}
+
+/* The text is a typed report laid on the woodcut, like the site's inner pages. */
+.cartouche {
+  position: absolute;
+  z-index: 2;
+  top: 64px;
+  bottom: 64px;
+  left: 64px;
+  width: 540px;
+  padding: 0 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--paper);
+  color: var(--paper-ink);
+  transform: rotate(-1.2deg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.number {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 28px;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--paper-ink);
+}
+
+.title {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.where {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--paper-ink);
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--paper-ink);
+}
+
+/* ?arte: the frontispiece on the session page, which already shows the title. */
+.arte body,
+.arte .card {
+  height: 450px;
+}
+
+.arte .cartouche {
+  display: none;
+}
+
+.arte .woodcut {
+  height: 450px;
+}

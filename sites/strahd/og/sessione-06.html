@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione VI · Arrivo a Vallaki e la lettera di Strahd</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">VI</p>
+      <h1 class="title">Arrivo a Vallaki e la lettera di Strahd</h1>
+      <p class="where">La Locanda di Urwin, a Vallaki</p>
+    </div>
+
+    <!-- Strahd's invitation on the inn table, sealed with the rampant raven, by candlelight -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- panelled wall of the room -->
+          <path d="M-680 -60 V300 M-654 206 q4 15 0 35 M-657 -40 q4 15 0 45 M-655 76 q4 13 0 46 M-624 -60 V300 M-604 88 q4 17 0 34 M-598 132 q4 13 0 46 M-597 173 q4 13 0 32 M-567 -60 V300 M-549 209 q4 11 0 34 M-552 157 q4 20 0 42 M-544 22 q4 14 0 49 M-508 -60 V300 M-486 120 q4 17 0 46 M-499 263 q4 14 0 42 M-487 54 q4 11 0 48 M-454 -60 V300 M-432 -4 q4 13 0 34 M-443 110 q4 12 0 47 M-446 176 q4 18 0 30 M-404 -60 V300 M-382 240 q4 13 0 38 M-393 81 q4 20 0 31 M-379 91 q4 14 0 50 M-354 -60 V300 M-327 264 q4 17 0 48 M-328 99 q4 18 0 40 M-331 106 q4 14 0 32 M-298 -60 V300 M-279 42 q4 18 0 33 M-287 -33 q4 16 0 37 M-280 39 q4 19 0 35 M-246 -60 V300 M-225 233 q4 13 0 39 M-235 108 q4 14 0 36 M-231 209 q4 17 0 49 M-187 -60 V300 M-166 77 q4 13 0 38 M-162 111 q4 19 0 36 M-169 -38 q4 11 0 31 M-130 -60 V300 M-107 -5 q4 14 0 49 M-121 225 q4 12 0 49 M-113 150 q4 18 0 46 M-78 -60 V300 M-67 105 q4 14 0 33 M-56 154 q4 11 0 43 M-67 -10 q4 16 0 39 M-19 -60 V300 M4 155 q4 11 0 47 M3 -14 q4 19 0 48 M-1 237 q4 17 0 46 M29 -60 V300 M57 252 q4 14 0 46 M43 99 q4 17 0 31 M58 208 q4 13 0 49 M76 -60 V300 M90 226 q4 20 0 39 M85 246 q4 11 0 46 M96 158 q4 10 0 33 M127 -60 V300 M157 -24 q4 18 0 49 M143 177 q4 11 0 45 M147 -5 q4 15 0 40 M174 -60 V300 M194 -17 q4 10 0 41 M189 7 q4 12 0 41 M187 80 q4 12 0 41 M233 -60 V300 M245 90 q4 13 0 35 M258 137 q4 16 0 34 M249 61 q4 14 0 38 M293 -60 V300 M316 131 q4 17 0 43 M309 210 q4 17 0 49 M315 11 q4 14 0 31 M340 -60 V300 M350 195 q4 17 0 32 M348 74 q4 15 0 46 M360 30 q4 19 0 36 M392 -60 V300 M419 184 q4 12 0 43 M403 -3 q4 20 0 31 M417 245 q4 17 0 45 M447 -60 V300 M465 49 q4 12 0 47 M473 201 q4 12 0 42 M473 39 q4 17 0 50 M503 -60 V300 M528 172 q4 11 0 42 M519 -30 q4 11 0 49 M532 -31 q4 19 0 39 M561 -60 V300 M572 -24 q4 10 0 31 M587 -39 q4 11 0 42 M572 45 q4 14 0 34 M621 -60 V300 M642 79 q4 16 0 43 M635 109 q4 11 0 48 M638 20 q4 18 0 42 M680 -60 V300 M699 211 q4 11 0 42 M707 107 q4 15 0 44 M698 212 q4 18 0 48 M728 -60 V300 M755 245 q4 19 0 37 M739 38 q4 14 0 47 M736 72 q4 13 0 32 M783 -60 V300 M811 198 q4 11 0 38 M811 -1 q4 18 0 40 M802 256 q4 18 0 40 M834 -60 V300 M860 268 q4 16 0 47 M859 161 q4 11 0 33 M855 -6 q4 17 0 33 M887 -60 V300 M910 -5 q4 18 0 32 M910 264 q4 11 0 37 M911 9 q4 19 0 34" stroke="#efe6d0" stroke-width="1.4" fill="none" stroke-linecap="round" />
+          <!-- the table -->
+          <path d="M-680 300 H920 V600 H-680 Z" fill="#2a2016" />
+          <path d="M-680 300 H920" stroke="#efe6d0" stroke-width="4" />
+          <path d="M-680 318 H920 M-680 342 H920 M-680 376 H920 M-680 424 H920 M-680 490 H920" stroke="#efe6d0" stroke-width="1.2" stroke-dasharray="160 30 90 24" />
+          <!-- the letter -->
+          <path d="M96 438 L130 318 L388 300 L404 424 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" />
+          <path d="M150 340 L360 326 M146 356 L330 344 M142 372 L362 358 M138 388 L300 378 M180 410 L260 404" stroke="#2a2016" stroke-width="2.2" stroke-dasharray="22 6 14 6 30 6" />
+          <text x="270" y="424" fill="#2a2016" font-family="IM Fell English" font-style="italic" font-size="18" transform="rotate(-4 270 424)">Strahd</text>
+          <!-- the wax seal: a raven rampant before a castle -->
+          <circle cx="330" cy="404" r="26" fill="#2a2016" />
+          <path d="M318 418 V398 l4 -6 l4 6 V418 M334 418 V394 l4 -6 l4 6 V418" fill="none" stroke="#efe6d0" stroke-width="1.6" />
+          <path d="M318 392 q8 -14 22 -10 q-4 4 -10 6 l8 6 q-12 2 -20 -2" fill="#efe6d0" />
+          <!-- the candle -->
+          <path d="M460 150 L488 150 M459 159 L504 174 M454 168 L477 184 M448 174 L476 213 M439 179 L448 205 M430 180 L430 228 M421 179 L412 205 M412 174 L384 213 M406 168 L383 184 M401 159 L356 174 M400 150 L372 150 M401 141 L356 126 M406 132 L383 116 M412 126 L384 87 M421 121 L412 95 M430 120 L430 72 M439 121 L448 95 M448 126 L476 87 M454 132 L477 116 M459 141 L504 126" stroke="#efe6d0" stroke-width="2.4" stroke-linecap="round" />
+          <path d="M416 300 V178 H444 V300 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" />
+          <path d="M422 190 q4 20 0 40 M436 200 v60" stroke="#2a2016" stroke-width="1.4" fill="none" />
+          <path d="M430 128 C440 146 444 160 430 176 C416 160 420 146 430 128 Z" fill="#efe6d0" stroke="#2a2016" stroke-width="2" />
+          <path d="M430 176 V184" stroke="#2a2016" stroke-width="2" />
+          <path d="M392 300 a38 10 0 1 0 76 0 a38 10 0 1 0 -76 0" fill="#2a2016" stroke="#efe6d0" stroke-width="2" />
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

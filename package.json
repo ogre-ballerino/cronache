@@ -20,7 +20,8 @@
     "transcribe": "node scripts/transcribe.mjs",
     "session": "node scripts/session.mjs",
     "test": "pnpm --filter @cronache/core test",
-    "scheda": "node scripts/scheda.mjs"
+    "scheda": "node scripts/scheda.mjs",
+    "og": "node scripts/og.mjs"
   },
   "optionalDependencies": {
     "parakeet-coreml": "^2.2.0"

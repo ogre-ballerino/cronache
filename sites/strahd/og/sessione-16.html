@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>Sessione XVI · I cavalieri del drago</title>
+  <link rel="stylesheet" href="og.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="cartouche">
+      <p class="number">XVI</p>
+      <h1 class="title">I cavalieri del drago</h1>
+      <p class="where">Da Vallaki ad Argynvostholt</p>
+    </div>
+
+    <!-- Argynvostholt in the storm, behind the stone dragon that faces it -->
+    <svg class="woodcut" viewBox="-660 -50 1200 630" data-arte="-340 14 1200 450" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="cut" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" />
+        </filter>
+        <filter id="ink" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="grain" />
+          <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0.937  0 0 0 0 0.902  0 0 0 0 0.816  9 0 0 0 -6.5" result="specks" />
+          <feComposite in="specks" in2="SourceGraphic" operator="in" result="worn" />
+          <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="worn" /></feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#ink)">
+        <g filter="url(#cut)">
+          <rect x="-680" y="-70" width="1600" height="680" fill="#2a2016" />
+
+          <!-- sky, lightening towards the horizon -->
+          <g data-sky="-40 330" data-left="-660" data-width="1560" data-seed="16" stroke="#efe6d0" fill="none" stroke-linecap="round"></g>
+
+          <!-- lightning far off over the house -->
+          <path d="M392 26 L374 84 L392 80 L366 150 L404 70 L386 74 L402 26 Z" fill="#efe6d0" />
+
+          <!-- the promontory and the valley falling away to the left -->
+          <path d="M-680 360 C-400 330 -200 356 0 348 C80 344 160 344 230 338 C300 332 380 330 560 326 C700 322 800 330 920 326 V600 H-680 Z" fill="#2a2016" />
+
+          <!-- Argynvostholt: fairy-tale cones, the dark octagonal tower, a third fallen in -->
+          <g transform="translate(324 340) scale(.72) translate(-262 -340)">
+          <path fill="#2a2016" d="
+            M262 340 V246 L274 196 L286 246 V256 L344 212 L404 256 V150 H398 V132 H408 V140 H418 V132 H428 V140 H438 V132 H448 V150 H442
+            V246 L456 200 L470 246 V268 L478 258 L486 284 L496 272 L504 300 L514 296 V340 Z" />
+          <path d="M274 196 V180 M456 200 V184" stroke="#2a2016" stroke-width="3" />
+          <!-- slits of storm light through the broken wall -->
+          <path d="M482 300 l4 16 M496 306 l3 12" stroke="#efe6d0" stroke-width="3" stroke-linecap="round" />
+          </g>
+
+          <!-- fog lying in front of the house -->
+          <g stroke="#efe6d0" fill="none" stroke-linecap="round">
+            <path d="M232 346 C270 338 300 350 340 342 C380 334 420 348 470 340 C490 337 505 340 540 336 C620 330 700 342 800 334 C840 331 880 336 920 334" stroke-width="5" />
+            <path d="M250 362 C290 356 330 366 380 358 C420 352 460 362 540 354 C620 348 720 360 920 350" stroke-width="3" />
+            <path d="M300 378 C340 372 380 380 430 374" stroke-width="1.6" />
+          </g>
+
+          <!-- grass cut into the ground -->
+          <g stroke="#efe6d0" stroke-width="1.6" stroke-linecap="round" fill="none">
+            <path d="M260 430 l4 -10 M270 432 l2 -12 M282 428 l5 -9 M380 450 l3 -11 M392 448 l5 -8 M470 420 l2 -12 M480 424 l4 -9" />
+            <path d="M240 470 C300 462 380 470 540 458 C640 452 760 462 920 452" stroke-width="1.2" />
+            <path d="M260 494 C320 488 400 494 540 484 C660 478 780 488 920 478" stroke-width="1.2" />
+          </g>
+
+          <!-- granite cube, cut with its joints -->
+          <path d="M36 600 V392 H226 V600 Z" fill="#2a2016" />
+          <g stroke="#efe6d0" stroke-linecap="round" fill="none">
+            <path d="M36 392 H226" stroke-width="4" />
+            <path d="M44 436 H218 M44 482 H218 M120 396 V432 M176 440 V478 M90 486 V514" stroke-width="2" />
+            <path d="M216 400 V510" stroke-width="1.4" />
+          </g>
+
+          <!-- the stone dragon, sitting like a heraldic beast, wings folded, staring at the house -->
+          <path d="M60 388 C30 394 22 422 38 442 C52 460 44 480 26 474" fill="none" stroke="#efe6d0" stroke-width="14" stroke-linecap="round" />
+          <path d="M60 388 C30 394 22 422 38 442 C52 460 44 480 26 474" fill="none" stroke="#2a2016" stroke-width="9" stroke-linecap="round" />
+          <!-- bat wing, half folded, raised behind the back -->
+          <path fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" d="
+            M168 296 L182 218 L136 116 L130 96 L146 114
+            Q118 150 62 166 Q86 196 54 234 Q84 250 66 296 Q96 300 112 330 Z" />
+          <g stroke="#efe6d0" stroke-linecap="round" fill="none" stroke-width="1.8">
+            <path d="M146 116 L62 166 M146 116 L54 234 M146 116 L66 296" />
+          </g>
+          <path fill="#2a2016" stroke="#efe6d0" stroke-width="2.4" stroke-linejoin="round" d="
+            M58 392 C50 366 58 338 86 326 C108 316 130 306 148 290 L160 272 L170 280 L176 260 L188 268 L192 248 L204 254 L206 234 L218 238 L220 218 L232 222 L234 204 L244 202
+            L224 178 L254 194 L238 166 L266 190
+            C284 190 304 194 324 202 L338 210 L326 215 L304 216 L318 222 L296 226
+            C282 228 270 232 262 240 C250 252 240 266 234 284 C230 300 230 316 236 330
+            L244 380 L256 392 L238 392 L232 384 L226 392 L214 392 L216 360
+            C200 350 180 350 166 362 C150 374 140 384 136 392 L124 392 L118 385 L112 392 Z" />
+
+          <g stroke="#efe6d0" stroke-linecap="round" fill="none">
+            <!-- belly plates down the neck -->
+            <path d="M258 248 l10 6 M250 266 l10 5 M244 286 l10 4 M240 306 l10 3 M238 326 l10 2" stroke-width="2" />
+            <!-- scales on the haunch -->
+            <path d="M70 356 q7 -7 14 0 q7 -7 14 0 M66 374 q7 -7 14 0 q7 -7 14 0 q7 -7 14 0 M84 340 q7 -7 14 0" stroke-width="1.6" />
+            <!-- haunch and foreleg muscle -->
+            <path d="M100 330 C124 336 140 356 140 384 M228 336 C226 352 230 366 238 378" stroke-width="1.6" />
+            <!-- the jaw's hairline seam, the nostril and the eye -->
+            <path d="M282 222 L318 216" stroke-width="1.2" />
+            <path d="M326 206 l3 1" stroke-width="2.4" />
+            <path d="M276 200 l12 2" stroke-width="3" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  </main>
+  <script src="woodcut.js"></script>
+</body>
+</html>

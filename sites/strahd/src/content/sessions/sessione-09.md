@@ -4,6 +4,7 @@ numero: 9
 data: 2026-08-13
 estratto: Erieth risale in cima alla villa del borgomastro, il gruppo lo raggiunge con una corda e scoprono una porta trappola che nasconde un macabro studio segreto.
 luoghiVisitati: [Vallaki, Villa del Borgomastro]
+anteprima: /images/sessioni/sessione-09.png
 ---
 
 Il gruppo nota, con un po' di ritardo, un problema nel loro sistema di segnalazione coi corvi organizzato con [[Urwin]]: era pensato solo per avvisare dalla piazza verso la [[Villa del Borgomastro]], non viceversa — un buco nel piano di cui si accorgono solo ora.

@@ -72,7 +72,17 @@ For each existing entity that appears again:
 - Always review the overview's last section, `## Questioni aperte`: one bullet per mystery or unanswered question, `- **Short topic.** The question?`, with wikilinks, most pressing first. Add the questions this session raised; remove a bullet once play answers it (the answer lives in the session and the narrative above, so no "resolved" list); reword it if the answer is partial. Only questions the group has, or could ask from what it saw: never hint at what the reference material says, and leave out player characters' own secrets. List the changes in the report, since the user knows best what the group considers open.
 - If the site has a map, update it as its `CLAUDE.md` describes; don't invent coordinates for new pins — list them in the report so the user can place them.
 
-## 6. Verify
+## 6. Woodcut
+
+Only if the site has an `og/` folder (e.g. `sites/strahd/og/`); otherwise skip this step. Each session gets a woodcut of its key scene, used as the link preview (with the title on a cartouche) and as the frontispiece on the session page (without text).
+
+1. Copy the latest `og/sessione-NN.html` to `og/sessione-<N>.html`. Change the `<title>`, the roman numeral ("Capitolo VIII" on ombre), the title and the `where` line (the places of `luoghiVisitati`, e.g. "Da Vallaki ad Argynvostholt").
+2. Redraw the SVG scene for this session: the image the group will remember, seen as they saw it (a place, a creature, an object). Keep the woodcut language of the site's `og.css` and `woodcut.js`: solid ink masses, light cut out in paper-coloured lines, the generated sky, no colour but the site's own: ink and paper on strahd; bone on green-black on ombre, with its gold only for fire and light; bone on black on porte, with its sick green for light and the text typed on a report. A light shape that overflows its frame (a window, a doorway) goes in a `clipPath`. Silhouettes must read at 400px wide. Nothing the group hasn't seen: no hidden villain, no room they didn't enter.
+3. Run `pnpm og sites/<site>/og/sessione-<N>.html`: it writes `public/images/sessioni/sessione-<N>.png` (1200×630 card) and `sessione-<N>-arte.webp` (1200×450 frontispiece, the `data-arte` crop of the same block, any 8:3 box, so a narrow scene can be zoomed with e.g. `800 300`; picked up by the session page automatically).
+4. Read both images and fix what doesn't read: shapes merging into each other, the scene off-centre in the frontispiece, lines stopping short of its edges, art cut off at the borders. Render again.
+5. Set `anteprima: /images/sessioni/sessione-<N>.png` in the session's frontmatter.
+
+## 7. Verify
 
 Run `pnpm -C sites/<site> build` and check the output:
 
@@ -80,11 +90,11 @@ Run `pnpm -C sites/<site> build` and check the output:
 - Unresolved wikilinks fail the build, listed together: fix each by correcting the target or creating the missing entity.
 - Fix every `[wikilinks] … names both …` warning: two entries share a name, so one of them is probably a duplicate.
 
-## 7. Report
+## 8. Report
 
 End with a short report:
 
-- Session file created, entities created, entities updated.
+- Session file created, entities created, entities updated, and the woodcut's two images for the user to look at.
 - **Ambiguities**: every name or detail you had to interpret, with your choice (e.g. "«Strad» → Strahd von Zarovich", "unclear whether Izek died: left `stato: vivo`").
 - Anything left for the user: map pins to place, a missing session date, the next session date if the site keeps it in `campaign.config.mjs`, and for new player characters the portraits to add in `public/images/personaggi/` (`<id>.webp` square + `<id>-full.webp` tall, converted from PNG as the root `CLAUDE.md` explains; the home page picks up the full one automatically, then set `immagine`).
 - A suggested commit message, e.g. `feat(content): add sessione-11`.
