@@ -6,10 +6,7 @@ estratto: Un foglio in tedesco mezzo bruciato nel caminetto di Hans Traeumer, la
 tag: [deutsche bank, mozart]
 ---
 
-Trovato nel caminetto dello studio della [[Casa di Hans Traeumer]]:
-qualcuno ha provato a bruciarlo. È in tedesco: una dichiarazione di custodia
-di una cassetta di sicurezza della [[Deutsche Bank]], con un indirizzo
-parziale di [[Berlino]]. In fondo, una frase:
+Trovato nel caminetto dello studio della [[Casa di Hans Traeumer]]: qualcuno ha provato a bruciarlo. È in tedesco: una dichiarazione di custodia di una cassetta di sicurezza della [[Deutsche Bank]], con un indirizzo parziale di [[Berlino]]. In fondo, una frase:
 
 > Thamos, König in Ägypten hat den Schlüssel.
 
