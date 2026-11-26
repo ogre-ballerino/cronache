@@ -9,14 +9,24 @@
   let previews: Promise<Record<string, any>> | undefined;
   let timer: ReturnType<typeof setTimeout> | undefined;
   let current: HTMLAnchorElement | undefined;
+  let pointerY: number | undefined;
 
   const load = () =>
     (previews ??= fetch(previewUrl)
       .then((res) => (res.ok ? res.json() : {}))
       .catch(() => ({})));
 
+  // A link wrapping onto several lines has one rect per line: anchor the card
+  // to the line under the pointer, not always to the first.
+  function lineRect(link: HTMLAnchorElement) {
+    const rects = [...link.getClientRects()];
+    const y = pointerY;
+    if (y === undefined) return rects[0] ?? link.getBoundingClientRect();
+    return rects.find((r) => y >= r.top && y <= r.bottom) ?? rects[0] ?? link.getBoundingClientRect();
+  }
+
   function place(link: HTMLAnchorElement) {
-    const rect = link.getClientRects()[0] ?? link.getBoundingClientRect();
+    const rect = lineRect(link);
     const gap = 8;
     const width = card.offsetWidth;
     const left = Math.min(Math.max(gap, rect.left), document.documentElement.clientWidth - width - gap);
@@ -47,6 +57,7 @@
     if (!link || link === current) return;
     hide();
     current = link;
+    pointerY = event instanceof PointerEvent ? event.clientY : undefined;
     timer = setTimeout(() => show(link), delay);
   }
 
