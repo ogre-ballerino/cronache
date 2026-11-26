@@ -13,6 +13,7 @@ const { title, heading, lede, description, placeholder } = config.sections.cerca
   <p class="page-lede">{lede}</p>
 
   <div class="search">
+    <pagefind-config highlight-param="evidenzia"></pagefind-config>
     <pagefind-input placeholder={placeholder} autofocus></pagefind-input>
     <div class="search-bar">
       <pagefind-summary></pagefind-summary>

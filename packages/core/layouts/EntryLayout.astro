@@ -2,6 +2,7 @@
 import config from 'virtual:cronache/config';
 import BaseLayout from './BaseLayout.astro';
 import Backlinks from '../components/Backlinks.astro';
+import SearchHighlight from '../components/SearchHighlight.astro';
 import { collectionByKey, entryUrl } from '../lib/collections.mjs';
 import { imageSize } from '../lib/portraits';
 import { isAlive, isLost } from '../lib/status.mjs';
@@ -48,4 +49,5 @@ const section = config.sections[collectionByKey(collection)!.section as keyof ty
       <slot name="after" />
     </div>
   </article>
+  <SearchHighlight />
 </BaseLayout>

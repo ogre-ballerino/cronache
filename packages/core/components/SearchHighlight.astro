@@ -1,0 +1,24 @@
+<script is:inline type="module">
+  // Inline: Vite can't bundle an import of /pagefind/, which only exists after the build.
+  const PARAM = 'evidenzia';
+  const url = new URL(location.href);
+
+  if (url.searchParams.has(PARAM)) {
+    try {
+      await import('/pagefind/pagefind-highlight.js');
+      new window.PagefindHighlight({ highlightParam: PARAM, addStyles: false, markContext: '.entry-content' });
+
+      const marks = [...document.querySelectorAll('mark.pagefind-highlight')];
+      const anchor = url.hash && document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      const first = anchor
+        ? marks.find((m) => anchor.compareDocumentPosition(m) & Node.DOCUMENT_POSITION_FOLLOWING)
+        : marks[0];
+      first?.scrollIntoView({ block: 'center' });
+    } catch {
+      // No index in astro dev: the page just opens as usual.
+    } finally {
+      url.searchParams.delete(PARAM);
+      history.replaceState(history.state, '', url);
+    }
+  }
+</script>
