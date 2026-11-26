@@ -4,6 +4,7 @@ import '../styles/base.css';
 import 'virtual:cronache/styles';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LinkPreview from '../components/LinkPreview.astro';
 import { defaultOgImage, type OgImage } from '../lib/og';
 
 interface Props {
@@ -56,5 +57,6 @@ const ogImageURL = new URL(og.src, Astro.site);
       </div>
     </main>
     <Footer />
+    <LinkPreview />
   </body>
 </html>

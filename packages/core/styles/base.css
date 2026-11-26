@@ -86,6 +86,13 @@ main {
 
 /* About: the "?" in the nav and its popover */
 
+.site-nav-end {
+  display: inline-flex;
+  align-items: baseline;
+  gap: inherit;
+  white-space: nowrap;
+}
+
 .site-about-toggle {
   width: 1.5em;
   height: 1.5em;
@@ -586,6 +593,103 @@ main {
 
 .backlinks-sessions a {
   text-decoration: none;
+}
+
+/* The session's loot as an account-book ledger: item, dotted leader, holder or amount. */
+.entry-content .loot {
+  list-style: none;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  hyphens: manual;
+}
+
+.loot li {
+  display: flex;
+  align-items: last baseline;
+  gap: 0.4em;
+}
+
+.loot li + li {
+  margin-top: 0.2rem;
+}
+
+.loot-label {
+  min-width: 0;
+}
+
+.loot-leader {
+  flex: 1 0 1.5em;
+  border-bottom: 2px dotted var(--color-rule);
+}
+
+.loot-value {
+  flex: none;
+  font-family: var(--font-sc);
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+}
+
+.loot-value a {
+  text-decoration: none;
+}
+
+.loot-amount {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Hovering or focusing a wikilink shows the entry's card. */
+.link-preview {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  gap: 0.75rem;
+  width: min(22rem, calc(100vw - 1rem));
+  padding: 0.75rem 0.9rem;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 0.18);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: left;
+  pointer-events: none;
+}
+
+.link-preview[hidden] {
+  display: none;
+}
+
+.link-preview-image {
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+}
+
+.link-preview-body {
+  min-width: 0;
+}
+
+.link-preview p {
+  margin: 0;
+}
+
+.link-preview .link-preview-excerpt {
+  margin-top: 0.35rem;
+}
+
+.link-preview-title {
+  font-family: var(--font-display);
+  font-size: 1.1em;
+}
+
+.link-preview-meta {
+  font-family: var(--font-sc);
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-muted);
 }
 
 .entry-pager {

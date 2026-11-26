@@ -38,8 +38,15 @@ data: <YYYY-MM-DD — the real session date if known; interactively, ask if unkn
 estratto: <1-2 sentences, max 300 characters (schema-enforced)>
 luoghiVisitati: [<titolo of each place the group was physically in — this is what marks a place as visited, on a map too if the site has one>]
 tag: [<optional, short>]
+bottino:  # D&D sites only (`features.schede: 'dnd5e'`); omit when nothing was kept
+  monete: { mo: <N>, ma: <N> }  # any of mp, mo, me, ma, mr
+  oggetti:
+    - nome: <short name, as the group knows it: what it is, not its story (that's in the body); plain text, no wikilinks>
+      chi: <the character who took it, by titolo; omit if shared or unclear>
 ---
 ```
+
+`bottino` lists what the group found and kept this session, shown in a box at the end of the page: coins and items picked up, not money spent, documents read and left, or things left where they were. Each item with a `chi` also appears under "Bottino raccolto" on that character's page, so `chi` must resolve to the character's file like a wikilink would.
 
 Body: a third-person narrative in Italian that summarises what happened, split into `##` sections by scene. Past tense or narrative present consistent with earlier sessions. Keep it readable prose — no raw transcript, no out-of-character table talk, no rules chatter unless it matters to the story. Link every entity on its first mention in each section.
 
@@ -62,6 +69,7 @@ For each existing entity that appears again:
 ## 5. Overview and map
 
 - Update `src/content/riassunto/overview.md` only if the campaign's overall state changed meaningfully (goal reached, new faction, new region, major death). Append or adjust the relevant section; don't rewrite it.
+- Always review the overview's last section, `## Questioni aperte`: one bullet per mystery or unanswered question, `- **Short topic.** The question?`, with wikilinks, most pressing first. Add the questions this session raised; remove a bullet once play answers it (the answer lives in the session and the narrative above, so no "resolved" list); reword it if the answer is partial. Only questions the group has, or could ask from what it saw: never hint at what the reference material says, and leave out player characters' own secrets. List the changes in the report, since the user knows best what the group considers open.
 - If the site has a map, update it as its `CLAUDE.md` describes; don't invent coordinates for new pins — list them in the report so the user can place them.
 
 ## 6. Verify

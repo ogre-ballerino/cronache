@@ -107,6 +107,8 @@ a {
 .site-header-masthead .site-nav {
   margin-top: 1.75rem;
   width: 100%;
+  /* Tighter than inner pages, so the whole nav fits the masthead's column. */
+  column-gap: 1.1rem;
   justify-content: center;
   padding: 0.6rem 0;
   border-top: 1px solid rgba(176, 144, 78, 0.3);

@@ -9,6 +9,9 @@ const { about } = config;
 
 const path = Astro.url.pathname;
 const isWithin = (href: string) => path === href.slice(0, -1) || path.startsWith(href);
+// The "?" travels with the last entry, so a wrapping nav never leaves it alone on a line.
+const links = config.nav.slice(0, -1);
+const last = config.nav.at(-1)!;
 ---
 <header class:list={['site-header', { 'site-header-masthead': masthead }]}>
   {masthead ? (
@@ -17,11 +20,16 @@ const isWithin = (href: string) => path === href.slice(0, -1) || path.startsWith
     <a href="/" class="site-header-title" set:html={config.headerTitle} />
   )}
   <nav class="site-nav" aria-label="Navigazione principale">
-    {config.nav.map((l) => (
+    {links.map((l) => (
       <a href={l.href} aria-current={isWithin(l.href) ? 'page' : undefined}>{l.label}</a>
     ))}
-    {about && (
-      <button type="button" class="site-about-toggle" popovertarget="site-about" aria-label={about.label}>?</button>
+    {about ? (
+      <span class="site-nav-end">
+        <a href={last.href} aria-current={isWithin(last.href) ? 'page' : undefined}>{last.label}</a>
+        <button type="button" class="site-about-toggle" popovertarget="site-about" aria-label={about.label}>?</button>
+      </span>
+    ) : (
+      <a href={last.href} aria-current={isWithin(last.href) ? 'page' : undefined}>{last.label}</a>
     )}
   </nav>
   {about && (

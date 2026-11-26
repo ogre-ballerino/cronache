@@ -4,6 +4,7 @@ import config from 'virtual:cronache/config';
 import EntryLayout from '../../layouts/EntryLayout.astro';
 import { ogImage } from '../../lib/og';
 import { fullPortrait } from '../../lib/portraits';
+import CharacterLoot from '../../components/CharacterLoot.astro';
 import { characterMeta } from '../../lib/characters';
 import { sheetPdfName, sheetPdfUrl, sheetsByCharacter, sheetUrl } from '../../lib/schede';
 
@@ -39,4 +40,5 @@ const meta = [characterMeta(entry.data, sheet), entry.data.fazione].filter(Boole
     </p>
   )}
   <Content />
+  <CharacterLoot id={entry.id} />
 </EntryLayout>

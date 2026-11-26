@@ -4,6 +4,13 @@ numero: 7
 data: 2026-05-27
 estratto: Il gruppo si divide tra la villa del borgomastro e la bottega del becchino; Erieth assassina il prete di Vallaki su ordine del suo patrono.
 luoghiVisitati: [Vallaki, Villa del Borgomastro, Bottega del Becchino, Chiesa di Vallaki]
+bottino:
+  monete: { mo: 50 }
+  oggetti:
+    - nome: Pozione di cura ferite, in una statuetta
+      chi: Artemis
+    - nome: Pozione che riduce la Forza, in una statuetta
+      chi: Artemis
 ---
 
 ## Mattina a Vallaki

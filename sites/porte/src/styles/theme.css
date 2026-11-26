@@ -586,6 +586,14 @@ main {
   padding: 2.5rem 0.5rem 3rem;
 }
 
+/* Wikilink previews float over the page, outside the paper: draw them on paper too. */
+.link-preview {
+  --color-bg: var(--color-paper);
+  --color-ink: var(--color-paper-ink);
+  --color-ink-muted: var(--color-paper-muted);
+  --color-rule: #a89d86;
+}
+
 main .container {
   --color-ink: var(--color-paper-ink);
   --color-ink-muted: var(--color-paper-muted);

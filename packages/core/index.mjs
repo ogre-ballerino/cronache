@@ -26,7 +26,7 @@ function routes(features) {
         ['/personaggi/[id]/scheda/[snapshot].pdf', 'personaggi/scheda-pdf.ts'],
       ]
     : [];
-  return [...pages, ...sheets, ['/cerca', 'cerca.astro']];
+  return [...pages, ...sheets, ['/cerca', 'cerca.astro'], ['/anteprime.json', 'anteprime.json.ts']];
 }
 
 function virtualModules(config, { root, contentDir, publicDir, sheetTemplate, coreDir }) {

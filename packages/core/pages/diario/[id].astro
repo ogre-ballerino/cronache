@@ -3,6 +3,7 @@ import { entryUrl } from '../../lib/collections.mjs';
 import { getCollection, render } from 'astro:content';
 import config from 'virtual:cronache/config';
 import EntryLayout from '../../layouts/EntryLayout.astro';
+import SessionLoot from '../../components/SessionLoot.astro';
 import { ogImage } from '../../lib/og';
 import { toRoman, longDate } from '../../lib/format';
 
@@ -27,6 +28,7 @@ const { Content } = await render(entry);
   og={ogImage(entry.data)}
 >
   <Content />
+  <SessionLoot loot={entry.data.bottino} />
   <nav slot="after" class="entry-pager" aria-label={config.labels.otherSessions}>
     {prev && (
       <a href={entryUrl('sessions', prev.id)}>&larr; {toRoman(prev.data.numero)}. {prev.data.titolo}</a>
