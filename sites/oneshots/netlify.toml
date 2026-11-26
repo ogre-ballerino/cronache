@@ -1,0 +1,16 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[redirects]]
+  from = "/avventure/il-kraken-crawl"
+  to = "/avventure/il-krakens-crawl"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/fogbrook"
+  to = "/luoghi/fogbrooke"
+  status = 301
