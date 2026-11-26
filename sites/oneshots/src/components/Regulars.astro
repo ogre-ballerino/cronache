@@ -2,13 +2,9 @@
 import { getCollection } from 'astro:content';
 import Avatar from './Avatar.astro';
 import { adventureCount } from '../lib/party';
-import { fullPortrait } from '../lib/portraits';
-import { isAlive } from '../lib/stato.mjs';
-
-interface Props {
-  detailed?: boolean;
-}
-const { detailed = false } = Astro.props;
+import { entryUrl } from '@cronache/core/lib/collections.mjs';
+import { fullPortrait } from '@cronache/core/lib/portraits';
+import { isAlive } from '@cronache/core/lib/status.mjs';
 
 // Whoever has played the most one-shots comes first.
 const regulars = (
@@ -31,14 +27,12 @@ const regulars = (
           <span class="regular-portrait"><Avatar character={character} size="lg" /></span>
         )}
         <h3 class="regular-name">
-          <a href={`/personaggi/${character.id}`}>{character.data.titolo}</a>
+          <a href={entryUrl('personaggi', character.id)}>{character.data.titolo}</a>
         </h3>
         <p class="regular-count">
           {count === 1 ? '1 avventura' : `${count} avventure`}
           {!isAlive(character.data.stato) && <>, {character.data.stato}</>}
         </p>
-        {detailed && character.data.classe && <p class="regular-class">{character.data.classe}</p>}
-        {detailed && character.data.estratto && <p class="regular-excerpt">{character.data.estratto}</p>}
       </li>
     ))}
   </ul>

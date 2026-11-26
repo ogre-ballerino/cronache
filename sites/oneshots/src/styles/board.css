@@ -1,4 +1,19 @@
-/* The board: one paper notice per one-shot, pinned slightly askew. */
+/* The home page: the quest board on the bare wall, its notices, the regulars' portraits, avatars and ink stamps. */
+
+/* The home holds loose paper, not a sheet. */
+main > .container:has(.board) {
+  max-width: 72rem;
+  padding: 0 1rem;
+  rotate: none;
+  color: inherit;
+  background: none;
+  box-shadow: none;
+}
+
+main > .container:has(.board)::before,
+main > .container:has(.board)::after {
+  content: none;
+}
 
 .board-title {
   margin: 0;
@@ -85,7 +100,7 @@
   text-align: center;
   font-style: italic;
   font-size: 0.95rem;
-  color: var(--ink-muted);
+  color: var(--color-ink-muted);
 }
 
 .notice-title {
@@ -96,7 +111,7 @@
 }
 
 .notice-title a {
-  color: var(--ink);
+  color: var(--color-ink);
   text-decoration: none;
 }
 
@@ -114,11 +129,11 @@
 .notice-terms {
   margin: 0;
   padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--color-hairline);
   text-align: center;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: var(--ink-muted);
+  color: var(--color-ink-muted);
 }
 
 .notice-excerpt {
@@ -140,7 +155,7 @@
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.35;
-  color: var(--ink-muted);
+  color: var(--color-ink-muted);
 }
 
 .avatar-stack {
@@ -161,7 +176,7 @@
 
 .notice-empty .notice-excerpt {
   font-style: italic;
-  color: var(--ink-muted);
+  color: var(--color-ink-muted);
 }
 
 /* The regulars: portraits pinned along the wall. */
@@ -220,7 +235,7 @@ img.regular-portrait {
 }
 
 .regular-name a {
-  color: var(--ink);
+  color: var(--color-ink);
   text-decoration: none;
 }
 
@@ -231,21 +246,84 @@ img.regular-portrait {
 }
 
 .regular:has(a:hover) .regular-name a {
-  color: var(--rubric);
+  color: var(--color-rubric);
 }
 
-.regular-count,
-.regular-class {
+.regular-count {
   margin: 0.15rem 0 0;
   font-style: italic;
   font-size: 0.95rem;
-  color: var(--ink-muted);
+  color: var(--color-ink-muted);
 }
 
-.regular-excerpt {
-  margin: 0.6rem 0 0;
-  text-align: left;
-  font-size: 0.95rem;
+/* Ink stamps: an adventure's outcome, a character's fate. */
+.stamp {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  z-index: 1;
+  padding: 0.1rem 0.55rem 0;
+  border: 0.22rem double currentColor;
+  border-radius: 0.3rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
   line-height: 1.5;
-  hyphens: auto;
+  rotate: -12deg;
+  opacity: 0.82;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.stamp-good {
+  color: var(--stamp-good);
+}
+
+.stamp-bad {
+  color: var(--stamp-bad);
+}
+
+.stamp-neutral {
+  color: var(--stamp-neutral);
+}
+
+/* Character avatars; without a portrait, a wax seal with their initials. */
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  background: var(--paper-edge);
+  box-shadow:
+    0 0 0 2px var(--color-bg),
+    0 1px 3px rgb(0 0 0 / 0.35);
+}
+
+.avatar-sm {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.8rem;
+}
+
+.avatar-md {
+  width: 3.75rem;
+  height: 3.75rem;
+  font-size: 1.2rem;
+}
+
+.avatar-lg {
+  width: 5.5rem;
+  height: 5.5rem;
+  font-size: 1.9rem;
+}
+
+.avatar-monogram {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: rgb(255 228 214 / 0.9);
+  background: radial-gradient(circle at 35% 30%, #c4453f, #8e1c1f 60%, #5c0f12);
 }

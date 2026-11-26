@@ -1,7 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { normalize } from './wikilinks.mjs';
+import { normalize } from '@cronache/core/lib/wikilinks.mjs';
 
-type Adventure = CollectionEntry<'avventure'>;
+type Adventure = CollectionEntry<'sessions'>;
 type Character = CollectionEntry<'personaggi'>;
 
 let partyCache: Map<string, Character[]> | null = null;
@@ -16,7 +16,7 @@ async function buildPartyIndex() {
   }
 
   const index = new Map<string, Character[]>();
-  for (const adventure of await getCollection('avventure')) {
+  for (const adventure of await getCollection('sessions')) {
     const party = adventure.data.personaggi.flatMap((name) => {
       const character = characters.get(normalize(name));
       if (!character) console.warn(`[party] ${adventure.id}: "${name}" is not a character`);

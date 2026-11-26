@@ -2,12 +2,13 @@
 import type { CollectionEntry } from 'astro:content';
 import Avatar from './Avatar.astro';
 import Stamp from './Stamp.astro';
-import { toRoman, longDate } from '../lib/format';
+import { entryUrl } from '@cronache/core/lib/collections.mjs';
+import { toRoman, longDate } from '@cronache/core/lib/format';
 import { systemLabel } from '../lib/systems';
 import { partyOf } from '../lib/party';
 
 interface Props {
-  adventure: CollectionEntry<'avventure'>;
+  adventure: CollectionEntry<'sessions'>;
 }
 const { adventure } = Astro.props;
 const { numero, titolo, data, sistema, livello, estratto, esito } = adventure.data;
@@ -17,7 +18,7 @@ const names = new Intl.ListFormat('it', { type: 'conjunction' }).format(party.ma
 <article class="notice">
   {esito && <Stamp label={esito} />}
   <p class="notice-number">Avviso n° {toRoman(numero)}</p>
-  <h2 class="notice-title"><a href={`/avventure/${adventure.id}`}>{titolo}</a></h2>
+  <h2 class="notice-title"><a href={entryUrl('sessions', adventure.id)}>{titolo}</a></h2>
   <p class="notice-terms">
     {systemLabel(sistema)}{livello && <>, livello {livello}</>}
     <br />

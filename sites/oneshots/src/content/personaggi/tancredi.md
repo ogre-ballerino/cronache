@@ -5,7 +5,7 @@ razza: Mezzorco
 sistema: dnd5e
 stato: viva
 estratto: Barbara mezzorca con gli occhialini da sapiente e un bestiario che legge al contrario; flemmatica finché non si toglie gli occhiali e va in furia, scudo in pugno e accetta in mano.
-immagine: /images/personaggi/tancredi.png
+immagine: /images/personaggi/tancredi.webp
 tag: [furia, scudo]
 ---
 

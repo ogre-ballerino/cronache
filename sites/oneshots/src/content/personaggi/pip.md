@@ -5,7 +5,7 @@ razza: Gnomo
 sistema: dnd5e
 stato: vivo
 estratto: Gnomo barbaro di novanta centimetri convinto di essere la persona più forte al mondo; se gli danno del piccoletto, va in furia e diventa un gigante di tre metri.
-immagine: /images/personaggi/pip.png
+immagine: /images/personaggi/pip.webp
 tag: [furia, gigante, trofeo]
 ---
 
