@@ -46,6 +46,16 @@ const ogImageURL = new URL(og.src, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:image:alt" content={og.alt} />
+    {config.umami && (
+      <script
+        is:inline
+        defer
+        src={config.umami.script}
+        data-website-id={config.umami.websiteId}
+        data-domains={Astro.site?.hostname}
+        data-exclude-hash="true"
+      ></script>
+    )}
   </head>
   <body>
     <Header masthead={masthead}>

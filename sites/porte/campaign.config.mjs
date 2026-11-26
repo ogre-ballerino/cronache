@@ -1,5 +1,5 @@
 import { defineCampaign } from '@cronache/core';
-import { ogreBallerinoAbout } from '../ogre-ballerino.mjs';
+import { ogreBallerinoAbout, ogreBallerinoUmami } from '../ogre-ballerino.mjs';
 
 const name = "Porte sull'Oscurità";
 
@@ -20,6 +20,7 @@ export default defineCampaign({
   ],
   features: { handout: true, schede: 'coc7e' },
   about: ogreBallerinoAbout(name),
+  umami: ogreBallerinoUmami('96de83df-8426-459e-80d3-71cbc7bc2a63'),
   footer: {
     ornament: '',
     lines: [

@@ -1,6 +1,8 @@
-// The "?" popover every Ogre Ballerino site shares: who we are, and how to get a journal like this.
+// What every Ogre Ballerino site shares: the "?" popover (who we are, and how to get a journal like this) and the Umami tracking.
 
 const EMAIL = 'luca@ogreballerino.com';
+// Proxied by each site's netlify.toml: first-party, so blockers leave it alone.
+const UMAMI_SCRIPT = '/stats/script.js';
 
 const CHRONICLES = [
   { name: 'La Maledizione di Strahd', url: 'https://strahd.ogreballerino.com/', game: 'D&amp;D 5e' },
@@ -29,4 +31,9 @@ export function ogreBallerinoAbout(siteName) {
       `<p class="site-about-more">Le altre cronache</p><ul>${others}</ul>`,
     ].join(''),
   };
+}
+
+/** @param {string} websiteId The site's id in Umami. */
+export function ogreBallerinoUmami(websiteId) {
+  return { script: UMAMI_SCRIPT, websiteId };
 }

@@ -7,3 +7,14 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+# Umami, first-party (see sites/ogre-ballerino.mjs)
+[[redirects]]
+  from = "/stats/script.js"
+  to = "https://stats.sirlisko.com/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/stats/api/send"
+  to = "https://stats.sirlisko.com/api/send"
+  status = 200
