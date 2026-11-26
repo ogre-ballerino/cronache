@@ -88,10 +88,12 @@ export function campaignCollections(extra: CollectionFields = {}) {
       extra.png
     ),
     luoghi: collection('luoghi', { tipo: z.string().optional(), regione: z.string().optional() }, extra.luoghi),
-    riassunto: defineCollection({ loader: loader('riassunto'), schema: z.object({ titolo: z.string() }) }),
   };
   return {
     ...collections,
+    ...(config.features.riassunto && {
+      riassunto: defineCollection({ loader: loader('riassunto'), schema: z.object({ titolo: z.string() }) }),
+    }),
     ...(config.features.handout && {
       handout: collection(
         'handout',

@@ -2,7 +2,7 @@
 // src/content and the Astro collection name; `section` is the key in
 // config.sections and the URL base.
 export const COLLECTIONS = [
-  { key: 'riassunto', section: 'riassunto', single: true },
+  { key: 'riassunto', section: 'riassunto', single: true, feature: 'riassunto' },
   { key: 'sessions', section: 'diario' },
   { key: 'personaggi', section: 'personaggi' },
   { key: 'png', section: 'png' },

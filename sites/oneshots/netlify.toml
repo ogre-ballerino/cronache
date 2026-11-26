@@ -1,0 +1,36 @@
+# Netlify UI: Package directory = sites/oneshots, Base directory unset, so install
+# and build run at the workspace root.
+[build]
+  command = "pnpm --filter oneshots build"
+  publish = "sites/oneshots/dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- sites/oneshots sites/ogre-ballerino.mjs packages/core package.json pnpm-lock.yaml pnpm-workspace.yaml"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# The adventures moved from /avventure to the engine's /diario.
+[[redirects]]
+  from = "/avventure/il-kraken-crawl"
+  to = "/diario/il-krakens-crawl/"
+  status = 301
+
+[[redirects]]
+  from = "/avventure/*"
+  to = "/diario/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/luoghi/fogbrook"
+  to = "/luoghi/fogbrooke/"
+  status = 301
+
+# Umami, first-party (see sites/ogre-ballerino.mjs)
+[[redirects]]
+  from = "/stats/script.js"
+  to = "https://stats.sirlisko.com/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/stats/api/send"
+  to = "https://stats.sirlisko.com/api/send"
+  status = 200

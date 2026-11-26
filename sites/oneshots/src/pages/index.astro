@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@cronache/core/layouts/BaseLayout.astro';
+import { sectionUrl } from '@cronache/core/lib/collections.mjs';
+import { getCollection } from 'astro:content';
+import config from 'virtual:cronache/config';
+import QuestCard from '../components/QuestCard.astro';
+import Regulars from '../components/Regulars.astro';
+
+const BOARD_SIZE = 9;
+
+const adventures = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
+const pinned = adventures.slice(0, BOARD_SIZE);
+const hasCharacters = (await getCollection('personaggi')).length > 0;
+---
+<BaseLayout masthead>
+  <Fragment slot="masthead">
+    <h1 class="masthead-title">{config.name}</h1>
+    <p class="masthead-lede">
+      Le one-shot giocate all'<a href="https://ogreballerino.com">Ogre Ballerino</a>, appese alla bacheca una
+      serata dopo l'altra.
+    </p>
+  </Fragment>
+
+  <div class="board">
+    {pinned.map((adventure) => <QuestCard adventure={adventure} />)}
+    {adventures.length === 0 && (
+      <article class="notice notice-empty">
+        <h2 class="notice-title">La bacheca è vuota</h2>
+        <p class="notice-excerpt">
+          Nessuna avventura appesa, per ora. Dopo la prima serata qui comparirà il suo avviso, con chi l'ha giocata.
+        </p>
+      </article>
+    )}
+  </div>
+  {adventures.length > pinned.length && (
+    <p class="board-more"><a href={sectionUrl('diario')}>Tutti i {adventures.length} avvisi</a></p>
+  )}
+
+  {hasCharacters && (
+    <section class="board-section">
+      <h2 class="board-title">Gli habitué</h2>
+      <p class="board-lede">Chi torna più spesso al tavolo.</p>
+      <Regulars />
+    </section>
+  )}
+</BaseLayout>

@@ -214,6 +214,25 @@ importers:
         specifier: ^1.5.2
         version: 1.5.2
 
+  sites/oneshots:
+    dependencies:
+      '@cronache/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@fontsource/cinzel':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/lora':
+        specifier: ^5.3.0
+        version: 5.3.0
+      astro:
+        specifier: ^7.3.1
+        version: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.6)
+    devDependencies:
+      pagefind:
+        specifier: ^1.5.2
+        version: 1.5.2
+
   sites/porte:
     dependencies:
       '@cronache/core':
@@ -597,6 +616,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource/cinzel@5.3.0':
+    resolution: {integrity: sha512-KEOYTsrRppW0uRIPWBDPrQgunCS6f8u4nzZxYRBfo9SCknKojLYjK7B0ZoVmJhyVLefz271ZQRF9EOpHZlfhRw==}
+
   '@fontsource/cormorant-garamond@5.3.0':
     resolution: {integrity: sha512-weuGsCirGVWBWqpt6YUp0yLThTe4G8YO45noq8wxeJCRvEpq5lFrxNMFSTxcyOyV5k5otzJ8guDzYegdYlcLMQ==}
 
@@ -611,6 +633,9 @@ packages:
 
   '@fontsource/im-fell-great-primer@5.3.0':
     resolution: {integrity: sha512-W/YmVwTcrzoTYiRaTd9FwRIX4so8pLc9ht9r3PB7jXsg/QJ4/Xzl44bHGLCwU6wS4xnqyulM5Vwq2E7grtyE/w==}
+
+  '@fontsource/lora@5.3.0':
+    resolution: {integrity: sha512-OK1g1z01rHVPqO5aw/FOIoDqc46KKYZdgL3NOLkxLWDk6QhDHhdr/h2BV1cke6gTvR1tzpDfdKyUkGsC+sQLeQ==}
 
   '@fontsource/reenie-beanie@5.3.0':
     resolution: {integrity: sha512-PgEiqKdPCLlvdY2IMWMBdYyMdr1mo1zxVBRNFlo3gclnCz560iiyTTt0dU4/VIGnjhyAb3gSWIQL0qXnn5oaYw==}
@@ -2393,6 +2418,8 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@fontsource/cinzel@5.3.0': {}
+
   '@fontsource/cormorant-garamond@5.3.0': {}
 
   '@fontsource/im-fell-dw-pica@5.3.0': {}
@@ -2402,6 +2429,8 @@ snapshots:
   '@fontsource/im-fell-english@5.3.0': {}
 
   '@fontsource/im-fell-great-primer@5.3.0': {}
+
+  '@fontsource/lora@5.3.0': {}
 
   '@fontsource/reenie-beanie@5.3.0': {}
 

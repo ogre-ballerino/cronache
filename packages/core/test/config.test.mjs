@@ -10,6 +10,7 @@ describe('resolveConfig', () => {
     const hrefs = (config) => config.nav.map((l) => l.href);
     assert.deepEqual(hrefs(resolveConfig(base)), ['/riassunto/', '/diario/', '/personaggi/', '/png/', '/luoghi/', '/cerca/']);
     assert.ok(hrefs(resolveConfig({ ...base, features: { handout: true } })).includes('/handout/'));
+    assert.ok(!hrefs(resolveConfig({ ...base, features: { riassunto: false } })).includes('/riassunto/'));
   });
 
   it('uses section labels in the nav and falls back title → heading', () => {

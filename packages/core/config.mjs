@@ -18,7 +18,8 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
  * @property {string} [headerTitle]      HTML of the header link on inner pages; defaults to `name`.
  * @property {{ href: string, label: string }[]} [nav]
  * @property {string[]} [css]            Stylesheets, in order: bare specifiers (fonts) or paths relative to the site root.
- * @property {{ handout?: boolean, schede?: false | 'dnd5e' | 'coc7e' }} [features]
+ * @property {{ riassunto?: boolean, handout?: boolean, schede?: false | 'dnd5e' | 'coc7e' }} [features]
+ *   `riassunto`: the campaign overview page, on by default; off for sites of standalone adventures.
  *   `schede`: the game system of the character sheets shown under each character page (lib/scheda/systems.ts).
  * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
  * @property {{ label: string, title: string, html: string }} [about]
@@ -103,7 +104,7 @@ export function defineCampaign(config) {
 
 /** @param {CampaignConfig} user */
 export function resolveConfig(user) {
-  const features = { handout: false, schede: false, ...user.features };
+  const features = { riassunto: true, handout: false, schede: false, ...user.features };
   const sections = Object.fromEntries(
     Object.entries(defaults.sections).map(([key, base]) => {
       const merged = { ...base, ...user.sections?.[key] };
