@@ -1,5 +1,5 @@
 import { defineCampaign } from '@cronache/core';
-import { ogreBallerinoAbout } from '../ogre-ballerino.mjs';
+import { ogreBallerinoAbout, ogreBallerinoUmami } from '../ogre-ballerino.mjs';
 
 const name = "La Bacheca dell'Ogre";
 
@@ -19,6 +19,7 @@ export default defineCampaign({
   ],
   features: { riassunto: false },
   about: ogreBallerinoAbout(name),
+  umami: ogreBallerinoUmami('1ffd3131-d8ee-4385-971a-ef02a1ddc0b7'),
   footer: {
     ornament: '',
     lines: [
