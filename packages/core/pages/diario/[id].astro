@@ -5,6 +5,7 @@ import config from 'virtual:cronache/config';
 import EntryLayout from '../../layouts/EntryLayout.astro';
 import SessionLoot from '../../components/SessionLoot.astro';
 import { ogImage } from '../../lib/og';
+import { imageSize, sessionArt } from '../../lib/portraits';
 import { toRoman, longDate } from '../../lib/format';
 
 export async function getStaticPaths() {
@@ -17,6 +18,8 @@ export async function getStaticPaths() {
 
 const { entry, prev, next } = Astro.props;
 const { Content } = await render(entry);
+const art = sessionArt(entry.id);
+const artSize = art ? imageSize(art) : undefined;
 ---
 <EntryLayout
   title={entry.data.titolo}
@@ -27,6 +30,7 @@ const { Content } = await render(entry);
   id={entry.id}
   og={ogImage(entry.data)}
 >
+  {art && <img slot="header" class="entry-frontispiece" src={art} alt="" width={artSize?.width} height={artSize?.height} />}
   <Content />
   <SessionLoot loot={entry.data.bottino} />
   <nav slot="after" class="entry-pager" aria-label={config.labels.otherSessions}>
