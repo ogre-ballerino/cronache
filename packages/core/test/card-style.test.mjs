@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { describe, it } from 'node:test';
-import { fontFaces, resolveToken, rootTokens } from '../lib/card-style.mjs';
+import { cardStyle, fontFaces, resolveToken, rootTokens } from '../lib/card-style.mjs';
 
 const tmp = (name, text) => {
   const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'cronache-card-')), name);
@@ -50,5 +50,21 @@ describe('fontFaces', () => {
       weight: 400,
       file: path.join(path.dirname(file), 'files/f-latin-400-normal.woff'),
     });
+  });
+});
+
+describe('cardStyle', () => {
+  it('prefers the --card-* tokens, falling back to the page ones', () => {
+    const theme = tmp(
+      'theme.css',
+      `:root {
+        --color-bg: #000; --color-ink: #eee; --color-ink-muted: #999; --color-rubric: gold; --color-rule: #333;
+        --paper: #ddd; --card-bg: var(--paper);
+        --font-display: 'Garamond', serif; --font-body: 'Body', serif; --font-card-title: 'Fraktur', serif;
+      }`
+    );
+    const style = cardStyle({ fonts: [], themes: [theme] });
+    assert.deepEqual(style.colors, { bg: '#ddd', ink: '#eee', 'ink-muted': '#999', rubric: 'gold', rule: '#333' });
+    assert.deepEqual([style.title, style.label, style.body], ['Fraktur', 'Garamond', 'Body']);
   });
 });

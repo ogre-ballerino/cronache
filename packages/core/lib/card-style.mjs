@@ -3,6 +3,8 @@ import path from 'node:path';
 
 // The link-preview cards are drawn from the site's own design tokens, so every
 // site gets cards in its own colours and fonts without configuring anything.
+// A theme whose pages differ from its woodcuts' cartouche sets `--card-<colour>`,
+// `--font-card-title` and `--font-card-label` so the two read alike.
 
 const COLORS = ['bg', 'ink', 'ink-muted', 'rubric', 'rule'];
 const SUBSETS = /latin(-ext)?-\d+-(normal|italic)/;
@@ -74,12 +76,14 @@ export function fontFaces(cssFile) {
  */
 export function cardStyle({ fonts, themes }) {
   const tokens = Object.assign({}, ...themes.map((file) => rootTokens(fs.readFileSync(file, 'utf8'))));
-  const colors = Object.fromEntries(COLORS.map((name) => [name, resolveToken(tokens, `color-${name}`)]));
+  const token = (card, page) => resolveToken(tokens, card) ?? resolveToken(tokens, page);
+  const colors = Object.fromEntries(COLORS.map((name) => [name, token(`card-${name}`, `color-${name}`)]));
   const missing = COLORS.filter((name) => !colors[name]);
   if (missing.length) throw new Error(`[cards] The theme defines no --color-${missing.join(', --color-')} in :root`);
   return {
     colors,
-    display: firstFamily(resolveToken(tokens, 'font-display')),
+    title: firstFamily(token('font-card-title', 'font-display')),
+    label: firstFamily(token('font-card-label', 'font-display')),
     body: firstFamily(resolveToken(tokens, 'font-body')),
     fonts: fonts.flatMap(fontFaces),
   };

@@ -16,9 +16,9 @@ const titleSize = (title) => (title.length <= 20 ? 104 : title.length <= 30 ? 86
  * @param {{ kind: string, title: string, excerpt?: string, footer: string }} text
  * @param {ReturnType<typeof import('./card-style.mjs').cardStyle>} style
  */
-export function cardTree({ kind, title, excerpt, footer }, { colors, display, body }) {
+export function cardTree({ kind, title, excerpt, footer }, { colors, title: titleFont, label, body }) {
   const frame = (inset, color) => h('div', { position: 'absolute', inset, border: `1px solid ${color}` });
-  const caps = { fontFamily: display, textTransform: 'uppercase', display: 'block', lineClamp: 1 };
+  const caps = { fontFamily: label, textTransform: 'uppercase', display: 'block', lineClamp: 1 };
   return h(
     'div',
     { width: CARD_WIDTH, height: CARD_HEIGHT, display: 'flex', background: colors.bg, color: colors.ink },
@@ -36,7 +36,7 @@ export function cardTree({ kind, title, excerpt, footer }, { colors, display, bo
         },
         [
           kind && h('div', { ...caps, fontSize: 22, letterSpacing: 6, color: colors.rubric }, kind),
-          h('div', { fontFamily: display, fontSize: titleSize(title), lineHeight: 1.05, marginTop: 14 }, title),
+          h('div', { fontFamily: titleFont, fontSize: titleSize(title), lineHeight: 1.05, marginTop: 14 }, title),
           excerpt &&
             h(
               'div',
