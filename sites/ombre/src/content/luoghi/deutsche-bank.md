@@ -3,6 +3,7 @@ titolo: Deutsche Bank
 tipo: Banca
 regione: Berlino
 estratto: I suoi impiegati non dormono più. Nel caveau, sotto una muffa spettrale, è custodito da un anno uno specchio di ossidiana.
+anteprima: /images/luoghi/deutsche-bank.png
 ---
 
 Un'imponente struttura in pietra, con grandi colonne, lampadari di cristallo, pavimenti di marmo e banconi di mogano. Gli impiegati sono emaciati e insonni, e uno è morto dopo essere stato trovato a mangiare monete.

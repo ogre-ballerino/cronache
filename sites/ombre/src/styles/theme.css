@@ -11,6 +11,9 @@
   --font-display: 'Cormorant Garamond', Garamond, Georgia, serif;
   --font-sc: 'Cormorant Garamond', Garamond, Georgia, serif;
   --font-body: 'Cormorant Garamond', Garamond, Georgia, serif;
+  /* Link-preview cards (core lib/card.mjs): the woodcuts' cartouche, its fraktur title. */
+  --card-ink-muted: #b8b19a;
+  --font-card-title: 'UnifrakturMaguntia', serif;
   --font-black: 'UnifrakturMaguntia', 'Cormorant Garamond', serif;
   --font-initial: 'UnifrakturMaguntia', 'Cormorant Garamond', serif;
   --font-hand: 'Reenie Beanie', 'Bradley Hand', cursive;

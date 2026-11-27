@@ -3,6 +3,7 @@ titolo: Vallaki
 tipo: cittadina
 regione: Barovia
 estratto: Cittadina murata un tempo governata con la forza da Barone Vargas, ora in preda alla rivolta e ai lupi.
+anteprima: /images/luoghi/vallaki.png
 ---
 
 Cittadina raggiunta dal gruppo scortando [[Ismark Kolyanovich]] e [[Ireena]] dal [[Villaggio di Barovia]]. Governata da [[Barone Vargas]] col suo programma di "felicità di stato" imposto con metodi violenti. Manifesti e maschere sorridenti dipinte a mano tappezzano muri e vetrine, imposti a monito di questa "felicità"; la piazza principale ospita anche una forca, riadattata a palco per discorsi e cerimonie ufficiali.

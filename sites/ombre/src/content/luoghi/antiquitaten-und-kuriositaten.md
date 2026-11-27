@@ -3,6 +3,7 @@ titolo: Antiquitäten und Kuriositäten
 tipo: Negozio di antiquariato
 regione: Berlino
 estratto: Il negozio di Kurt Weber, in un vicolo buio vicino alla Sprea. Il suo indirizzo arriva agli investigatori su un biglietto da visita.
+anteprima: /images/luoghi/antiquitaten-und-kuriositaten.png
 ---
 
 Nascosto in un vicolo buio vicino alla Sprea, sotto un'insegna coperta di fuliggine. In vetrina, maschere africane, un globo celeste ammaccato, una mano mummificata; dentro, scaffali fino al soffitto, grimori, pugnali cerimoniali, oggetti maledetti, e un odore di incenso stantio, carta vecchia, senape e carne. Un sortilegio lo protegge dai poteri maligni che si aggirano per [[Berlino]].

@@ -92,6 +92,14 @@ body {
   color: var(--muted);
 }
 
+/* A place's card (pnpm og --luogo): its kind and region where the session's numeral was. */
+.place .number {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
 /* ?arte: the frontispiece on the session page, which already shows the title. */
 .arte body,
 .arte .card {

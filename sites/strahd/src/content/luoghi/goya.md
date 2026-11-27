@@ -3,6 +3,7 @@ titolo: Goya
 tipo: città
 regione: Morgren
 estratto: Città natale del gruppo, capitale del regno omonimo, a nord del continente di Morgren tra la costa e la catena dei Monti Goyaman.
+anteprima: /images/luoghi/goya.png
 ---
 
 Città di partenza della compagnia, prima di Barovia. Qui vive il padre di [[Artemis]], la cui casa è teatro dello scontro che dà origine al gruppo: [[Erieth]] e [[Tariq]], inseguendo [[I Fratelli Banditi|alcuni lestofanti]] in cerca di vendetta contro Artemis, si ritrovano a difendere la casa insieme ad Artemis stesso e a [[Don Matteor]].

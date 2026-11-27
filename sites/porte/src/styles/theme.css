@@ -21,6 +21,13 @@
   --font-initial: 'IM Fell English', Georgia, serif;
   --font-typed: 'Special Elite', 'Courier New', monospace;
   --paper-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  /* Link-preview cards (core lib/card.mjs): a typed report, like the woodcuts' cartouche. */
+  --card-bg: var(--color-paper);
+  --card-ink: var(--color-paper-ink);
+  --card-ink-muted: var(--color-paper-muted);
+  --card-rubric: var(--color-paper-ink);
+  --card-rule: #8f846f;
+  --font-card-label: 'Special Elite', 'Courier New', monospace;
 }
 
 html {
