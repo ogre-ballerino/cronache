@@ -3,11 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
+    "dev": "pnpm campaigns && wrangler dev",
+    "deploy": "pnpm campaigns && wrangler deploy",
     "types": "wrangler types",
-    "check": "wrangler types && tsc --noEmit",
-    "test": "node --test test/*.test.ts"
+    "check": "pnpm campaigns && wrangler types && tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "campaigns": "node scripts/campaigns.ts",
+    "commands": "node --env-file=.dev.vars scripts/commands.ts"
   },
   "devDependencies": {
     "typescript": "^7.0.2",

@@ -7,17 +7,27 @@ import { ogImage } from '../lib/og';
 
 // Read by the Discord bot (bots/discord): keep the shape in sync with its types.
 export const GET: APIRoute = async ({ site }) => {
-  const [latest] = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
+  const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
+  const [latest] = sessions;
   const absolute = (path: string) => new URL(path, site).href;
+  const { announcement, readMore, color } = config.discord;
   return Response.json({
-    ...config.discord,
-    ultima: latest && {
+    announcement,
+    readMore,
+    color,
+    latest: latest && {
       url: absolute(entryUrl('sessions', latest.id)),
-      titolo: latest.data.titolo,
-      etichetta: `${config.labels.session} ${toRoman(latest.data.numero)}`,
-      data: longDate(latest.data.data),
-      estratto: latest.data.estratto ?? '',
-      immagine: absolute(ogImage(latest.data).src),
+      title: latest.data.titolo,
+      label: `${config.labels.session} ${toRoman(latest.data.numero)}`,
+      date: longDate(latest.data.data),
+      excerpt: latest.data.estratto ?? '',
+      image: absolute(ogImage(latest.data).src),
     },
+    // Every session's real date, for the calendar feed's history.
+    sessions: sessions.map((s) => ({
+      date: s.data.data.toISOString().slice(0, 10),
+      title: s.data.titolo,
+      url: absolute(entryUrl('sessions', s.id)),
+    })),
   });
 };

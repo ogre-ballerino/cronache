@@ -4,15 +4,15 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-11-01",
   "observability": { "enabled": true },
-  // Secrets (wrangler secret put): NETLIFY_JWS_SECRET, and DISCORD_WEBHOOK_<CAMPAGNA> for each campaign.
+  // Secrets (wrangler secret put): NETLIFY_JWS_SECRET, DISCORD_WEBHOOK_<CAMPAIGN> for each campaign,
+  // ICLOUD_USER, ICLOUD_PASSWORD (app-specific), ICLOUD_CALENDAR_URL_<CAMPAIGN> for each campaign with an iCloud calendar.
+  // Campaigns come from the sites: see scripts/campaigns.ts.
   "vars": {
-    "CAMPAGNE": {
-      "strahd": "https://strahd.ogreballerino.com",
-      "ombre": "https://ombre.ogreballerino.com"
-    }
+    "DISCORD_APP_ID": "1575834122549465098",
+    "DISCORD_PUBLIC_KEY": "654edc81942e3d316ed3a522daaf13bf5de2c0a8cb8ef28d59ad7648ccf47fc2" // gitleaks:allow (public by design: verifies Discord signatures)
   },
   "durable_objects": {
-    "bindings": [{ "name": "CAMPAGNA", "class_name": "Campagna" }]
+    "bindings": [{ "name": "CAMPAIGN", "class_name": "Campaign" }]
   },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Campagna"] }]
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Campaign"] }]
 }

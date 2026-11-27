@@ -1,16 +1,17 @@
 // The shape of a site's /bot.json (packages/core/pages/bot.json.ts).
 export interface Bot {
-  annuncio: string;
-  leggi: string;
-  colore: number;
-  ultima?: {
+  announcement: string;
+  readMore: string;
+  color: number;
+  latest?: {
     url: string;
-    titolo: string;
-    etichetta: string;
-    data: string;
-    estratto: string;
-    immagine: string;
+    title: string;
+    label: string;
+    date: string;
+    excerpt: string;
+    image: string;
   };
+  sessions?: { date: string; title: string; url: string }[];
 }
 
 export async function readBot(site: string): Promise<Bot> {

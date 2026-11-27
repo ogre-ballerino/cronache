@@ -24,11 +24,12 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
  * @property {{ ornament: string, lines: string[] }} [footer] Footer paragraphs as HTML.
  * @property {{ label: string, title: string, html: string }} [about]
  *   A "?" at the end of the nav opening a popover: `label` names the button, `html` is the body.
- * @property {{ endpoint: string } | { at: string }} [nextSession]
- *   `endpoint`: fetched in the browser, expects `{ data: { next_session } }`.
+ * @property {({ endpoint: string } | { at: string }) & { calendar?: string }} [nextSession]
+ *   `endpoint`: fetched in the browser, expects `{ start: ISO date | null }` (the Discord bot's `/next/<campaign>.json`).
  *   `at`: a fixed local wall-clock time, e.g. '2026-11-28T16:30:00'.
+ *   `calendar`: a calendar feed to subscribe to (`webcal://…`), linked next to the date.
  * @property {DiscordConfig} [discord]
- *   The campaign's Discord bot (bots/discord): with it, the build publishes /bot.json for the bot to read.
+ *   The campaign's Discord bot (bots/discord): with it, the build publishes /bot.json, and the bot's deploy picks the campaign up.
  * @property {{ script: string, websiteId: string }} [umami]
  *   Umami tracking; only counted on the site's own domain, so `astro dev` and deploy previews stay out.
  * @property {Record<number, string>} [seasons]
@@ -39,9 +40,13 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
 
 /**
  * @typedef {object} DiscordConfig
- * @property {string} annuncio  Message posted with a new session.
- * @property {string} leggi     Text of the link at the end of the announcement.
- * @property {number} colore    Embed colour, e.g. 0x6b4f2a.
+ * @property {string} announcement Message posted with a new session.
+ * @property {string} readMore     Text of the link at the end of the announcement.
+ * @property {number} color        Embed colour, e.g. 0x6b4f2a.
+ * @property {string} channel      ID of the Discord channel where `/next` sets this campaign's next session.
+ * @property {string} event        Title of the session's calendar events.
+ * @property {string} signature    Signs the bot's posts about the next session, e.g. an emoji.
+ * @property {string} timezone     IANA timezone the dates given to `/next` are read in, e.g. 'Europe/London'.
  */
 
 const defaults = {
@@ -53,6 +58,7 @@ const defaults = {
     loot: 'Bottino',
     lootTaken: 'Bottino raccolto',
     nextSession: 'Prossima sessione',
+    followCalendar: 'Segui il calendario',
     sheet: 'Scheda del personaggio',
     sheetDownload: 'Scarica il PDF',
     sheetBack: 'Torna al personaggio',

@@ -1,5 +1,5 @@
 import { defineCampaign } from '@cronache/core';
-import { ogreBallerinoAbout, ogreBallerinoUmami } from '../ogre-ballerino.mjs';
+import { OGRE_BALLERINO_TIMEZONE, ogreBallerinoAbout, ogreBallerinoNextSession, ogreBallerinoUmami } from '../ogre-ballerino.mjs';
 
 export default defineCampaign({
   name: 'La Maledizione di Strahd',
@@ -34,11 +34,15 @@ export default defineCampaign({
       'Fatto con le manine sante di <a href="https://sirlisko.com">sirlisko</a> (alias <a href="/personaggi/tariq/">Tariq</a>)',
     ],
   },
-  nextSession: { endpoint: 'https://cms.sirlisko.com/items/strahd' },
+  nextSession: ogreBallerinoNextSession('strahd'),
   discord: {
-    annuncio: '🦇 Un pipistrello porta notizie da Barovia: il diario ha un nuovo capitolo!',
-    leggi: 'Leggi il diario',
-    colore: 0x6b4f2a,
+    announcement: '🦇 Un pipistrello porta notizie da Barovia: il diario ha un nuovo capitolo!',
+    readMore: 'Leggi il diario',
+    color: 0x6b4f2a,
+    channel: '1486866792499384440',
+    event: 'Curse of Strahd',
+    signature: '🦇',
+    timezone: OGRE_BALLERINO_TIMEZONE,
   },
   features: { schede: 'dnd5e' },
   sections: {

@@ -1,5 +1,5 @@
 import { defineCampaign } from '@cronache/core';
-import { ogreBallerinoAbout, ogreBallerinoUmami } from '../ogre-ballerino.mjs';
+import { OGRE_BALLERINO_TIMEZONE, ogreBallerinoAbout, ogreBallerinoNextSession, ogreBallerinoUmami } from '../ogre-ballerino.mjs';
 
 const name = "L'Equilibrio delle Ombre";
 
@@ -28,11 +28,15 @@ export default defineCampaign({
     ],
   },
   // Wall-clock time; the home page hides it once it has passed.
-  nextSession: { at: '2026-11-28T16:30:00' },
+  nextSession: ogreBallerinoNextSession('ombre'),
   discord: {
-    annuncio: '🐈‍⬛ Il gatto nero ha lasciato qualcosa sulla soglia: un nuovo capitolo delle Ombre!',
-    leggi: 'Leggi il capitolo',
-    colore: 0x2f4a3a,
+    announcement: '🐈‍⬛ Il gatto nero ha lasciato qualcosa sulla soglia: un nuovo capitolo delle Ombre!',
+    readMore: 'Leggi il capitolo',
+    color: 0x2f4a3a,
+    channel: '1572782733787275444',
+    event: "L'Equilibrio delle Ombre",
+    signature: '🐈‍⬛',
+    timezone: OGRE_BALLERINO_TIMEZONE,
   },
   labels: { session: 'Capitolo' },
   sections: {
