@@ -137,14 +137,9 @@
   "dadiVita": "6d8",
   "attacchi": [
     {
-      "nome": "+1 Rapier",
+      "nome": "Rapier del Patto",
       "bonus": 7,
       "danni": "1d8+4 piercing"
-    },
-    {
-      "nome": "+1 Shortsword",
-      "bonus": 7,
-      "danni": "1d6+4 piercing"
     }
   ],
   "incantesimi": {
@@ -492,7 +487,7 @@
     },
     {
       "nome": "Potion of Healing",
-      "quantita": 1,
+      "quantita": 2,
       "magico": true
     },
     {
@@ -506,12 +501,12 @@
       "magico": true
     },
     {
-      "nome": "+1 Rapier",
+      "nome": "Rapier del Patto",
       "quantita": 1,
       "magico": true
     },
     {
-      "nome": "+1 Shortsword",
+      "nome": "Shortsword del patto",
       "quantita": 1,
       "magico": true
     }
