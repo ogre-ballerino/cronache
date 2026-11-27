@@ -137,14 +137,9 @@
   "dadiVita": "6d8",
   "attacchi": [
     {
-      "nome": "Rapier Pact of the Blade",
+      "nome": "Rapier del Patto",
       "bonus": 7,
       "danni": "1d8+4 piercing"
-    },
-    {
-      "nome": "Shortsword Pact of the Blade",
-      "bonus": 7,
-      "danni": "1d6+4 piercing"
     }
   ],
   "incantesimi": {
@@ -428,7 +423,6 @@
       "Rapiers",
       "Shortswords",
       "Hand crossbows",
-      "Weapons created with Pact of the Blade",
       "Martial weapons"
     ],
     "strumenti": [],
@@ -486,14 +480,14 @@
       "magico": false
     },
     {
-      "nome": "+1 Rod of the Pact - Maltheris' Bless",
+      "nome": "+1 Rod of the Pact Keeper",
       "quantita": 1,
       "magico": true,
       "sintonia": true
     },
     {
       "nome": "Potion of Healing",
-      "quantita": 1,
+      "quantita": 2,
       "magico": true
     },
     {
@@ -503,6 +497,16 @@
     },
     {
       "nome": "Potion of Fire Breath",
+      "quantita": 1,
+      "magico": true
+    },
+    {
+      "nome": "Rapier del Patto",
+      "quantita": 1,
+      "magico": true
+    },
+    {
+      "nome": "Shortsword del patto",
       "quantita": 1,
       "magico": true
     }
