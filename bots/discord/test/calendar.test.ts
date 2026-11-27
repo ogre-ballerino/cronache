@@ -33,7 +33,8 @@ describe('ics', () => {
     const out = lines(ics([{ uid: 'strahd-2026-12-31', start: '2026-12-31', title: 'Curse of Strahd · Fine', url: 'https://x/' }], 'C', now));
     assert.ok(out.includes('DTSTART;VALUE=DATE:20261231'));
     assert.ok(out.includes('DTEND;VALUE=DATE:20270101'));
-    assert.ok(out.includes('URL:https://x/'));
+    assert.ok(out.includes('DESCRIPTION:https://x/'));
+    assert.ok(!out.some((l) => l.startsWith('URL:')));
   });
 
   it('escapes commas and semicolons in text', () => {

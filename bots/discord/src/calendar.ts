@@ -36,7 +36,8 @@ const vevent = ({ uid, start, end, title, url }: CalendarEvent, now: number) => 
     ? [`DTSTART:${icsUtc(start)}`, `DTEND:${icsUtc(end ?? start + SESSION_HOURS * 3_600_000)}`]
     : [`DTSTART;VALUE=DATE:${icsDay(start)}`, `DTEND;VALUE=DATE:${icsDay(start, 1)}`]),
   `SUMMARY:${escapeText(title)}`,
-  ...(url ? [`URL:${url}`, `DESCRIPTION:${escapeText(url)}`] : []),
+  // Only in the description: Google ignores URL, and Apple shows both as two links.
+  ...(url ? [`DESCRIPTION:${escapeText(url)}`] : []),
   'END:VEVENT',
 ];
 
