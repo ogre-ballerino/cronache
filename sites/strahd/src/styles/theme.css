@@ -455,6 +455,11 @@ a {
   r: 17;
 }
 
+.map-pin-link:hover .map-pin-large,
+.map-pin-link:focus-visible .map-pin-large {
+  r: 23;
+}
+
 /* Where the party is now: two rings around the pin, breathing unless motion is reduced. */
 .map-here-ring {
   fill: none;

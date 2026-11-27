@@ -157,7 +157,7 @@ function smooth(pts: P[]) {
               cx={n.x}
               cy={n.y}
               r={r}
-              class:list={['map-pin', { 'map-pin-visited': visited, 'map-pin-unknown': !visited }]}
+              class:list={['map-pin', { 'map-pin-large': n.large, 'map-pin-visited': visited, 'map-pin-unknown': !visited }]}
             />
             <rect
               x={labelX - labelWidth / 2}
