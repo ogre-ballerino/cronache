@@ -444,10 +444,12 @@ a {
   stroke: var(--color-bg);
 }
 
+/* Solid paper, so the pin doesn't sink into the woodcut's hatching. */
 .map-pin-unknown {
-  fill: rgba(239, 230, 208, 0.7);
+  fill: var(--color-bg);
   stroke: var(--color-ink);
-  stroke-dasharray: 3 3;
+  stroke-width: 3.5;
+  stroke-dasharray: 4 3;
 }
 
 .map-pin-link:hover .map-pin,
