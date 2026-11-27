@@ -16,7 +16,7 @@ Al risveglio la mattina dopo, il casolare è avvolto nella nebbia. Sulla strada 
 
 Al villaggio: case sbarrate, cielo perennemente coperto, un lamento per strada — è [[Mary]], che ha perso la figlia, tenuta segregata in casa "per proteggerla". In locanda il gruppo incontra [[Ismark Kolyanovich]], figlio del borgomastro, che spiega che da Barovia non si esce (nebbia velenosa) e che su queste terre regna un'entità che chiamano il diavolo, [[Strahd von Zarovich]]. Chiede al gruppo di scortare la sorella [[Ireena]] a [[Vallaki]], offrendo in cambio la sua spada.
 
-Nella chiesa del villaggio, [[Padre Donavich]] tiene rinchiuso il figlio nel sotterraneo — da sotto il pavimento arrivano lamenti. Racconta di una spedizione organizzata un anno prima da un mago venuto da lontano per abbattere Strahd: nessun sopravvissuto tranne suo figlio, tornato "cambiato", trasformato in qualcosa di simile a Strahd.
+Nella chiesa del villaggio, [[Padre Donavich]] tiene rinchiuso il figlio nel sotterraneo — da sotto il pavimento arrivano lamenti. Racconta di una spedizione organizzata un anno prima da un [[Mago sconosciuto|mago]] venuto da lontano per abbattere Strahd: nessun sopravvissuto tranne suo figlio, tornato "cambiato", trasformato in qualcosa di simile a Strahd.
 
 Passando la notte a casa del borgomastro morto, il gruppo assiste a una processione di spettri — perlopiù guerrieri — che marciano in fila verso il [[Castello Ravenloft]]. La mattina dopo seppelliscono Kolyan e partono per Vallaki con Ismark e Ireena.
 

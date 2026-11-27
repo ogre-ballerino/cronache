@@ -18,7 +18,7 @@ La mattina seguente il gruppo porta il cadavere del borgomastro [[Kolyan Indirov
 
 ## Il racconto del prete
 
-Parlando con [[Padre Donavich]], il gruppo viene a conoscenza di una spedizione organizzata un anno prima da un mago venuto da lontano, con lo scopo di sconfiggere il tiranno [[Strahd von Zarovich]]. Dal racconto si evince che nessuno fosse sopravvissuto a parte il figlio del prete, che però tornò "cambiato": il diavolo Strahd lo aveva tramutato in qualcosa di simile a lui.
+Parlando con [[Padre Donavich]], il gruppo viene a conoscenza di una spedizione organizzata un anno prima da un [[Mago sconosciuto|mago]] venuto da lontano, con lo scopo di sconfiggere il tiranno [[Strahd von Zarovich]]. Dal racconto si evince che nessuno fosse sopravvissuto a parte il figlio del prete, che però tornò "cambiato": il diavolo Strahd lo aveva tramutato in qualcosa di simile a lui.
 
 ## La partenza per Vallaki
 
