@@ -7,6 +7,19 @@ estratto: Hans si sveglia nel corpo di Alistair, Chung in quello di Rita, e Jade
 luoghiVisitati: [Hotel Savoy, Grunewald, Neues Schauspielhaus, Galleria Nazionale, Museo di Etnologia, Romanisches Café, Eldorado, Weiße Maus]
 anteprima: /images/sessioni/sessione-08.png
 tag: [inizio della stagione]
+promemoria:
+  lettera: |
+    Ho passato la notte in una cesta di vimini, con una maschera bianca sul muso, e ho visto tutto. La luna ha ballato, e nessuno di voi è rimasto seduto.
+
+    Quasi nessuno. Nel palchetto c'era un uomo che non beveva e non toccava nessuno. Guardava. Io guardavo lui.
+
+    Domani Berlino vi concede l'ultimo giorno prima del treno. Lavatevi via lo champagne, e il resto. Io sono già sulla soglia.
+  recap: |
+    Hans apre gli occhi nel corpo di Alistair, all'Hotel Savoy, mentre Chung parla con la voce di Rita. È il 26 agosto 1925: Jade riporta a casa la sorella, gli altri hanno Berlino fino a domenica. Al museo di etnologia le casse egizie aspettano di partire per l'America sulla Mauretania, pagate per intero dal barone Grünau.
+
+    Poi arriva la lettera di Kurt Weber, con i biglietti per la Weiße Maus. Venerdì sera Anita Berber danza Astarte, e la sala diventa un baccanale: non resistono HP, né Hans, né Agatha, né Belzoni. Restano lucidi soltanto Albin Grau e l'uomo nel palchetto, il barone.
+
+    Sabato mattina si svegliano sparsi per la città, svuotati, con la testa che rimbomba. Agatha ne è certa: era un rito, e la loro energia è servita a qualcosa. Resta un solo giorno prima del treno.
 ---
 
 ## Il risveglio
