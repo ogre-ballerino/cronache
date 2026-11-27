@@ -9,8 +9,9 @@ const places = await getCollection('luoghi');
 const byId = Object.fromEntries(places.map((l) => [l.id, l]));
 
 const slugMap = getSlugMap(contentDir);
+const sessions = await getCollection('sessions');
 const visitedUrls = new Set<string>();
-for (const s of await getCollection('sessions')) {
+for (const s of sessions) {
   for (const name of s.data.luoghiVisitati) {
     const target = slugMap.get(normalize(name));
     if (target?.collection === 'luoghi') visitedUrls.add(target.url);
@@ -38,6 +39,15 @@ const nodes = [
 ]
   .map((n) => ({ ...n, entry: byId[n.id] }))
   .filter((n) => n.entry);
+
+// Where the party is now: the last pinned place in the latest session's
+// luoghiVisitati, which lists places in the order the group reached them.
+const latest = sessions.reduce((a, b) => (b.data.numero > a.data.numero ? b : a));
+const hereId = latest.data.luoghiVisitati
+  .map((name) => slugMap.get(normalize(name))?.url)
+  .reverse()
+  .map((url) => nodes.find((n) => entryUrl('luoghi', n.id) === url)?.id)
+  .find(Boolean);
 
 // Traced along the roads of the valley's map (the trails to the Wizard of Wines
 // and Argynvostholt are dotted on it), between the places and crossroads.
@@ -137,6 +147,12 @@ function smooth(pts: P[]) {
         return (
           <a href={entryUrl('luoghi', n.id)} class="map-pin-link">
             {n.large && <circle cx={n.x} cy={n.y} r={r * 4} fill="url(#castle-glow)" />}
+            {n.id === hereId && (
+              <g class="map-here">
+                <circle cx={n.x} cy={n.y} r={r + 12} class="map-here-ring" />
+                <circle cx={n.x} cy={n.y} r={r + 20} class="map-here-ring map-here-ring-outer" />
+              </g>
+            )}
             <circle
               cx={n.x}
               cy={n.y}
@@ -169,6 +185,9 @@ function smooth(pts: P[]) {
   <div class="map-legend">
     <span class="map-legend-item"><span class="map-legend-dot map-legend-dot-visited" aria-hidden="true"></span>Visitato</span>
     <span class="map-legend-item"><span class="map-legend-dot map-legend-dot-unknown" aria-hidden="true"></span>Conosciuto, non visitato</span>
+    {hereId && (
+      <span class="map-legend-item"><span class="map-legend-dot map-legend-dot-here" aria-hidden="true"></span>La compagnia, ora</span>
+    )}
     <span class="map-legend-item"><span class="map-legend-line map-legend-line-travelled" aria-hidden="true"></span>Strada percorsa</span>
     <span class="map-legend-item"><span class="map-legend-line map-legend-line-known" aria-hidden="true"></span>Altre strade</span>
   </div>

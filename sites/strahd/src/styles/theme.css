@@ -455,6 +455,34 @@ a {
   r: 17;
 }
 
+/* Where the party is now: two rings around the pin, breathing unless motion is reduced. */
+.map-here-ring {
+  fill: none;
+  stroke: var(--color-rubric);
+  stroke-width: 3;
+}
+
+.map-here-ring-outer {
+  stroke: var(--color-ink);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-here {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: map-here 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes map-here {
+  50% {
+    transform: scale(1.18);
+    opacity: 0.55;
+  }
+}
+
 .map-pin-label-bg {
   fill: rgba(239, 230, 208, 0.92);
   stroke: var(--color-ink);
@@ -497,6 +525,11 @@ a {
 
 .map-legend-dot-visited {
   background: var(--color-rubric);
+}
+
+.map-legend-dot-here {
+  background: var(--color-rubric);
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-rubric);
 }
 
 .map-legend-dot-unknown {
