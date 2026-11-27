@@ -72,3 +72,12 @@ describe('feed', () => {
     assert.equal(event.title, 'S · Notte');
   });
 });
+
+describe('feed slot', () => {
+  it("puts the journal sessions in the campaign's usual slot, on its clock", () => {
+    const [event] = feed('strahd', 'S', 'Europe/London', [], [{ date: '2026-07-01', title: 'Notte', url: 'u' }], { start: '21:00', hours: 3 });
+    assert.equal(event.start, Date.parse('2026-07-01T20:00:00Z'));
+    assert.equal(event.end, Date.parse('2026-07-01T23:00:00Z'));
+    assert.ok(ics([event], 'S', 0).includes('DTEND:20260701T230000Z'));
+  });
+});

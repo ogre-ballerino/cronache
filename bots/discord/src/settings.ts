@@ -1,4 +1,5 @@
 import type { ICloud } from './calendar.ts';
+import type { Slot } from './feed.ts';
 import { CAMPAIGNS } from './campaigns.ts';
 
 // A campaign's bot settings, from its site's campaign.config.mjs (scripts/campaigns.ts).
@@ -9,6 +10,7 @@ export interface CampaignSettings {
   event: string;
   signature: string;
   timezone: string;
+  slot?: Slot;
 }
 
 export type Secrets = { NETLIFY_JWS_SECRET: string; ICLOUD_USER?: string; ICLOUD_PASSWORD?: string } & Record<

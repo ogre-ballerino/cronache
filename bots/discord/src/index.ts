@@ -27,7 +27,7 @@ async function onCalendar(env: Env, name: string) {
   if (!c) return new Response('Unknown campaign', { status: 404 });
   // Without the site, the feed still has the dates set with /next.
   const journal = await readBot(c.site).then((bot) => bot.sessions, () => []);
-  const events = feed(name, c.event, c.timezone, await campaign(env, name).sessions(), journal);
+  const events = feed(name, c.event, c.timezone, await campaign(env, name).sessions(), journal, c.slot);
   return new Response(ics(events, c.title), {
     headers: { 'Content-Type': 'text/calendar; charset=utf-8', 'Content-Disposition': `inline; filename="${name}.ics"` },
   });
