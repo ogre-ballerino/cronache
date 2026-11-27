@@ -4,6 +4,7 @@ import config from 'virtual:cronache/config';
 const next = config.nextSession;
 const endpoint = next && 'endpoint' in next ? next.endpoint : undefined;
 const at = next && 'at' in next ? next.at : undefined;
+const calendar = next?.calendar;
 
 // `at` is a wall-clock time: format it as UTC so the build machine's time zone doesn't shift it.
 const atDate = at ? new Date(`${at}Z`) : undefined;
@@ -13,11 +14,13 @@ const atLabel =
     atDate.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }),
     atDate.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }),
   ].join(' alle ');
-const show = endpoint || (atDate && atDate.getTime() > Date.now());
 ---
-{show && (
+{(endpoint || (atDate && atDate.getTime() > Date.now())) && (
   <p class="next-session" id="next-session" data-endpoint={endpoint} data-at={at} hidden={!!endpoint}>
     {config.labels.nextSession}: <span id="next-session-value">{atLabel}</span>
+    {calendar && (
+      <a class="next-session-calendar" href={calendar} data-umami-event="calendar">{config.labels.followCalendar}</a>
+    )}
   </p>
 )}
 
@@ -31,9 +34,9 @@ const show = endpoint || (atDate && atDate.getTime() > Date.now());
   if (endpoint && valueEl) {
     fetch(endpoint)
       .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .then(({ data }) => {
-        if (!data?.next_session) return;
-        const sessionDate = new Date(data.next_session);
+      .then(({ start }) => {
+        if (!start) return;
+        const sessionDate = new Date(start);
         if (Number.isNaN(sessionDate.getTime())) return;
         if (sessionDate.getTime() < Date.now()) return;
 
@@ -43,7 +46,7 @@ const show = endpoint || (atDate && atDate.getTime() > Date.now());
         item!.hidden = false;
       })
       .catch(() => {
-        // CMS unreachable: leave the next session hidden.
+        // Bot unreachable: leave the next session hidden.
       });
   }
 </script>

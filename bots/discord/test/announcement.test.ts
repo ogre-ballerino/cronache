@@ -1,18 +1,18 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { announcement, sameSession } from '../src/annuncio.ts';
+import { announcement, sameSession } from '../src/announcement.ts';
 
 const bot = {
-  annuncio: '🦇 Nuovo capitolo!',
-  leggi: 'Leggi il diario',
-  colore: 0x6b4f2a,
-  ultima: {
+  announcement: '🦇 Nuovo capitolo!',
+  readMore: 'Leggi il diario',
+  color: 0x6b4f2a,
+  latest: {
     url: 'https://strahd.ogreballerino.com/diario/sessione-16/',
-    titolo: 'I cavalieri del drago',
-    etichetta: 'Sessione XVI',
-    data: '25 novembre 2026',
-    estratto: 'Il gruppo lascia Vallaki.',
-    immagine: 'https://strahd.ogreballerino.com/images/sessioni/sessione-16.png',
+    title: 'I cavalieri del drago',
+    label: 'Sessione XVI',
+    date: '25 novembre 2026',
+    excerpt: 'Il gruppo lascia Vallaki.',
+    image: 'https://strahd.ogreballerino.com/images/sessioni/sessione-16.png',
   },
 };
 
@@ -22,17 +22,17 @@ describe('announcement', () => {
     assert.equal(content, '🦇 Nuovo capitolo!');
     assert.deepEqual(embeds[0], {
       title: 'I cavalieri del drago',
-      url: bot.ultima.url,
-      description: `Il gruppo lascia Vallaki.\n\n[Leggi il diario](${bot.ultima.url})`,
+      url: bot.latest.url,
+      description: `Il gruppo lascia Vallaki.\n\n[Leggi il diario](${bot.latest.url})`,
       color: 0x6b4f2a,
-      image: { url: bot.ultima.immagine },
+      image: { url: bot.latest.image },
       footer: { text: 'Sessione XVI · 25 novembre 2026' },
     });
   });
 
   it('leaves out the blank line when there is no excerpt', () => {
-    const { embeds } = announcement({ ...bot, ultima: { ...bot.ultima, estratto: '' } });
-    assert.equal(embeds[0].description, `[Leggi il diario](${bot.ultima.url})`);
+    const { embeds } = announcement({ ...bot, latest: { ...bot.latest, excerpt: '' } });
+    assert.equal(embeds[0].description, `[Leggi il diario](${bot.latest.url})`);
   });
 });
 

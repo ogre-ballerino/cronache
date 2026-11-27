@@ -14,6 +14,20 @@ const CHRONICLES = [
 // The questions save a round of replies: they tell whether the journal fits the group.
 const MAIL_BODY = 'Ciao sirlisko,\n\nche gioco fate?\nOgni quanto giocate?\nRegistrate le sessioni o prendete appunti?\n';
 
+// Where the group plays: the bot's /next reads the dates it's given on this clock.
+export const OGRE_BALLERINO_TIMEZONE = 'Europe/London';
+
+const BOT = 'https://cronache-bot.sirlisko.workers.dev';
+
+/** @param {string} campaign The site's folder name: the bot's key for it. The date is the one set with /next. */
+export function ogreBallerinoNextSession(campaign) {
+  return {
+    endpoint: `${BOT}/next/${campaign}.json`,
+    // webcal:// subscribes; an https .ics link would only import today's events once.
+    calendar: `${BOT.replace(/^https/, 'webcal')}/calendar/${campaign}.ics`,
+  };
+}
+
 /** @param {string} siteName The site's `name`: it goes in the mail subject, to tell which site the request came from. */
 export function ogreBallerinoAbout(siteName) {
   const subject = `Un diario per il mio gruppo (da ${siteName})`;

@@ -3,17 +3,17 @@ import type { Bot } from './bot.ts';
 // The trailing slash is a URL format detail, not a new session.
 export const sameSession = (a: string | undefined, b: string) => a?.replace(/\/$/, '') === b.replace(/\/$/, '');
 
-export function announcement({ annuncio, leggi, colore, ultima }: Bot & { ultima: NonNullable<Bot['ultima']> }) {
+export function announcement({ announcement, readMore, color, latest }: Bot & { latest: NonNullable<Bot['latest']> }) {
   return {
-    content: annuncio,
+    content: announcement,
     embeds: [
       {
-        title: ultima.titolo,
-        url: ultima.url,
-        description: `${ultima.estratto}\n\n[${leggi}](${ultima.url})`.trim(),
-        color: colore,
-        image: { url: ultima.immagine },
-        footer: { text: `${ultima.etichetta} · ${ultima.data}` },
+        title: latest.title,
+        url: latest.url,
+        description: `${latest.excerpt}\n\n[${readMore}](${latest.url})`.trim(),
+        color,
+        image: { url: latest.image },
+        footer: { text: `${latest.label} · ${latest.date}` },
       },
     ],
   };
