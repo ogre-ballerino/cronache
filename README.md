@@ -27,7 +27,7 @@ pnpm test             # engine unit tests
 
 Inside a site folder, plain `pnpm dev`, `pnpm build` and `pnpm preview` work too.
 
-Each site is a separate Netlify site with its folder as base directory; its `netlify.toml` skips the build when neither the site nor the engine changed.
+Each site is a separate Netlify site with its folder as base directory; its `netlify.toml` skips the build when neither the site nor the engine changed. Deploy previews build only for PRs labelled `preview`: see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## Adding a session
 
