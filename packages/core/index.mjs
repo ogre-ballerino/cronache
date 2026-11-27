@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rehypeHeadingIds, unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
+import { cardStyle } from './lib/card-style.mjs';
 import { enabledCollections } from './lib/collections.mjs';
 import { resolveConfig } from './config.mjs';
 import rehypeHeadingLinks from './lib/rehype-heading-links.mjs';
@@ -27,13 +28,25 @@ function routes({ features, discord }) {
       ]
     : [];
   const bot = discord ? [['/bot.json', 'bot.json.ts']] : [];
-  return [...pages, ...sheets, ...bot, ['/cerca', 'cerca.astro'], ['/anteprime.json', 'anteprime.json.ts']];
+  return [
+    ...pages,
+    ...sheets,
+    ...bot,
+    ['/cerca', 'cerca.astro'],
+    ['/anteprime.json', 'anteprime.json.ts'],
+    ['/anteprime/[section]/[id].png', 'anteprima.png.ts'],
+  ];
 }
 
 function virtualModules(config, { root, contentDir, publicDir, sheetTemplate, coreDir }) {
   const require = createRequire(path.join(root, 'package.json'));
   // Relative paths are the site's own files; anything else is a package (fonts).
-  const resolveCss = (spec) => (spec.startsWith('.') ? path.resolve(root, spec) : require.resolve(spec));
+  const isOwn = (spec) => spec.startsWith('.');
+  const resolveCss = (spec) => (isOwn(spec) ? path.resolve(root, spec) : require.resolve(spec));
+  const card = cardStyle({
+    fonts: config.css.filter((spec) => !isOwn(spec)).map(resolveCss),
+    themes: config.css.filter(isOwn).map(resolveCss),
+  });
   const modules = {
     'virtual:cronache/config': `export default ${JSON.stringify(config)};`,
     'virtual:cronache/paths': [
@@ -42,6 +55,7 @@ function virtualModules(config, { root, contentDir, publicDir, sheetTemplate, co
       `export const sheetTemplate = ${JSON.stringify(sheetTemplate)};`,
       `export const coreDir = ${JSON.stringify(coreDir)};`,
     ].join('\n'),
+    'virtual:cronache/card': `export default ${JSON.stringify(card)};`,
     'virtual:cronache/styles': config.css.map((spec) => `import ${JSON.stringify(resolveCss(spec))};`).join('\n'),
   };
   return {

@@ -33,7 +33,7 @@ These apply to every content edit, in every site, by hand or through a skill.
 - `png/`: `titolo`, `ruolo`, `stato`, `fazione`, `luogo`, `estratto`, `tag`.
 - `luoghi/`: `titolo`, `tipo`, `regione`, `estratto`, `tag`.
 - `handout/` (sites with `features.handout`): `titolo`, `capitolo` (number of the session where the group got it), `fonte`, `estratto`, `tag`, `immagine` only if the file exists. Body: the document as the group read it, without adding text.
-- `anteprima` (any collection, optional): the link-preview image, a path under `public/` (e.g. a handout photo for the session that revealed it); the build fails if the file is missing. It's shown as a large card. Without it, a page previews its `immagine` as a thumbnail, or the site's `images/og.png`.
+- `anteprima` (any collection, optional): the link-preview image, a path under `public/` (e.g. a handout photo for the session that revealed it); the build fails if the file is missing. It's shown as a large card. Without it, a page previews its `immagine` as a thumbnail; failing that, NPCs and places get a typographic card generated at build time (`/anteprime/<section>/<id>.png`, from `titolo`, `ruolo`/`tipo`, `stato`, `estratto` and the theme's tokens and fonts), and every other page the site's `images/og.png`.
 - `stato` values (`packages/core/lib/status.mjs`): characters `vivo`|`morto`|`folle`|`scomparso`|`ritirato`, NPCs `vivo`|`morto`|`folle`|`scomparso`|`sconosciuto`, each with a feminine form (`viva`, `morta`, `scomparsa`, `ritirata`) for women.
 - Filenames are the kebab-case, accent-free `titolo`. Files starting with `_` are drafts: skipped by the collections and by the wikilink slug map.
 
