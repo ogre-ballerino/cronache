@@ -1,7 +1,7 @@
 ---
 titolo: La processione degli spettri
 numero: 5
-data: 2026-04-29
+data: 2026-02-03
 estratto: Una notte di spettri in marcia verso il castello, la sepoltura di Kolyan Indirovich e il racconto di una spedizione fallita contro Strahd convincono il gruppo a partire per Vallaki.
 luoghiVisitati: [Villaggio di Barovia]
 anteprima: /images/sessioni/sessione-05.png

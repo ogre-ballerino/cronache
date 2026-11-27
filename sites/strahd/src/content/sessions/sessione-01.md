@@ -1,7 +1,7 @@
 ---
 titolo: L'agguato a casa del padre di Artemis
 numero: 1
-data: 2026-03-25
+data: 2026-01-07
 estratto: A Goya la vendetta di alcuni lestofanti contro Artemis ricade sul padre; Erieth, in missione per il suo patrono, si ritrova a difendere la casa insieme a Tariq e Don Matteor.
 luoghiVisitati: [Goya]
 anteprima: /images/sessioni/sessione-01.png

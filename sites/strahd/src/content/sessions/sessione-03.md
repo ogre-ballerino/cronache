@@ -1,7 +1,7 @@
 ---
 titolo: Il cancello incantato
 numero: 3
-data: 2026-04-08
+data: 2026-01-21
 estratto: Un manto di nebbia avvolge il casolare durante la notte; sulla strada del ritorno il gruppo affronta dei lupi, trova un cadavere inquietante e attraversa un cancello che si apre da solo.
 luoghiVisitati: [Casolare fuori Goya]
 anteprima: /images/sessioni/sessione-03.png
