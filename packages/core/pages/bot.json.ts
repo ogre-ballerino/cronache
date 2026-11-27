@@ -10,11 +10,12 @@ export const GET: APIRoute = async ({ site }) => {
   const sessions = (await getCollection('sessions')).sort((a, b) => b.data.numero - a.data.numero);
   const [latest] = sessions;
   const absolute = (path: string) => new URL(path, site).href;
-  const { announcement, readMore, color } = config.discord;
+  const { announcement, readMore, color, letter } = config.discord;
   return Response.json({
     announcement,
     readMore,
     color,
+    letter,
     latest: latest && {
       url: absolute(entryUrl('sessions', latest.id)),
       title: latest.data.titolo,
@@ -22,6 +23,8 @@ export const GET: APIRoute = async ({ site }) => {
       date: longDate(latest.data.data),
       excerpt: latest.data.estratto ?? '',
       image: absolute(ogImage(latest.data).src),
+      letter: latest.data.promemoria?.lettera,
+      recap: latest.data.promemoria?.recap,
     },
     // Every session's real date, for the calendar feed's history.
     sessions: sessions.map((s) => ({

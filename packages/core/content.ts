@@ -46,6 +46,11 @@ const loot = z
   })
   .strict();
 
+// Posted on Discord by the bot (bots/discord) before the next session: plain text, no wikilinks.
+const reminders = z
+  .object({ lettera: z.string().transform(curlyQuotes).optional(), recap: z.string().transform(curlyQuotes).optional() })
+  .strict();
+
 const collection = (name: string, fields: Fields, extra: Fields = {}) =>
   defineCollection({ loader: loader(name), schema: z.object({ ...baseFields, ...fields, ...extra }) });
 
@@ -65,6 +70,7 @@ export function campaignCollections(extra: CollectionFields = {}) {
         data: z.coerce.date(),
         luoghiVisitati: z.array(z.string()).default([]),
         bottino: loot.optional(),
+        promemoria: reminders.optional(),
       },
       extra.sessions
     ),

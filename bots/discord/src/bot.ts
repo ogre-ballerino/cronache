@@ -3,6 +3,7 @@ export interface Bot {
   announcement: string;
   readMore: string;
   color: number;
+  letter?: { title: string; footer: string };
   latest?: {
     url: string;
     title: string;
@@ -10,6 +11,8 @@ export interface Bot {
     date: string;
     excerpt: string;
     image: string;
+    letter?: string;
+    recap?: string;
   };
   sessions?: { date: string; title: string; url: string }[];
 }

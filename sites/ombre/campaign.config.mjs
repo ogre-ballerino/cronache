@@ -37,6 +37,8 @@ export default defineCampaign({
     event: "L'Equilibrio delle Ombre",
     signature: '🐈‍⬛',
     timezone: OGRE_BALLERINO_TIMEZONE,
+    slot: { start: '16:00', hours: 6 },
+    letter: { title: '🐈‍⬛ Qualcosa sulla soglia', footer: 'Il gatto nero' },
   },
   labels: { session: 'Capitolo' },
   sections: {

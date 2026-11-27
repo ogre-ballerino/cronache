@@ -43,6 +43,8 @@ export default defineCampaign({
     event: 'Curse of Strahd',
     signature: '🦇',
     timezone: OGRE_BALLERINO_TIMEZONE,
+    slot: { start: '21:00', hours: 3 },
+    letter: { title: '🦇 Una lettera dal Castello Ravenloft', footer: 'Strahd von Zarovich' },
   },
   features: { schede: 'dnd5e' },
   sections: {

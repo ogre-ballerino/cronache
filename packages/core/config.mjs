@@ -47,6 +47,11 @@ import { SHEET_TEXT } from './lib/scheda/text.mjs';
  * @property {string} event        Title of the session's calendar events.
  * @property {string} signature    Signs the bot's posts about the next session, e.g. an emoji.
  * @property {string} timezone     IANA timezone the dates given to `/next` are read in, e.g. 'Europe/London'.
+ * @property {{ start: string, hours: number }} [slot]
+ *   When the campaign usually plays, e.g. `{ start: '21:00', hours: 3 }`: the calendar feed puts there the journal
+ *   sessions whose time was never set with `/next`; without it, they're all-day events.
+ * @property {{ title: string, footer: string }} [letter]
+ *   The letter posted the day before the next session (the latest session's `promemoria.lettera`); without it, no letter.
  */
 
 const defaults = {

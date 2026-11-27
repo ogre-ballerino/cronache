@@ -19,4 +19,5 @@ Companion site for *L'Equilibrio delle Ombre*, an ongoing Call of Cthulhu 7e cam
 - When no investigator has a `-full.webp` portrait, the home page shows a "Dramatis personae" list instead.
 - There's no map yet. A 1920s world map (US and Berlin) may come later; `luoghiVisitati` is kept on sessions for it.
 - Investigator sheets are on (`features.schede: 'coc7e'`): a snapshot after a chapter, `pnpm scheda <sheet.pdf> ombre <id> --sessione N` for a filled Chaosium PDF, or transcribed by hand from a photo. The players' sheets and photos go in `sources/schede/capitolo-NN/` (gitignored: they hold the backstory, which stays off the site).
-- The next session date is fixed in `campaign.config.mjs` (`nextSession.at`, a local wall-clock time): update it after each session. The home page hides it once it has passed.
+- The next session date is set from Discord with `/next` (the `discord-bot` skill); the home page reads it from the bot.
+- **Discord letter:** the black cat writes it (`promemoria.lettera`, see the `new-session` skill), the voice of the campaign's Discord posts: it has slipped in everywhere and seen everything, and speaks of it cryptically, in short lines, never explaining. Unsigned: the post's footer reads «Il gatto nero».
