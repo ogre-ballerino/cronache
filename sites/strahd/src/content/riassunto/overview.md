@@ -22,6 +22,8 @@ Passando la notte a casa del borgomastro morto, il gruppo assiste a una processi
 
 ## Vallaki: le reliquie e il vino
 
+> **In ricostruzione.** Il diario salta da qui al ritorno a Vallaki con il carro del vino: mancano una decina di serate di gioco (11, 18 e 25 febbraio; 11 e 24 marzo; 31 marzo, 9, 14, 22 e 29 aprile) di cui non esistono né registrazioni né resoconti. Le stiamo ricostruendo dai ricordi del gruppo: chi ricorda qualcosa lo mandi, anche in ordine sparso.
+
 Le reliquie di Sant'Andral, rubate dalla [[Chiesa di Vallaki]] (che la tenevano consacrata), portano il gruppo alla [[Bottega del Becchino]]: [[Van der Vort]] manda a chiamare le guardie (che non arrivano mai) e sparisce. Al piano di sopra il gruppo trova le reliquie e un gruppo di vampiri che li attacca; fuggono, ne uccidono alcuni durante l'inseguimento e riportano le ossa in chiesa. Tornati più tardi nella bottega, ormai vuota, trovano un foglio con l'ordine di riempire bare di terra, firmato [[P. (identità sconosciuta)|"P."]], e delle statuette con liquido non identificato.
 
 [[Urwin]] li manda a recuperare la fornitura di vino mancante al [[Wizard of Wines]]: la cantina è invasa da mostri-pianta guidati da druidi malvagi al servizio di Strahd, che avevano rubato alla cantina una delle tre gemme del vino. Sgominati i druidi, il gruppo recupera il vino e lo riporta a Vallaki. Dai registri della cantina emergono rapporti non ostili con Strahd fino a qualche decennio fa, poi cessati.
