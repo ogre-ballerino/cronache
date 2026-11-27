@@ -82,7 +82,21 @@ Only if the site has an `og/` folder (e.g. `sites/strahd/og/`); otherwise skip t
 4. Read both images and fix what doesn't read: shapes merging into each other, the scene off-centre in the frontispiece, lines stopping short of its edges, art cut off at the borders. Render again.
 5. Set `anteprima: /images/sessioni/sessione-<N>.png` in the session's frontmatter.
 
-## 7. Verify
+## 7. Discord reminders
+
+Only for sites with `discord` in `campaign.config.mjs`; otherwise skip this step. The bot posts two texts from the latest session before the next one: the letter the day before (only if the config has `discord.letter`), the recap three hours before. Write them in the session's frontmatter:
+
+```yaml
+promemoria:
+  lettera: <the letter, in the voice the site's CLAUDE.md gives; max 100 words, 2-3 short paragraphs, signed on the last line if the voice has a signature>
+  recap: <"previously on": max 150 words, 2-3 short paragraphs>
+```
+
+- **Lettera:** an invitation to the next session, in character. It's posted the day before: say «domani», never «stasera» or «oggi», and no date or time, which the post adds below it. Allude to a single event of this session, as if the writer had watched it.
+- **Recap:** the 3 or 4 key moments of this session told as one scene, not a list: narrative present, the site's tone, characters by name. Only facts from the session, nobody credited with what someone else did, theories not presented as certain. Don't start with «Nella puntata precedente» (it's the post's title); end on a complete sentence that leaves the scene open, no ellipsis.
+- Both are plain Discord text: no wikilinks, no headings, no emoji, no lists. Spoiler rules apply as everywhere: they're read by the whole group. Use a YAML block scalar (`|`) for paragraphs.
+
+## 8. Verify
 
 Run `pnpm -C sites/<site> build` and check the output:
 
@@ -90,11 +104,11 @@ Run `pnpm -C sites/<site> build` and check the output:
 - Unresolved wikilinks fail the build, listed together: fix each by correcting the target or creating the missing entity.
 - Fix every `[wikilinks] … names both …` warning: two entries share a name, so one of them is probably a duplicate.
 
-## 8. Report
+## 9. Report
 
 End with a short report:
 
-- Session file created, entities created, entities updated, and the woodcut's two images for the user to look at.
+- Session file created, entities created, entities updated, the woodcut's two images for the user to look at, and the Discord letter and recap to read through.
 - **Ambiguities**: every name or detail you had to interpret, with your choice (e.g. "«Strad» → Strahd von Zarovich", "unclear whether Izek died: left `stato: vivo`").
 - Anything left for the user: map pins to place, a missing session date, the next session date if the site keeps it in `campaign.config.mjs` (`nextSession.at`; sites on the Discord bot get it from `/next`), and for new player characters their portraits (the `add-portrait` skill, once the user has them).
 - A suggested commit message, e.g. `feat(content): add sessione-11`.

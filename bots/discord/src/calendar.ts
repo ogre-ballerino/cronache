@@ -16,6 +16,7 @@ export interface ICloud {
 export interface CalendarEvent {
   uid: string;
   start: number | string;
+  end?: number;
   title: string;
   url?: string;
 }
@@ -27,12 +28,12 @@ const icsDay = (day: string, plus = 0) => {
 };
 const escapeText = (s: string) => s.replace(/[\\;,]/g, (c) => `\\${c}`).replace(/\n/g, '\\n');
 
-const vevent = ({ uid, start, title, url }: CalendarEvent, now: number) => [
+const vevent = ({ uid, start, end, title, url }: CalendarEvent, now: number) => [
   'BEGIN:VEVENT',
   `UID:${uid}`,
   `DTSTAMP:${icsUtc(now)}`,
   ...(typeof start === 'number'
-    ? [`DTSTART:${icsUtc(start)}`, `DTEND:${icsUtc(start + SESSION_HOURS * 3_600_000)}`]
+    ? [`DTSTART:${icsUtc(start)}`, `DTEND:${icsUtc(end ?? start + SESSION_HOURS * 3_600_000)}`]
     : [`DTSTART;VALUE=DATE:${icsDay(start)}`, `DTEND;VALUE=DATE:${icsDay(start, 1)}`]),
   `SUMMARY:${escapeText(title)}`,
   ...(url ? [`URL:${url}`, `DESCRIPTION:${escapeText(url)}`] : []),

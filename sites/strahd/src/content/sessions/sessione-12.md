@@ -1,7 +1,7 @@
 ---
 titolo: Le carte di Madama Eva
 numero: 12
-data: 2026-10-29
+data: 2026-10-28
 estratto: Madama Eva legge al gruppo i tarocchi di Barovia e indica un tesoro nascosto nel campo; nella notte Artemis ruba dai Vistani un'elsa senziente che brama la morte di Strahd e una pozione di soffio di fuoco.
 luoghiVisitati: [Accampamento dei Vistani]
 anteprima: /images/sessioni/sessione-12.png

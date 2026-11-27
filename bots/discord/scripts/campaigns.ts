@@ -5,7 +5,7 @@ import { readdir, writeFile } from 'node:fs/promises';
 const SITES = new URL('../../../sites/', import.meta.url);
 const FIELDS = ['channel', 'event', 'signature', 'timezone'] as const;
 
-const campaigns: Record<string, Record<string, string>> = {};
+const campaigns: Record<string, object> = {};
 for (const dir of await readdir(SITES, { withFileTypes: true })) {
   if (!dir.isDirectory()) continue;
   const { default: config } = await import(new URL(`${dir.name}/campaign.config.mjs`, SITES).href);
@@ -13,7 +13,8 @@ for (const dir of await readdir(SITES, { withFileTypes: true })) {
   const { default: astro } = await import(new URL(`${dir.name}/astro.config.mjs`, SITES).href);
   const missing = FIELDS.filter((k) => !config.discord[k]);
   if (missing.length) throw new Error(`sites/${dir.name}: discord.${missing.join(', discord.')} missing`);
-  campaigns[dir.name] = { site: astro.site, title: config.name, ...Object.fromEntries(FIELDS.map((k) => [k, config.discord[k]])) };
+  const { slot } = config.discord;
+  campaigns[dir.name] = { site: astro.site, title: config.name, ...Object.fromEntries(FIELDS.map((k) => [k, config.discord[k]])), ...(slot && { slot }) };
 }
 
 await writeFile(
