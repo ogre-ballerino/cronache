@@ -18,41 +18,49 @@ for (const s of await getCollection('sessions')) {
   }
 }
 
-// Painted background (public/images/mappe/barovia.webp) traced from a sketch
-// of the valley in 1920x1080 coordinates. Only places the party knows about get
-// a pin and a name: the landscape stays unlabelled to avoid spoilers.
+// Woodcut background (public/images/mappe/barovia.webp) recut from the valley's
+// map, in 1920x1080 coordinates: forests, water and relief only. Only places the
+// party knows about get a pin and a name, and only known roads are drawn: the
+// landscape stays unlabelled to avoid spoilers.
 const W = 1920;
 const H = 1080;
 
 type P = [number, number];
 
 const nodes = [
-  { id: 'villaggio-di-barovia', x: 1730, y: 705 },
-  { id: 'castello-ravenloft', x: 1565, y: 455, large: true },
-  { id: 'vallaki', x: 835, y: 425 },
-  { id: 'torre-abbandonata', x: 545, y: 305 },
-  { id: 'wizard-of-wines', x: 175, y: 580 },
-  { id: 'argynvostholt', x: 650, y: 690 },
-  { id: 'accampamento-dei-vistani', x: 1335, y: 790 },
+  { id: 'villaggio-di-barovia', x: 1545, y: 660 },
+  { id: 'castello-ravenloft', x: 1384, y: 546, large: true },
+  { id: 'vallaki', x: 761, y: 351 },
+  { id: 'torre-abbandonata', x: 427, y: 283 },
+  { id: 'wizard-of-wines', x: 176, y: 506 },
+  { id: 'argynvostholt', x: 650, y: 662 },
+  { id: 'accampamento-dei-vistani', x: 1320, y: 672, labelBelow: true },
 ]
   .map((n) => ({ ...n, entry: byId[n.id] }))
   .filter((n) => n.entry);
 
+// Traced along the roads of the valley's map (the trails to the Wizard of Wines
+// and Argynvostholt are dotted on it), between the places and crossroads.
 const travelledRoads: P[][] = [
-  // Village of Barovia → Vallaki along the Old Svalich Road
-  [[1920, 605], [1852, 610], [1830, 642], [1790, 680], [1730, 705], [1660, 758], [1600, 814], [1520, 830], [1440, 836], [1370, 826], [1310, 790], [1272, 750], [1300, 712], [1305, 672], [1270, 640], [1210, 616], [1198, 560], [1150, 568], [1090, 580], [1034, 572], [1028, 512], [1044, 470], [1012, 448], [945, 440], [885, 428], [835, 425], [785, 440], [745, 468], [716, 500], [640, 476]],
-  // Vallaki → Argynvostholt
-  [[560, 460], [572, 530], [604, 584], [640, 626], [650, 676]],
-  // Vallaki → Wizard of Wines
-  [[745, 468], [716, 500], [640, 476], [570, 456], [512, 446], [432, 470], [360, 482], [312, 530], [290, 572], [240, 582], [196, 582]],
+  // From the gate in the east, past the Village of Barovia and Tser Pool, up to Vallaki
+  [[1907, 596], [1807, 597], [1786, 618], [1769, 648], [1747, 670], [1731, 676], [1680, 680], [1542, 680], [1518, 684], [1492, 716], [1458, 770], [1434, 791], [1399, 793], [1374, 766], [1366, 763], [1339, 763], [1320, 776], [1309, 778], [1299, 791], [1277, 809], [1243, 810], [1228, 795], [1213, 768], [1213, 755], [1223, 737], [1222, 689], [1206, 672], [1189, 671], [1150, 712], [1113, 730], [1106, 730], [1094, 718], [1087, 704], [1091, 698], [1102, 694], [1126, 673], [1141, 667], [1160, 665], [1167, 658], [1167, 624], [1193, 595], [1199, 560], [1190, 554], [1155, 553], [1141, 539], [1146, 522], [1160, 507], [1160, 493], [1154, 484], [1124, 454], [1090, 456], [1078, 439], [1063, 426], [1053, 426], [1030, 438], [1007, 465], [988, 467], [980, 458], [980, 446], [986, 435], [987, 425], [981, 419], [971, 419], [962, 425], [958, 423], [958, 399], [971, 389], [993, 387], [1005, 396], [1024, 398], [1052, 370], [1067, 363], [1075, 355], [1078, 338], [1072, 332], [1052, 331], [1038, 339], [1023, 339], [1010, 332], [1000, 332], [985, 343], [955, 347], [913, 368], [909, 368], [909, 364], [899, 357], [895, 368], [875, 368], [832, 356], [761, 351]],
+  // Vallaki → the crossroads by Lake Baratok → the Wizard of Wines
+  [[761, 351], [698, 354], [675, 364], [646, 379], [614, 411], [586, 446], [560, 453], [535, 453], [508, 431], [497, 427], [484, 414], [471, 390], [453, 372], [440, 364], [414, 362], [395, 366], [381, 365], [376, 360], [370, 360], [363, 367], [328, 373], [316, 384], [311, 395], [311, 415], [304, 427], [297, 433], [278, 440], [265, 451], [260, 485], [254, 494], [241, 496], [210, 478], [190, 479], [186, 484], [176, 506]],
+  // Vallaki → over the bridge on the Luna, then south down the overgrown trail to Argynvostholt
+  [[761, 351], [698, 354], [653, 376], [646, 383], [669, 408], [672, 416], [673, 431], [666, 462], [666, 481], [673, 495], [680, 525], [679, 569], [671, 582], [667, 610], [658, 631], [659, 643], [647, 653], [647, 659]],
+  // The trail down to the Vistani camp on Tser Pool
+  [[1181, 621], [1197, 639], [1209, 647], [1249, 649], [1258, 653], [1264, 661], [1260, 688], [1275, 705], [1320, 672]],
 ];
 
 const knownRoads: P[][] = [
-  [[1198, 548], [1260, 522], [1330, 492], [1400, 510], [1442, 506], [1500, 490], [1558, 468]],
-  [[512, 446], [470, 426], [380, 420], [250, 420], [120, 410], [0, 415]],
-  [[470, 426], [424, 362], [400, 302], [350, 256]],
-  [[520, 446], [540, 400], [545, 330]],
-  [[312, 530], [322, 620], [332, 700], [352, 770], [430, 760], [468, 850], [482, 940], [520, 1010]],
+  // The road up to Castle Ravenloft
+  [[1160, 500], [1181, 502], [1208, 473], [1224, 473], [1248, 497], [1268, 498], [1281, 484], [1291, 482], [1296, 490], [1292, 512], [1315, 536], [1331, 537], [1346, 551], [1374, 551]],
+  // The Old Svalich Road west, out of the valley
+  [[376, 360], [349, 335], [300, 335], [272, 326], [250, 326], [224, 343], [209, 344], [189, 331], [120, 321], [46, 300], [11, 300]],
+  // Out to the tower on Lake Baratok
+  [[410, 365], [426, 362], [436, 345], [458, 331], [456, 318], [446, 309], [427, 283]],
+  // South, over the pass
+  [[410, 365], [410, 411], [406, 421], [386, 453], [343, 493], [340, 500], [340, 512], [354, 536], [355, 558], [336, 576], [316, 585], [296, 587], [277, 609], [267, 643], [279, 651], [287, 642], [289, 630], [305, 615], [314, 615], [337, 637], [350, 641], [376, 641], [397, 623], [423, 626], [431, 635], [431, 645], [426, 655], [429, 687], [389, 719], [382, 733], [382, 746], [393, 755], [408, 757], [430, 781], [439, 784], [448, 798], [447, 810], [457, 819], [467, 823], [507, 822], [532, 844], [543, 847], [561, 870], [559, 911], [579, 932], [581, 943], [596, 958], [612, 967], [645, 965], [662, 985], [676, 995], [707, 998], [719, 1011], [718, 1026], [733, 1027], [728, 1035]],
 ];
 
 const r1 = (n: number) => Math.round(n * 10) / 10;
@@ -85,14 +93,6 @@ function smooth(pts: P[]) {
           <stop offset="0%" stop-color="#7a1f2b" stop-opacity="0.55" />
           <stop offset="100%" stop-color="#7a1f2b" stop-opacity="0" />
         </radialGradient>
-        <filter id="sepia" color-interpolation-filters="sRGB">
-          <feColorMatrix type="saturate" values="0.3" />
-          <feComponentTransfer>
-            <feFuncR type="linear" slope="0.72" intercept="0.2" />
-            <feFuncG type="linear" slope="0.7" intercept="0.17" />
-            <feFuncB type="linear" slope="0.62" intercept="0.1" />
-          </feComponentTransfer>
-        </filter>
         <filter id="fog" x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="5" />
           <feDisplacementMap in="SourceGraphic" scale="110" />
@@ -101,8 +101,11 @@ function smooth(pts: P[]) {
       </defs>
 
       <rect width={W} height={H} class="map-paper" />
-      <image href="/images/mappe/barovia.webp" width={W} height={H} preserveAspectRatio="none" filter="url(#sepia)" />
+      <image href="/images/mappe/barovia.webp" width={W} height={H} preserveAspectRatio="none" />
 
+      {[...knownRoads, ...travelledRoads].map((s) => (
+        <path d={smooth(s)} class="map-road-casing" />
+      ))}
       {knownRoads.map((s) => (
         <path d={smooth(s)} class="map-road-known" />
       ))}
@@ -124,6 +127,9 @@ function smooth(pts: P[]) {
         const title = n.entry!.data.titolo;
         const r = n.large ? 18 : 13;
         const labelWidth = title.length * 14.5 + 32;
+        // Kept inside the frame; below the pin when a neighbour's label sits above.
+        const labelX = Math.min(W - 30 - labelWidth / 2, Math.max(30 + labelWidth / 2, n.x));
+        const labelY = n.labelBelow ? n.y + r + 14 : n.y - r - 56;
         return (
           <a href={entryUrl('luoghi', n.id)} class="map-pin-link">
             {n.large && <circle cx={n.x} cy={n.y} r={r * 4} fill="url(#castle-glow)" />}
@@ -134,16 +140,16 @@ function smooth(pts: P[]) {
               class:list={['map-pin', { 'map-pin-visited': visited, 'map-pin-unknown': !visited }]}
             />
             <rect
-              x={n.x - labelWidth / 2}
-              y={n.y - r - 56}
+              x={labelX - labelWidth / 2}
+              y={labelY}
               width={labelWidth}
               height="42"
               rx="4"
               class="map-pin-label-bg"
             />
             <text
-              x={n.x}
-              y={n.y - r - 26}
+              x={labelX}
+              y={labelY + 30}
               class:list={['map-pin-label', { 'map-pin-label-unknown': !visited }]}
               text-anchor="middle"
             >

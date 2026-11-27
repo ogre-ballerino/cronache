@@ -3,6 +3,8 @@
   --font-sc: 'IM Fell English SC', Georgia, 'Times New Roman', serif;
   --font-body: 'IM Fell DW Pica', Georgia, 'Times New Roman', serif;
   --font-initial: 'IM Fell Great Primer', Georgia, 'Times New Roman', serif;
+  /* The page's own background, resolved here so .map-wrap's light palette can't override it. */
+  --color-page: var(--color-bg);
 }
 
 /* The map stays a sheet of paper in dark mode, so it keeps the light palette. */
@@ -341,13 +343,11 @@ a {
 
 /* Map */
 
-/* Breaks out of the text column like .cast-grid; narrower screens scroll it. */
+/* Breaks out of the text column like .cast-grid; narrower screens scroll it.
+   No box: the map's ragged fog fades it into the page, light or dark. */
 .map-wrap {
   width: min(1100px, calc(100vw - 2rem));
   margin-left: calc(50% - min(550px, 50vw - 1rem));
-  padding: 6px;
-  border: 1px solid var(--color-ink);
-  background: var(--color-bg);
   overflow-x: auto;
   overscroll-behavior-x: contain;
 }
@@ -377,6 +377,15 @@ a {
   fill: #e6d7b3;
 }
 
+/* A paper edge lifts the roads off the woodcut's hatching. */
+.map-road-casing {
+  fill: none;
+  stroke: var(--color-bg);
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .map-road-travelled {
   fill: none;
   stroke: var(--color-rubric);
@@ -388,15 +397,14 @@ a {
 .map-road-known {
   fill: none;
   stroke: var(--color-ink);
-  stroke-width: 2.5;
+  stroke-width: 3;
   stroke-dasharray: 9 8;
   stroke-linecap: round;
-  opacity: 0.75;
 }
 
 .map-fog {
   fill: none;
-  stroke: var(--color-bg);
+  stroke: var(--color-page);
   stroke-width: 170;
 }
 
