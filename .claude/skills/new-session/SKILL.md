@@ -96,7 +96,7 @@ End with a short report:
 
 - Session file created, entities created, entities updated, and the woodcut's two images for the user to look at.
 - **Ambiguities**: every name or detail you had to interpret, with your choice (e.g. "«Strad» → Strahd von Zarovich", "unclear whether Izek died: left `stato: vivo`").
-- Anything left for the user: map pins to place, a missing session date, the next session date if the site keeps it in `campaign.config.mjs` (`nextSession.at`; sites on the Discord bot get it from `/prossima`), and for new player characters their portraits (the `add-portrait` skill, once the user has them).
+- Anything left for the user: map pins to place, a missing session date, the next session date if the site keeps it in `campaign.config.mjs` (`nextSession.at`; sites on the Discord bot get it from `/next`), and for new player characters their portraits (the `add-portrait` skill, once the user has them).
 - A suggested commit message, e.g. `feat(content): add sessione-11`.
 
 Don't commit — the user reviews `git diff` first.

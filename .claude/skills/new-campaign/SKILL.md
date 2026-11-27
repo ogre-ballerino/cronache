@@ -25,4 +25,4 @@ One Netlify project per site, with base directory `sites/<name>`; its `netlify.t
 
 ## 3. Discord and calendar (optional)
 
-For announcements, `/prossima` and a calendar feed, follow "Adding a campaign" in `bots/discord/README.md` (the `discord-bot` skill explains the pieces): a `discord` section and `nextSession` in `campaign.config.mjs`, the webhook secret, the Netlify outgoing webhook, then a bot deploy.
+For announcements, `/next` and a calendar feed, follow "Adding a campaign" in `bots/discord/README.md` (the `discord-bot` skill explains the pieces): a `discord` section and `nextSession` in `campaign.config.mjs`, the webhook secret, the Netlify outgoing webhook, then a bot deploy.
