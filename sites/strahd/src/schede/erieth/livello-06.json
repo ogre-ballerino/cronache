@@ -137,12 +137,12 @@
   "dadiVita": "6d8",
   "attacchi": [
     {
-      "nome": "+1 Rapier",
+      "nome": "Rapier Pact of the Blade",
       "bonus": 7,
       "danni": "1d8+4 piercing"
     },
     {
-      "nome": "+1 Shortsword",
+      "nome": "Shortsword Pact of the Blade",
       "bonus": 7,
       "danni": "1d6+4 piercing"
     }
@@ -428,6 +428,7 @@
       "Rapiers",
       "Shortswords",
       "Hand crossbows",
+      "Weapons created with Pact of the Blade",
       "Martial weapons"
     ],
     "strumenti": [],
@@ -485,7 +486,7 @@
       "magico": false
     },
     {
-      "nome": "+1 Rod of the Pact Keeper",
+      "nome": "+1 Rod of the Pact - Maltheris' Bless",
       "quantita": 1,
       "magico": true,
       "sintonia": true
@@ -502,16 +503,6 @@
     },
     {
       "nome": "Potion of Fire Breath",
-      "quantita": 1,
-      "magico": true
-    },
-    {
-      "nome": "+1 Rapier",
-      "quantita": 1,
-      "magico": true
-    },
-    {
-      "nome": "+1 Shortsword",
       "quantita": 1,
       "magico": true
     }
