@@ -3,6 +3,7 @@ titolo: Chiesa di Vallaki
 tipo: chiesa
 regione: Barovia
 estratto: Chiesa di Padre Lucian Petrovich, teatro del suo assassinio; dopo la rivolta è stata sprangata da fuori e ridotta a un mattatoio.
+anteprima: /images/luoghi/chiesa-di-vallaki.png
 ---
 
 Retta da [[Padre Lucian Petrovich]], dà rifugio a [[Ismark Kolyanovich]] e [[Ireena]], sempre più barricata (porta sbarrata, panca incastrata) dopo i tentativi notturni dei vampiri di entrare.

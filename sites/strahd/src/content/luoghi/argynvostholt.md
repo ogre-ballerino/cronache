@@ -3,6 +3,7 @@ titolo: Argynvostholt
 tipo: rovina/fortezza
 regione: Barovia
 estratto: Dimora in rovina dei cavalieri con il simbolo del drago, custodita da una statua di drago; i suoi cavalieri non-morti hanno accolto il gruppo con la spada.
+anteprima: /images/luoghi/argynvostholt.png
 ---
 
 Sede di un ordine di cavalieri contraddistinti dal simbolo del drago, segnalata al gruppo da un non-morto incontrato durante le indagini come possibile alleato nella lotta contro [[Strahd von Zarovich]]. 

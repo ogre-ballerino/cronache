@@ -3,6 +3,7 @@ titolo: Castello Ravenloft
 tipo: castello
 regione: Barovia
 estratto: Il castello di Strahd von Zarovich, meta della processione di spettri vista al Villaggio di Barovia.
+anteprima: /images/luoghi/castello-ravenloft.png
 ---
 
 Dimora di [[Strahd von Zarovich]]. Visto da lontano, il castello domina l'intera vallata dalla cima di uno sperone roccioso: torri consumate e bastioni in rovina si stagliano contro un cielo perennemente plumbeo — un profilo che i pochi abitanti di Barovia evitano persino di indicare col dito.

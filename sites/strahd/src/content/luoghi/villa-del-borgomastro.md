@@ -3,6 +3,7 @@ titolo: Villa del Borgomastro
 tipo: villa
 regione: Barovia
 estratto: Residenza di Barone Vargas a Vallaki, con almeno due oggetti magici al piano superiore, tra cui uno specchio che evoca un assassino spettrale.
+anteprima: /images/luoghi/villa-del-borgomastro.png
 ---
 
 Residenza di [[Barone Vargas]] a [[Vallaki]]. Dall'esterno [[Don Matteor]] ha rilevato oggetti magici dal secondo piano in su, tra cui uno specchio che con una formula ("Specchio magico sul muro, evoca la tua ombra...") può evocare un assassino spettrale. Da lì provengono bagliori viola dello stesso colore visti al [[Casolare fuori Goya|casolare fuori Goya]] all'inizio della campagna — notati sia da [[Urwin]] che dai corvi del suo clan.
